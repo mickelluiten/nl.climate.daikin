@@ -33,7 +33,7 @@ Note: Do not use the MASTER branch for now, what is available in the development
 - 22-FEB-18: Completed the flowcards for trigger (9x), condition (9x) and action (5x).
 
 ## Demo mode (upon pairing the demo mode is by default turned ON !!)
-Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows (tip... turn on a lamp to verify your flow iso the airco...)
+Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows (tip... turn on a lamp to verify your flow iso the airco...).
 
 ## Credits
 App uses icons that where created by http://www.freepik.com from https://www.flaticon.com is licensed by Creative Commons.
