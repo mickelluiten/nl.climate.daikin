@@ -6,10 +6,34 @@ Adds to Homey support for Daikin Air Conditioners.
 
 Note: Do not use the MASTER branch for now, what is available in the development branch is the best available, use at own risk!
 
+## Features
+- supports Daikin airconditioners & heatpumps through either a generic driver (Inverter) or a model specific one (currently Emura only).
+- the airco's Target temperature as well as its operating mode can be controlled from a mobile card.
+- mobile card shows target temperature, operating mode, fan rate and fan swing mode.
+- 23 flowcards: 9 trigger cards, 9 condition cards and 5 action cards.
+
+![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/development/assets/images/mobilecard.png)
+
+## Demo mode (upon pairing the demo mode is by default turned ON !!)
+Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows (tip... turn on a lamp to verify your flow iso the airco...).
+
+## Version history
+### v0.3.0
+- ~~intial public beta release that was published to Athom App Store.~~
+
+### v0.2.0
+- was only available via GitHub
+
+### v0.1.0
+- was only available via GitHub
+
 ## To-do (in random order)
 - improve and extend "error handling"
 - differentiate capabilities by model (inverter, emura, still pending is the nexura)
 - Homekit support
+
+## Credits
+App uses icons that where created by http://www.freepik.com from https://www.flaticon.com is licensed by Creative Commons.
 
 ## Development history
 - 31-JAN-18: inside / outside / target temperature (fixed value for now) show on mobile card.
@@ -31,9 +55,3 @@ Note: Do not use the MASTER branch for now, what is available in the development
 - 20-FEB-18: The airco can now also be switched off with the mode settings wheel
 - 21-FEB-18: Added a whole bunch of condition flowcards
 - 22-FEB-18: Completed the flowcards for trigger (9x), condition (9x) and action (5x).
-
-## Demo mode (upon pairing the demo mode is by default turned ON !!)
-Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows (tip... turn on a lamp to verify your flow iso the airco...).
-
-## Credits
-App uses icons that where created by http://www.freepik.com from https://www.flaticon.com is licensed by Creative Commons.
