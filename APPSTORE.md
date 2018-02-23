@@ -1,7 +1,7 @@
 
 ![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/development/assets/images/Daikin-logo-wide.png)
 
-# Daikin AC
+# Daikin AI
 Adds support for Daikin Airconditioners.
 
 ## To-do

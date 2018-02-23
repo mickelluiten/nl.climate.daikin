@@ -3,8 +3,8 @@ Do not use the MASTER branch for now, what is available in the development branc
 
 ![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/development/assets/images/Daikin-logo-wide.png)
 
-# Daikin AC
-Adds support for Daikin Airconditioners.
+# Daikin AI
+Adds support for Daikin Air Conditioners.
 
 ## To-do (in random order)
 - improve and extend "error handling"
