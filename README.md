@@ -1,7 +1,7 @@
 #    >>>>>  THIS APP IS IN DEVELOPMENT  <<<<<
 Do not use the MASTER branch for now, what is available in the development branch is the best available, use at own risk!
 
-![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/development/assets/images/Daikin-logo.png)
+![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/development/assets/images/Daikin-logo-wide.png)
 
 # Daikin AC
 Adds support for Daikin Airconditioners.
