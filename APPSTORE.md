@@ -2,10 +2,10 @@
 ![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/development/assets/images/Daikin-logo-wide.png)
 
 # Daikin AI
-Adds to Homey support for Daikin Air Conditioners.
+Adds to Homey support for Daikin Air Conditioners and Heatpumps (aka inverters).
 
 ## Features
-- supports Daikin airconditioners & heatpumps through either a generic driver (Inverter) or a model specific one (currently Emura only).
+- supports Daikin airconditioners & heatpumps through either a generic driver (I called Inverter) or a model specific one (currently Emura only).
 - the airco's Target temperature as well as its operating mode can be controlled from a mobile card.
 - mobile card shows target temperature, operating mode, fan rate and fan swing mode.
 - 23 flowcards: 9 trigger cards, 9 condition cards and 5 action cards.
@@ -17,7 +17,7 @@ Demo mode can be disabled in the device its settings menu. Demo mode can be very
 
 ## Change log
 ### v0.3.0
-- intial public beta release that was published to Athom App Store
+- intial beta release to Athom App Store
 
 ### v0.2.0
 - was only available via GitHub
