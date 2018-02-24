@@ -201,7 +201,7 @@ class EmuraDriver extends Driver {
 			let device = args.device;           
             let settings = device.getSettings();   
                                     
-            var ip_address = settings.inverter_ip;    
+            var ip_address = settings.emura_ip;    
             this.log('ip_address', ip_address);                        
 
             var atemp = args.atemp;
@@ -217,7 +217,7 @@ class EmuraDriver extends Driver {
 			let device = args.device;           
             let settings = device.getSettings();   
                                     
-            var ip_address = settings.inverter_ip;    
+            var ip_address = settings.emura_ip;    
             this.log('ip_address', ip_address);                        
 
             var airco_mode = args.mode;
@@ -232,7 +232,7 @@ class EmuraDriver extends Driver {
 			let device = args.device;           
             let settings = device.getSettings();   
                                     
-            var ip_address = settings.inverter_ip;    
+            var ip_address = settings.emura_ip;    
             this.log('ip_address', ip_address);                        
 
             var airco_mode = args.mode;
@@ -248,7 +248,7 @@ class EmuraDriver extends Driver {
 			let device = args.device;           
             let settings = device.getSettings();   
                                     
-            var ip_address = settings.inverter_ip;    
+            var ip_address = settings.emura_ip;    
             this.log('ip_address', ip_address);                        
 
             var fan_rate = args.frate;
@@ -264,7 +264,7 @@ class EmuraDriver extends Driver {
 			let device = args.device;           
             let settings = device.getSettings();   
                                     
-            var ip_address = settings.inverter_ip;    
+            var ip_address = settings.emura_ip;    
             this.log('ip_address', ip_address);                        
 
             var fan_direction = args.fdir;

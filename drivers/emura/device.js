@@ -268,11 +268,11 @@ class EmuraDevice extends Device {
            this.setCapabilityValue('measure_temperature.outside', outside);
        
  	   	   let device = this;
- 	   	   let outside_tokens = {
+ 	   	   let tokens = {
  	   		   'outside_temp': outside
  	   	   };
        
- 	   	   let outside_state  = {
+ 	   	   let state  = {
  	   		   'temperature.outside': outside
  	   	   }
        
