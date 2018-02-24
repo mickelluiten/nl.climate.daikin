@@ -29,6 +29,7 @@ Demo mode can be disabled in the device its settings menu. Demo mode can be very
 - was only available via GitHub
 
 ## To-do (in random order)
+- crush more bugs (and try not to introduce new onces...)
 - improve and extend "error handling"
 - differentiate capabilities by model (inverter, emura, still pending is the nexura)
 - Homekit support
@@ -56,3 +57,4 @@ App uses icons that where created by http://www.freepik.com from https://www.fla
 - 20-FEB-18: The airco can now also be switched off with the mode settings wheel
 - 21-FEB-18: Added a whole bunch of condition flowcards
 - 22-FEB-18: Completed the flowcards for trigger (9x), condition (9x) and action (5x).
+- 24-FEB-18: Code optimizations, crushed bugs that I introduced with adding of the flowcards

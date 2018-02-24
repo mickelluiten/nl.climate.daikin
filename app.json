@@ -58,7 +58,7 @@
                     "filter": "driver_id=inverter|emura"
                 },
                 {
-                    "name": "target_temperature",
+                    "name": "target_temperature_more",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -80,7 +80,7 @@
                     "filter": "driver_id=inverter|emura"
                 },
                 {
-                    "name": "target_temperature",
+                    "name": "target_temperature_less",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -120,7 +120,7 @@
             ]
         },
         {
-            "id": "change_inside_temperature_more_than",
+            "id": "inside_temperature_more_than",
             "title": {
                 "en": "The inside temperature is more than",
                 "nl": "De binnentemperatuur is meer dan"
@@ -132,7 +132,7 @@
                     "filter": "driver_id=inverter|emura"
                 },
                 {
-                    "name": "temperature",
+                    "name": "inside_temperature_more",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -142,7 +142,7 @@
             ]
         },
         {
-            "id": "change_inside_temperature_less_than",
+            "id": "inside_temperature_less_than",
             "title": {
                 "en": "The inside temperature is less than",
                 "nl": "De binnentemperatuur is minder dan"
@@ -154,7 +154,7 @@
                     "filter": "driver_id=inverter|emura"
                 },
                 {
-                    "name": "temperature",
+                    "name": "inside_temperature_less",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -164,7 +164,7 @@
             ]
         },
         {
-            "id": "change_inside_temperature_between",
+            "id": "inside_temperature_between",
             "title": {
                 "en": "The inside temperature is between",
                 "nl": "De binnentemperatuur is tussen"
@@ -176,7 +176,7 @@
                     "filter": "driver_id=inverter|emura"
                 },
                 {
-                    "name": "temperature_from",
+                    "name": "inside_temperature_from",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -184,7 +184,7 @@
                     }
                 },
                                     {
-                    "name": "temperature_to",
+                    "name": "inside_temperature_to",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -194,7 +194,7 @@
             ]
         },
         {
-            "id": "change_outside_temperature_more_than",
+            "id": "outside_temperature_more_than",
             "title": {
                 "en": "The outside temperature is more than",
                 "nl": "De buitentemperatuur is meer dan"
@@ -206,7 +206,7 @@
                     "filter": "driver_id=inverter|emura"
                 },
                 {
-                    "name": "temperature",
+                    "name": "outside_temperature_more",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -216,7 +216,7 @@
             ]
         },
         {
-            "id": "change_outside_temperature_less_than",
+            "id": "outside_temperature_less_than",
             "title": {
                 "en": "The outside temperature is less than",
                 "nl": "De buitentemperatuur is minder dan"
@@ -228,7 +228,7 @@
                     "filter": "driver_id=inverter|emura"                  
                 },
                 {
-                    "name": "temperature",
+                    "name": "ouside_temperature_less",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -238,7 +238,7 @@
             ]
         },
         {
-            "id": "change_outside_temperature_between",
+            "id": "outside_temperature_between",
             "title": {
                 "en": "The outside temperature is between",
                 "nl": "De buitentemperatuur is tussen"
@@ -250,7 +250,7 @@
                     "filter": "driver_id=inverter|emura"                  
                 },
                 {
-                    "name": "temperature_from",
+                    "name": "outside_temperature_from",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -258,7 +258,7 @@
                     }
                 },
                                     {
-                    "name": "temperature_to",
+                    "name": "outside_temperature_to",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -282,7 +282,7 @@
                     "filter": "driver_id=inverter|emura"
                 },
                 {
-                    "name": "target_temperature",
+                    "name": "target_temperature_more",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -304,7 +304,7 @@
                     "filter": "driver_id=inverter|emura"                    
                 },
                 {
-                    "name": "target_temperature",
+                    "name": "target_temperature_less",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -356,7 +356,7 @@
                     "filter": "driver_id=inverter|emura"
                 },
                 {
-                    "name": "temperature",
+                    "name": "inside_temperature_more",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -378,7 +378,7 @@
                     "filter": "driver_id=inverter|emura"
                 },
                 {
-                    "name": "temperature",
+                    "name": "inside_temperature_less",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -400,7 +400,7 @@
                     "filter": "driver_id=inverter|emura"
                 },
                 {
-                    "name": "temperature_from",
+                    "name": "inside_temperature_from",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -408,7 +408,7 @@
                     }
                 },
                                     {
-                    "name": "temperature_to",
+                    "name": "inside_temperature_to",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -430,7 +430,7 @@
                     "filter": "driver_id=inverter|emura"
                 },
                 {
-                    "name": "temperature",
+                    "name": "outside_temperature_more",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -452,7 +452,7 @@
                     "filter": "driver_id=inverter|emura"
                 },
                 {
-                    "name": "temperature",
+                    "name": "outside_temperature_less",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -474,7 +474,7 @@
                     "filter": "driver_id=inverter|emura"
                 },
                 {
-                    "name": "temperature_from",
+                    "name": "outside_temperature_from",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -482,7 +482,7 @@
                     }
                 },
                                     {
-                    "name": "temperature_to",
+                    "name": "outside_temperature_to",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -920,7 +920,7 @@
             }
          ]
       },
-      "airco_humidity": {
+      "set_humidity": {
           "type": "number",
           "title": {
               "en": "Humidity capability",
@@ -936,7 +936,7 @@
               "max": 100,
               "step": 5                 
       },
-      "airco_temperature": {
+      "set_temperature": {
           "type": "number",
           "title": {
               "en": "Set temperature capability",
@@ -965,8 +965,8 @@
        "airco_mode_inverter",
        "fan_rate",
        "fan_direction",
-       "airco_humidity",
-       "airco_temperature",
+       "set_humidity",
+       "set_temperature",
 	   "measure_temperature.inside",
        "measure_temperature.outside" 
      ],
@@ -989,13 +989,13 @@
      			"nl": "Lamel"
             }   
         },
-     	"airco_humidity": {
+     	"set_humidity": {
      		"title": {
      			"en": "Set",
      			"nl": "Doel"
             }   
         },
-  		"airco_temperature": {
+  		"set_temperature": {
   			"title": {
   				"en": "Set",
   				"nl": "Doel"
@@ -1038,7 +1038,7 @@
              },
              {
                "id": "thermostat",
-               "capabilities": [ "airco_temperature" ]
+               "capabilities": [ "set_temperature" ]
              }
          ]
      },
@@ -1126,8 +1126,8 @@
        "airco_mode_emura",
        "fan_rate",
        "fan_direction",
-       "airco_humidity",
-       "airco_temperature",
+       "set_humidity",
+       "set_temperature",
 	   "measure_temperature.inside",
        "measure_temperature.outside" 
      ],
@@ -1150,13 +1150,13 @@
      			"nl": "Lamel"
             }   
         },
-     	"airco_humidity": {
+     	"set_humidity": {
      		"title": {
      			"en": "Set",
      			"nl": "Doel"
             }   
         },
-  		"airco_temperature": {
+  		"set_temperature": {
   			"title": {
   				"en": "Set",
   				"nl": "Doel"
@@ -1192,20 +1192,20 @@
                  "options": {
                     "showTitle": true,
                     "icons": {
-                        "fan_direction": "./drivers/inverter/assets/oscillation.svg",
-                        "fan_rate": "./drivers/inverter/assets/house.svg"
+                        "fan_direction": "./drivers/emura/assets/oscillation.svg",
+                        "fan_rate": "./drivers/emura/assets/house.svg"
                     }
                 }
              },
              {
                "id": "thermostat",
-               "capabilities": [ "airco_temperature" ]
+               "capabilities": [ "set_temperature" ]
              }
          ]
      },
      "images": {
-       "large": "/drivers/inverter/assets/images/large.png",
-       "small": "/drivers/inverter/assets/images/small.png"
+       "large": "/drivers/emura/assets/images/large.png",
+       "small": "/drivers/emura/assets/images/small.png"
      },	          
      "pair": [
          {

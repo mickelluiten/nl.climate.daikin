@@ -1,8 +1,8 @@
 "use strict";
 
 const Homey = require('homey');
-const util = require('../../lib/daikin');
-const Device = require('../../lib/device');
+const Device = require('../../lib/Device');
+const util = require('../../lib/Daikin');
 
 //Device for a Daikin Emura device
 class EmuraDevice extends Device {
@@ -15,8 +15,8 @@ class EmuraDevice extends Device {
         this.registerCapabilityListener('airco_mode_emura', this.onCapabilityMode.bind(this));
 		this.registerCapabilityListener('fan_rate', this.onCapabilityFanRate.bind(this));			
 		this.registerCapabilityListener('fan_direction', this.onCapabilityFanDir.bind(this));	       
-		this.registerCapabilityListener('airco_humidty', this.onCapabilityAircoHum.bind(this));
-        this.registerCapabilityListener('airco_temperature', this.onCapabilityAircoTemp.bind(this));        
+		this.registerCapabilityListener('set_humidity', this.onCapabilityAircoHum.bind(this));
+        this.registerCapabilityListener('set_temperature', this.onCapabilityAircoTemp.bind(this));        
 		this.registerCapabilityListener('measure_temperature.inside', this.onCapabilityMeasureTemperature.bind(this));
         this.registerCapabilityListener('measure_temperature.outside', this.onCapabilityMeasureTemperature.bind(this));       
                 
@@ -91,7 +91,7 @@ class EmuraDevice extends Device {
 		this.log('onCapabilityAircoHum');
 
 		this.log('humidity %:', ahum);
-    	this.setCapabilityValue('airco_humidity', ahum);
+    	this.setCapabilityValue('set_humidity', ahum);
         
         return Promise.resolve();  
 	}
@@ -100,28 +100,28 @@ class EmuraDevice extends Device {
     onCapabilityAircoTemp(atemp, opts) {
 		this.log('onCapabilityAircoTemp');
 
- 	    var oldTargetTemperature = this.getState().airco_temperature;
+ 	    var oldTargetTemperature = this.getState().set_temperature;
         this.log('oldTargetTemperature: ', oldTargetTemperature);
  	    
         if (oldTargetTemperature != atemp) {
            this.log('new target airco temperature °C:', atemp);        
- 	   	   this.setCapabilityValue('airco_temperature', atemp);
+ 	   	   this.setCapabilityValue('set_temperature', atemp);
        
  	   	   let device = this;
  	   	   let tokens = {
- 	   		   'target_temperature': atemp
+ 	   		   'temperature_set': atemp
  	   	   };
        
  	   	   let state  = {
- 	   		   'airco_temperature': atemp
+ 	   		   'set_temperature': atemp
  	   	   }
        
  	   	   // trigger temperature flows
  	   	   let driver = this.getDriver();
  	   	   driver
- 	   			.triggerTemperatureMoreThan(device, tokens, state)
- 	   			.triggerTemperatureLessThan(device, tokens, state)
- 	   			.triggerTemperatureBetween(device, tokens, state);
+ 	   			.triggerTargetTemperatureMoreThan(device, tokens, state)
+ 	   			.triggerTargetTemperatureLessThan(device, tokens, state)
+ 	   			.triggerTargetTemperatureBetween(device, tokens, state);
            
            // update the airco its settings         
            this.daikinTempControl(atemp);
@@ -198,11 +198,11 @@ class EmuraDevice extends Device {
     //---- temperature
 		const atemp = Number(control_info[4]);
         this.log('temperature °C:', atemp);  
-        this.setCapabilityValue('airco_temperature', atemp);
+        this.setCapabilityValue('set_temperature', atemp);
         
     //---- humidity
 		const ahum = Number(control_info[5]);      
-    	this.setCapabilityValue('airco_humidity', ahum);              
+    	this.setCapabilityValue('set_humidity', ahum);              
         
     //---- fan rate
         var fan_rates = [ "A", "B", "3", "4", "5", "6", "7"];
@@ -246,20 +246,20 @@ class EmuraDevice extends Device {
            this.setCapabilityValue('measure_temperature.inside', inside);
 
 	   	   let device = this;
-	   	   let inside_tokens = {
-	   		   'inside_temperature': inside
+	   	   let tokens = {
+	   		   'inside_temp': inside
 	   	   };
 
-	   	   let inside_state  = {
+	   	   let state  = {
 	   		   'temperature.inside': inside
 	   	   }
 
 	   	   // trigger inside temperature flows
 	   	   let driver = this.getDriver();
 	   	   driver
-	   			.triggerTemperatureMoreThan(device, inside_tokens, inside_state)
-	   			.triggerTemperatureLessThan(device, inside_tokens, inside_state)
-	   			.triggerTemperatureBetween(device, inside_tokens, inside_state);
+	   			.triggerInsideTemperatureMoreThan(device, tokens, state)
+	   			.triggerInsideTemperatureLessThan(device, tokens, state)
+	   			.triggerInsideTemperatureBetween(device, tokens, state);
 
         }
          	    
@@ -269,7 +269,7 @@ class EmuraDevice extends Device {
        
  	   	   let device = this;
  	   	   let outside_tokens = {
- 	   		   'outside_temperature': outside
+ 	   		   'outside_temp': outside
  	   	   };
        
  	   	   let outside_state  = {
@@ -279,9 +279,9 @@ class EmuraDevice extends Device {
  	   	   // trigger outside temperature flows
  	   	   let driver = this.getDriver();
  	   	   driver
- 	   			.triggerTemperatureMoreThan(device, outside_tokens, outside_state)
- 	   			.triggerTemperatureLessThan(device, outside_tokens, outside_state)
- 	   			.triggerTemperatureBetween(device, outside_tokens, outside_state);
+ 	   			.triggerOutsideTemperatureMoreThan(device, tokens, state)
+ 	   			.triggerOutsideTemperatureLessThan(device, tokens, state)
+ 	   			.triggerOutsideTemperatureBetween(device, tokens, state);
 
         }        		
 		
