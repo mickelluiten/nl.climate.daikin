@@ -20,7 +20,7 @@ Demo mode can be disabled in the device its settings menu. Demo mode can be very
 
 ## Version history
 ### v0.3.0
-- ~~intial beta release to Athom App Store.~~
+- intial beta release to Athom App Store.
 
 ### v0.2.0
 - was only available via GitHub
@@ -58,4 +58,5 @@ App uses icons that where created by http://www.freepik.com from https://www.fla
 - 21-FEB-18: Added a whole bunch of condition flowcards
 - 22-FEB-18: Completed the flowcards for trigger (9x), condition (9x) and action (5x).
 - 24-FEB-18: Code optimizations, crushed bugs that I introduced with adding of the flowcards.
-- 25-FEB-18: Added Nexura driver. Fixed a bug that prevented the inside/outside flowcard triggers from triggering
+- 25-FEB-18: Added Nexura driver. Fixed a bug that prevented the inside/outside flowcard triggers from triggering.
+- 25-FEB-18: First beta (v0.3.0) pubilished to the Athom app store.

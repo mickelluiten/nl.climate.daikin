@@ -17,7 +17,7 @@ Demo mode can be disabled in the device its settings menu. Demo mode can be very
 
 ## Change log
 ### v0.3.0
-- intial beta release to Athom App Store
+- intial beta release to Athom App Store. Note: this beta for sure contains bugs, let me know if you found one...
 
 ### v0.2.0
 - was only available via GitHub
