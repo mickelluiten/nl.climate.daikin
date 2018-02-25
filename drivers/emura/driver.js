@@ -17,7 +17,6 @@ class EmuraDriver extends Driver {
         this._triggerTargetTemperatureMoreThan = new Homey.FlowCardTriggerDevice('change_target_temperature_more_than').register();
 		this._triggerTargetTemperatureMoreThan.registerRunListener((args, state) => {
 			let conditionMet = state.set_temperature > args.target_temperature_more;
-            this.log('args', args);
             this.log('trigger - args.target_temperature_more', args.target_temperature_more);
             this.log('trigger - state.set_temperature', (state.set_temperature) );
             this.log('trigger - conditionMet', conditionMet);
@@ -27,7 +26,6 @@ class EmuraDriver extends Driver {
 		this._triggerTargetTemperatureLessThan = new Homey.FlowCardTriggerDevice('change_target_temperature_less_than').register();
 		this._triggerTargetTemperatureLessThan.registerRunListener((args, state) => {
 			let conditionMet = state.set_temperature < args.target_temperature_less;
-            this.log('args', args);
             this.log('trigger - args.target_temperature_less', args.target_temperature_less);
             this.log('trigger - state.set_temperature', (state.set_temperature) );
             this.log('trigger - conditionMet', conditionMet);
@@ -37,7 +35,6 @@ class EmuraDriver extends Driver {
 		this._triggerTargetTemperatureBetween = new Homey.FlowCardTriggerDevice('change_target_temperature_between').register();
 		this._triggerTargetTemperatureBetween.registerRunListener((args, state) => {
 			let conditionMet = state.set_temperature > args.target_temperature_from && state.set_temperature < args.target_temperature_to;
-            this.log('args', args);
             this.log('trigger - args.target_temperature_from', args.target_temperature_from);
             this.log('trigger - args.target_temperature_to', args.target_temperature_to);
             this.log('trigger - state.set_temperature', (state.set_temperature) );
@@ -48,50 +45,50 @@ class EmuraDriver extends Driver {
 	    /*** INSIDE TEMPERATURE TRIGGERS ***/
 		this._triggerInsideTemperatureMoreThan = new Homey.FlowCardTriggerDevice('inside_temperature_more_than').register();
 		this._triggerInsideTemperatureMoreThan.registerRunListener((args, state) => {
-			let conditionMet = state.temperature_inside > args.inside_temperature_more;
+			let conditionMet = state['measure_temperature.inside'] > args.inside_temperature_more;
             this.log('trigger - args.inside_temperature_more', args.inside_temperature_more);
-            this.log('trigger - state.temperature_inside]', (state.temperature_inside) );
+            this.log('trigger - state()[measure_temperature.inside]', ( state['measure_temperature.inside']) );
             this.log('trigger - conditionMet inside temp', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
 
 		this._triggerInsideTemperatureLessThan = new Homey.FlowCardTriggerDevice('inside_temperature_less_than').register();
 		this._triggerInsideTemperatureLessThan.registerRunListener((args, state) => {
-			let conditionMet = state.temperature_inside < args.inside_temperature_less;
+			let conditionMet = state['measure_temperature.inside'] < args.inside_temperature_less;
             this.log('trigger - args.inside_temperature_less', args.inside_temperature_less);
-            this.log('trigger - state.temperature_inside]', (state.temperature_inside) );
+            this.log('trigger - state()[measure_temperature.inside]', ( state['measure_temperature.inside']) );
             this.log('trigger - conditionMet inside temp', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
 
 		this._triggerInsideTemperatureBetween = new Homey.FlowCardTriggerDevice('inside_temperature_between').register();
 		this._triggerInsideTemperatureBetween.registerRunListener((args, state) => {
-			let conditionMet = state.temperature_inside > args.inside_temperature_from && state.temperature_inside < args.inside_temperature_to;
+			let conditionMet = state['measure_temperature.inside'] > args.inside_temperature_from && state['measure_temperature.inside'] < args.inside_temperature_to;
 			return Promise.resolve(conditionMet);
 		});
 
 		/*** OUTSIDE TEMPERATURE TRIGGERS ***/
 		this._triggerOutsideTemperatureMoreThan = new Homey.FlowCardTriggerDevice('outside_temperature_more_than').register();
 		this._triggerOutsideTemperatureMoreThan.registerRunListener((args, state) => {
-			let conditionMet = state.temperature_outside > args.outside_temperature_more;
+			let conditionMet = state['measure_temperature.outside'] > args.outside_temperature_more;
             this.log('trigger - args.outside_temperature_more', args.outside_temperature_more);
-            this.log('trigger - state.temperature_outside', (state.temperature_outside) );
+            this.log('trigger - state[measure_temperature.outside]', ( state['measure_temperature.outside']) );
             this.log('trigger - conditionMet outside temp', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
 
 		this._triggerOutsideTemperatureLessThan = new Homey.FlowCardTriggerDevice('outside_temperature_less_than').register();
 		this._triggerOutsideTemperatureLessThan.registerRunListener((args, state) => {
-			let conditionMet = state.temperature_outside < args.ouside_temperature_less;
+			let conditionMet = state['measure_temperature.outside'] < args.ouside_temperature_less;
             this.log('trigger - args.ouside_temperature_less', args.ouside_temperature_less);
-            this.log('trigger - state.temperature_outside', (state.temperature_outside) );
+            this.log('trigger - state[measure_temperature.outside]', ( state['measure_temperature.outside']) );
             this.log('trigger - conditionMet outside temp', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
 
 		this._triggerOutsideTemperatureBetween = new Homey.FlowCardTriggerDevice('outside_temperature_between').register();
 		this._triggerOutsideTemperatureBetween.registerRunListener((args, state) => {
-			let conditionMet = state.temperature_outside > args.outside_temperature_from && state.temperature_outside < args.outside_temperature_to;
+			let conditionMet = state['measure_temperature.outside'] > args.outside_temperature_from && state['measure_temperature.outside'] < args.outside_temperature_to;
 			return Promise.resolve(conditionMet);
 		});
 

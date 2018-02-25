@@ -247,11 +247,11 @@ class EmuraDevice extends Device {
 
 	   	   let device = this;
 	   	   let tokens = {
-	   		   'inside_temp': inside
+	   		   'inside_temperature': inside
 	   	   };
 
 	   	   let state  = {
-	   		   'temperature.inside': inside
+	   		   'measure_temperature.inside': inside
 	   	   }
 
 	   	   // trigger inside temperature flows
@@ -269,11 +269,11 @@ class EmuraDevice extends Device {
        
  	   	   let device = this;
  	   	   let tokens = {
- 	   		   'outside_temp': outside
+ 	   		   'outside_temperature': outside
  	   	   };
        
  	   	   let state  = {
- 	   		   'temperature.outside': outside
+ 	   		   'measure_temperature.outside': outside
  	   	   }
        
  	   	   // trigger outside temperature flows

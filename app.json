@@ -1,6 +1,6 @@
 {
     "id": "nl.climate.daikin",
-	"version": "0.2.0",
+	"version": "0.2.1",
     "compatibility": ">=1.5.3",
     "sdk": 2,
     "name": {
@@ -55,7 +55,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"
+                    "filter": "driver_id=inverter|emura|nexura"
                 },
                 {
                     "name": "target_temperature_more",
@@ -77,7 +77,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"
+                    "filter": "driver_id=inverter|emura|nexura"
                 },
                 {
                     "name": "target_temperature_less",
@@ -99,7 +99,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"
+                    "filter": "driver_id=inverter|emura|nexura"
                 },
                 {
                     "name": "target_temperature_from",
@@ -129,7 +129,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"
+                    "filter": "driver_id=inverter|emura|nexura"
                 },
                 {
                     "name": "inside_temperature_more",
@@ -151,7 +151,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"
+                    "filter": "driver_id=inverter|emura|nexura"
                 },
                 {
                     "name": "inside_temperature_less",
@@ -173,7 +173,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"
+                    "filter": "driver_id=inverter|emura|nexura"
                 },
                 {
                     "name": "inside_temperature_from",
@@ -203,7 +203,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"
+                    "filter": "driver_id=inverter|emura|nexura"
                 },
                 {
                     "name": "outside_temperature_more",
@@ -225,7 +225,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"                  
+                    "filter": "driver_id=inverter|emura|nexura"               
                 },
                 {
                     "name": "ouside_temperature_less",
@@ -247,7 +247,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"                  
+                    "filter": "driver_id=inverter|emura|nexura"              
                 },
                 {
                     "name": "outside_temperature_from",
@@ -279,7 +279,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"
+                    "filter": "driver_id=inverter|emura|nexura"
                 },
                 {
                     "name": "target_temperature_more",
@@ -301,7 +301,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"                    
+                    "filter": "driver_id=inverter|emura|nexura"                  
                 },
                 {
                     "name": "target_temperature_less",
@@ -323,7 +323,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"                    
+                    "filter": "driver_id=inverter|emura|nexura"                  
                 },
                 {
                     "name": "target_temperature_from",
@@ -353,7 +353,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"
+                    "filter": "driver_id=inverter|emura|nexura"
                 },
                 {
                     "name": "inside_temperature_more",
@@ -375,7 +375,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"
+                    "filter": "driver_id=inverter|emura|nexura"
                 },
                 {
                     "name": "inside_temperature_less",
@@ -397,7 +397,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"
+                    "filter": "driver_id=inverter|emura|nexura"
                 },
                 {
                     "name": "inside_temperature_from",
@@ -427,7 +427,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"
+                    "filter": "driver_id=inverter|emura|nexura"
                 },
                 {
                     "name": "outside_temperature_more",
@@ -449,7 +449,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"
+                    "filter": "driver_id=inverter|emura|nexura"
                 },
                 {
                     "name": "outside_temperature_less",
@@ -471,7 +471,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura"
+                    "filter": "driver_id=inverter|emura|nexura"
                 },
                 {
                     "name": "outside_temperature_from",
@@ -503,7 +503,7 @@
              {
           	  "name": "device",
           	  "type": "device",
-              "filter": "driver_id=inverter|emura"
+              "filter": "driver_id=inverter|emura|nexura"
               },
               {
               "name": "atemp",
@@ -569,7 +569,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=emura"
+            "filter": "driver_id=emura|nexura"
           },
      	  {
      	  	"name": "mode",
@@ -604,7 +604,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=inverter|emura"
+            "filter": "driver_id=inverter|emura|nexura"
           },
      	  {
      	  	"name": "mode",
@@ -627,7 +627,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=inverter|emura"
+            "filter": "driver_id=inverter|emura|nexura"
           },
      	  {
      	  	"name": "frate",
@@ -669,7 +669,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=inverter|emura"
+            "filter": "driver_id=inverter|emura|nexura"
           },
      	  {
      	  	"name": "fdir",
@@ -766,6 +766,62 @@
          ]
       },
       "airco_mode_emura": {
+          "type": "enum",
+          "title": {
+              "en": "Airco mode capability",
+              "nl": "Airco modus functionaliteit"
+          },
+          "getable": true,
+          "setable": true,
+          "min": 0,
+          "max": 7,
+          "step": 1,
+          "values": [
+            {
+                "id": "off",
+                "title": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+            },
+            {
+              "id": "cooling",
+              "title": {
+                "en": "Cooling",
+                "nl": "Koelen"
+              }
+            },
+            {
+              "id": "heating",
+              "title": {
+                "en": "Heating",
+                "nl": "Verwarmen"
+              }
+            },
+            {
+              "id": "auto",
+              "title": {
+                "en": "Auto",
+                "nl": "Auto"
+              }
+            },
+            {
+              "id": "fan",
+              "title": {
+                "en": "Fan",
+                "nl": "Ventilator"
+              }
+            },
+            {
+              "id": "dehumid",
+              "title": {
+                "en": "Dry",
+                "nl": "Ontvochtigen"
+              }
+            }
+         ]
+      },
+      "airco_mode_nexura": {
           "type": "enum",
           "title": {
               "en": "Airco mode capability",
@@ -971,10 +1027,10 @@
        "measure_temperature.outside" 
      ],
      "capabilitiesOptions": {
-   		"airco_mode": {
+   		"airco_mode_inverter": {
    			"title": {
-   				"en": "Airco",
-   				"nl": "Airco"
+   				"en": "Mode",
+   				"nl": "Modus"
               }   
           },
    		"fan_rate": {
@@ -1132,10 +1188,10 @@
        "measure_temperature.outside" 
      ],
      "capabilitiesOptions": {
-   		"airco_mode": {
+   		"airco_mode_emura": {
    			"title": {
-   				"en": "Airco",
-   				"nl": "Airco"
+   				"en": "Mode",
+   				"nl": "Modus"
               }   
           },
    		"fan_rate": {
@@ -1275,5 +1331,166 @@
           "value": false
       }]   
     }]
-  }]
+  },
+  {
+    "id": "nexura",
+    "name": {
+      "en": "Nexura",
+      "nl": "Nexura"
+    },
+    "class": "other",     
+    "capabilities": [
+      "airco_mode_nexura",
+      "fan_rate",
+      "fan_direction",
+      "set_humidity",
+      "set_temperature",
+      "measure_temperature.inside",
+      "measure_temperature.outside" 
+    ],
+    "capabilitiesOptions": {
+  		"airco_mode_nexura": {
+  			"title": {
+  				"en": "Mode",
+  				"nl": "Modus"
+             }   
+         },
+  		"fan_rate": {
+  			"title": {
+  				"en": "Fan",
+  				"nl": "Vent."
+             }   
+         },
+    	"fan_direction": {
+    		"title": {
+    			"en": "Wings",
+    			"nl": "Lamel"
+           }   
+       },
+    	"set_humidity": {
+    		"title": {
+    			"en": "Set",
+    			"nl": "Doel"
+           }   
+       },
+ 		"set_temperature": {
+ 			"title": {
+ 				"en": "Set",
+ 				"nl": "Doel"
+            }   
+        },         
+		"measure_temperature.inside": {
+			"title": {
+				"en": "Inside",
+				"nl": "Binnen"
+           }   
+       },
+	"measure_temperature.outside": {
+		"title": {
+			"en": "Outside",
+			"nl": "Buiten"
+		}
+	}
+    },     
+    "mobile": {
+        "components": [
+            {
+                "id": "picker",
+                "capabilities": [
+                    "airco_mode_nexura"
+                 ]             
+            },
+            {
+                "id": "sensor",
+                "capabilities": [
+                    "fan_rate",
+                    "fan_direction"
+                 ],
+                "options": {
+                   "showTitle": true,
+                   "icons": {
+                       "fan_direction": "./drivers/nexura/assets/oscillation.svg",
+                       "fan_rate": "./drivers/nexura/assets/house.svg"
+                   }
+               }
+            },
+            {
+              "id": "thermostat",
+              "capabilities": [ "set_temperature" ]
+            }
+        ]
+    },
+    "images": {
+      "large": "/drivers/nexura/assets/images/large.png",
+      "small": "/drivers/nexura/assets/images/small.png"
+    },	          
+    "pair": [
+        {
+            "id": "start"
+        },
+        {
+            "id": "list_my_devices",
+            "template": "list_devices",
+            "navigation": {
+                "next": "add_my_devices"
+            }
+        },
+        {
+             "id": "add_my_devices",
+             "template": "add_devices"
+        }
+    ], 	 
+    "settings": [
+        {
+        "type": "group",
+        "label": {
+        "en": "Network setting",
+        "nl": "Netwerk instellingen"
+        },
+        "children": [{
+             "id": "nexura_ip",
+             "type": "text",
+             "label": {
+             "en": "Airconditioners IP address",
+             "nl": "Airconditioners IP adres"
+             },
+             "value": ""
+         }]
+     },
+     {
+     "type": "group",
+     "label": {
+     "en": "Application refresh (all settings in seconds)",
+     "nl": "Applicatie verversen (alle instelling in seconden)"
+     },
+     "children": [{
+          "id": "interval",
+          "type": "text",
+          "label": {
+          "en": "Polling interval",
+          "nl": "Gegevens opvragen elke"
+          },
+          "value": "10",
+          "min": 5,
+          "max": 30.0,
+          "step": 1  
+      }]
+    },
+    {
+    "type": "group",
+    "label": {
+    "en": "Demo mode (power OFF no matter what mode is selected)",
+    "nl": "Demonstratie mode (airco is altijd uitgeschakeld ongeacht de gekozen modus)"
+    },
+    "children": [{
+         "id": "demomode",
+         "type": "checkbox",
+         "label": {
+         "en": "Demo mode",
+         "nl": "Demo modus"
+         },
+         "value": false
+     }]   
+   }]
+ }]
 }

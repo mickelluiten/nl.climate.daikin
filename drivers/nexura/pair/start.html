@@ -1,75 +1,91 @@
 <script>
+Homey.setTitle( __('pair.start.title') );
+
 function saveSettings () {
-    $('#error').html('');
+    $('.err-msg').text('');
 	$('#save').prop('disabled', true);
-	Homey.emit('manual_add', {
-	    data: { // this data object is saved to- and unique for the device. It is passed on the get and set functions as 1st argument
-	        id: 'NEXURA'+Math.floor(Date.now() / 1000),
-            ip: $('#nexura_ip').val()
-	    },
-	    settings: {
-		    'nexura_ip': $('#nexura_ip').val()
-	    },
-	    name: 'Nexura',
-	}, function( err, result ){
-	    if( err ) return console.error(err);
-	});
-    
-    Homey.on('success', function(device){
-		$('#error').html('Connected, saving...');
-        $('#save').prop('disabled', true);
-        Homey.addDevice({
-            data: { // this data object is saved to- and unique for the device. It is passed on the get and set functions as 1st argument
-                id: 'NEXURA'+Math.floor(Date.now() / 1000),
-                ip: device.settings.nexura_ip
-            },
-            settings: {
-                'nexura_ip': device.settings.nexura_ip
-            },
-            name: device.name,
-            capabilities: []
-        }, function( err, result ){
-            if( err ) return console.error(err);
-            Homey.done();
+        
+	var inputIPAddress = $('#ipAddress').val();
+	var inputDeviceName = $('#deviceName').val();
+	var inputDeviceInterval = $('#deviceInterval').val();
+
+	if (inputIPAddress != '') {	
+        var device = {
+			data: {
+				id: GetGUID(),
+                inputdevicename: inputDeviceName,
+                ip: inputIPAddress 
+			},
+			    name: inputDeviceName,
+			    settings: {
+			            	"nexura_ip": inputIPAddress,				
+			            	"interval": inputDeviceInterval,
+                            "demomode": true                    
+			    }
+		};
+		Homey.emit('manual_add', device, function (err, result) {
+            $('.err-msg').text(__('pair.start.add'));
+			if(err) {
+                return console.error(err);
+			}
         });
-    });
-    
-    Homey.on('error', function(message){
-        $('#error').html('Error: '+message);
+        Homey.on('success', function(device){
+				//Successfully connected
+                $('#save').prop('disabled', true);	
+				Homey.addDevice(device, function(err, result){
+					if( err ) return console.error(err);
+					console.log(result);
+    				//Done pairing
+    				Homey.done();
+				});
+			});
+	} else {
+		$('.err-msg').text(__('pair.start.required'));
         $('#save').prop('disabled', false);
-    });
+	}
+}
+
+Homey.on('error', function(message){
+    $('.err-msg').text(__('pair.start.error'));
+    Homey.done();
+})
+
+function GetGUID() {
+   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+       var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+       return v.toString(16);
+   });
 }
 </script>
-<!doctype html>
-<html>
-    <head>
-        <style>
-            label {
-                width: 150px;
-                display:inline-block !important;   
-            }
-            input {
-                border: 1px solid #ccc;
-                padding: 3px;
-            }
-            button {
-                padding: 10px;
-                background-color: #ddd;
-                border: 1px solid #ccc;
-            }
-            #error {
-                color: red;
-            }
-        </style>
-    </head>
-    <body>
-        <p data-i18n="settings.device.intro"></p>
-            <div class="field row">
-                <label data-i18n="settings.device.ip" for="nexura_ip">ip</label>
-                <input id="nexura_ip" type="text" value="" placeholder="e.g. 192.168.0.63"/>
-            </div>
-            <br>
-            <p id="error"></p>
-        <button class="right" onclick="saveSettings()" id="save" data-i18n="settings.button.save"></button>
-    </body>
-</html>
+    <p data-i18n="pair.start.intro">enter IP address and name</p>
+		<style>
+			.pairSettings {
+				font-size:16px;
+				border:none;
+			}
+			input {
+				font-size:16px;
+				border: 1px solid #ccc;
+			}
+		</style>
+		<table class="pairSettings">
+			<tr>
+				<td style="width:100px;" data-i18n="pair.start.ipAddress">IP</td>
+				<td><input id="ipAddress" type="text" value="" placeholder="192.168.1.1"/></td>
+			</tr>
+			<tr>
+				<td style="width:100px;" data-i18n="pair.start.deviceName">Name</td>
+				<td><input id="deviceName" type="text" value="Nexura" placeholder="Nexura"/></td>
+			</tr>
+			<tr>
+				<td style="width:100px;" data-i18n="pair.start.deviceInterval">Interval</td>
+				<td><input id="deviceInterval" type="text" value="10" placeholder="10"/></td>
+			</tr>
+		</table>
+		<p>
+		&nbsp;
+	  </p>
+<fieldset>
+    <button class="button" data-i18n="pair.start.saveSettings" id="save" onclick="saveSettings()">Save</button>
+</fieldset>
+<p class="err-msg" style="color: #ff6300;"></p>
