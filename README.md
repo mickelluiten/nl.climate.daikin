@@ -19,8 +19,11 @@ Note: Do not use the MASTER branch for now, what is available in the development
 Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows (tip... turn on a lamp to verify your flow iso the airco...).
 
 ## Version history
-### v0.3.0
-- intial beta release to Athom App Store.
+### v0.3.1 - released ....
+- ~~second beta release to Athom App Store.~~
+
+### v0.3.0 - released 26-FEB-18
+- initial beta release to Athom App Store.
 
 ### v0.2.0
 - was only available via GitHub
@@ -60,3 +63,5 @@ App uses icons that where created by http://www.freepik.com from https://www.fla
 - 24-FEB-18: Code optimizations, crushed bugs that I introduced with adding of the flowcards.
 - 25-FEB-18: Added Nexura driver. Fixed a bug that prevented the inside/outside flowcard triggers from triggering.
 - 25-FEB-18: First beta (v0.3.0) pubilished to the Athom app store.
+- 28-FEB-18: 1/ Added validation to IP-address (IPv4 validation) input field when paring, removed interval setting from paring dialog.
+- 28-FEB-18: 2/ Added validation (valid = between 5 - 30 sec) to Interval input field in settings dialog. 

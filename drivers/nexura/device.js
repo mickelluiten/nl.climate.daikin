@@ -41,8 +41,8 @@ class NexuraDevice extends Device {
     onDeleted() {
         this.log('Nexura device deleted');
         
-        this.setSettings({nexura_ip: "0.0.0.0", interval: "0"})
-            .then(this.log('settings for nexura are cleared'));
+        this.setSettings({nexura_ip: "0.0.0.0", interval: 0})
+            .then(this.log('settings for Nexura are cleared'));
             
         this.nexuraIsDeleted = true;
         

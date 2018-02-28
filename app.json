@@ -1,6 +1,6 @@
 {
     "id": "nl.climate.daikin",
-	"version": "0.3.0",
+	"version": "0.3.1",
     "compatibility": ">=1.5.3",
     "sdk": 2,
     "name": {
@@ -1139,19 +1139,20 @@
       "type": "group",
       "label": {
       "en": "Application refresh (all settings in seconds)",
-      "nl": "Applicatie verversen (alle instelling in seconden)"
+      "nl": "Applicatie verversen (alle instellingen in seconden)"
       },
       "children": [{
            "id": "interval",
-           "type": "text",
+           "type": "number",
            "label": {
            "en": "Polling interval",
            "nl": "Gegevens opvragen elke"
            },
-           "value": "10",
-           "min": 5,
-           "max": 30.0,
-           "step": 1  
+           "value": 10,
+           "attr": {
+               "min": 5,
+               "max": 30
+           } 
        }]
      },
      {
@@ -1300,19 +1301,20 @@
       "type": "group",
       "label": {
       "en": "Application refresh (all settings in seconds)",
-      "nl": "Applicatie verversen (alle instelling in seconden)"
+      "nl": "Applicatie verversen (alle instellingen in seconden)"
       },
       "children": [{
            "id": "interval",
-           "type": "text",
+           "type": "number",
            "label": {
            "en": "Polling interval",
            "nl": "Gegevens opvragen elke"
            },
-           "value": "10",
-           "min": 5,
-           "max": 30.0,
-           "step": 1  
+           "value": 10,
+           "attr": {
+               "min": 5,
+               "max": 30
+           } 
        }]
      },
      {
@@ -1461,19 +1463,20 @@
      "type": "group",
      "label": {
      "en": "Application refresh (all settings in seconds)",
-     "nl": "Applicatie verversen (alle instelling in seconden)"
+     "nl": "Applicatie verversen (alle instellingen in seconden)"
      },
      "children": [{
           "id": "interval",
-          "type": "text",
+          "type": "number",
           "label": {
           "en": "Polling interval",
           "nl": "Gegevens opvragen elke"
           },
-          "value": "10",
-          "min": 5,
-          "max": 30.0,
-          "step": 1  
+          "value": 10,
+          "attr": {
+              "min": 5,
+              "max": 30
+          } 
       }]
     },
     {

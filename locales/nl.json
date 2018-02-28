@@ -5,6 +5,7 @@
             "title":"Daikin apparaat instellingen",
             "error":"Er is een fout opgetreden, controleer het zojuist ingevoerde IP-adres.",
             "required":"IP adres is verplicht.",
+            "invalidIP":"Voer een geldig IPv4 adres in.",
             "ipAddress":"IP adres",
             "deviceName":"Naam",
             "saveSettings":"Voeg toe",

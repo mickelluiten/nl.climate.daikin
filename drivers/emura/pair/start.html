@@ -2,14 +2,31 @@
 Homey.setTitle( __('pair.start.title') );
 
 function saveSettings () {
-    $('.err-msg').text('');
-	$('#save').prop('disabled', true);
-        
-	var inputIPAddress = $('#ipAddress').val();
-	var inputDeviceName = $('#deviceName').val();
-	var inputDeviceInterval = $('#deviceInterval').val();
+   $('.err-msg').text('');
+   $('#save').prop('disabled', true);
 
-	if (inputIPAddress != '') {	
+   // input variables           
+   var inputIPAddress = $('#ipAddress').val();
+   var inputDeviceName = $('#deviceName').val();
+   
+   // ip-address can not be empty
+   if (inputIPAddress == "") {
+   	    Homey.alert(__('pair.start.required'));
+        $('#save').prop('disabled', false);
+   		return;
+   }
+   
+   // create Regular Expression that validates for IPv4 addresses, then do the actual test on the input.
+   var Ipv4RegEx = new RegExp ('^(([01]?\\d\\d?|2[0-4]\\d|25[0-5]).){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$');
+   var IPInputOK = Ipv4RegEx.test(inputIPAddress);
+    
+   if (!IPInputOK) {
+   	   Homey.alert(__('pair.start.invalidIP'));
+       $('#save').prop('disabled', false);
+   	   return;
+   	}
+
+ 	if (IPInputOK) {
         var device = {
 			data: {
 				id: GetGUID(),
@@ -19,7 +36,7 @@ function saveSettings () {
 			    name: inputDeviceName,
 			    settings: {
 			            	"emura_ip": inputIPAddress,				
-			            	"interval": inputDeviceInterval,
+			            	"interval": 10,
                             "demomode": true                    
 			    }
 		};
@@ -39,10 +56,7 @@ function saveSettings () {
     				Homey.done();
 				});
 			});
-	} else {
-		$('.err-msg').text(__('pair.start.required'));
-        $('#save').prop('disabled', false);
-	}
+	} 
 }
 
 Homey.on('error', function(message){
@@ -76,10 +90,6 @@ function GetGUID() {
 			<tr>
 				<td style="width:100px;" data-i18n="pair.start.deviceName">Name</td>
 				<td><input id="deviceName" type="text" value="Emura 2" placeholder="Emura 2"/></td>
-			</tr>
-			<tr>
-				<td style="width:100px;" data-i18n="pair.start.deviceInterval">Interval</td>
-				<td><input id="deviceInterval" type="text" value="10" placeholder="10"/></td>
 			</tr>
 		</table>
 		<p>

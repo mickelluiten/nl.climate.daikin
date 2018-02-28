@@ -41,8 +41,8 @@ class InverterDevice extends Device {
     onDeleted() {
         this.log('Inverter device deleted');
         
-        this.setSettings({inverter_ip: "0.0.0.0", interval: "0"})
-            .then(this.log('settings for inverter are cleared'));
+        this.setSettings({inverter_ip: "0.0.0.0", interval: 0})
+            .then(this.log('settings for Inverter are cleared'));
             
         this.inverterIsDeleted = true;
         

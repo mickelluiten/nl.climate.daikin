@@ -41,8 +41,8 @@ class EmuraDevice extends Device {
     onDeleted() {
         this.log('Emura device deleted');
         
-        this.setSettings({emura_ip: "0.0.0.0", interval: "0"})
-            .then(this.log('settings for emura are cleared'));
+        this.setSettings({emura_ip: "0.0.0.0", interval: 0})
+            .then(this.log('settings for Emura are cleared'));
             
         this.emuraIsDeleted = true;
         

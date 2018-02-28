@@ -5,8 +5,9 @@
             "title":"Daikin equipment settings",
             "error":"An error has occurred, check the just entered IP-address.",
             "required":"IP address is required.",
+            "invalidIP":"Enter a valid IPv4 address.",
             "ipAddress":"IP address",
-            "deviceName":"Device name",
+            "deviceName":"Device name",           
             "saveSettings":"Add device",
             "add":"Your settings are being saved now...",
             "deviceInterval":"Interval"   
