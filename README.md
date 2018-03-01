@@ -64,4 +64,6 @@ App uses icons that where created by http://www.freepik.com from https://www.fla
 - 25-FEB-18: Added Nexura driver. Fixed a bug that prevented the inside/outside flowcard triggers from triggering.
 - 25-FEB-18: First beta (v0.3.0) pubilished to the Athom app store.
 - 28-FEB-18: 1/ Added validation to IP-address (IPv4 validation) input field when paring, removed interval setting from paring dialog.
-- 28-FEB-18: 2/ Added validation (valid = between 5 - 30 sec) to Interval input field in settings dialog. 
+- 28-FEB-18: 2/ Added validation (valid = between 5 - 30 sec) to Interval input field in device settings dialog. 
+- 01-MAR-18: 1/ Fixed a few bugs in app.json that caused CLI 2.0 to fail against "level debug".
+- 01-MAR-18: 2/ Added IPv4 validation to device settings dialog

@@ -38,8 +38,7 @@
     "contributing": {
       "donate": {
         "paypal": {
-          "username": "peter.eier@upcmail.nl",
-          "currency": "EUR"
+          "username": "peter.eier@upcmail.nl"
         }
       }
     },
@@ -508,10 +507,9 @@
               {
               "name": "atemp",
               "type": "number",
-              "min": "15",
-              "max": "35",
-              "placeholder" :
-            {
+              "min": 15,
+              "max": 35,
+              "placeholder": {
                "en": "°C",
                "nl": "°C"
             }
@@ -703,9 +701,6 @@
           },
           "getable": true,
           "setable": true,
-          "min": 0,
-          "max": 7,
-          "step": 1,
           "values": [
             {
                 "id": "off",
@@ -773,9 +768,6 @@
           },
           "getable": true,
           "setable": true,
-          "min": 0,
-          "max": 7,
-          "step": 1,
           "values": [
             {
                 "id": "off",
@@ -829,9 +821,6 @@
           },
           "getable": true,
           "setable": true,
-          "min": 0,
-          "max": 7,
-          "step": 1,
           "values": [
             {
                 "id": "off",
@@ -1005,7 +994,7 @@
               "nl": "°C"
           },
           "min": 15,
-          "max": 35.0,
+          "max": 35,
           "step": 0.5          
        }
   },          
@@ -1128,6 +1117,7 @@
          "children": [{
               "id": "inverter_ip",
               "type": "text",
+              "pattern": "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5]).){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$",
               "label": {
               "en": "Airconditioners IP address",
               "nl": "Airconditioners IP adres"
@@ -1290,6 +1280,7 @@
          "children": [{
               "id": "emura_ip",
               "type": "text",
+              "pattern": "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5]).){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$",
               "label": {
               "en": "Airconditioners IP address",
               "nl": "Airconditioners IP adres"
@@ -1452,6 +1443,7 @@
         "children": [{
              "id": "nexura_ip",
              "type": "text",
+              "pattern": "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5]).){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$",
              "label": {
              "en": "Airconditioners IP address",
              "nl": "Airconditioners IP adres"
