@@ -2,7 +2,7 @@
 ![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/development/assets/images/Daikin-logo-wide.png)
 
 # Daikin AI
-Adds to Homey support for Daikin Air Conditioners and Heatpumps (aka inverters).
+Adds to Homey control support for Daikin Air Conditioners and Heatpumps (aka inverters).
 
 Note: Do not use the MASTER branch for now, what is available in the development branch is the best available. The beta branch is also available via the Athom's App Store.
 

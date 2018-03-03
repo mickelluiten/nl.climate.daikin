@@ -1,5 +1,5 @@
 # Daikin AI
-Adds to Homey support for Daikin Air Conditioners and Heatpumps (aka inverters).
+Adds to Homey control support for Daikin Air Conditioners and Heatpumps (aka inverters).
 
 ![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/development/assets/images/Daikin-logo-wide.png)
 
