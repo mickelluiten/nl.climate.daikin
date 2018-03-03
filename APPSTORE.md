@@ -17,11 +17,11 @@ Adds to Homey support for Daikin Air Conditioners and Heatpumps (aka inverters).
 Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows (tip... turn on a lamp to verify your flow iso the airco...).
 
 ## Change log
-### v0.3.1 - released ....
-- ~~second beta release to Athom App Store.~~
-
-### v0.3.0 - released 26-FEB-18
+### v0.4.0
 - initial beta release to Athom App Store. Note: this beta for sure contains bugs, let me know if you found one...
+
+### v0.3.0
+- was only available via GitHub
 
 ### v0.2.0
 - was only available via GitHub
@@ -29,8 +29,8 @@ Demo mode can be disabled in the device its settings menu. Demo mode can be very
 ### v0.1.0
 - was only available via GitHub
 
-## To-do
-- add Homekit support
+## Limitations
+HomeKit is not supported. However in future updates I might add a "HomeKit model", that model would then enable one to control just the basic capabilities of "every" WiFi capable Daikin airconditioner using HomeKit.
 
 ## Credits
 App uses icons that where created by http://www.freepik.com from https://www.flaticon.com is licensed by Creative Commons.

@@ -1,6 +1,6 @@
 {
     "id": "nl.climate.daikin",
-	"version": "0.3.1",
+	"version": "0.4.0",
     "compatibility": ">=1.5.3",
     "sdk": 2,
     "name": {
@@ -45,7 +45,7 @@
 	"flow": {
     "triggers": [
         {
-            "id": "change_target_temperature_more_than",
+            "id": "change_inverter_target_temperature_more_than",
             "title": {
                 "en": "The target temperature is more than",
                 "nl": "De doeltemperatuur is meer dan"
@@ -54,7 +54,51 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"
+                    "filter": "driver_id=inverter"
+                },
+                {
+                    "name": "target_temperature_more",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "change_emura_target_temperature_more_than",
+            "title": {
+                "en": "The target temperature is more than",
+                "nl": "De doeltemperatuur is meer dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"
+                },
+                {
+                    "name": "target_temperature_more",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "change_nexura_target_temperature_more_than",
+            "title": {
+                "en": "The target temperature is more than",
+                "nl": "De doeltemperatuur is meer dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"
                 },
                 {
                     "name": "target_temperature_more",
@@ -67,7 +111,7 @@
             ]
         },          
         {
-            "id": "change_target_temperature_less_than",
+            "id": "change_inverter_target_temperature_less_than",
             "title": {
                 "en": "The target temperature is less than",
                 "nl": "De doeltemperatuur is minder dan"
@@ -76,7 +120,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"
+                    "filter": "driver_id=inverter"
                 },
                 {
                     "name": "target_temperature_less",
@@ -89,7 +133,51 @@
             ]
         },
         {
-            "id": "change_target_temperature_between",
+            "id": "change_emura_target_temperature_less_than",
+            "title": {
+                "en": "The target temperature is less than",
+                "nl": "De doeltemperatuur is minder dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"
+                },
+                {
+                    "name": "target_temperature_less",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "change_nexura_target_temperature_less_than",
+            "title": {
+                "en": "The target temperature is less than",
+                "nl": "De doeltemperatuur is minder dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"
+                },
+                {
+                    "name": "target_temperature_less",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "change_inverter_target_temperature_between",
             "title": {
                 "en": "The target temperature is between",
                 "nl": "De doeltemperatuur is tussen"
@@ -98,7 +186,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"
+                    "filter": "driver_id=inverter"
                 },
                 {
                     "name": "target_temperature_from",
@@ -119,7 +207,67 @@
             ]
         },
         {
-            "id": "inside_temperature_more_than",
+            "id": "change_emura_target_temperature_between",
+            "title": {
+                "en": "The target temperature is between",
+                "nl": "De doeltemperatuur is tussen"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"
+                },
+                {
+                    "name": "target_temperature_from",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                },
+                                    {
+                    "name": "target_temperature_to",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "change_nexura_target_temperature_between",
+            "title": {
+                "en": "The target temperature is between",
+                "nl": "De doeltemperatuur is tussen"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"
+                },
+                {
+                    "name": "target_temperature_from",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                },
+                                    {
+                    "name": "target_temperature_to",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "inside_inverter_temperature_more_than",
             "title": {
                 "en": "The inside temperature is more than",
                 "nl": "De binnentemperatuur is meer dan"
@@ -128,7 +276,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"
+                    "filter": "driver_id=inverter"
                 },
                 {
                     "name": "inside_temperature_more",
@@ -141,7 +289,51 @@
             ]
         },
         {
-            "id": "inside_temperature_less_than",
+            "id": "inside_emura_temperature_more_than",
+            "title": {
+                "en": "The inside temperature is more than",
+                "nl": "De binnentemperatuur is meer dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"
+                },
+                {
+                    "name": "inside_temperature_more",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "inside_nexura_temperature_more_than",
+            "title": {
+                "en": "The inside temperature is more than",
+                "nl": "De binnentemperatuur is meer dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"
+                },
+                {
+                    "name": "inside_temperature_more",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "inside_inverter_temperature_less_than",
             "title": {
                 "en": "The inside temperature is less than",
                 "nl": "De binnentemperatuur is minder dan"
@@ -150,7 +342,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"
+                    "filter": "driver_id=inverter"
                 },
                 {
                     "name": "inside_temperature_less",
@@ -163,7 +355,51 @@
             ]
         },
         {
-            "id": "inside_temperature_between",
+            "id": "inside_emura_temperature_less_than",
+            "title": {
+                "en": "The inside temperature is less than",
+                "nl": "De binnentemperatuur is minder dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"
+                },
+                {
+                    "name": "inside_temperature_less",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "inside_nexura_temperature_less_than",
+            "title": {
+                "en": "The inside temperature is less than",
+                "nl": "De binnentemperatuur is minder dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"
+                },
+                {
+                    "name": "inside_temperature_less",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "inside_inverter_temperature_between",
             "title": {
                 "en": "The inside temperature is between",
                 "nl": "De binnentemperatuur is tussen"
@@ -172,7 +408,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"
+                    "filter": "driver_id=inverter"
                 },
                 {
                     "name": "inside_temperature_from",
@@ -193,7 +429,67 @@
             ]
         },
         {
-            "id": "outside_temperature_more_than",
+            "id": "inside_emura_temperature_between",
+            "title": {
+                "en": "The inside temperature is between",
+                "nl": "De binnentemperatuur is tussen"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"
+                },
+                {
+                    "name": "inside_temperature_from",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                },
+                                    {
+                    "name": "inside_temperature_to",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "inside_nexura_temperature_between",
+            "title": {
+                "en": "The inside temperature is between",
+                "nl": "De binnentemperatuur is tussen"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"
+                },
+                {
+                    "name": "inside_temperature_from",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                },
+                                    {
+                    "name": "inside_temperature_to",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "outside_inverter_temperature_more_than",
             "title": {
                 "en": "The outside temperature is more than",
                 "nl": "De buitentemperatuur is meer dan"
@@ -202,7 +498,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"
+                    "filter": "driver_id=inverter"
                 },
                 {
                     "name": "outside_temperature_more",
@@ -215,7 +511,51 @@
             ]
         },
         {
-            "id": "outside_temperature_less_than",
+            "id": "outside_emura_temperature_more_than",
+            "title": {
+                "en": "The outside temperature is more than",
+                "nl": "De buitentemperatuur is meer dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"
+                },
+                {
+                    "name": "outside_temperature_more",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "outside_nexura_temperature_more_than",
+            "title": {
+                "en": "The outside temperature is more than",
+                "nl": "De buitentemperatuur is meer dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"
+                },
+                {
+                    "name": "outside_temperature_more",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "outside_inverter_temperature_less_than",
             "title": {
                 "en": "The outside temperature is less than",
                 "nl": "De buitentemperatuur is minder dan"
@@ -224,7 +564,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"               
+                    "filter": "driver_id=inverter"               
                 },
                 {
                     "name": "ouside_temperature_less",
@@ -237,7 +577,51 @@
             ]
         },
         {
-            "id": "outside_temperature_between",
+            "id": "outside_emura_temperature_less_than",
+            "title": {
+                "en": "The outside temperature is less than",
+                "nl": "De buitentemperatuur is minder dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"               
+                },
+                {
+                    "name": "ouside_temperature_less",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "outside_nexura_temperature_less_than",
+            "title": {
+                "en": "The outside temperature is less than",
+                "nl": "De buitentemperatuur is minder dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"               
+                },
+                {
+                    "name": "ouside_temperature_less",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "outside_inverter_temperature_between",
             "title": {
                 "en": "The outside temperature is between",
                 "nl": "De buitentemperatuur is tussen"
@@ -246,7 +630,67 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"              
+                    "filter": "driver_id=inverter"              
+                },
+                {
+                    "name": "outside_temperature_from",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                },
+                                    {
+                    "name": "outside_temperature_to",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "outside_emura_temperature_between",
+            "title": {
+                "en": "The outside temperature is between",
+                "nl": "De buitentemperatuur is tussen"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"              
+                },
+                {
+                    "name": "outside_temperature_from",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                },
+                                    {
+                    "name": "outside_temperature_to",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "outside_nexura_temperature_between",
+            "title": {
+                "en": "The outside temperature is between",
+                "nl": "De buitentemperatuur is tussen"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"              
                 },
                 {
                     "name": "outside_temperature_from",
@@ -269,7 +713,7 @@
     ],
     "conditions": [
         {
-            "id": "has_target_temperature_more_than",
+            "id": "has_inverter_target_temperature_more_than",
             "title": {
                 "en": "The target temperature is more than",
                 "nl": "De doeltemperatuur is meer dan"
@@ -278,7 +722,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"
+                    "filter": "driver_id=inverter"
                 },
                 {
                     "name": "target_temperature_more",
@@ -291,7 +735,51 @@
             ]
         },
         {
-            "id": "has_target_temperature_less_than",
+            "id": "has_emura_target_temperature_more_than",
+            "title": {
+                "en": "The target temperature is more than",
+                "nl": "De doeltemperatuur is meer dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"
+                },
+                {
+                    "name": "target_temperature_more",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_nexura_target_temperature_more_than",
+            "title": {
+                "en": "The target temperature is more than",
+                "nl": "De doeltemperatuur is meer dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"
+                },
+                {
+                    "name": "target_temperature_more",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_inverter_target_temperature_less_than",
             "title": {
                 "en": "The target temperature !{{is|isn't}} less than",
                 "nl": "De doeltemperatuur !{{is|is niet}} minder dan"
@@ -300,7 +788,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"                  
+                    "filter": "driver_id=inverter"                  
                 },
                 {
                     "name": "target_temperature_less",
@@ -313,7 +801,51 @@
             ]
         },
         {
-            "id": "has_target_temperature_between",
+            "id": "has_emura_target_temperature_less_than",
+            "title": {
+                "en": "The target temperature !{{is|isn't}} less than",
+                "nl": "De doeltemperatuur !{{is|is niet}} minder dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"                  
+                },
+                {
+                    "name": "target_temperature_less",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_nexura_target_temperature_less_than",
+            "title": {
+                "en": "The target temperature !{{is|isn't}} less than",
+                "nl": "De doeltemperatuur !{{is|is niet}} minder dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"                  
+                },
+                {
+                    "name": "target_temperature_less",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_inverter_target_temperature_between",
             "title": {
                 "en": "The target temperature !{{is|isn't}} between",
                 "nl": "De doeltemperatuur !{{is|is niet}} tussen"
@@ -322,7 +854,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"                  
+                    "filter": "driver_id=inverter"                  
                 },
                 {
                     "name": "target_temperature_from",
@@ -343,7 +875,67 @@
             ]
         },
         {
-            "id": "has_inside_temperature_more_than",
+            "id": "has_emura_target_temperature_between",
+            "title": {
+                "en": "The target temperature !{{is|isn't}} between",
+                "nl": "De doeltemperatuur !{{is|is niet}} tussen"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"                  
+                },
+                {
+                    "name": "target_temperature_from",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                },
+                                    {
+                    "name": "target_temperature_to",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_nexura_target_temperature_between",
+            "title": {
+                "en": "The target temperature !{{is|isn't}} between",
+                "nl": "De doeltemperatuur !{{is|is niet}} tussen"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"                  
+                },
+                {
+                    "name": "target_temperature_from",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                },
+                                    {
+                    "name": "target_temperature_to",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_inverter_inside_temperature_more_than",
             "title": {
                 "en": "The inside temperature !{{is|isn't}} more than",
                 "nl": "De binnentemperatuur !{{is|is niet}} meer dan"
@@ -352,7 +944,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"
+                    "filter": "driver_id=inverter"
                 },
                 {
                     "name": "inside_temperature_more",
@@ -365,7 +957,51 @@
             ]
         },
         {
-            "id": "has_inside_temperature_less_than",
+            "id": "has_emura_inside_temperature_more_than",
+            "title": {
+                "en": "The inside temperature !{{is|isn't}} more than",
+                "nl": "De binnentemperatuur !{{is|is niet}} meer dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"
+                },
+                {
+                    "name": "inside_temperature_more",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_nexura_inside_temperature_more_than",
+            "title": {
+                "en": "The inside temperature !{{is|isn't}} more than",
+                "nl": "De binnentemperatuur !{{is|is niet}} meer dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"
+                },
+                {
+                    "name": "inside_temperature_more",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_inverter_inside_temperature_less_than",
             "title": {
                 "en": "The inside temperature !{{is|isn't}} less than",
                 "nl": "De binnentemperatuur !{{is|is niet}} minder dan"
@@ -374,7 +1010,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"
+                    "filter": "driver_id=inverter"
                 },
                 {
                     "name": "inside_temperature_less",
@@ -387,7 +1023,51 @@
             ]
         },
         {
-            "id": "has_inside_temperature_between",
+            "id": "has_emura_inside_temperature_less_than",
+            "title": {
+                "en": "The inside temperature !{{is|isn't}} less than",
+                "nl": "De binnentemperatuur !{{is|is niet}} minder dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"
+                },
+                {
+                    "name": "inside_temperature_less",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_nexura_inside_temperature_less_than",
+            "title": {
+                "en": "The inside temperature !{{is|isn't}} less than",
+                "nl": "De binnentemperatuur !{{is|is niet}} minder dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"
+                },
+                {
+                    "name": "inside_temperature_less",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_inverter_inside_temperature_between",
             "title": {
                 "en": "The inside temperature !{{is|isn't}} between",
                 "nl": "De binnentemperatuur !{{is|is niet}} tussen"
@@ -396,7 +1076,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"
+                    "filter": "driver_id=inverter"
                 },
                 {
                     "name": "inside_temperature_from",
@@ -417,7 +1097,67 @@
             ]
         },
         {
-            "id": "has_outside_temperature_more_than",
+            "id": "has_emura_inside_temperature_between",
+            "title": {
+                "en": "The inside temperature !{{is|isn't}} between",
+                "nl": "De binnentemperatuur !{{is|is niet}} tussen"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"
+                },
+                {
+                    "name": "inside_temperature_from",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                },
+                                    {
+                    "name": "inside_temperature_to",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_nexura_inside_temperature_between",
+            "title": {
+                "en": "The inside temperature !{{is|isn't}} between",
+                "nl": "De binnentemperatuur !{{is|is niet}} tussen"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"
+                },
+                {
+                    "name": "inside_temperature_from",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                },
+                                    {
+                    "name": "inside_temperature_to",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_inverter_outside_temperature_more_than",
             "title": {
                 "en": "The outside temperature !{{is|isn't}} more than",
                 "nl": "De buitentemperatuur !{{is|is niet}} meer dan"
@@ -426,7 +1166,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"
+                    "filter": "driver_id=inverter"
                 },
                 {
                     "name": "outside_temperature_more",
@@ -439,7 +1179,51 @@
             ]
         },
         {
-            "id": "has_outside_temperature_less_than",
+            "id": "has_emura_outside_temperature_more_than",
+            "title": {
+                "en": "The outside temperature !{{is|isn't}} more than",
+                "nl": "De buitentemperatuur !{{is|is niet}} meer dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"
+                },
+                {
+                    "name": "outside_temperature_more",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_nexura_outside_temperature_more_than",
+            "title": {
+                "en": "The outside temperature !{{is|isn't}} more than",
+                "nl": "De buitentemperatuur !{{is|is niet}} meer dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"
+                },
+                {
+                    "name": "outside_temperature_more",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_inverter_outside_temperature_less_than",
             "title": {
                 "en": "The outside temperature !{{is|isn't}} less than",
                 "nl": "De buitentemperatuur !{{is|is niet}} minder dan"
@@ -448,7 +1232,7 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"
+                    "filter": "driver_id=inverter"
                 },
                 {
                     "name": "outside_temperature_less",
@@ -461,7 +1245,51 @@
             ]
         },
         {
-            "id": "has_outside_temperature_between",
+            "id": "has_emura_outside_temperature_less_than",
+            "title": {
+                "en": "The outside temperature !{{is|isn't}} less than",
+                "nl": "De buitentemperatuur !{{is|is niet}} minder dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"
+                },
+                {
+                    "name": "outside_temperature_less",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_nexura_outside_temperature_less_than",
+            "title": {
+                "en": "The outside temperature !{{is|isn't}} less than",
+                "nl": "De buitentemperatuur !{{is|is niet}} minder dan"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"
+                },
+                {
+                    "name": "outside_temperature_less",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_inverter_outside_temperature_between",
             "title": {
                 "en": "The outside temperature !{{is|isn't}} between",
                 "nl": "De buitentemperatuur !{{is|is niet}} tussen"
@@ -470,7 +1298,67 @@
                 {
                     "name": "device",
                     "type": "device",
-                    "filter": "driver_id=inverter|emura|nexura"
+                    "filter": "driver_id=inverter"
+                },
+                {
+                    "name": "outside_temperature_from",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                },
+                                    {
+                    "name": "outside_temperature_to",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_emura_outside_temperature_between",
+            "title": {
+                "en": "The outside temperature !{{is|isn't}} between",
+                "nl": "De buitentemperatuur !{{is|is niet}} tussen"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=emura"
+                },
+                {
+                    "name": "outside_temperature_from",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                },
+                                    {
+                    "name": "outside_temperature_to",
+                    "type": "number",
+                    "placeholder": {
+                        "en": "in C",
+                        "nl": "in C"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "has_nexura_outside_temperature_between",
+            "title": {
+                "en": "The outside temperature !{{is|isn't}} between",
+                "nl": "De buitentemperatuur !{{is|is niet}} tussen"
+            },
+            "args": [
+                {
+                    "name": "device",
+                    "type": "device",
+                    "filter": "driver_id=nexura"
                 },
                 {
                     "name": "outside_temperature_from",
@@ -493,7 +1381,7 @@
     ],
     "actions": [
         {
-          "id": "change_target_temp",
+          "id": "change_inverter_target_temp",
           "title": {
               "en": "Change target temperature",
               "nl": "Wijzig doel temperatuur"
@@ -502,7 +1390,7 @@
              {
           	  "name": "device",
           	  "type": "device",
-              "filter": "driver_id=inverter|emura|nexura"
+              "filter": "driver_id=inverter"
               },
               {
               "name": "atemp",
@@ -515,9 +1403,57 @@
             }
      	  }
   		]
-      }, 
+      },
       {
-        "id": "turn_airco_on",
+         "id": "change_emura_target_temp",
+         "title": {
+             "en": "Change target temperature",
+             "nl": "Wijzig doel temperatuur"
+         },
+         "args": [
+            {
+        	 "name": "device",
+        	 "type": "device",
+             "filter": "driver_id=emura"
+             },
+             {
+             "name": "atemp",
+             "type": "number",
+             "min": 15,
+             "max": 35,
+             "placeholder": {
+              "en": "°C",
+              "nl": "°C"
+            }
+   	      }
+		]
+      },
+      {
+         "id": "change_nexura_target_temp",
+         "title": {
+             "en": "Change target temperature",
+             "nl": "Wijzig doel temperatuur"
+         },
+         "args": [
+            {
+        	 "name": "device",
+        	 "type": "device",
+             "filter": "driver_id=nexura"
+             },
+             {
+             "name": "atemp",
+             "type": "number",
+             "min": 15,
+             "max": 35,
+             "placeholder": {
+              "en": "°C",
+              "nl": "°C"
+            }
+   	      }
+		]
+      },             
+      {
+        "id": "turn_inverter_on",
         "title": {
           "en": "Select a airconditioning mode",
           "nl": "Kies een modus voor de airconditioner"
@@ -558,7 +1494,7 @@
          ]
       },
       {
-        "id": "turn_airco_on",
+        "id": "turn_emura_on",
         "title": {
           "en": "Select a airconditioning mode",
           "nl": "Kies een modus voor de airconditioner"
@@ -567,7 +1503,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=emura|nexura"
+            "filter": "driver_id=emura"
           },
      	  {
      	  	"name": "mode",
@@ -593,7 +1529,42 @@
          ]
       },
       {
-        "id": "turn_airco_off",
+        "id": "turn_nexura_on",
+        "title": {
+          "en": "Select a airconditioning mode",
+          "nl": "Kies een modus voor de airconditioner"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=nexura"
+          },
+     	  {
+     	  	"name": "mode",
+     	  	"type": "dropdown",
+     	  	"values": [ 
+     	  		 { "id": "cooling", 
+     	  			"label": { "en": "Cooling", "nl": "Koelen" } 
+     	  		 },
+     	  		 { "id": "heating", 
+     	  			"label": { "en": "Heating", "nl": "Verwarmen" } 
+     	  		 },
+     	  		 { "id": "auto", 
+     	  			"label": { "en": "Auto", "nl": "Auto" } 
+     	  		 },
+     	  		 { "id": "dehumid", 
+     	  			"label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
+     	  		 },
+     	  		 { "id": "fan", 
+     	  			"label": { "en": "Fan", "nl": "Ventilator" } 
+     	  		 }
+     	   	  ]
+     	   }
+         ]
+      },      
+      {
+        "id": "turn_inverter_off",
         "title": {
           "en": "The airconditioner will be",
           "nl": "De airconditioning wordt"
@@ -602,7 +1573,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=inverter|emura|nexura"
+            "filter": "driver_id=inverter"
           },
      	  {
      	  	"name": "mode",
@@ -614,9 +1585,55 @@
      	   	  ]
      	   }
         ]
-      },      
+      },
       {
-        "id": "change_fan_rate",
+        "id": "turn_emura_off",
+        "title": {
+          "en": "The airconditioner will be",
+          "nl": "De airconditioning wordt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=emura"
+          },
+     	  {
+     	  	"name": "mode",
+     	  	"type": "dropdown",
+     	  	"values": [ 
+     	  		 { "id": "off", 
+     	  			"label": { "en": "turned off", "nl": "uitgezet" } 
+     	  		 }
+     	   	  ]
+     	   }
+        ]
+      },
+      {
+        "id": "turn_nexura_off",
+        "title": {
+          "en": "The airconditioner will be",
+          "nl": "De airconditioning wordt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=nexura"
+          },
+     	  {
+     	  	"name": "mode",
+     	  	"type": "dropdown",
+     	  	"values": [ 
+     	  		 { "id": "off", 
+     	  			"label": { "en": "turned off", "nl": "uitgezet" } 
+     	  		 }
+     	   	  ]
+     	   }
+        ]
+      },        
+      {
+        "id": "change_inverter_fan_rate",
         "title": {
           "en": "Select a fan rate",
           "nl": "Kies een ventilator snelheid"
@@ -625,7 +1642,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=inverter|emura|nexura"
+            "filter": "driver_id=inverter"
           },
      	  {
      	  	"name": "frate",
@@ -658,7 +1675,91 @@
          ]
       },
       {
-        "id": "change_fan_direction",
+        "id": "change_emura_fan_rate",
+        "title": {
+          "en": "Select a fan rate",
+          "nl": "Kies een ventilator snelheid"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=emura"
+          },
+     	  {
+     	  	"name": "frate",
+     	  	"type": "dropdown",
+     	  	"values": [ 
+     	  		 { "id": "A", 
+     	  			"label": { "en": "Auto", "nl": "Auto" } 
+     	  		 },
+     	  		 { "id": "B", 
+     	  			"label": { "en": "Quiet", "nl": "Stil" } 
+     	  		 },
+     	  		 { "id": "3", 
+     	  			"label": { "en": "Level 1", "nl": "Niveau 1" } 
+     	  		 },
+     	  		 { "id": "4", 
+     	  			"label": { "en": "Level 2", "nl": "Niveau 2" } 
+     	  		 },
+     	  		 { "id": "5", 
+     	  			"label": { "en": "Level 3", "nl": "Niveau 3" } 
+     	  		 },
+     	  		 { "id": "6", 
+     	  			"label": { "en": "Level 4", "nl": "Niveau 4" } 
+     	  		 },
+     	  		 { "id": "7", 
+     	  			"label": { "en": "Level 5", "nl": "Niveau 5" } 
+     	  		 }
+     	   	  ]
+     	   }
+
+         ]
+      },
+      {
+        "id": "change_nexura_fan_rate",
+        "title": {
+          "en": "Select a fan rate",
+          "nl": "Kies een ventilator snelheid"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=nexura"
+          },
+     	  {
+     	  	"name": "frate",
+     	  	"type": "dropdown",
+     	  	"values": [ 
+     	  		 { "id": "A", 
+     	  			"label": { "en": "Auto", "nl": "Auto" } 
+     	  		 },
+     	  		 { "id": "B", 
+     	  			"label": { "en": "Quiet", "nl": "Stil" } 
+     	  		 },
+     	  		 { "id": "3", 
+     	  			"label": { "en": "Level 1", "nl": "Niveau 1" } 
+     	  		 },
+     	  		 { "id": "4", 
+     	  			"label": { "en": "Level 2", "nl": "Niveau 2" } 
+     	  		 },
+     	  		 { "id": "5", 
+     	  			"label": { "en": "Level 3", "nl": "Niveau 3" } 
+     	  		 },
+     	  		 { "id": "6", 
+     	  			"label": { "en": "Level 4", "nl": "Niveau 4" } 
+     	  		 },
+     	  		 { "id": "7", 
+     	  			"label": { "en": "Level 5", "nl": "Niveau 5" } 
+     	  		 }
+     	   	  ]
+     	   }
+
+         ]
+      },
+      {
+        "id": "change_inverter_fan_direction",
         "title": {
           "en": "Select sweep",
           "nl": "Kies lamellen richting"
@@ -667,7 +1768,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=inverter|emura|nexura"
+            "filter": "driver_id=inverter"
           },
      	  {
      	  	"name": "fdir",
@@ -686,10 +1787,73 @@
      	  			"label": { "en": "3D", "nl": "3D" } 
      	  		 }
      	   	  ]
-     	   }
-
+     	    }
          ]
-      }     
+      },
+      {
+        "id": "change_emura_fan_direction",
+        "title": {
+          "en": "Select sweep",
+          "nl": "Kies lamellen richting"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=emura"
+          },
+     	  {
+     	  	"name": "fdir",
+     	  	"type": "dropdown",
+     	  	"values": [ 
+     	  		 { "id": "0", 
+     	  			"label": { "en": "Stop", "nl": "Stop" } 
+     	  		 },
+     	  		 { "id": "1", 
+     	  			"label": { "en": "Vertical", "nl": "Vertikaal" } 
+     	  		 },
+     	  		 { "id": "2", 
+     	  			"label": { "en": "Horizontal", "nl": "Horizontaal" } 
+     	  		 },
+     	  		 { "id": "3", 
+     	  			"label": { "en": "3D", "nl": "3D" } 
+     	  		 }
+     	   	  ]
+     	    }
+         ]
+      },
+      {
+        "id": "change_nexura_fan_direction",
+        "title": {
+          "en": "Select sweep",
+          "nl": "Kies lamellen richting"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=nexura"
+          },
+     	  {
+     	  	"name": "fdir",
+     	  	"type": "dropdown",
+     	  	"values": [ 
+     	  		 { "id": "0", 
+     	  			"label": { "en": "Stop", "nl": "Stop" } 
+     	  		 },
+     	  		 { "id": "1", 
+     	  			"label": { "en": "Vertical", "nl": "Vertikaal" } 
+     	  		 },
+     	  		 { "id": "2", 
+     	  			"label": { "en": "Horizontal", "nl": "Horizontaal" } 
+     	  		 },
+     	  		 { "id": "3", 
+     	  			"label": { "en": "3D", "nl": "3D" } 
+     	  		 }
+     	   	  ]
+     	    }
+         ]
+      }      
     ]
   },
   "capabilities": {
