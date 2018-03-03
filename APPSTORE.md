@@ -5,13 +5,13 @@
 Adds to Homey support for Daikin Air Conditioners and Heatpumps (aka inverters).
 
 ## Features
-- supports Daikin airconditioners & heatpumps through either a generic driver (I called Inverter) or a model (range) specific one like Emura.
+- supports Daikin airconditioners & heatpumps through either a generic driver (called Inverter) or a model (range) specific one like Emura.
 - the mobile card shows target temperature, operating mode, fan rate and fan swing mode.
 - target temperature as well as operating mode can be controlled from the mobile card.
 
 ![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/development/assets/images/mobilecard.png)
 
-- with the available 23 flowcards (9 trigger cards, 9 condition cards and 5 action cards) the options to automate are almost endless.
+- with the available 22 flowcards (9 trigger cards, 9 condition cards and 4 action cards) the options to automate are almost endless.
 
 ### Demo mode (upon pairing the demo mode is by default turned ON !!)
 Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows.

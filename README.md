@@ -4,19 +4,19 @@
 # Daikin AI
 Adds to Homey support for Daikin Air Conditioners and Heatpumps (aka inverters).
 
-Note: Do not use the MASTER branch for now, what is available in the development branch is the best available, use at own risk!
+Note: Do not use the MASTER branch for now, what is available in the development branch is the best available. The beta branch is also available via the Athom's App Store.
 
 ## Features
-- supports Daikin airconditioners & heatpumps through either a generic driver (I called Inverter) or a model specific one (currently Emura only).
-- the airco's Target temperature as well as its operating mode can be controlled from a mobile card.
-- mobile card shows target temperature, operating mode, fan rate and fan swing mode.
+- supports Daikin airconditioners & heatpumps through either a generic driver (called Inverter) or a model (range) specific one like Emura.
+- the mobile card shows target temperature, operating mode, fan rate and fan swing mode.
+- target temperature as well as operating mode can be controlled from the mobile card.
 
 ![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/development/assets/images/mobilecard.png)
 
-- 23 flowcards: 9 trigger cards, 9 condition cards and 5 action cards.
+- with the available 22 flowcards (9 trigger cards, 9 condition cards and 4 action cards) the options to automate are almost endless.
 
 ## Demo mode (upon pairing the demo mode is by default turned ON !!)
-Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows (tip... turn on a lamp to verify your flow iso the airco...).
+Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows.
 
 ## To-do (in random order)
 - crush more bugs (and try not to introduce new onces...)
