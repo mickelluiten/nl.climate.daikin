@@ -1,8 +1,7 @@
-
-![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/development/assets/images/Daikin-logo-wide.png)
-
 # Daikin AI
 Adds to Homey support for Daikin Air Conditioners and Heatpumps (aka inverters).
+
+![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/development/assets/images/Daikin-logo-wide.png)
 
 ## Features
 - supports Daikin airconditioners & heatpumps through either a generic driver (called Inverter) or a model (range) specific one like Emura.
