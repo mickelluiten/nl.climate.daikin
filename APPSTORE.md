@@ -5,7 +5,7 @@
 Adds to Homey support for Daikin Air Conditioners and Heatpumps (aka inverters).
 
 ## Features
-- supports Daikin airconditioners & heatpumps through either a generic driver (I called Inverter) or a model specific one (currently Emura only).
+- supports Daikin airconditioners & heatpumps through either a generic driver (I called Inverter) or a model (range) specific one like Emura.
 - the airco's Target temperature as well as its operating mode can be controlled from a mobile card.
 - mobile card shows target temperature, operating mode, fan rate and fan swing mode.
 
