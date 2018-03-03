@@ -1,7 +1,7 @@
 {
     "pair":{
         "start":{
-            "intro":"Voer het IP adres van de airconditioner in, geef deze een naam en geef de verversings interval in seconden op.",
+            "intro":"Voer het IP adres van de airconditioner in en geef deze een naam.",
             "title":"Daikin apparaat instellingen",
             "error":"Er is een fout opgetreden, controleer het zojuist ingevoerde IP-adres.",
             "required":"IP adres is verplicht.",

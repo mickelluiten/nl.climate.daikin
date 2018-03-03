@@ -1,7 +1,7 @@
 {
     "pair":{
         "start":{
-            "intro":"Enter your Airco's IP address, give it a name and enter the desired polling interval in seconds.",
+            "intro":"Enter your Airco's IP address and give it a name.",
             "title":"Daikin equipment settings",
             "error":"An error has occurred, check the just entered IP-address.",
             "required":"IP address is required.",
