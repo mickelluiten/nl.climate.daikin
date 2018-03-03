@@ -187,13 +187,18 @@ class EmuraDevice extends Device {
 	updateControlListeners(control_info, control_response) {        
 		this.log('updateControlListeners');
 
+    //---- power status
+        const apow = Number(control_info[1]);
+        
     //---- mode
         var airco_modes_emura = [ "auto", "auto1", "dehumid", "cooling", "heating", "off", "fan", "auto2" ];                        
         const amode = Number(control_info[2]);
-        const airco_mode_emura = airco_modes_emura[amode];	
+        const airco_mode_emura = airco_modes_emura[amode];
+        const capability_mode = this.getCapabilityValue('airco_mode_emura');		
         this.log('mode:', airco_mode_emura);
+        this.log('capability_mode:', capability_mode);
         // we do not differentiate the modes: auto1 and auto2
-        if (amode != 1 && amode != 7) this.setCapabilityValue('airco_mode_emura', airco_mode_emura);
+        if ((amode != 1 && amode != 7) || (capability_mode != "off")) this.setCapabilityValue('airco_mode_emura', airco_mode_emura);
         
     //---- temperature
 		const atemp = Number(control_info[4]);

@@ -17,6 +17,7 @@ class InverterDriver extends Driver {
         this._triggerTargetTemperatureMoreThan = new Homey.FlowCardTriggerDevice('change_inverter_target_temperature_more_than').register();
 		this._triggerTargetTemperatureMoreThan.registerRunListener((args, state) => {
 			let conditionMet = state.set_temperature > args.target_temperature_more;
+
             this.log('trigger - args.target_temperature_more', args.target_temperature_more);
             this.log('trigger - state.set_temperature', (state.set_temperature) );
             this.log('trigger - conditionMet', conditionMet);
@@ -26,19 +27,12 @@ class InverterDriver extends Driver {
 		this._triggerTargetTemperatureLessThan = new Homey.FlowCardTriggerDevice('change_inverter_target_temperature_less_than').register();
 		this._triggerTargetTemperatureLessThan.registerRunListener((args, state) => {
 			let conditionMet = state.set_temperature < args.target_temperature_less;
-            this.log('trigger - args.target_temperature_less', args.target_temperature_less);
-            this.log('trigger - state.set_temperature', (state.set_temperature) );
-            this.log('trigger - conditionMet', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
 
 		this._triggerTargetTemperatureBetween = new Homey.FlowCardTriggerDevice('change_inverter_target_temperature_between').register();
 		this._triggerTargetTemperatureBetween.registerRunListener((args, state) => {
 			let conditionMet = state.set_temperature > args.target_temperature_from && state.set_temperature < args.target_temperature_to;
-            this.log('trigger - args.target_temperature_from', args.target_temperature_from);
-            this.log('trigger - args.target_temperature_to', args.target_temperature_to);
-            this.log('trigger - state.set_temperature', (state.set_temperature) );
-            this.log('trigger - conditionMet', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
 
@@ -46,6 +40,7 @@ class InverterDriver extends Driver {
 		this._triggerInsideTemperatureMoreThan = new Homey.FlowCardTriggerDevice('inside_inverter_temperature_more_than').register();
 		this._triggerInsideTemperatureMoreThan.registerRunListener((args, state) => {
 			let conditionMet = state['measure_temperature.inside'] > args.inside_temperature_more;
+
             this.log('trigger - args.inside_temperature_more', args.inside_temperature_more);
             this.log('trigger - state()[measure_temperature.inside]', ( state['measure_temperature.inside']) );
             this.log('trigger - conditionMet inside temp', conditionMet);
@@ -55,9 +50,6 @@ class InverterDriver extends Driver {
 		this._triggerInsideTemperatureLessThan = new Homey.FlowCardTriggerDevice('inside_inverter_temperature_less_than').register();
 		this._triggerInsideTemperatureLessThan.registerRunListener((args, state) => {
 			let conditionMet = state['measure_temperature.inside'] < args.inside_temperature_less;
-            this.log('trigger - args.inside_temperature_less', args.inside_temperature_less);
-            this.log('trigger - state()[measure_temperature.inside]', ( state['measure_temperature.inside']) );
-            this.log('trigger - conditionMet inside temp', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
 
@@ -71,18 +63,16 @@ class InverterDriver extends Driver {
 		this._triggerOutsideTemperatureMoreThan = new Homey.FlowCardTriggerDevice('outside_inverter_temperature_more_than').register();
 		this._triggerOutsideTemperatureMoreThan.registerRunListener((args, state) => {
 			let conditionMet = state['measure_temperature.outside'] > args.outside_temperature_more;
+
             this.log('trigger - args.outside_temperature_more', args.outside_temperature_more);
-            this.log('trigger - state[measure_temperature.outside]', ( state['measure_temperature.outside']) );
-            this.log('trigger - conditionMet outside temp', conditionMet);
+            this.log('trigger - state()[measure_temperature.inside]', ( state['measure_temperature.inside']) );
+            this.log('trigger - conditionMet inside temp', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
 
 		this._triggerOutsideTemperatureLessThan = new Homey.FlowCardTriggerDevice('outside_inverter_temperature_less_than').register();
 		this._triggerOutsideTemperatureLessThan.registerRunListener((args, state) => {
 			let conditionMet = state['measure_temperature.outside'] < args.ouside_temperature_less;
-            this.log('trigger - args.ouside_temperature_less', args.ouside_temperature_less);
-            this.log('trigger - state[measure_temperature.outside]', ( state['measure_temperature.outside']) );
-            this.log('trigger - conditionMet outside temp', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
 
@@ -98,9 +88,11 @@ class InverterDriver extends Driver {
 		this._conditionTargetTemperatureMoreThan = new Homey.FlowCardCondition('has_inverter_target_temperature_more_than').register();
 		this._conditionTargetTemperatureMoreThan.registerRunListener((args, state) => {
 			let device = args.device;
-			let conditionMet = device.getState().set_temperature > args.target_temperature_more;
+            let devicestate = device.getState();
+			let conditionMet = devicestate.set_temperature > args.target_temperature_more;
+
             this.log('condition args.target_temperature_more', args.target_temperature_more);            
-            this.log('condition device.getState().set_temperature', (device.getState().set_temperature) );
+            this.log('condition devicestate.set_temperature', devicestate.set_temperature);
             this.log('condition conditionMet', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
@@ -108,21 +100,16 @@ class InverterDriver extends Driver {
 		this._conditionTargetTemperatureLessThan = new Homey.FlowCardCondition('has_inverter_target_temperature_less_than').register();
 		this._conditionTargetTemperatureLessThan.registerRunListener((args, state) => {
 			let device = args.device;
-			let conditionMet = device.getState().set_temperature < args.target_temperature_less;
-            this.log('condition args.target_temperature_less', args.target_temperature_less);            
-            this.log('condition device.getState().set_temperature', (device.getState().set_temperature) );
-            this.log('condition conditionMet', conditionMet);
+            let devicestate = device.getState();
+			let conditionMet = devicestate.set_temperature < args.target_temperature_less;
 			return Promise.resolve(conditionMet);
 		});
 
 		this._conditionTargetTemperatureBetween = new Homey.FlowCardCondition('has_inverter_target_temperature_between').register();
 		this._conditionTargetTemperatureBetween.registerRunListener((args, state) => {
 			let device = args.device;
-			let conditionMet = device.getState().set_temperature > args.target_temperature_from && device.getState().set_temperature < args.target_temperature_to;
-            this.log('condition args.target_temperature_from', args.target_temperature_from);  
-            this.log('condition args.target_temperature_to', args.target_temperature_to);                       
-            this.log('condition device.getState().set_temperature', (device.getState().set_temperature) );
-            this.log('condition conditionMet', conditionMet);
+            let devicestate = device.getState();
+			let conditionMet = devicestate.set_temperature > args.target_temperature_from && devicestate.set_temperature < args.target_temperature_to;
 			return Promise.resolve(conditionMet);
 		});
 
@@ -130,8 +117,10 @@ class InverterDriver extends Driver {
 		this._conditionInsideTemperatureMoreThan = new Homey.FlowCardCondition('has_inverter_inside_temperature_more_than').register();
 		this._conditionInsideTemperatureMoreThan.registerRunListener((args, state) => {
 			let device = args.device;
-			let conditionMet = device.getState().temperature_inside > args.inside_temperature_more;
-            this.log('condition - temperature_inside', device.getState().temperature_inside);
+            let devicestate = device.getState();
+			let conditionMet = devicestate['measure_temperature.inside'] > args.inside_temperature_more;
+
+            this.log('condition - [measure_temperature.inside]', devicestate['measure_temperature.inside']);
             this.log('condition - args.inside_temperature_more', args.inside_temperature_more);
             this.log('condition - conditionMet inside temp', conditionMet);
 			return Promise.resolve(conditionMet);
@@ -140,21 +129,16 @@ class InverterDriver extends Driver {
 		this._conditionInsideTemperatureLessThan = new Homey.FlowCardCondition('has_inverter_inside_temperature_less_than').register();
 		this._conditionInsideTemperatureLessThan.registerRunListener((args, state) => {
 			let device = args.device;
-			let conditionMet = device.getState().temperature_inside < args.inside_temperature_less;
-            this.log('condition - temperature_inside', device.getState().temperature_inside);
-            this.log('condition - args.inside_temperature_more', args.inside_temperature_more);
-            this.log('condition - conditionMet inside temp', conditionMet);
+            let devicestate = device.getState();
+			let conditionMet = devicestate['measure_temperature.inside'] < args.inside_temperature_less;
 			return Promise.resolve(conditionMet);
 		});
 
 		this._conditionInsideTemperatureBetween = new Homey.FlowCardCondition('has_inverter_inside_temperature_between').register();
 		this._conditionInsideTemperatureBetween.registerRunListener((args, state) => {
 			let device = args.device;
-			let conditionMet = device.getState().temperature_inside > args.inside_temperature_from && device.getState().temperature_inside < args.inside_temperature_to;
-            this.log('condition - temperature_inside', device.getState().temperature_inside);
-            this.log('condition - args.inside_temperature_from', args.inside_temperature_from);
-            this.log('condition - args.inside_temperature_to', args.inside_temperature_to);
-            this.log('condition - conditionMet inside temp', conditionMet);
+            let devicestate = device.getState();
+			let conditionMet = devicestate['measure_temperature.inside'] > args.inside_temperature_from && devicestate['measure_temperature.inside'] < args.inside_temperature_to;
 			return Promise.resolve(conditionMet);
 		});
 
@@ -162,8 +146,10 @@ class InverterDriver extends Driver {
 		this._conditionOutsideTemperatureMoreThan = new Homey.FlowCardCondition('has_inverter_outside_temperature_more_than').register();
 		this._conditionOutsideTemperatureMoreThan.registerRunListener((args, state) => {
 			let device = args.device;
-			let conditionMet = device.getState().temperature_outside > args.outside_temperature_more;
-            this.log('condition - temperature_outside', device.getState().temperature_outside);
+            let devicestate = device.getState();
+			let conditionMet = devicestate['measure_temperature.outside'] > args.outside_temperature_more;
+
+            this.log('condition - [measure_temperature.outside]', devicestate['measure_temperature.outside']);
             this.log('condition - args.outside_temperature_more', args.outside_temperature_more);
             this.log('condition - conditionMet outside temp', conditionMet);
 			return Promise.resolve(conditionMet);
@@ -172,21 +158,16 @@ class InverterDriver extends Driver {
 		this._conditionOutsideTemperatureLessThan = new Homey.FlowCardCondition('has_inverter_outside_temperature_less_than').register();
 		this._conditionOutsideTemperatureLessThan.registerRunListener((args, state) => {
 			let device = args.device;
-			let conditionMet = device.getState().temperature_outside < args.outside_temperature_less;
-            this.log('condition - temperature_outside', device.getState().temperature_outside);
-            this.log('condition - args.outside_temperature_less', args.outside_temperature_less);
-            this.log('condition - conditionMet outside temp', conditionMet);
+            let devicestate = device.getState();
+			let conditionMet = devicestate['measure_temperature.outside'] < args.outside_temperature_less;
 			return Promise.resolve(conditionMet);
 		});
 
 		this._conditionOutsideTemperatureBetween = new Homey.FlowCardCondition('has_inverter_outside_temperature_between').register();
 		this._conditionOutsideTemperatureBetween.registerRunListener((args, state) => {
 			let device = args.device;
-			let conditionMet = device.getState().temperature_outside > args.outside_temperature_from && device.getState().temperature_outside < args.outside_temperature_to;
-            this.log('condition - temperature_outside', device.getState().temperature_outside);
-            this.log('condition - args.outside_temperature_from', args.outside_temperature_from);
-            this.log('condition - args.outside_temperature_to', args.outside_temperature_to);
-            this.log('condition - conditionMet outside temp', conditionMet);
+            let devicestate = device.getState();
+			let conditionMet = devicestate['measure_temperature.outside'] > args.outside_temperature_from && devicestate['measure_temperature.outside'] < args.outside_temperature_to;
 			return Promise.resolve(conditionMet);
 		});
 
@@ -202,6 +183,7 @@ class InverterDriver extends Driver {
             this.log('ip_address', ip_address);                        
 
             var atemp = args.atemp;
+            device.setCapabilityValue('set_temperature', atemp);              
             this.log('target temp', atemp);
                         
             inverterctrl.daikinTempControl(atemp, ip_address);
@@ -218,26 +200,12 @@ class InverterDriver extends Driver {
             this.log('ip_address', ip_address);                        
 
             var airco_mode = args.mode;
+            device.setCapabilityValue('airco_mode_inverter', airco_mode);          
             this.log('airco_mode', airco_mode); 
                         
             inverterctrl.daikinModeControl(airco_mode, ip_address);
 			return Promise.resolve(airco_mode);
-		});
-
-		this._actionAircoOff = new Homey.FlowCardAction('turn_inverter_off').register();
-		this._actionAircoOff.registerRunListener((args, state) => {
-			let device = args.device;           
-            let settings = device.getSettings();   
-                                    
-            var ip_address = settings.inverter_ip;    
-            this.log('ip_address', ip_address);                        
-
-            var airco_mode = args.mode;
-            this.log('airco_mode', airco_mode); 
-                        
-            inverterctrl.daikinModeControl(airco_mode, ip_address);
-			return Promise.resolve(airco_mode);
-		});            
+		});          
 
     //--- FAN RATE ACTIONS
 		this._actionFanRate = new Homey.FlowCardAction('change_inverter_fan_rate').register();
@@ -249,6 +217,7 @@ class InverterDriver extends Driver {
             this.log('ip_address', ip_address);                        
 
             var fan_rate = args.frate;
+            device.setCapabilityValue('fan_rate', fan_rate);             
             this.log('fan_rate', fan_rate);
                         
             inverterctrl.daikinFanRateControl(fan_rate, ip_address);
@@ -265,6 +234,7 @@ class InverterDriver extends Driver {
             this.log('ip_address', ip_address);                        
 
             var fan_direction = args.fdir;
+            device.setCapabilityValue('fan_direction', fan_direction);              
             this.log('fan_direction', fan_direction);
                         
             inverterctrl.daikinFanDirControl(fan_direction, ip_address);

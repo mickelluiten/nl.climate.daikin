@@ -187,12 +187,17 @@ class InverterDevice extends Device {
 	updateControlListeners(control_info, control_response) {        
 		this.log('updateControlListeners');
 
+    //---- power status
+        const apow = Number(control_info[1]);
+
     //---- mode
         var airco_mode_inverters = [ "auto", "auto1", "dehumid", "cooling", "heating", "off", "fan", "auto2" ];                        
         const amode = Number(control_info[2]);
-        const airco_mode_inverter = airco_mode_inverters[amode];	
+        const airco_mode_inverter = airco_mode_inverters[amode];
+        const capability_mode = this.getCapabilityValue('airco_mode_inverter');	
         this.log('mode:', airco_mode_inverter);
-        this.setCapabilityValue('airco_mode_inverter', airco_mode_inverter);
+        this.log('capability_mode:', capability_mode);    
+        if (capability_mode != "off") this.setCapabilityValue('airco_mode_inverter', airco_mode_inverter);
         
     //---- temperature
 		const atemp = Number(control_info[4]);
@@ -310,7 +315,7 @@ class InverterDevice extends Device {
        var settings = this.getSettings();
        var inverter_ip = settings.inverter_ip;
        var demo_mode = settings.demomode;
-       
+
        util.daikinModeControl(airco_mode_inverter, inverter_ip, demo_mode);
       
     }  

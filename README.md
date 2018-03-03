@@ -54,4 +54,4 @@ App uses icons that where created by http://www.freepik.com from https://www.fla
 - 01-MAR-18: 1/ Fixed a few bugs in app.json that caused CLI 2.0 to fail against "level debug".
 - 01-MAR-18: 2/ Added IPv4 validation to device settings dialog.
 - 02-MAR-18: Fixed an issue which prevented the App to be installed from the App store.
-- 03-MAR-18: Fixed flow card bug.
+- 03-MAR-18: Fixed condition and action flow card bug.

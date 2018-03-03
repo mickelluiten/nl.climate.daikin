@@ -1455,8 +1455,8 @@
       {
         "id": "turn_inverter_on",
         "title": {
-          "en": "Select a airconditioning mode",
-          "nl": "Kies een modus voor de airconditioner"
+            "en": "Select operating mode",
+            "nl": "Kies werkmodus"
         },
         "args": [
           {
@@ -1468,26 +1468,29 @@
      	  	"name": "mode",
      	  	"type": "dropdown",
      	  	"values": [ 
+    	  		 { "id": "off", 
+    	  		   "label": { "en": "Off", "nl": "Uit" } 
+    	  		 },
      	  		 { "id": "cooling", 
-     	  			"label": { "en": "Cooling", "nl": "Koelen" } 
+     	  		   "label": { "en": "Cooling", "nl": "Koelen" } 
      	  		 },
      	  		 { "id": "heating", 
-     	  			"label": { "en": "Heating", "nl": "Verwarmen" } 
+     	  		   "label": { "en": "Heating", "nl": "Verwarmen" } 
      	  		 },
      	  		 { "id": "auto", 
-     	  			"label": { "en": "Auto", "nl": "Auto" } 
+     	  		   "label": { "en": "Auto", "nl": "Auto" } 
      	  		 },
      	  		 { "id": "auto1", 
-     	  			"label": { "en": "Auto 1", "nl": "Auto 1" } 
+     	  		   "label": { "en": "Auto 1", "nl": "Auto 1" } 
      	  		 },
      	  		 { "id": "auto2", 
-     	  			"label": { "en": "Auto 2", "nl": "Auto 2" } 
+     	  		   "label": { "en": "Auto 2", "nl": "Auto 2" } 
      	  		 },
      	  		 { "id": "dehumid", 
-     	  			"label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
+     	  		   "label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
      	  		 },
      	  		 { "id": "fan", 
-     	  			"label": { "en": "Fan", "nl": "Ventilator" } 
+     	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
      	  		 }
      	   	  ]
      	   }
@@ -1496,8 +1499,8 @@
       {
         "id": "turn_emura_on",
         "title": {
-          "en": "Select a airconditioning mode",
-          "nl": "Kies een modus voor de airconditioner"
+            "en": "Select operating mode",
+            "nl": "Kies werkmodus"
         },
         "args": [
           {
@@ -1509,20 +1512,23 @@
      	  	"name": "mode",
      	  	"type": "dropdown",
      	  	"values": [ 
+   	  		     { "id": "off", 
+   	  		       "label": { "en": "Off", "nl": "Uit" } 
+   	  		     },
      	  		 { "id": "cooling", 
-     	  			"label": { "en": "Cooling", "nl": "Koelen" } 
+     	  		   "label": { "en": "Cooling", "nl": "Koelen" } 
      	  		 },
      	  		 { "id": "heating", 
-     	  			"label": { "en": "Heating", "nl": "Verwarmen" } 
+     	  		   "label": { "en": "Heating", "nl": "Verwarmen" } 
      	  		 },
      	  		 { "id": "auto", 
-     	  			"label": { "en": "Auto", "nl": "Auto" } 
+     	  		   "label": { "en": "Auto", "nl": "Auto" } 
      	  		 },
      	  		 { "id": "dehumid", 
-     	  			"label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
+     	  		   "label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
      	  		 },
      	  		 { "id": "fan", 
-     	  			"label": { "en": "Fan", "nl": "Ventilator" } 
+     	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
      	  		 }
      	   	  ]
      	   }
@@ -1531,8 +1537,8 @@
       {
         "id": "turn_nexura_on",
         "title": {
-          "en": "Select a airconditioning mode",
-          "nl": "Kies een modus voor de airconditioner"
+          "en": "Select operating mode",
+          "nl": "Kies werkmodus"
         },
         "args": [
           {
@@ -1544,94 +1550,28 @@
      	  	"name": "mode",
      	  	"type": "dropdown",
      	  	"values": [ 
+   	  		     { "id": "off", 
+   	  			   "label": { "en": "Off", "nl": "Uit" } 
+   	   		     },
      	  		 { "id": "cooling", 
-     	  			"label": { "en": "Cooling", "nl": "Koelen" } 
+     	  		   "label": { "en": "Cooling", "nl": "Koelen" } 
      	  		 },
      	  		 { "id": "heating", 
-     	  			"label": { "en": "Heating", "nl": "Verwarmen" } 
+     	  		   "label": { "en": "Heating", "nl": "Verwarmen" } 
      	  		 },
      	  		 { "id": "auto", 
-     	  			"label": { "en": "Auto", "nl": "Auto" } 
+     	  		   "label": { "en": "Auto", "nl": "Auto" } 
      	  		 },
      	  		 { "id": "dehumid", 
-     	  			"label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
+     	  		   "label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
      	  		 },
      	  		 { "id": "fan", 
-     	  			"label": { "en": "Fan", "nl": "Ventilator" } 
+     	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
      	  		 }
      	   	  ]
      	   }
          ]
-      },      
-      {
-        "id": "turn_inverter_off",
-        "title": {
-          "en": "The airconditioner will be",
-          "nl": "De airconditioning wordt"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=inverter"
-          },
-     	  {
-     	  	"name": "mode",
-     	  	"type": "dropdown",
-     	  	"values": [ 
-     	  		 { "id": "off", 
-     	  			"label": { "en": "turned off", "nl": "uitgezet" } 
-     	  		 }
-     	   	  ]
-     	   }
-        ]
-      },
-      {
-        "id": "turn_emura_off",
-        "title": {
-          "en": "The airconditioner will be",
-          "nl": "De airconditioning wordt"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=emura"
-          },
-     	  {
-     	  	"name": "mode",
-     	  	"type": "dropdown",
-     	  	"values": [ 
-     	  		 { "id": "off", 
-     	  			"label": { "en": "turned off", "nl": "uitgezet" } 
-     	  		 }
-     	   	  ]
-     	   }
-        ]
-      },
-      {
-        "id": "turn_nexura_off",
-        "title": {
-          "en": "The airconditioner will be",
-          "nl": "De airconditioning wordt"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=nexura"
-          },
-     	  {
-     	  	"name": "mode",
-     	  	"type": "dropdown",
-     	  	"values": [ 
-     	  		 { "id": "off", 
-     	  			"label": { "en": "turned off", "nl": "uitgezet" } 
-     	  		 }
-     	   	  ]
-     	   }
-        ]
-      },        
+      },       
       {
         "id": "change_inverter_fan_rate",
         "title": {
