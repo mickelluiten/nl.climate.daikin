@@ -2260,7 +2260,7 @@
           "type": "checkbox",
           "label": {
           "en": "Demo mode",
-          "nl": "Demo modus"
+          "nl": "Demonstratie mode"
           },
           "value": false
       }]
@@ -2423,7 +2423,7 @@
           "type": "checkbox",
           "label": {
           "en": "Demo mode",
-          "nl": "Demo modus"
+          "nl": "Demonstratie mode"
           },
           "value": false
       }]   
@@ -2586,7 +2586,7 @@
          "type": "checkbox",
          "label": {
          "en": "Demo mode",
-         "nl": "Demo modus"
+         "nl": "Demonstratie mode"
          },
          "value": false
      }]   
