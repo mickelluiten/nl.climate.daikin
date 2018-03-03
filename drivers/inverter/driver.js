@@ -1,8 +1,8 @@
 "use strict";
 
 const Homey = require('homey');
-const Driver = require('../../lib/Driver');
-const inverterctrl = require('../../lib/Daikin');
+const Driver = require('../../lib/driver');
+const inverterctrl = require('../../lib/daikin');
 
 //Driver for a Daikin Inverter type Airconditioner
 class InverterDriver extends Driver {		

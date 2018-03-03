@@ -1,8 +1,8 @@
 "use strict";
 
 const Homey = require('homey');
-const Device = require('../../lib/Device');
-const util = require('../../lib/Daikin');
+const Device = require('../../lib/device');
+const util = require('../../lib/daikin');
 
 //Device for a Daikin Nexura device
 class NexuraDevice extends Device {

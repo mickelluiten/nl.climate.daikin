@@ -1,8 +1,8 @@
 "use strict";
 
 const Homey = require('homey');
-const Driver = require('../../lib/Driver');
-const nexuractrl = require('../../lib/Daikin');
+const Driver = require('../../lib/driver');
+const nexuractrl = require('../../lib/daikin');
 
 //Driver for a Daikin Nexura type Airconditioner
 class NexuraDriver extends Driver {		

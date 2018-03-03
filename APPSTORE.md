@@ -30,7 +30,7 @@ Demo mode can be disabled in the device its settings menu. Demo mode can be very
 - was only available via GitHub
 
 ## Limitations
-HomeKit is not supported. However in future updates I might add a "HomeKit model", that model would then enable one to control just the basic capabilities of "every" WiFi capable Daikin airconditioner using HomeKit.
+HomeKit is not supported. However in future updates I might add a "HomeKit model", that model would than enable one to control just the basic capabilities of "every" WiFi capable Daikin airconditioner using HomeKit.
 
 ## Credits
 App uses icons that where created by http://www.freepik.com from https://www.flaticon.com is licensed by Creative Commons.
