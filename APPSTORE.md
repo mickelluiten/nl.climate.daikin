@@ -16,7 +16,7 @@ Adds to Homey control support for Daikin Air Conditioners and Heatpumps (aka inv
 Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows.
 
 ## Change log
-### v0.4.0
+### v0.4.1
 - initial beta release to Athom App Store.
   Note: this beta for sure contains bugs, let me know if you found one...
 
