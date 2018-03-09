@@ -11,26 +11,23 @@ Adds to Homey control support for Daikin Air Conditioners and Heatpumps (aka inv
 ![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/development/assets/images/mobilecard.png)
 
 - with the available 22 flowcards (9 trigger cards, 9 condition cards and 4 action cards) the options to automate are almost endless.
+- HomeKit support* for every WiFi capable Daikin Airconditioner thru the "Model HomeKit" driver. The "Model Homekit" driver has 2 trigger flowcards, no condition flowcards and 2 action flowcards. The AC control functionality is however limited to: airco's mode setting, target temperature setting and inside temperature measurement.
+  Note *: requires either HomeKit by Sprut, or HomeyKit by Bas Jansen. 
+
 
 ### Demo mode (upon pairing the demo mode is by default turned ON !!)
 Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows.
 
 ## Change log
+### v0.5.0
+- Added HomeKit support (only for the Model HomeKit), functionality is limited to: mode setting, target temperature setting and inside temperature measurement (due to limitations of the HomeKit App).
+
 ### v0.4.1
-- initial beta release to Athom App Store.
+- initial release to the App Store.
   Note: this beta for sure contains bugs, let me know if you found one...
 
-### v0.3.0
-- was only available via GitHub
-
-### v0.2.0
-- was only available via GitHub
-
-### v0.1.0
-- was only available via GitHub
-
 ## Limitations
-HomeKit is not supported, however in future updates I might add a "HomeKit model". This "HomeKit model" should than make it possible to control only the basic capabilities, i.e. cool, heat, off, temp setting, of "every" WiFi capable Daikin airconditioner using HomeKit.
+HomeKit support only applies for the 'Model HomeKit'.
 
 ## Credits
 App uses icons that where created by http://www.freepik.com from https://www.flaticon.com is licensed by Creative Commons.

@@ -4,7 +4,7 @@ const Homey = require('homey');
 const Device = require('../../lib/device');
 const util = require('../../lib/daikin');
 
-//Device for a Daikin Emura device
+// Device for a Daikin Emura device
 class EmuraDevice extends Device {
 
     onInit() {						
@@ -226,6 +226,7 @@ class EmuraDevice extends Device {
         const fan_direction = fan_directions[fdir];             
     	this.setCapabilityValue('fan_direction', fan_direction);
         this.log('fdir:', fan_direction);                 	
+
 		return Promise.resolve();
 	}
 
@@ -293,7 +294,7 @@ class EmuraDevice extends Device {
 		return Promise.resolve();
 	}
 
-//-------- airco controll methods --------------
+//-------- airco control methods --------------
 
     // POST new Power settings to Airconditioner    
     daikinPowerControl(pow) {
