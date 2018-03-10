@@ -65,3 +65,4 @@ If you like the app, consider buying me a cup of coffee!
 - 03-MAR-18: Fixed condition and action flow card bug.
 - 05-MAR-18: Published v0.4.1 to Athom's App Store.
 - 06-MAR-18: Added the Model HomeKit driver (v0.4.5).
+- 10-MAR-18: Emura 2 picture replaced by a better looking one (v0.4.6). Checked ones more that athom app validate --level publish passed, which it does.
