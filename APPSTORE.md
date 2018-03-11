@@ -8,7 +8,7 @@ Adds to Homey control support for Daikin Air Conditioners and Heatpumps (aka inv
 - the mobile card shows target temperature, operating mode, fan rate and fan swing mode.
 - target temperature as well as operating mode can be controlled from the mobile card.
 
-![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/development/assets/images/mobilecard.png)
+![Mobile card](https://github.com/PeterEIER/nl.climate.daikin/raw/development/assets/images/mobilecard.png)
 
 - with the available 22 flowcards (9 trigger cards, 9 condition cards and 4 action cards) the options to automate are almost endless.
 - HomeKit support* for every WiFi capable Daikin Airconditioner thru the "Model HomeKit" driver. The "Model Homekit" driver has 2 trigger flowcards, no condition flowcards and 2 action flowcards. The AC control functionality is however limited to: airco's mode setting, target temperature setting and inside temperature measurement.
