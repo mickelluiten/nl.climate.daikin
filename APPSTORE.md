@@ -20,11 +20,9 @@ Demo mode can be disabled in the device its settings menu. Demo mode can be very
 
 ## Change log
 ### v0.5.0
-- Added HomeKit support (only for the Model HomeKit), functionality is limited to: mode setting, target temperature setting and inside temperature measurement (due to limitations of the HomeKit App).
-
-### v0.4.1
 - initial release to the App Store.
-  Note: this beta for sure contains bugs, let me know if you found one...
+- Added HomeKit support (only for the Model HomeKit), functionality is limited to: mode setting, target temperature setting and inside temperature measurement (due to limitations of the HomeKit App).
+- Note: this beta for sure contains bugs, let me know if you found one...
 
 ## Limitations
 HomeKit support only applies for the 'Model HomeKit'.
