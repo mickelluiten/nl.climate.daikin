@@ -68,3 +68,4 @@ If you like the app, consider buying me a cup of coffee!
 - 10-MAR-18: Emura 2 picture replaced by a better looking one (v0.4.6). Checked ones more that athom app validate --level publish passed, which it does.
 - 10-MAR-18: Added "athomForumDiscussionId": 2082, to app.json.
 - 11-MAR-18: Paring abort handling.
+- 09-APR-18: Added model Comfora.

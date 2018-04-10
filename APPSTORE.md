@@ -19,13 +19,8 @@ Adds to Homey control support for Daikin Air Conditioners and Heatpumps (aka inv
 Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows.
 
 ## Change log
-### v0.5.0
-- initial release to the App Store.
-- Added HomeKit support (only for the Model HomeKit), functionality is limited to: mode setting, target temperature setting and inside temperature measurement (due to limitations of the HomeKit App).
-- Note: this beta for sure contains bugs, let me know if you found one...
+### v0.6.0
+- Added support for model series Comfora.
 
 ## Limitations
 HomeKit support only applies for the 'Model HomeKit'.
-
-## Credits
-App uses icons that where created by http://www.freepik.com from https://www.flaticon.com is licensed by Creative Commons.
