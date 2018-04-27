@@ -1,7 +1,7 @@
 {
     "pair":{
         "start":{
-            "intro":"Enter your Airco's IP address and give it a name.",
+            "intro":"Enter your Airco's (static) IP address and give it a name.",
             "title":"Daikin equipment settings",
             "error":"An error has occurred, check the just entered IP-address.",
             "required":"IP address is required.",

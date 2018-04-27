@@ -1,7 +1,7 @@
 {
     "pair":{
         "start":{
-            "intro":"Voer het IP adres van de airconditioner in en geef deze een naam.",
+            "intro":"Voer het (statische) IP adres van de airconditioner in en geef deze een naam.",
             "title":"Daikin apparaat instellingen",
             "error":"Er is een fout opgetreden, controleer het zojuist ingevoerde IP-adres.",
             "required":"IP adres is verplicht.",

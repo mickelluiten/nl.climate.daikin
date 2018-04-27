@@ -1,5 +1,5 @@
 
-![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/development/assets/images/Daikin-logo-wide.png)
+![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/Daikin-logo-wide.png)
 
 # Daikin AI
 Adds to Homey control support for Daikin Air Conditioners and Heatpumps (aka inverters).
@@ -11,7 +11,7 @@ Note: Do not use the MASTER branch for now, what is available in the development
 - the mobile card shows target temperature, operating mode, fan rate and fan swing mode.
 - target temperature as well as operating mode can be controlled from the mobile card.
 
-![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/development/assets/images/mobilecard.png)
+![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/mobilecard.png)
 
 - with the available 22 flowcards (9 trigger cards, 9 condition cards and 4 action cards) the options to automate are almost endless.
 - HomeKit support* for every WiFi capable Daikin Airconditioner thru the "Model HomeKit" driver. The "Model Homekit" driver has 2 trigger flowcards, no condition flowcards and 2 action flowcards. The AC control functionality is however limited to: airco's mode setting, target temperature setting and inside temperature measurement.
@@ -69,3 +69,4 @@ If you like the app, consider buying me a cup of coffee!
 - 10-MAR-18: Added "athomForumDiscussionId": 2082, to app.json.
 - 11-MAR-18: Paring abort handling.
 - 09-APR-18: Added model Comfora.
+- 27-APR-18: Fixed a bug (in the Appollon77 library) which did make the app crash when the air conditioner could not be reached.
