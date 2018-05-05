@@ -1,12 +1,12 @@
 {
     "pair":{
         "start":{
-            "intro":"Voer het (statische) IP adres van de airconditioner in en geef deze een naam.",
+            "intro":"Voer het IP-adres van de airconditioner in en geef deze een naam. Opmerking: het gebruik van een statisch IP-adres is verplicht, DHCP wordt niet ondersteund.",
             "title":"Daikin apparaat instellingen",
             "error":"Er is een fout opgetreden, controleer het zojuist ingevoerde IP-adres.",
-            "required":"IP adres is verplicht.",
+            "required":"IP-adres is verplicht.",
             "invalidIP":"Voer een geldig IPv4 adres in.",
-            "ipAddress":"IP adres",
+            "ipAddress":"IP-adres",
             "deviceName":"Naam",
             "saveSettings":"Voeg toe",
             "add":"Uw instellingen worden nu opgeslagen...",

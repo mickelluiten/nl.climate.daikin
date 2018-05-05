@@ -7,7 +7,7 @@ class Daikin extends Homey.App {
 	
 	onInit() {
 		
-		this.log('Daikin AC is running...');
+		this.log('Daikin AI is running...');
 		
 	}
 	

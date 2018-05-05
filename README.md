@@ -69,6 +69,7 @@ If you like the app, consider buying me a cup of coffee!
 - 10-MAR-18: Added "athomForumDiscussionId": 2082, to app.json.
 - 11-MAR-18: Paring abort handling.
 - 09-APR-18: Added model Comfora.
-- 27-APR-18: Fixed a bug (in the Appollon77 Daikin Controller library) which did make the app crash when the air conditioner could not be reached.
-- 29-APR-18: Appollon77 fixed the error himself (fix#6), Daikin AI upgraded to the latest Daikin Controller lib version v1.1.2 (from v1.1.0)
-- 29-APR-18: Further optimized the error in the Daikin AI app itself when making calls to the Appollon77 lib.
+- 27-APR-18: Fixed a bug (in the Apollon77 Daikin Controller library) which did make the app crash when the air conditioner could not be reached.
+- 29-APR-18: Apollon77 fixed the error himself (fix#6), Daikin AI upgraded to the latest Daikin Controller lib version v1.1.2 (from v1.1.0)
+- 29-APR-18: Further optimized the error handling in the Daikin AI app itself when making calls to the Apollon77 lib.
+- 05-MAY-18: Removed model Inverter to decomplex things making the app easier to maintain in the furure.

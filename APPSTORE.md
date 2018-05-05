@@ -22,9 +22,13 @@ Demo mode can be disabled in the device its settings menu. Demo mode can be very
 To prevent unreliable behavior of this application the use of a fixed (static) IP-address is required.
 
 ## Change log
+### v1.0.0
+- Stable release.
+- Removed Model Inverter.
+
 ### v0.6.2
 - Added support for model series Comfora.
-- Bug fixes (as provided by the Appollon77 Daikin Controller Library).
+- Bug fixes (as provided by the Apollon77 Daikin Controller Library).
 
 ### v0.5.0
 - first public beta

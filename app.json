@@ -1,6 +1,6 @@
 {
     "id": "nl.climate.daikin",
-	"version": "0.6.2",
+	"version": "1.0.0",
     "compatibility": ">=1.5.3",
     "sdk": 2,
     "name": {
@@ -16,8 +16,8 @@
         "climate"
     ],
     "tags": {
-           "en": [ "daikin", "emura", "nextura", "inverter", "comfora", "airconditioner", "airconditioning", "thermostat", "fan", "homekit", "home" ],
-           "nl": [ "daikin", "emura", "nextura", "inverter", "comfora", "airconditioner", "airconditioning", "thermostaat", "ventilator", "homekit", "home" ]
+           "en": [ "daikin", "emura", "nextura", "comfora", "airconditioner", "airconditioning", "thermostat", "fan", "homekit", "home" ],
+           "nl": [ "daikin", "emura", "nextura", "comfora", "airconditioner", "airconditioning", "thermostaat", "ventilator", "homekit", "home" ]
      },
     "images": {
       "large": "/assets/images/large.png",
@@ -45,28 +45,6 @@
     "athomForumDiscussionId": 2082,
 	"flow": {
     "triggers": [
-        {
-            "id": "change_inverter_target_temperature_more_than",
-            "title": {
-                "en": "The target temperature is more than",
-                "nl": "De doeltemperatuur is meer dan"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"
-                },
-                {
-                    "name": "target_temperature_more",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },
         {
             "id": "change_comfora_target_temperature_more_than",
             "title": {
@@ -125,28 +103,6 @@
                 },
                 {
                     "name": "target_temperature_more",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },          
-        {
-            "id": "change_inverter_target_temperature_less_than",
-            "title": {
-                "en": "The target temperature is less than",
-                "nl": "De doeltemperatuur is minder dan"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"
-                },
-                {
-                    "name": "target_temperature_less",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -213,36 +169,6 @@
                 },
                 {
                     "name": "target_temperature_less",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "change_inverter_target_temperature_between",
-            "title": {
-                "en": "The target temperature is between",
-                "nl": "De doeltemperatuur is tussen"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"
-                },
-                {
-                    "name": "target_temperature_from",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                },
-                                    {
-                    "name": "target_temperature_to",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -342,28 +268,6 @@
             ]
         },
         {
-            "id": "inside_inverter_temperature_more_than",
-            "title": {
-                "en": "The inside temperature is more than",
-                "nl": "De binnentemperatuur is meer dan"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"
-                },
-                {
-                    "name": "inside_temperature_more",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },
-        {
             "id": "inside_comfora_temperature_more_than",
             "title": {
                 "en": "The inside temperature is more than",
@@ -430,28 +334,6 @@
             ]
         },
         {
-            "id": "inside_inverter_temperature_less_than",
-            "title": {
-                "en": "The inside temperature is less than",
-                "nl": "De binnentemperatuur is minder dan"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"
-                },
-                {
-                    "name": "inside_temperature_less",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },
-        {
             "id": "inside_comfora_temperature_less_than",
             "title": {
                 "en": "The inside temperature is less than",
@@ -509,36 +391,6 @@
                 },
                 {
                     "name": "inside_temperature_less",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "inside_inverter_temperature_between",
-            "title": {
-                "en": "The inside temperature is between",
-                "nl": "De binnentemperatuur is tussen"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"
-                },
-                {
-                    "name": "inside_temperature_from",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                },
-                                    {
-                    "name": "inside_temperature_to",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -638,28 +490,6 @@
             ]
         },
         {
-            "id": "outside_inverter_temperature_more_than",
-            "title": {
-                "en": "The outside temperature is more than",
-                "nl": "De buitentemperatuur is meer dan"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"
-                },
-                {
-                    "name": "outside_temperature_more",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },
-        {
             "id": "outside_comfora_temperature_more_than",
             "title": {
                 "en": "The outside temperature is more than",
@@ -726,28 +556,6 @@
             ]
         },
         {
-            "id": "outside_inverter_temperature_less_than",
-            "title": {
-                "en": "The outside temperature is less than",
-                "nl": "De buitentemperatuur is minder dan"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"               
-                },
-                {
-                    "name": "ouside_temperature_less",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },
-        {
             "id": "outside_comfora_temperature_less_than",
             "title": {
                 "en": "The outside temperature is less than",
@@ -805,36 +613,6 @@
                 },
                 {
                     "name": "ouside_temperature_less",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "outside_inverter_temperature_between",
-            "title": {
-                "en": "The outside temperature is between",
-                "nl": "De buitentemperatuur is tussen"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"              
-                },
-                {
-                    "name": "outside_temperature_from",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                },
-                                    {
-                    "name": "outside_temperature_to",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -936,28 +714,6 @@
     ],
     "conditions": [
         {
-            "id": "has_inverter_target_temperature_more_than",
-            "title": {
-                "en": "The target temperature is more than",
-                "nl": "De doeltemperatuur is meer dan"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"
-                },
-                {
-                    "name": "target_temperature_more",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },
-        {
             "id": "has_comfora_target_temperature_more_than",
             "title": {
                 "en": "The target temperature is more than",
@@ -1024,28 +780,6 @@
             ]
         },
         {
-            "id": "has_inverter_target_temperature_less_than",
-            "title": {
-                "en": "The target temperature !{{is|isn't}} less than",
-                "nl": "De doeltemperatuur !{{is|is niet}} minder dan"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"                  
-                },
-                {
-                    "name": "target_temperature_less",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },
-        {
             "id": "has_comfora_target_temperature_less_than",
             "title": {
                 "en": "The target temperature !{{is|isn't}} less than",
@@ -1103,36 +837,6 @@
                 },
                 {
                     "name": "target_temperature_less",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "has_inverter_target_temperature_between",
-            "title": {
-                "en": "The target temperature !{{is|isn't}} between",
-                "nl": "De doeltemperatuur !{{is|is niet}} tussen"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"                  
-                },
-                {
-                    "name": "target_temperature_from",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                },
-                                    {
-                    "name": "target_temperature_to",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -1232,28 +936,6 @@
             ]
         },
         {
-            "id": "has_inverter_inside_temperature_more_than",
-            "title": {
-                "en": "The inside temperature !{{is|isn't}} more than",
-                "nl": "De binnentemperatuur !{{is|is niet}} meer dan"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"
-                },
-                {
-                    "name": "inside_temperature_more",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },
-        {
             "id": "has_comfora_inside_temperature_more_than",
             "title": {
                 "en": "The inside temperature !{{is|isn't}} more than",
@@ -1320,28 +1002,6 @@
             ]
         },
         {
-            "id": "has_inverter_inside_temperature_less_than",
-            "title": {
-                "en": "The inside temperature !{{is|isn't}} less than",
-                "nl": "De binnentemperatuur !{{is|is niet}} minder dan"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"
-                },
-                {
-                    "name": "inside_temperature_less",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },
-        {
             "id": "has_comfora_inside_temperature_less_than",
             "title": {
                 "en": "The inside temperature !{{is|isn't}} less than",
@@ -1399,36 +1059,6 @@
                 },
                 {
                     "name": "inside_temperature_less",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "has_inverter_inside_temperature_between",
-            "title": {
-                "en": "The inside temperature !{{is|isn't}} between",
-                "nl": "De binnentemperatuur !{{is|is niet}} tussen"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"
-                },
-                {
-                    "name": "inside_temperature_from",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                },
-                                    {
-                    "name": "inside_temperature_to",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -1528,28 +1158,6 @@
             ]
         },
         {
-            "id": "has_inverter_outside_temperature_more_than",
-            "title": {
-                "en": "The outside temperature !{{is|isn't}} more than",
-                "nl": "De buitentemperatuur !{{is|is niet}} meer dan"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"
-                },
-                {
-                    "name": "outside_temperature_more",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },
-        {
             "id": "has_comfora_outside_temperature_more_than",
             "title": {
                 "en": "The outside temperature !{{is|isn't}} more than",
@@ -1616,28 +1224,6 @@
             ]
         },
         {
-            "id": "has_inverter_outside_temperature_less_than",
-            "title": {
-                "en": "The outside temperature !{{is|isn't}} less than",
-                "nl": "De buitentemperatuur !{{is|is niet}} minder dan"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"
-                },
-                {
-                    "name": "outside_temperature_less",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },
-        {
             "id": "has_comfora_outside_temperature_less_than",
             "title": {
                 "en": "The outside temperature !{{is|isn't}} less than",
@@ -1695,36 +1281,6 @@
                 },
                 {
                     "name": "outside_temperature_less",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "has_inverter_outside_temperature_between",
-            "title": {
-                "en": "The outside temperature !{{is|isn't}} between",
-                "nl": "De buitentemperatuur !{{is|is niet}} tussen"
-            },
-            "args": [
-                {
-                    "name": "device",
-                    "type": "device",
-                    "filter": "driver_id=inverter"
-                },
-                {
-                    "name": "outside_temperature_from",
-                    "type": "number",
-                    "placeholder": {
-                        "en": "in C",
-                        "nl": "in C"
-                    }
-                },
-                                    {
-                    "name": "outside_temperature_to",
                     "type": "number",
                     "placeholder": {
                         "en": "in C",
@@ -1825,30 +1381,6 @@
         }
     ],
     "actions": [
-        {
-          "id": "change_inverter_target_temp",
-          "title": {
-              "en": "Change target temperature",
-              "nl": "Wijzig doel temperatuur"
-          },
-          "args": [
-             {
-          	  "name": "device",
-          	  "type": "device",
-              "filter": "driver_id=inverter"
-              },
-              {
-              "name": "atemp",
-              "type": "number",
-              "min": 15,
-              "max": 35,
-              "placeholder": {
-               "en": "°C",
-               "nl": "°C"
-            }
-     	  }
-  		]
-      },
       {
          "id": "change_comfora_target_temp",
          "title": {
@@ -1920,50 +1452,6 @@
             }
    	      }
 		]
-      },             
-      {
-        "id": "turn_inverter_on",
-        "title": {
-            "en": "Select operating mode",
-            "nl": "Kies werkmodus"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=inverter"
-          },
-     	  {
-     	  	"name": "mode",
-     	  	"type": "dropdown",
-     	  	"values": [ 
-    	  		 { "id": "off", 
-    	  		   "label": { "en": "Off", "nl": "Uit" } 
-    	  		 },
-     	  		 { "id": "cooling", 
-     	  		   "label": { "en": "Cooling", "nl": "Koelen" } 
-     	  		 },
-     	  		 { "id": "heating", 
-     	  		   "label": { "en": "Heating", "nl": "Verwarmen" } 
-     	  		 },
-     	  		 { "id": "auto", 
-     	  		   "label": { "en": "Auto", "nl": "Auto" } 
-     	  		 },
-     	  		 { "id": "auto1", 
-     	  		   "label": { "en": "Auto 1", "nl": "Auto 1" } 
-     	  		 },
-     	  		 { "id": "auto2", 
-     	  		   "label": { "en": "Auto 2", "nl": "Auto 2" } 
-     	  		 },
-     	  		 { "id": "dehumid", 
-     	  		   "label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
-     	  		 },
-     	  		 { "id": "fan", 
-     	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
-     	  		 }
-     	   	  ]
-     	   }
-         ]
       },
       {
         "id": "turn_comfora_on",
@@ -2077,48 +1565,6 @@
      	  		 }
      	   	  ]
      	   }
-         ]
-      },       
-      {
-        "id": "change_inverter_fan_rate",
-        "title": {
-          "en": "Select a fan rate",
-          "nl": "Kies een ventilator snelheid"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=inverter"
-          },
-     	  {
-     	  	"name": "frate",
-     	  	"type": "dropdown",
-     	  	"values": [ 
-     	  		 { "id": "A", 
-     	  			"label": { "en": "Auto", "nl": "Auto" } 
-     	  		 },
-     	  		 { "id": "B", 
-     	  			"label": { "en": "Quiet", "nl": "Stil" } 
-     	  		 },
-     	  		 { "id": "3", 
-     	  			"label": { "en": "Level 1", "nl": "Niveau 1" } 
-     	  		 },
-     	  		 { "id": "4", 
-     	  			"label": { "en": "Level 2", "nl": "Niveau 2" } 
-     	  		 },
-     	  		 { "id": "5", 
-     	  			"label": { "en": "Level 3", "nl": "Niveau 3" } 
-     	  		 },
-     	  		 { "id": "6", 
-     	  			"label": { "en": "Level 4", "nl": "Niveau 4" } 
-     	  		 },
-     	  		 { "id": "7", 
-     	  			"label": { "en": "Level 5", "nl": "Niveau 5" } 
-     	  		 }
-     	   	  ]
-     	   }
-
          ]
       },
       {
@@ -2248,38 +1694,6 @@
          ]
       },
       {
-        "id": "change_inverter_fan_direction",
-        "title": {
-          "en": "Select sweep",
-          "nl": "Kies lamellen richting"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=inverter"
-          },
-     	  {
-     	  	"name": "fdir",
-     	  	"type": "dropdown",
-     	  	"values": [ 
-     	  		 { "id": "0", 
-     	  			"label": { "en": "Stop", "nl": "Stop" } 
-     	  		 },
-     	  		 { "id": "1", 
-     	  			"label": { "en": "Vertical", "nl": "Vertikaal" } 
-     	  		 },
-     	  		 { "id": "2", 
-     	  			"label": { "en": "Horizontal", "nl": "Horizontaal" } 
-     	  		 },
-     	  		 { "id": "3", 
-     	  			"label": { "en": "3D", "nl": "3D" } 
-     	  		 }
-     	   	  ]
-     	    }
-         ]
-      },
-      {
         "id": "change_comfora_fan_direction",
         "title": {
           "en": "Select sweep",
@@ -2378,73 +1792,6 @@
     ]
   },
   "capabilities": {
-      "airco_mode_inverter": {
-          "type": "enum",
-          "title": {
-              "en": "Airco mode capability",
-              "nl": "Airco modus functionaliteit"
-          },
-          "getable": true,
-          "setable": true,
-          "values": [
-            {
-                "id": "off",
-                "title": {
-                  "en": "Off",
-                  "nl": "Uit"
-                }
-            },
-            {
-              "id": "cooling",
-              "title": {
-                "en": "Cooling",
-                "nl": "Koelen"
-              }
-            },
-            {
-              "id": "heating",
-              "title": {
-                "en": "Heating",
-                "nl": "Verwarmen"
-              }
-            },
-            {
-              "id": "auto",
-              "title": {
-                "en": "Auto",
-                "nl": "Auto"
-              }
-            },
-            {
-              "id": "auto1",           
-              "title": {
-                "en": "Auto-1",
-                "nl": "Auto-1"
-              }
-            },
-            {
-              "id": "auto2",            
-              "title": {
-                "en": "Auto-2",
-                "nl": "Auto-2"
-              }
-            },
-            {
-              "id": "fan",
-              "title": {
-                "en": "Fan",
-                "nl": "Ventilator"
-              }
-            },
-            {
-              "id": "dehumid",
-              "title": {
-                "en": "Dry",
-                "nl": "Ontvochtigen"
-              }
-            }
-         ]
-      },
       "airco_mode_comfora": {
           "type": "enum",
           "title": {
@@ -2738,169 +2085,6 @@
   },          
   "drivers": [
    {
-     "id": "inverter",
-     "name": {
-       "en": "Inverter",
-       "nl": "Inverter"
-     },
-     "class": "other",     
-     "capabilities": [
-       "airco_mode_inverter",
-       "fan_rate",
-       "fan_direction",
-       "set_humidity",
-       "set_temperature",
-	   "measure_temperature.inside",
-       "measure_temperature.outside" 
-     ],
-     "capabilitiesOptions": {
-   		"airco_mode_inverter": {
-   			"title": {
-   				"en": "Mode",
-   				"nl": "Modus"
-              }   
-          },
-   		"fan_rate": {
-   			"title": {
-   				"en": "Fan",
-   				"nl": "Vent."
-              }   
-          },
-     	"fan_direction": {
-     		"title": {
-     			"en": "Wings",
-     			"nl": "Lamel"
-            }   
-        },
-     	"set_humidity": {
-     		"title": {
-     			"en": "Set",
-     			"nl": "Doel"
-            }   
-        },
-  		"set_temperature": {
-  			"title": {
-  				"en": "Set",
-  				"nl": "Doel"
-             }   
-         },         
- 		"measure_temperature.inside": {
- 			"title": {
- 				"en": "Inside",
- 				"nl": "Binnen"
-            }   
-        },
-		"measure_temperature.outside": {
-			"title": {
-				"en": "Outside",
-				"nl": "Buiten"
-			}
-		}
-     },     
-     "mobile": {
-         "components": [
-             {
-                 "id": "picker",
-                 "capabilities": [
-                     "airco_mode_inverter"
-                  ]             
-             },
-             {
-                 "id": "sensor",
-                 "capabilities": [
-                     "fan_rate",
-                     "fan_direction"
-                  ],
-                 "options": {
-                    "showTitle": true,
-                    "icons": {
-                        "fan_direction": "./drivers/inverter/assets/oscillation.svg",
-                        "fan_rate": "./drivers/inverter/assets/house.svg"
-                    }
-                }
-             },
-             {
-               "id": "thermostat",
-               "capabilities": [ "set_temperature" ]
-             }
-         ]
-     },
-     "images": {
-       "large": "/drivers/inverter/assets/images/large.png",
-       "small": "/drivers/inverter/assets/images/small.png"
-     },	          
-     "pair": [
-         {
-             "id": "start"
-         },
-         {
-             "id": "list_my_devices",
-             "template": "list_devices",
-             "navigation": {
-                 "next": "add_my_devices"
-             }
-         },
-         {
-              "id": "add_my_devices",
-              "template": "add_devices"
-         }
-     ], 	 
-     "settings": [
-         {
-         "type": "group",
-         "label": {
-         "en": "Network setting",
-         "nl": "Netwerk instellingen"
-         },
-         "children": [{
-              "id": "inverter_ip",
-              "type": "text",
-              "pattern": "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5]).){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$",
-              "label": {
-              "en": "Airconditioners IP address",
-              "nl": "Airconditioners IP adres"
-              },
-              "value": ""
-          }]
-      },
-      {
-      "type": "group",
-      "label": {
-      "en": "Application refresh (all settings in seconds)",
-      "nl": "Applicatie verversen (alle instellingen in seconden)"
-      },
-      "children": [{
-           "id": "interval",
-           "type": "number",
-           "label": {
-           "en": "Polling interval",
-           "nl": "Gegevens opvragen elke"
-           },
-           "value": 10,
-           "attr": {
-               "min": 5,
-               "max": 30
-           } 
-       }]
-     },
-     {
-     "type": "group",
-     "label": {
-     "en": "Demo mode (power OFF no matter what mode is selected)",
-     "nl": "Demonstratie mode (airco is altijd uitgeschakeld ongeacht de gekozen modus)"
-     },
-     "children": [{
-          "id": "demomode",
-          "type": "checkbox",
-          "label": {
-          "en": "Demo mode",
-          "nl": "Demonstratie mode"
-          },
-          "value": false
-      }]
-    }]
-   },
-   {
      "id": "comfora",
      "name": {
        "en": "Comfora",
@@ -3012,8 +2196,8 @@
          {
          "type": "group",
          "label": {
-         "en": "Network setting",
-         "nl": "Netwerk instellingen"
+         "en": "Network setting (note: a static IP-address is required, DHCP is not supported.)",
+         "nl": "Netwerk instellingen (opmerking: een statisch IP-adres is noodzakelijk, DHCP wordt niet ondersteund.)"
          },
          "children": [{
               "id": "comfora_ip",
@@ -3175,8 +2359,8 @@
          {
          "type": "group",
          "label": {
-         "en": "Network setting",
-         "nl": "Netwerk instellingen"
+         "en": "Network setting (note: a static IP-address is required, DHCP is not supported.)",
+         "nl": "Netwerk instellingen (opmerking: een statisch IP-adres is noodzakelijk, DHCP wordt niet ondersteund.)"
          },
          "children": [{
               "id": "emura_ip",
@@ -3338,8 +2522,8 @@
         {
         "type": "group",
         "label": {
-        "en": "Network setting",
-        "nl": "Netwerk instellingen"
+        "en": "Network setting (note: a static IP-address is required, DHCP is not supported.)",
+        "nl": "Netwerk instellingen (opmerking: een statisch IP-adres is noodzakelijk, DHCP wordt niet ondersteund.)"
         },
         "children": [{
              "id": "nexura_ip",
@@ -3450,8 +2634,8 @@
        {
        "type": "group",
        "label": {
-       "en": "Network setting",
-       "nl": "Netwerk instellingen"
+       "en": "Network setting (note: a static IP-address is required, DHCP is not supported.)",
+       "nl": "Netwerk instellingen (opmerking: een statisch IP-adres is noodzakelijk, DHCP wordt niet ondersteund.)"
        },
        "children": [{
             "id": "homekit_ip",

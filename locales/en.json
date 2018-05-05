@@ -1,12 +1,12 @@
 {
     "pair":{
         "start":{
-            "intro":"Enter your Airco's (static) IP address and give it a name.",
+            "intro":"Enter your Airco's IP-address and give it a name. Note: the use of a static IP-address is mandatory, DHCP is not supported.",
             "title":"Daikin equipment settings",
             "error":"An error has occurred, check the just entered IP-address.",
-            "required":"IP address is required.",
+            "required":"IP-address is required.",
             "invalidIP":"Enter a valid IPv4 address.",
-            "ipAddress":"IP address",
+            "ipAddress":"IP-address",
             "deviceName":"Device name",           
             "saveSettings":"Add device",
             "add":"Your settings are being saved now...",
