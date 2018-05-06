@@ -16,8 +16,8 @@
         "climate"
     ],
     "tags": {
-           "en": [ "daikin", "emura", "nextura", "comfora", "airconditioner", "airconditioning", "thermostat", "fan", "homekit", "home" ],
-           "nl": [ "daikin", "emura", "nextura", "comfora", "airconditioner", "airconditioning", "thermostaat", "ventilator", "homekit", "home" ]
+           "en": [ "daikin", "emura", "nextura", "comfora", "Sensira", "Perfera", "Stylish", "airconditioner", "airconditioning", "thermostat", "fan", "homekit", "home" ],
+           "nl": [ "daikin", "emura", "nextura", "comfora", "Sensira", "Perfera", "Stylish", "airconditioner", "airconditioning", "thermostaat", "ventilator", "homekit", "home" ]
      },
     "images": {
       "large": "/assets/images/large.png",
@@ -2087,8 +2087,8 @@
    {
      "id": "comfora",
      "name": {
-       "en": "Comfora",
-       "nl": "Comfora"
+       "en": "Comfora, Sensira, Perfera, Stylish etc.",
+       "nl": "Comfora, Sensira, Perfera, Stylish etc."
      },
      "class": "other",     
      "capabilities": [
