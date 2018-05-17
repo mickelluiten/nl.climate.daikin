@@ -35,9 +35,11 @@ function saveSettings () {
 			},
 			    name: inputDeviceName,
 			    settings: {
-			            	"comfora_ip": inputIPAddress,				
-			            	"interval": 10,
-                            "demomode": true                    
+			            	"comfora_ip": inputIPAddress,
+                            "comfora_adapter": "BRP069Bxx",
+                            "comfora_useGetToPost": true,
+                    	    "comfora_interval": 10,
+                            "comfora_demomode": true                    
 			    }
 		};
 		Homey.emit('manual_add', device, function (err, result) {
@@ -89,13 +91,12 @@ function GetGUID() {
 			</tr>
 			<tr>
 				<td style="width:100px;" data-i18n="pair.start.deviceName">Name</td>
-				<td><input id="deviceName" type="text" value="Comfora" placeholder="Comfora"/></td>
+				<td><input id="deviceName" type="text" value="Sensira" placeholder="Sensira"/></td>
 			</tr>
 		</table>
-		<p>
-		&nbsp;
-	  </p>
+		<p>&nbsp;</p>
+        <p style="background-color:#00FF00;" data-i18n="pair.start.adaptersensira">Adapter</p>
 <fieldset>
     <button class="button" data-i18n="pair.start.saveSettings" id="save" onclick="saveSettings()">Save</button>
 </fieldset>
-<p class="err-msg" style="color: #ff6300;"></p>
+<p class="err-msg" style="color:#ff6347;"></p>

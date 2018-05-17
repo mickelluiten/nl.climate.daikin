@@ -20,12 +20,18 @@ Note: Do not use the MASTER branch for now, what is available in the development
 ## Demo mode (upon pairing the demo mode is by default turned ON !!)
 Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows.
 
+## IP-address conciderations
+To prevent unreliable behavior of this application the use of a fixed (static) IP-address is required.
+
+## WiFi adapter models
+Daikin just recently introduced a new model WiFi adapter (BRP069B--) which uses a different way to sent commands to the airconditioner. During paring the app will pair your airconditioner with model specific default settings for the WiFi adapter its firmware. In some case you have to change these default settings, this can be done in the device settings menu.
+
 ## To-do (in random order)
-- crush more bugs (and try not to introduce new ones...)
-- improve and extend "error handling"
+Nothing on the to-do list for now.
 
 ## Credits
-App uses icons that where created by http://www.freepik.com from https://www.flaticon.com is licensed by Creative Commons.
+- This Homey (by Athom) App is based on the great work of the unofficial Daikin API documentation project (https://github.com/ael-code/daikin-control) as well as the Apollon77 Daikin Controller library (https://github.com/Apollon77/daikin-controller).
+- App uses icons that where created by http://www.freepik.com from https://www.flaticon.com is licensed by Creative Commons.
 
 ## Donations
 If you like the app, consider buying me a cup of coffee!  
@@ -73,3 +79,5 @@ If you like the app, consider buying me a cup of coffee!
 - 29-APR-18: Apollon77 fixed the error himself (fix#6), Daikin AI upgraded to the latest Daikin Controller lib version v1.1.2 (from v1.1.0)
 - 29-APR-18: Further optimized the error handling in the Daikin AI app itself when making calls to the Apollon77 lib.
 - 05-MAY-18: Removed model Inverter to decomplex things making the app easier to maintain in the furure.
+- 06-MAY-18: Comfora driver changed into a multi model driver.
+- 17-MAY-18: Added support for the new model WiFi controller (BRP069B--).

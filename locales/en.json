@@ -10,7 +10,11 @@
             "deviceName":"Device name",           
             "saveSettings":"Add device",
             "add":"Your settings are being saved now...",
-            "deviceInterval":"Interval"   
+            "deviceInterval":"Interval",
+            "adaptersensira":"Default (BRP069B--, FW < 1.4.3) adapter settings will be applied!! As necessary change these after pairing is completed.",
+            "adapteremura":"Default (BRP069A--, FW >= 1.4.3) adapter settings will be applied!! As necessary change these after pairing is completed.",
+            "adapternexura":"Default (BRP069A--, FW >= 1.4.3) adapter settings will be applied!! As necessary change these after pairing is completed.",
+            "adapterhomekit":"Default (BRP069A--, FW >= 1.4.3) adapter settings will be applied!! As necessary change these after pairing is completed."
         }
     }
 }

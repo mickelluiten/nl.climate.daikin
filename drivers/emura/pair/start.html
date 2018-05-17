@@ -35,9 +35,11 @@ function saveSettings () {
 			},
 			    name: inputDeviceName,
 			    settings: {
-			            	"emura_ip": inputIPAddress,				
-			            	"interval": 10,
-                            "demomode": true                    
+			            	"emura_ip": inputIPAddress,
+                            "emura_adapter": "BRP069Axx",
+                            "emura_useGetToPost": false,			
+			            	"emura_interval": 10,
+                            "emura_demomode": true                    
 			    }
 		};
 		Homey.emit('manual_add', device, function (err, result) {
@@ -92,10 +94,9 @@ function GetGUID() {
 				<td><input id="deviceName" type="text" value="Emura 2" placeholder="Emura 2"/></td>
 			</tr>
 		</table>
-		<p>
-		&nbsp;
-	  </p>
+		<p>&nbsp;</p>
+        <p style="background-color:#00FF00;" data-i18n="pair.start.adapteremura">Adapter</p>
 <fieldset>
     <button class="button" data-i18n="pair.start.saveSettings" id="save" onclick="saveSettings()">Save</button>
 </fieldset>
-<p class="err-msg" style="color: #ff6300;"></p>
+<p class="err-msg" style="color:#ff6347;"></p>

@@ -41,7 +41,7 @@ class ComforaDevice extends Device {
     onDeleted() {
         this.log('Comfora device deleted');
         
-        this.setSettings({comfora_ip: "0.0.0.0", interval: 0})
+        this.setSettings({comfora_ip: "0.0.0.0", comfora_interval: 0})
             .then(this.log('settings for Comfora are cleared'));
             
         this.comforaIsDeleted = true;
@@ -155,13 +155,13 @@ class ComforaDevice extends Device {
 
         var settings = this.getSettings();
         var comfora_ip = settings.comfora_ip; this.log('Comfora ip-address: ', comfora_ip);        
-        var interval = settings.interval; this.log('Refresh interval: ', interval);
+        var comfora_interval = settings.comfora_interval; this.log('Refresh interval: ', comfora_interval);
 
         var currentmode = this.getState().airco_mode_comfora;   
         if (currentmode != "off") this.deviceRequestControl(comfora_ip); // refresh only when the airco is powered on...             
 		this.deviceRequestSensor(comfora_ip);                            // always refresh sensors...
      
-        setTimeout(this.refreshData.bind(this), interval * 1000);
+        setTimeout(this.refreshData.bind(this), comfora_interval * 1000);
         
     }
 
@@ -192,17 +192,18 @@ class ComforaDevice extends Device {
         
     //---- mode
         var airco_modes_comfora = [ "auto", "auto1", "dehumid", "cooling", "heating", "off", "fan", "auto2" ];                        
-        const amode = Number(control_info[2]);
+        var amode = Number(control_info[2]);
+        // do not differentiate the modes: auto1 and auto2
+        if ((amode == 1) || (amode == 7)) amode = 0 ;
         const airco_mode_comfora = airco_modes_comfora[amode];
         const capability_mode = this.getCapabilityValue('airco_mode_comfora');		
         this.log('mode:', airco_mode_comfora);
         this.log('capability_mode:', capability_mode);
-        // we do not differentiate the modes: auto1 and auto2
-        if ((amode != 1 && amode != 7) || (capability_mode != "off")) this.setCapabilityValue('airco_mode_comfora', airco_mode_comfora);
+        if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_comfora', airco_mode_comfora);
         
     //---- temperature
 		const atemp = Number(control_info[4]);
-        this.log('temperature °C:', atemp);  
+        this.log('target temperature °C:', atemp);  
         this.setCapabilityValue('set_temperature', atemp);
         
     //---- humidity
@@ -302,8 +303,16 @@ class ComforaDevice extends Device {
 
        var settings = this.getSettings();
        var comfora_ip = settings.comfora_ip;
+       var comfora_useGetToPost = settings.comfora_useGetToPost;
+       var comfora_adapter = settings.comfora_adapter;
+       var comfora_options = {};
+       this.log('firmware < v1.4.3 (then useGetToPost):', comfora_useGetToPost);
+       this.log('Adapter model:', comfora_adapter)
+       
+       if (comfora_useGetToPost) comfora_options = {'useGetToPost': true};
+       else comfora_options = {'useGetToPost': false};
               
-       var daikin = new DaikinAC(comfora_ip, options, function(err) {
+       var daikin = new DaikinAC(comfora_ip, comfora_options, function(err) {
 
            daikin.setACControlInfo({"pow":pow});           
        });
@@ -316,9 +325,17 @@ class ComforaDevice extends Device {
 
        var settings = this.getSettings();
        var comfora_ip = settings.comfora_ip;
-       var demo_mode = settings.demomode;
+       var demo_mode = settings.comfora_demomode;
+       var comfora_useGetToPost = settings.comfora_useGetToPost;
+       var comfora_adapter = settings.comfora_adapter;
+       var comfora_options = {};
+       this.log('firmware < v1.4.3 (then useGetToPost):', comfora_useGetToPost);
+       this.log('Adapter model:', comfora_adapter)
        
-       util.daikinModeControl(airco_mode_comfora, comfora_ip, demo_mode);
+       if (comfora_useGetToPost) comfora_options = {'useGetToPost': true};
+       else comfora_options = {'useGetToPost': false};
+       
+       util.daikinModeControl(airco_mode_comfora, comfora_ip, comfora_options, demo_mode);
       
     }  
 
@@ -328,8 +345,16 @@ class ComforaDevice extends Device {
     
        var settings = this.getSettings();
        var comfora_ip = settings.comfora_ip;
+       var comfora_useGetToPost = settings.comfora_useGetToPost;
+       var comfora_adapter = settings.comfora_adapter;
+       var comfora_options = {};
+       this.log('firmware < v1.4.3 (then useGetToPost):', comfora_useGetToPost);
+       this.log('Adapter model:', comfora_adapter)
        
-       util.daikinFanRateControl(fan_rate, comfora_ip);
+       if (comfora_useGetToPost) comfora_options = {'useGetToPost': true};
+       else comfora_options = {'useGetToPost': false};
+       
+       util.daikinFanRateControl(fan_rate, comfora_ip, comfora_options);
        
     }  
 
@@ -339,8 +364,16 @@ class ComforaDevice extends Device {
     
        var settings = this.getSettings();
        var comfora_ip = settings.comfora_ip;
+       var comfora_useGetToPost = settings.comfora_useGetToPost;
+       var comfora_adapter = settings.comfora_adapter;
+       var comfora_options = {};
+       this.log('firmware < v1.4.3 (then useGetToPost):', comfora_useGetToPost);
+       this.log('Adapter model:', comfora_adapter)
        
-       util.daikinFanDirControl(fan_direction, comfora_ip);
+       if (comfora_useGetToPost) comfora_options = {'useGetToPost': true};
+       else comfora_options = {'useGetToPost': false};
+       
+       util.daikinFanDirControl(fan_direction, comfora_ip, comfora_options);
       
     }  
        
@@ -350,8 +383,17 @@ class ComforaDevice extends Device {
 
        var settings = this.getSettings();
        var comfora_ip = settings.comfora_ip;
+       var comfora_useGetToPost = settings.comfora_useGetToPost;
+       var comfora_adapter = settings.comfora_adapter;
+       var comfora_options = {};
+       
+       this.log('firmware < v1.4.3 (then useGetToPost):', comfora_useGetToPost);
+       this.log('Adapter model:', comfora_adapter)
+       
+       if (comfora_useGetToPost) comfora_options = {'useGetToPost': true};
+       else comfora_options = {'useGetToPost': false};
 
-       util.daikinTempControl(atemp, comfora_ip);
+       util.daikinTempControl(atemp, comfora_ip, comfora_options);
 
     }
 

@@ -10,7 +10,11 @@
             "deviceName":"Naam",
             "saveSettings":"Voeg toe",
             "add":"Uw instellingen worden nu opgeslagen...",
-            "deviceInterval":"Interval"          
+            "deviceInterval":"Interval",
+            "adaptersensira":"Standaard (BRP069B--, FW < 1.4.3) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond.",
+            "adapteremura":"Standaard (BRP069A--, FW >= 1.4.3) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond.",
+            "adapternexura":"Standaard (BRP069A--, FW >= 1.4.3) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond.",
+            "adapterhomekit":"Standaard (BRP069A--, FW >= 1.4.3) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond."
         }
     }
 }

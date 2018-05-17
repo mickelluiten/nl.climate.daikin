@@ -37,7 +37,7 @@ class HomeKitDevice extends Device {
     onDeleted() {
         this.log('HomeKit device deleted');
         
-        this.setSettings({homekit_ip: "0.0.0.0", interval: 0})
+        this.setSettings({homekit_ip: "0.0.0.0", homekit_interval: 0})
             .then(this.log('settings for HomeKit are cleared'));
             
         this.homekitIsDeleted = true;
@@ -115,13 +115,13 @@ class HomeKitDevice extends Device {
 
         var settings = this.getSettings();
         var homekit_ip = settings.homekit_ip; this.log('HomeKit ip-address: ', homekit_ip);        
-        var interval = settings.interval; this.log('Refresh interval: ', interval);
+        var homekit_interval = settings.homekit_interval; this.log('Refresh interval: ', homekit_interval);
 
         var currentmode = this.getState().thermostat_mode;   
         if (currentmode != "off") this.deviceRequestControl(homekit_ip); // refresh only when the airco is powered on...             
 		this.deviceRequestSensor(homekit_ip);                            // always refresh sensors...
      
-        setTimeout(this.refreshData.bind(this), interval * 1000);
+        setTimeout(this.refreshData.bind(this), homekit_interval * 1000);
         
     }
 
@@ -152,17 +152,20 @@ class HomeKitDevice extends Device {
         
     //---- mode
         var airco_modes_homekit = [ "auto", "auto1", "dehumid", "cool", "heat", "off", "fan", "auto2" ];                        
-        const amode = Number(control_info[2]);
+        var amode = Number(control_info[2]);
+        // do not differentiate the modes: auto1 and auto2
+        if ((amode == 1) || (amode == 7)) amode = 0 ;
+        // Homekit does not support the modes: dehumid and fan        
+        if ((amode == 2) || (amode == 6)) amode = this.getCapabilityValue('thermostat_mode'); // we stick to the current thermostat_mode
         const thermostat_mode = airco_modes_homekit[amode];
         const capability_mode = this.getCapabilityValue('thermostat_mode');		
         this.log('mode:', thermostat_mode);
         this.log('capability_mode:', capability_mode);
-        // we do not differentiate the modes: auto1, auto2, dehumid and fan as these are not supported by HomeKit
-        if ((amode != 1 && amode != 2 && amode != 6 && amode != 7) || (capability_mode != "off")) this.setCapabilityValue('thermostat_mode', thermostat_mode);
+        if ((capability_mode != "off")) this.setCapabilityValue('thermostat_mode', thermostat_mode);
         
     //---- temperature
 		const atemp = Number(control_info[4]);
-        this.log('temperature °C:', atemp);  
+        this.log('target temperature °C:', atemp);  
         this.setCapabilityValue('target_temperature', atemp);
     
 		return Promise.resolve();
@@ -187,8 +190,16 @@ class HomeKitDevice extends Device {
 
        var settings = this.getSettings();
        var homekit_ip = settings.homekit_ip;
+       var homekit_useGetToPost = settings.homekit_useGetToPost;
+       var homekit_adapter = settings.homekit_adapter;
+       var homekit_options = {};
+       this.log('firmware < v1.4.3 (then useGetToPost):', homekit_useGetToPost);
+       this.log('Adapter model:', homekit_adapter)
+       
+       if (homekit_useGetToPost) homekit_options = {'useGetToPost': true};
+       else homekit_options = {'useGetToPost': false};
               
-       var daikin = new DaikinAC(homekit_ip, options, function(err) {
+       var daikin = new DaikinAC(homekit_ip, homekit_options, function(err) {
 
            daikin.setACControlInfo({"pow":pow});           
        });
@@ -201,9 +212,17 @@ class HomeKitDevice extends Device {
 
        var settings = this.getSettings();
        var homekit_ip = settings.homekit_ip;
-       var demo_mode = settings.demomode;
+       var demo_mode = settings.homekit_demomode;
+       var homekit_useGetToPost = settings.homekit_useGetToPost;
+       var homekit_adapter = settings.homekit_adapter;
+       var homekit_options = {};
+       this.log('firmware < v1.4.3 (then useGetToPost):', homekit_useGetToPost);
+       this.log('Adapter model:', homekit_adapter)
        
-       util.daikinModeControl(thermostat_mode, homekit_ip, demo_mode);
+       if (homekit_useGetToPost) homekit_options = {'useGetToPost': true};
+       else homekit_options = {'useGetToPost': false};
+       
+       util.daikinModeControl(thermostat_mode, homekit_ip, homekit_options, demo_mode);
       
     }  
        
@@ -213,8 +232,16 @@ class HomeKitDevice extends Device {
 
        var settings = this.getSettings();
        var homekit_ip = settings.homekit_ip;
+       var homekit_useGetToPost = settings.homekit_useGetToPost;
+       var homekit_adapter = settings.homekit_adapter;
+       var homekit_options = {};
+       this.log('firmware < v1.4.3 (then useGetToPost):', homekit_useGetToPost);
+       this.log('Adapter model:', homekit_adapter)
+       
+       if (homekit_useGetToPost) homekit_options = {'useGetToPost': true};
+       else homekit_options = {'useGetToPost': false};
 
-       util.daikinTempControl(atemp, homekit_ip);
+       util.daikinTempControl(atemp, homekit_ip, homekit_options);
 
     }
 

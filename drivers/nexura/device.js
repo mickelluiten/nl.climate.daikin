@@ -41,7 +41,7 @@ class NexuraDevice extends Device {
     onDeleted() {
         this.log('Nexura device deleted');
         
-        this.setSettings({nexura_ip: "0.0.0.0", interval: 0})
+        this.setSettings({nexura_ip: "0.0.0.0", nexura_interval: 0})
             .then(this.log('settings for Nexura are cleared'));
             
         this.nexuraIsDeleted = true;
@@ -155,13 +155,13 @@ class NexuraDevice extends Device {
 
         var settings = this.getSettings();
         var nexura_ip = settings.nexura_ip; this.log('Nexura ip-address: ', nexura_ip);        
-        var interval = settings.interval; this.log('Refresh interval: ', interval);
+        var nexura_interval = settings.nexura_interval; this.log('Refresh interval: ', nexura_interval);
 
         var currentmode = this.getState().airco_mode_nexura;   
         if (currentmode != "off") this.deviceRequestControl(nexura_ip); // refresh only when the airco is powered on...             
 		this.deviceRequestSensor(nexura_ip);                            // always refresh sensors...
      
-        setTimeout(this.refreshData.bind(this), interval * 1000);
+        setTimeout(this.refreshData.bind(this), nexura_interval * 1000);
         
     }
 
@@ -192,17 +192,18 @@ class NexuraDevice extends Device {
 
     //---- mode
         var airco_modes_nexura = [ "auto", "auto1", "dehumid", "cooling", "heating", "off", "fan", "auto2" ];                        
-        const amode = Number(control_info[2]);
+        var amode = Number(control_info[2]);
+        // do not differentiate the modes: auto1 and auto2
+        if ((amode == 1) || (amode == 7)) amode = 0 ;
         const airco_mode_nexura = airco_modes_nexura[amode];	
         const capability_mode = this.getCapabilityValue('airco_mode_nexura');
         this.log('mode:', airco_mode_nexura);
         this.log('capability_mode:', capability_mode);
-        // we do not differentiate the modes: auto1 and auto2
-        if ((amode != 1 && amode != 7) || (capability_mode != "off")) this.setCapabilityValue('airco_mode_nexura', airco_mode_nexura);
+        if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_nexura', airco_mode_nexura);
         
     //---- temperature
 		const atemp = Number(control_info[4]);
-        this.log('temperature °C:', atemp);  
+        this.log('target temperature °C:', atemp);  
         this.setCapabilityValue('set_temperature', atemp);
         
     //---- humidity
@@ -302,8 +303,16 @@ class NexuraDevice extends Device {
 
        var settings = this.getSettings();
        var nexura_ip = settings.nexura_ip;
+       var nexura_useGetToPost = settings.nexura_useGetToPost;
+       var nexura_adapter = settings.nexura_adapter;
+       var nexura_options = {};
+       this.log('firmware < v1.4.3 (then useGetToPost):', nexura_useGetToPost);
+       this.log('Adapter model:', nexura_adapter)
+       
+       if (nexura_useGetToPost) nexura_options = {'useGetToPost': true};
+       else nexura_options = {'useGetToPost': false};
               
-       var daikin = new DaikinAC(nexura_ip, options, function(err) {
+       var daikin = new DaikinAC(nexura_ip, nexura_options, function(err) {
 
            daikin.setACControlInfo({"pow":pow});           
        });
@@ -316,9 +325,17 @@ class NexuraDevice extends Device {
 
        var settings = this.getSettings();
        var nexura_ip = settings.nexura_ip;
-       var demo_mode = settings.demomode;
+       var demo_mode = settings.nexura_demomode;
+       var nexura_useGetToPost = settings.nexura_useGetToPost;
+       var nexura_adapter = settings.nexura_adapter;
+       var nexura_options = {};
+       this.log('firmware < v1.4.3 (then useGetToPost):', nexura_useGetToPost);
+       this.log('Adapter model:', nexura_adapter)
        
-       util.daikinModeControl(airco_mode_nexura, nexura_ip, demo_mode);
+       if (nexura_useGetToPost) nexura_options = {'useGetToPost': true};
+       else nexura_options = {'useGetToPost': false};
+       
+       util.daikinModeControl(airco_mode_nexura, nexura_ip, nexura_options, demo_mode);
       
     }  
 
@@ -328,8 +345,16 @@ class NexuraDevice extends Device {
     
        var settings = this.getSettings();
        var nexura_ip = settings.nexura_ip;
+       var nexura_useGetToPost = settings.nexura_useGetToPost;
+       var nexura_adapter = settings.nexura_adapter;
+       var nexura_options = {};
+       this.log('firmware < v1.4.3 (then useGetToPost):', nexura_useGetToPost);
+       this.log('Adapter model:', nexura_adapter)
        
-       util.daikinFanRateControl(fan_rate, nexura_ip);
+       if (nexura_useGetToPost) nexura_options = {'useGetToPost': true};
+       else nexura_options = {'useGetToPost': false};
+       
+       util.daikinFanRateControl(fan_rate, nexura_ip, nexura_options);
        
     }  
 
@@ -339,8 +364,16 @@ class NexuraDevice extends Device {
     
        var settings = this.getSettings();
        var nexura_ip = settings.nexura_ip;
+       var nexura_useGetToPost = settings.nexura_useGetToPost;
+       var nexura_adapter = settings.nexura_adapter;
+       var nexura_options = {};
+       this.log('firmware < v1.4.3 (then useGetToPost):', nexura_useGetToPost);
+       this.log('Adapter model:', nexura_adapter)
        
-       util.daikinFanDirControl(fan_direction, nexura_ip);
+       if (nexura_useGetToPost) nexura_options = {'useGetToPost': true};
+       else nexura_options = {'useGetToPost': false};
+       
+       util.daikinFanDirControl(fan_direction, nexura_ip, nexura_options);
       
     }  
        
@@ -350,8 +383,16 @@ class NexuraDevice extends Device {
 
        var settings = this.getSettings();
        var nexura_ip = settings.nexura_ip;
+       var nexura_useGetToPost = settings.nexura_useGetToPost;
+       var nexura_adapter = settings.nexura_adapter;
+       var nexura_options = {};
+       this.log('firmware < v1.4.3 (then useGetToPost):', nexura_useGetToPost);
+       this.log('Adapter model:', nexura_adapter)
+       
+       if (nexura_useGetToPost) nexura_options = {'useGetToPost': true};
+       else nexura_options = {'useGetToPost': false};
 
-       util.daikinTempControl(atemp, nexura_ip);
+       util.daikinTempControl(atemp, nexura_ip, nexura_options);
 
     }
 

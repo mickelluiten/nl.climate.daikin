@@ -41,7 +41,7 @@ class EmuraDevice extends Device {
     onDeleted() {
         this.log('Emura device deleted');
         
-        this.setSettings({emura_ip: "0.0.0.0", interval: 0})
+        this.setSettings({emura_ip: "0.0.0.0", emura_interval: 0})
             .then(this.log('settings for Emura are cleared'));
             
         this.emuraIsDeleted = true;
@@ -155,13 +155,13 @@ class EmuraDevice extends Device {
 
         var settings = this.getSettings();
         var emura_ip = settings.emura_ip; this.log('Emura ip-address: ', emura_ip);        
-        var interval = settings.interval; this.log('Refresh interval: ', interval);
+        var emura_interval = settings.emura_interval; this.log('Refresh interval: ', emura_interval);
 
         var currentmode = this.getState().airco_mode_emura;   
         if (currentmode != "off") this.deviceRequestControl(emura_ip); // refresh only when the airco is powered on...             
 		this.deviceRequestSensor(emura_ip);                            // always refresh sensors...
      
-        setTimeout(this.refreshData.bind(this), interval * 1000);
+        setTimeout(this.refreshData.bind(this), emura_interval * 1000);
         
     }
 
@@ -192,17 +192,18 @@ class EmuraDevice extends Device {
         
     //---- mode
         var airco_modes_emura = [ "auto", "auto1", "dehumid", "cooling", "heating", "off", "fan", "auto2" ];                        
-        const amode = Number(control_info[2]);
+        var amode = Number(control_info[2]);
+        // do not differentiate the modes: auto1 and auto2
+        if ((amode == 1) || (amode == 7)) amode = 0 ;
         const airco_mode_emura = airco_modes_emura[amode];
         const capability_mode = this.getCapabilityValue('airco_mode_emura');		
         this.log('mode:', airco_mode_emura);
         this.log('capability_mode:', capability_mode);
-        // we do not differentiate the modes: auto1 and auto2
-        if ((amode != 1 && amode != 7) || (capability_mode != "off")) this.setCapabilityValue('airco_mode_emura', airco_mode_emura);
+        if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_emura', airco_mode_emura);
         
     //---- temperature
 		const atemp = Number(control_info[4]);
-        this.log('temperature °C:', atemp);  
+        this.log('target temperature °C:', atemp);  
         this.setCapabilityValue('set_temperature', atemp);
         
     //---- humidity
@@ -302,8 +303,16 @@ class EmuraDevice extends Device {
 
        var settings = this.getSettings();
        var emura_ip = settings.emura_ip;
+       var emura_useGetToPost = settings.emura_useGetToPost;
+       var emura_adapter = settings.emura_adapter;
+       var emura_options = {};
+       this.log('firmware < v1.4.3 (then useGetToPost):', emura_useGetToPost);
+       this.log('Adapter model:', emura_adapter)
+       
+       if (emura_useGetToPost) emura_options = {'useGetToPost': true};
+       else emura_options = {'useGetToPost': false};
               
-       var daikin = new DaikinAC(emura_ip, options, function(err) {
+       var daikin = new DaikinAC(emura_ip, emura_options, function(err) {
 
            daikin.setACControlInfo({"pow":pow});           
        });
@@ -316,9 +325,17 @@ class EmuraDevice extends Device {
 
        var settings = this.getSettings();
        var emura_ip = settings.emura_ip;
-       var demo_mode = settings.demomode;
+       var demo_mode = settings.emura_demomode;
+       var emura_useGetToPost = settings.emura_useGetToPost;
+       var emura_adapter = settings.emura_adapter;
+       var emura_options = {};
+       this.log('firmware < v1.4.3 (then useGetToPost):', emura_useGetToPost);
+       this.log('Adapter model:', emura_adapter)
        
-       util.daikinModeControl(airco_mode_emura, emura_ip, demo_mode);
+       if (emura_useGetToPost) emura_options = {'useGetToPost': true};
+       else emura_options = {'useGetToPost': false};
+       
+       util.daikinModeControl(airco_mode_emura, emura_ip, emura_options, demo_mode);
       
     }  
 
@@ -328,8 +345,16 @@ class EmuraDevice extends Device {
     
        var settings = this.getSettings();
        var emura_ip = settings.emura_ip;
+       var emura_useGetToPost = settings.emura_useGetToPost;
+       var emura_adapter = settings.emura_adapter;
+       var emura_options = {};
+       this.log('firmware < v1.4.3 (then useGetToPost):', emura_useGetToPost);
+       this.log('Adapter model:', emura_adapter)
        
-       util.daikinFanRateControl(fan_rate, emura_ip);
+       if (emura_useGetToPost) emura_options = {'useGetToPost': true};
+       else emura_options = {'useGetToPost': false};
+       
+       util.daikinFanRateControl(fan_rate, emura_ip, emura_options);
        
     }  
 
@@ -339,8 +364,16 @@ class EmuraDevice extends Device {
     
        var settings = this.getSettings();
        var emura_ip = settings.emura_ip;
+       var emura_useGetToPost = settings.emura_useGetToPost;
+       var emura_adapter = settings.emura_adapter;
+       var emura_options = {};
+       this.log('firmware < v1.4.3 (then useGetToPost):', emura_useGetToPost);
+       this.log('Adapter model:', emura_adapter)
        
-       util.daikinFanDirControl(fan_direction, emura_ip);
+       if (emura_useGetToPost) emura_options = {'useGetToPost': true};
+       else emura_options = {'useGetToPost': false};
+       
+       util.daikinFanDirControl(fan_direction, emura_ip, emura_options);
       
     }  
        
@@ -350,8 +383,16 @@ class EmuraDevice extends Device {
 
        var settings = this.getSettings();
        var emura_ip = settings.emura_ip;
+       var emura_useGetToPost = settings.emura_useGetToPost;
+       var emura_adapter = settings.emura_adapter;
+       var emura_options = {};
+       this.log('firmware < v1.4.3 (then useGetToPost):', emura_useGetToPost);
+       this.log('Adapter model:', emura_adapter)
+       
+       if (emura_useGetToPost) emura_options = {'useGetToPost': true};
+       else emura_options = {'useGetToPost': false};
 
-       util.daikinTempControl(atemp, emura_ip);
+       util.daikinTempControl(atemp, emura_ip, emura_options);
 
     }
 

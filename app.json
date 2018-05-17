@@ -1,6 +1,6 @@
 {
     "id": "nl.climate.daikin",
-	"version": "1.0.1",
+	"version": "1.0.2",
     "compatibility": ">=1.5.3",
     "sdk": 2,
     "name": {
@@ -16,8 +16,8 @@
         "climate"
     ],
     "tags": {
-           "en": [ "daikin", "emura", "nextura", "comfora", "Sensira", "Perfera", "Stylish", "airconditioner", "airconditioning", "thermostat", "fan", "homekit", "home" ],
-           "nl": [ "daikin", "emura", "nextura", "comfora", "Sensira", "Perfera", "Stylish", "airconditioner", "airconditioning", "thermostaat", "ventilator", "homekit", "home" ]
+           "en": [ "Daikin", "Emura", "Nextura", "Comfora", "Ururu Sarara", "Ururu", "Sarara", "Stylish", "Perfera", "Sensira", "airconditioner", "airconditioning", "thermostat", "fan", "homekit", "home" ],
+           "nl": [ "Daikin", "Emura", "Nextura", "Comfora", "Ururu Sarara", "Ururu", "Sarara", "Stylish", "Perfera", "Sensira", "airconditioner", "airconditioning", "thermostaat", "ventilator", "homekit", "home" ]
      },
     "images": {
       "large": "/assets/images/large.png",
@@ -2087,8 +2087,8 @@
    {
      "id": "comfora",
      "name": {
-       "en": "Comfora, Sensira, Perfera, Stylish etc.",
-       "nl": "Comfora, Sensira, Perfera, Stylish etc."
+       "en": "Comfora, Sensira, Ururu Sarara, Perfera, Stylish etc.",
+       "nl": "Comfora, Sensira, Ururu Sarara, Perfera, Stylish etc."
      },
      "class": "other",     
      "capabilities": [
@@ -2217,7 +2217,7 @@
       "nl": "Applicatie verversen (alle instellingen in seconden)"
       },
       "children": [{
-           "id": "interval",
+           "id": "comfora_interval",
            "type": "number",
            "label": {
            "en": "Polling interval",
@@ -2233,11 +2233,51 @@
      {
      "type": "group",
      "label": {
-     "en": "Demo mode (power OFF no matter what mode is selected)",
-     "nl": "Demonstratie mode (airco is altijd uitgeschakeld ongeacht de gekozen modus)"
+     "en": "WiFi adapter type and firmware version",
+     "nl": "WiFi adapter type and firmware version"
      },
      "children": [{
-          "id": "demomode",
+          "id": "comfora_adapter",
+          "type": "radio",
+          "label": {
+          "en": "Model adapter",
+          "nl": "Model adapter"
+          },
+          "value": "BRP069Bxx",
+          "values": [
+               {
+                   "id": "BRP069Axx",
+                   "label": {
+                       "en": "Model BRP069A--",
+                       "nl": "Model BRP069A--"
+                   }
+               },
+               {
+                   "id": "BRP069Bxx",
+                   "label": {
+                       "en": "Model BRP069B--",
+                       "nl": "Model BRP069B--"
+                   }
+                }
+          ]
+      },
+      {   "id": "comfora_useGetToPost",
+          "type": "checkbox",
+          "label": {
+          "en": "Firmware less than v1.4.3",
+          "nl": "Firmware kleiner dan v1.4.3"
+          },
+          "value": false
+       }]
+    },
+     {
+     "type": "group",
+     "label": {
+     "en": "Demo mode (when checked; power OFF no matter which mode is selected)",
+     "nl": "Demonstratie mode (wanneer aangekruist; airco is altijd uitgeschakeld ongeacht de gekozen modus)"
+     },
+     "children": [{
+          "id": "comfora_demomode",
           "type": "checkbox",
           "label": {
           "en": "Demo mode",
@@ -2380,7 +2420,7 @@
       "nl": "Applicatie verversen (alle instellingen in seconden)"
       },
       "children": [{
-           "id": "interval",
+           "id": "emura_interval",
            "type": "number",
            "label": {
            "en": "Polling interval",
@@ -2396,11 +2436,51 @@
      {
      "type": "group",
      "label": {
-     "en": "Demo mode (power OFF no matter what mode is selected)",
-     "nl": "Demonstratie mode (airco is altijd uitgeschakeld ongeacht de gekozen modus)"
+     "en": "WiFi adapter type and firmware version",
+     "nl": "WiFi adapter type and firmware version"
      },
      "children": [{
-          "id": "demomode",
+          "id": "emura_adapter",
+          "type": "radio",
+          "label": {
+          "en": "Model adapter",
+          "nl": "Model adapter"
+          },
+          "value": "BRP069Axx",
+          "values": [
+               {
+                   "id": "BRP069Axx",
+                   "label": {
+                       "en": "Model BRP069A--",
+                       "nl": "Model BRP069A--"
+                   }
+               },
+               {
+                   "id": "BRP069Bxx",
+                   "label": {
+                       "en": "Model BRP069B--",
+                       "nl": "Model BRP069B--"
+                   }
+                }
+          ]
+      },
+      {   "id": "emura_useGetToPost",
+          "type": "checkbox",
+          "label": {
+          "en": "Firmware less than v1.4.3",
+          "nl": "Firmware kleiner dan v1.4.3"
+          },
+          "value": true
+       }]
+    },
+     {
+     "type": "group",
+     "label": {
+     "en": "Demo mode (when checked; power OFF no matter which mode is selected)",
+     "nl": "Demonstratie mode (wanneer aangekruist; airco is altijd uitgeschakeld ongeacht de gekozen modus)"
+     },
+     "children": [{
+          "id": "emura_demomode",
           "type": "checkbox",
           "label": {
           "en": "Demo mode",
@@ -2543,7 +2623,7 @@
      "nl": "Applicatie verversen (alle instellingen in seconden)"
      },
      "children": [{
-          "id": "interval",
+          "id": "nexura_interval",
           "type": "number",
           "label": {
           "en": "Polling interval",
@@ -2559,11 +2639,51 @@
     {
     "type": "group",
     "label": {
-    "en": "Demo mode (power OFF no matter what mode is selected)",
-    "nl": "Demonstratie mode (airco is altijd uitgeschakeld ongeacht de gekozen modus)"
+    "en": "WiFi adapter type and firmware version",
+    "nl": "WiFi adapter type and firmware version"
     },
     "children": [{
-         "id": "demomode",
+         "id": "nexura_adapter",
+         "type": "radio",
+         "label": {
+         "en": "Model adapter",
+         "nl": "Model adapter"
+         },
+         "value": "BRP069Axx",
+         "values": [
+              {
+                  "id": "BRP069Axx",
+                  "label": {
+                      "en": "Model BRP069A--",
+                      "nl": "Model BRP069A--"
+                  }
+              },
+              {
+                  "id": "BRP069Bxx",
+                  "label": {
+                      "en": "Model BRP069B--",
+                      "nl": "Model BRP069B--"
+                  }
+               }
+         ]
+     },
+     {   "id": "nexura_useGetToPost",
+         "type": "checkbox",
+         "label": {
+         "en": "Firmware less than v1.4.3",
+         "nl": "Firmware kleiner dan v1.4.3"
+         },
+         "value": true
+      }]
+   },
+    {
+    "type": "group",
+    "label": {
+    "en": "Demo mode (when checked; power OFF no matter which mode is selected)",
+    "nl": "Demonstratie mode (wanneer aangekruist; airco is altijd uitgeschakeld ongeacht de gekozen modus)"
+    },
+    "children": [{
+         "id": "nexura_demomode",
          "type": "checkbox",
          "label": {
          "en": "Demo mode",
@@ -2655,7 +2775,7 @@
     "nl": "Applicatie verversen (alle instellingen in seconden)"
     },
     "children": [{
-         "id": "interval",
+         "id": "homekit_interval",
          "type": "number",
          "label": {
          "en": "Polling interval",
@@ -2671,11 +2791,51 @@
    {
    "type": "group",
    "label": {
-   "en": "Demo mode (power OFF no matter what mode is selected)",
-   "nl": "Demonstratie mode (airco is altijd uitgeschakeld ongeacht de gekozen modus)"
+   "en": "WiFi adapter type and firmware version",
+   "nl": "WiFi adapter type and firmware version"
    },
    "children": [{
-        "id": "demomode",
+        "id": "homekit_adapter",
+        "type": "radio",
+        "label": {
+        "en": "Model adapter",
+        "nl": "Model adapter"
+        },
+        "value": "BRP069Axx",
+        "values": [
+             {
+                 "id": "BRP069Axx",
+                 "label": {
+                     "en": "Model BRP069A--",
+                     "nl": "Model BRP069A--"
+                 }
+             },
+             {
+                 "id": "BRP069Bxx",
+                 "label": {
+                     "en": "Model BRP069B--",
+                     "nl": "Model BRP069B--"
+                 }
+              }
+        ]
+    },
+    {   "id": "homekit_useGetToPost",
+        "type": "checkbox",
+        "label": {
+        "en": "Firmware less than v1.4.3",
+        "nl": "Firmware kleiner dan v1.4.3"
+        },
+        "value": true
+     }]
+   },
+   {
+   "type": "group",
+   "label": {
+   "en": "Demo mode (when checked; power OFF no matter which mode is selected)",
+   "nl": "Demonstratie mode (wanneer aangekruist; airco is altijd uitgeschakeld ongeacht de gekozen modus)"
+   },
+   "children": [{
+        "id": "homekit_demomode",
         "type": "checkbox",
         "label": {
         "en": "Demo mode",
