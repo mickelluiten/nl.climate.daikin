@@ -81,3 +81,4 @@ If you like the app, consider buying me a cup of coffee!
 - 05-MAY-18: Removed model Inverter to decomplex things making the app easier to maintain in the furure.
 - 06-MAY-18: Comfora driver changed into a multi model driver.
 - 17-MAY-18: Added support for the new model WiFi controller (BRP069B--).
+- 18-MAY-18: Cosmetic changes to pairing dialog.

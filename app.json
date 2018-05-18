@@ -1,6 +1,6 @@
 {
     "id": "nl.climate.daikin",
-	"version": "1.0.2",
+	"version": "1.0.3",
     "compatibility": ">=1.5.3",
     "sdk": 2,
     "name": {
@@ -2233,8 +2233,8 @@
      {
      "type": "group",
      "label": {
-     "en": "WiFi adapter type and firmware version",
-     "nl": "WiFi adapter type and firmware version"
+     "en": "WiFi adapter type and firmware version (note: for model A adapters, in general, the firmware checkbox should not be checked.)",
+     "nl": "WiFi adapter type en firmware versie (noot: voor model A adapters geldt in algemene zin dat de firmware checkbox niet behoeft te worden aangekruisd.)"
      },
      "children": [{
           "id": "comfora_adapter",
@@ -2264,8 +2264,8 @@
       {   "id": "comfora_useGetToPost",
           "type": "checkbox",
           "label": {
-          "en": "Firmware less than v1.4.3",
-          "nl": "Firmware kleiner dan v1.4.3"
+          "en": "B-model fw <= v2.0.1",
+          "nl": "B-model fw <= v2.0.1"
           },
           "value": false
        }]
@@ -2436,8 +2436,8 @@
      {
      "type": "group",
      "label": {
-     "en": "WiFi adapter type and firmware version",
-     "nl": "WiFi adapter type and firmware version"
+     "en": "WiFi adapter type and firmware version (note: for model A adapters, in general, the firmware checkbox should not be checked.)",
+     "nl": "WiFi adapter type en firmware versie (noot: voor model A adapters geldt in algemene zin dat de firmware checkbox niet behoeft te worden aangekruisd.)"
      },
      "children": [{
           "id": "emura_adapter",
@@ -2467,8 +2467,8 @@
       {   "id": "emura_useGetToPost",
           "type": "checkbox",
           "label": {
-          "en": "Firmware less than v1.4.3",
-          "nl": "Firmware kleiner dan v1.4.3"
+          "en": "B-model fw <= v2.0.1",
+          "nl": "B-model fw <= v2.0.1"
           },
           "value": true
        }]
@@ -2639,8 +2639,8 @@
     {
     "type": "group",
     "label": {
-    "en": "WiFi adapter type and firmware version",
-    "nl": "WiFi adapter type and firmware version"
+    "en": "WiFi adapter type and firmware version (note: for model A adapters, in general, the firmware checkbox should not be checked.)",
+    "nl": "WiFi adapter type en firmware versie (noot: voor model A adapters geldt in algemene zin dat de firmware checkbox niet behoeft te worden aangekruisd.)"
     },
     "children": [{
          "id": "nexura_adapter",
@@ -2670,8 +2670,8 @@
      {   "id": "nexura_useGetToPost",
          "type": "checkbox",
          "label": {
-         "en": "Firmware less than v1.4.3",
-         "nl": "Firmware kleiner dan v1.4.3"
+         "en": "B-model fw <= v2.0.1",
+         "nl": "B-model fw <= v2.0.1"
          },
          "value": true
       }]
@@ -2791,8 +2791,8 @@
    {
    "type": "group",
    "label": {
-   "en": "WiFi adapter type and firmware version",
-   "nl": "WiFi adapter type and firmware version"
+   "en": "WiFi adapter type and firmware version (note: for model A adapters, in general, the firmware checkbox should not be checked.)",
+   "nl": "WiFi adapter type en firmware versie (noot: voor model A adapters geldt in algemene zin dat de firmware checkbox niet behoeft te worden aangekruisd.)"
    },
    "children": [{
         "id": "homekit_adapter",
@@ -2822,8 +2822,8 @@
     {   "id": "homekit_useGetToPost",
         "type": "checkbox",
         "label": {
-        "en": "Firmware less than v1.4.3",
-        "nl": "Firmware kleiner dan v1.4.3"
+        "en": "B-model fw <= v2.0.1",
+        "nl": "B-model fw <= v2.0.1"
         },
         "value": true
      }]

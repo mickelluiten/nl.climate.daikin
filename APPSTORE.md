@@ -18,18 +18,21 @@ Adds to Homey control support for Daikin Air Conditioners and Heatpumps (aka inv
 ### Demo mode (upon pairing the demo mode is by default turned ON !!)
 Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows.
 
-### IP-address conciderations
-To prevent unreliable behavior of this application the use of a fixed (static) IP-address is required.
+### Refresh interval
+The interface, as designed by Daikin, with the airconditioner is based on polling. With the refresh interval settings it is possible to set the polling frequency between 5 and 30 seconds. A higher frequency (lower number) means that you Homey has more work to do. When your setup involves more than 1 airconditioner a polling frequency of less than 10 seconds is not recommended. It should be noted that the refresh interval setting has no influence for sending commands to the airconditioner, a mode, target temperature change etc is always executed immediately.
 
-Note: your airconditioner its IP-address can be found in the Daikin Controller app (select your airco > click on the gear sysmbol > the information shows under "Adapter information").  
+### IP-address: the use of a static IP-address is recommended
+To prevent unreliable behavior of the application the use of a fixed (static) IP-address is required. When DHCP changes your airconditioners IP-address the application will not be aware of this change and as a result the application can no longer controle the airconditioner till you manually update the IP-address in the devices its settings menu. 
+
+Note: your airconditioner its current IP-address can be found in the Daikin Controller app (select your airco > click on the gear sysmbol > the information shows under "Adapter information").  
 
 ### WiFi adapter models
-Daikin just recently introduced a new model WiFi adapter (BRP069B--) which uses a different way to sent commands to the airconditioner. During paring the app will pair your airconditioner with model specific default settings for the WiFi adapter its firmware. In some case you have to change these default settings, this can be done in the device settings menu.
+Daikin just recently introduced a new model WiFi adapter (BRP069B--) which uses a different way to sent commands to the airconditioner. During paring the app will pair your airconditioner with model specific default settings, in some cases you have to change these default settings this can be done in the device settings menu.
 
 Note: the WiFi adapter its firmware version can be found in the Daikin Controller app (select your airco > click on the gear sysmbol > the information shows under "Adapter information").  
 
 ## Change log
-### v1.0.2
+### v1.0.3
 - Removed Model Inverter.
 - Multi model driver (Sensira, Stylish, Comfora, Ururu Sarara, Perfera) replaces the Comfora driver.
 - Fixed an compatibility issue with the type B WiFi adapter (BRP069B--) as a result of which the airco could not be controlled.
