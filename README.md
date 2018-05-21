@@ -7,7 +7,7 @@ Adds to Homey control support for Daikin Air Conditioners and Heatpumps (aka inv
 Note: Do not use the MASTER branch for now, what is available in the development branch is the best available. The beta branch is also available via the Athom's App Store.
 
 ## Features
-- supports Daikin airconditioners & heatpumps through either a generic driver (called Inverter) or a model (range) specific one like Emura.
+- supports most Daikin airconditioners & heatpumps.
 - the mobile card shows target temperature, operating mode, fan rate and fan swing mode.
 - target temperature as well as operating mode can be controlled from the mobile card.
 

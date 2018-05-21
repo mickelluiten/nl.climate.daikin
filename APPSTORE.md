@@ -1,12 +1,11 @@
 # Daikin AI
-Adds to Homey control support for Daikin Air Conditioners and Heatpumps (aka inverters).
+Control your Daikin air conditioner (or heatpump) through Homey. This app requires that your Daikin air conditioner (or heatpump) is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--).
 
 ![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/Daikin-logo-wide.png)
 
 ## Features
-- supports Daikin airconditioners & heatpumps through either a generic driver (called Inverter) or a model (range) specific one like Emura.
-- the mobile card shows target temperature, operating mode, fan rate and fan swing mode.
-- target temperature as well as operating mode can be controlled from the mobile card.
+- supports Daikin airconditioners & heatpumps (aka inverters) through model range drivers.
+- the mobile card shows, depeding on the selected driver, target temperature, operating mode, inside temperature, fan rate and fan swing mode. Target temperature as well as operating mode can be controlled from the mobile card, fan rate and fan swing mode can only be controled via an action card.
 
 ![Mobile card](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/mobilecard.png)
 
@@ -15,24 +14,24 @@ Adds to Homey control support for Daikin Air Conditioners and Heatpumps (aka inv
   Note *: requires either HomeKit by Sprut, or HomeyKit by Bas Jansen. 
 
 
-### Demo mode (upon pairing the demo mode is by default turned ON !!)
+## Demo mode (upon pairing the demo mode is by default turned ON !!)
 Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows.
 
-### Refresh interval
-The interface, as designed by Daikin, with the airconditioner is based on polling. With the refresh interval settings it is possible to set the polling frequency between 5 and 30 seconds. A higher frequency (lower number) means that you Homey has more work to do. When your setup involves more than 1 airconditioner a polling frequency of less than 10 seconds is not recommended. It should be noted that the refresh interval setting has no influence for sending commands to the airconditioner, a mode, target temperature change etc is always executed immediately.
+## Refresh interval
+Daikin designed an interface that is based on polling which means the airconditioner must be interogated once in a while to know its current status. The polling interval of the official Daikin Online Controller app is between 30 and 60 seconds. With the refresh interval setting of the Daikin AI app it is possible to set its polling interval between 5 and 30 seconds which is up to 6 times faster. A higher refresh interval means that your Homey has more work to do. When your setup involves more than one airconditioner a polling interval of less than 10 seconds is not recommended. As a result of the polling mechanism a change made with the app, either the official Daikin Online Controller app or the Homey Daikin AI app, may not show immediately in either app. It should be noted that the refresh interval (setting) has no influence for sending commands to the airconditioner, a mode, target temperature etc. change is always executed immediately.
 
-### IP-address: the use of a static IP-address is recommended
+## IP-address: the use of a static IP-address is recommended
 To prevent unreliable behavior of the application the use of a fixed (static) IP-address is required. When DHCP changes your airconditioners IP-address the application will not be aware of this change and as a result the application can no longer controle the airconditioner till you manually update the IP-address in the devices its settings menu. 
 
-Note: your airconditioner its current IP-address can be found in the Daikin Controller app (select your airco > click on the gear sysmbol > the information shows under "Adapter information").  
+Note: your airconditioner its current IP-address can be found in the Daikin Online Controller app (select your airco > click on the gear sysmbol > the IP-address shows under "Adapter information").  
 
-### WiFi adapter models
-Daikin just recently introduced a new model WiFi adapter (BRP069B--) which uses a different way to sent commands to the airconditioner. During paring the app will pair your airconditioner with model specific default settings, in some cases you have to change these default settings this can be done in the device settings menu.
+## WiFi adapter models
+Daikin just recently introduced a new model WiFi adapter (BRP069B--) which uses a different way to sent commands to the airconditioner. During paring the app will pair your airconditioner with model specific default settings, in some cases you have to change these default settings which can be done in the device settings menu.
 
-Note: the WiFi adapter its firmware version can be found in the Daikin Controller app (select your airco > click on the gear sysmbol > the information shows under "Adapter information").  
+Note: the WiFi adapter its firmware version can be found in the Daikin Online Controller app (select your airco > click on the gear sysmbol > the firmware version shows under "Adapter information").  
 
 ## Change log
-### v1.0.3
+### v1.0.4
 - Removed Model Inverter.
 - Multi model driver (Sensira, Stylish, Comfora, Ururu Sarara, Perfera) replaces the Comfora driver.
 - Fixed an compatibility issue with the type B WiFi adapter (BRP069B--) as a result of which the airco could not be controlled.
@@ -48,6 +47,7 @@ Note: the WiFi adapter its firmware version can be found in the Daikin Controlle
 - HomeKit support only applies for the 'Model HomeKit'.
 - DHCP is not supported.
 - Not all Daikin airconditioner models / model seriers / combinations of indoor and outdoor units are supported. Due to the fact that Daikin does not disclose their interface specification reverse engineering of the interface is extremely difficult.
+- Homey speech is not supported (note: Homekit driver users have limited support through Siri and can set airconditioner mode and the target temperature).
 
 #### Compatible units in combination with BRP069A41:
 FTXG20LV1BW, FTXG20LV1BS , FTXG25LV1BW, FTXG25LV1BS, FTXG35LV1BW, FTXG35LV1BS, FTXG50LV1BW, FTXG50LV1BS, FTXJ20LV1BW, FTXJ20LV1BS, FTXJ25LV1BW, FTXJ25LV1BS, FTXJ35LV1BW, FTXJ35LV1BS, FTXJ50LV1BW, FTXJ50LV1BS.
@@ -62,7 +62,7 @@ CTXS15K2V1B, CTXS15K3V1B, FTXS20K2V1B, FTXS20K3V1B, FTXS25K2V1B, FTXS25K3V1B, CT
 FTX50KV1B, FTX60KV1B
 
 #### Compatible units in combination with BRP069Bxx  (?):
-No information available.
+No model information available.
 
 ##Credits
 This Homey App is based on the great work of the unofficial Daikin API documentation project (https://github.com/ael-code/daikin-control) as well as the Apollon77 Daikin Controller library (https://github.com/Apollon77/daikin-controller).
