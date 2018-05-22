@@ -31,7 +31,7 @@ Daikin just recently introduced a new model WiFi adapter (BRP069B--) which uses 
 Note: the WiFi adapter its firmware version can be found in the Daikin Online Controller app (select your airco > click on the gear sysmbol > the firmware version shows under "Adapter information").  
 
 ## Change log
-### v1.0.4
+### v1.0.5
 - Removed Model Inverter.
 - Multi model driver (Sensira, Stylish, Comfora, Ururu Sarara, Perfera) replaces the Comfora driver.
 - Fixed an compatibility issue with the type B WiFi adapter (BRP069B--) as a result of which the airco could not be controlled.
@@ -47,7 +47,8 @@ Note: the WiFi adapter its firmware version can be found in the Daikin Online Co
 - HomeKit support only applies for the 'Model HomeKit'.
 - DHCP is not supported.
 - Not all Daikin airconditioner models / model seriers / combinations of indoor and outdoor units are supported. Due to the fact that Daikin does not disclose their interface specification reverse engineering of the interface is extremely difficult.
-- Homey speech is not supported (note: Homekit driver users have limited support through Siri and can set airconditioner mode and the target temperature).
+- Homey speech is not supported (note: Homekit driver users have speech support through Siri and can set airconditioner mode and the target temperature).
+
 
 #### Compatible units in combination with BRP069A41:
 FTXG20LV1BW, FTXG20LV1BS , FTXG25LV1BW, FTXG25LV1BS, FTXG35LV1BW, FTXG35LV1BS, FTXG50LV1BW, FTXG50LV1BS, FTXJ20LV1BW, FTXJ20LV1BS, FTXJ25LV1BW, FTXJ25LV1BS, FTXJ35LV1BW, FTXJ35LV1BS, FTXJ50LV1BW, FTXJ50LV1BS.
