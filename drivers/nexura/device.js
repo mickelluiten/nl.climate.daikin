@@ -157,9 +157,8 @@ class NexuraDevice extends Device {
         var nexura_ip = settings.nexura_ip; this.log('Nexura ip-address: ', nexura_ip);        
         var nexura_interval = settings.nexura_interval; this.log('Refresh interval: ', nexura_interval);
 
-        var currentmode = this.getState().airco_mode_nexura;   
-        if (currentmode != "off") this.deviceRequestControl(nexura_ip); // refresh only when the airco is powered on...             
-		this.deviceRequestSensor(nexura_ip);                            // always refresh sensors...
+        this.deviceRequestControl(nexura_ip);            
+		this.deviceRequestSensor(nexura_ip);
      
         setTimeout(this.refreshData.bind(this), nexura_interval * 1000);
         
@@ -199,7 +198,13 @@ class NexuraDevice extends Device {
         const capability_mode = this.getCapabilityValue('airco_mode_nexura');
         this.log('mode:', airco_mode_nexura);
         this.log('capability_mode:', capability_mode);
+        // when the airco is tured off using Daikin AI show mode "OFF" and keep showing that mode
         if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_nexura', airco_mode_nexura);
+        // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
+        // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
+        if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_nexura', "auto");
+        // when the airo is powered off externally make sure that capability mode "OFF" is set
+        if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_nexura', "off");  
         
     //---- temperature
 		const atemp = Number(control_info[4]);
@@ -306,7 +311,7 @@ class NexuraDevice extends Device {
        var nexura_useGetToPost = settings.nexura_useGetToPost;
        var nexura_adapter = settings.nexura_adapter;
        var nexura_options = {};
-       this.log('firmware < v1.4.3 (then useGetToPost):', nexura_useGetToPost);
+       this.log('firmware < v2.0.1 (then useGetToPost):', nexura_useGetToPost);
        this.log('Adapter model:', nexura_adapter)
        
        if (nexura_useGetToPost) nexura_options = {'useGetToPost': true};
@@ -329,7 +334,7 @@ class NexuraDevice extends Device {
        var nexura_useGetToPost = settings.nexura_useGetToPost;
        var nexura_adapter = settings.nexura_adapter;
        var nexura_options = {};
-       this.log('firmware < v1.4.3 (then useGetToPost):', nexura_useGetToPost);
+       this.log('firmware < v2.0.1 (then useGetToPost):', nexura_useGetToPost);
        this.log('Adapter model:', nexura_adapter)
        
        if (nexura_useGetToPost) nexura_options = {'useGetToPost': true};
@@ -348,7 +353,7 @@ class NexuraDevice extends Device {
        var nexura_useGetToPost = settings.nexura_useGetToPost;
        var nexura_adapter = settings.nexura_adapter;
        var nexura_options = {};
-       this.log('firmware < v1.4.3 (then useGetToPost):', nexura_useGetToPost);
+       this.log('firmware < v2.0.1 (then useGetToPost):', nexura_useGetToPost);
        this.log('Adapter model:', nexura_adapter)
        
        if (nexura_useGetToPost) nexura_options = {'useGetToPost': true};
@@ -367,7 +372,7 @@ class NexuraDevice extends Device {
        var nexura_useGetToPost = settings.nexura_useGetToPost;
        var nexura_adapter = settings.nexura_adapter;
        var nexura_options = {};
-       this.log('firmware < v1.4.3 (then useGetToPost):', nexura_useGetToPost);
+       this.log('firmware < v2.0.1 (then useGetToPost):', nexura_useGetToPost);
        this.log('Adapter model:', nexura_adapter)
        
        if (nexura_useGetToPost) nexura_options = {'useGetToPost': true};
@@ -386,7 +391,7 @@ class NexuraDevice extends Device {
        var nexura_useGetToPost = settings.nexura_useGetToPost;
        var nexura_adapter = settings.nexura_adapter;
        var nexura_options = {};
-       this.log('firmware < v1.4.3 (then useGetToPost):', nexura_useGetToPost);
+       this.log('firmware < v2.0.1 (then useGetToPost):', nexura_useGetToPost);
        this.log('Adapter model:', nexura_adapter)
        
        if (nexura_useGetToPost) nexura_options = {'useGetToPost': true};

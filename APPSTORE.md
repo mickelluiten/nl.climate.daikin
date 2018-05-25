@@ -31,6 +31,9 @@ Daikin just recently introduced a new model WiFi adapter (BRP069B--) which uses 
 Note: the WiFi adapter its firmware version can be found in the Daikin Online Controller app (select your airco > click on the gear sysmbol > the firmware version shows under "Adapter information").  
 
 ## Change log
+### v1.0.6
+- fixed a problem that prevented the mode knob to update when the mode was set using either the IR remote control or Daikin Controller app. 
+
 ### v1.0.5
 - Removed Model Inverter.
 - Multi model driver (Sensira, Stylish, Comfora, Ururu Sarara, Perfera) replaces the Comfora driver.

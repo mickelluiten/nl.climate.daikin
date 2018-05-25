@@ -2,9 +2,7 @@
 ![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/Daikin-logo-wide.png)
 
 # Daikin AI
-Adds to Homey control support for Daikin Air Conditioners and Heatpumps (aka inverters).
-
-Note: Do not use the MASTER branch for now, what is available in the development branch is the best available. The beta branch is also available via the Athom's App Store.
+Control your Daikin air conditioner (or heatpump) through Homey. This app requires that your Daikin air conditioner (or heatpump) is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--).
 
 ## Features
 - supports most Daikin airconditioners & heatpumps.
@@ -82,3 +80,4 @@ If you like the app, consider buying me a cup of coffee!
 - 06-MAY-18: Comfora driver changed into a multi model driver.
 - 17-MAY-18: Added support for the new model WiFi controller (BRP069B--).
 - 18-MAY-18: Cosmetic changes to pairing dialog.
+- 25-MAY-18: Fixed a problem that prevented the mode knob to update when the mode was set using either the IR remote control or Daikin Controller app.

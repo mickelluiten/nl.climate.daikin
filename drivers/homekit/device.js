@@ -117,9 +117,8 @@ class HomeKitDevice extends Device {
         var homekit_ip = settings.homekit_ip; this.log('HomeKit ip-address: ', homekit_ip);        
         var homekit_interval = settings.homekit_interval; this.log('Refresh interval: ', homekit_interval);
 
-        var currentmode = this.getState().thermostat_mode;   
-        if (currentmode != "off") this.deviceRequestControl(homekit_ip); // refresh only when the airco is powered on...             
-		this.deviceRequestSensor(homekit_ip);                            // always refresh sensors...
+        this.deviceRequestControl(homekit_ip);          
+		this.deviceRequestSensor(homekit_ip);
      
         setTimeout(this.refreshData.bind(this), homekit_interval * 1000);
         
@@ -161,7 +160,13 @@ class HomeKitDevice extends Device {
         const capability_mode = this.getCapabilityValue('thermostat_mode');		
         this.log('mode:', thermostat_mode);
         this.log('capability_mode:', capability_mode);
-        if ((capability_mode != "off")) this.setCapabilityValue('thermostat_mode', thermostat_mode);
+        // when the airco is tured off using Daikin AI show mode "OFF" and keep showing that mode
+        if ((capability_mode != "off")) this.setCapabilityValue('thermostat_mode)', thermostat_mode));
+        // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
+        // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
+        if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('thermostat_mode)', "auto");
+        // when the airo is powered off externally make sure that capability mode "OFF" is set
+        if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('thermostat_mode)', "off");  
         
     //---- temperature
 		const atemp = Number(control_info[4]);
@@ -193,7 +198,7 @@ class HomeKitDevice extends Device {
        var homekit_useGetToPost = settings.homekit_useGetToPost;
        var homekit_adapter = settings.homekit_adapter;
        var homekit_options = {};
-       this.log('firmware < v1.4.3 (then useGetToPost):', homekit_useGetToPost);
+       this.log('firmware < v2.0.1 (then useGetToPost):', homekit_useGetToPost);
        this.log('Adapter model:', homekit_adapter)
        
        if (homekit_useGetToPost) homekit_options = {'useGetToPost': true};
@@ -216,7 +221,7 @@ class HomeKitDevice extends Device {
        var homekit_useGetToPost = settings.homekit_useGetToPost;
        var homekit_adapter = settings.homekit_adapter;
        var homekit_options = {};
-       this.log('firmware < v1.4.3 (then useGetToPost):', homekit_useGetToPost);
+       this.log('firmware < v2.0.1 (then useGetToPost):', homekit_useGetToPost);
        this.log('Adapter model:', homekit_adapter)
        
        if (homekit_useGetToPost) homekit_options = {'useGetToPost': true};
@@ -235,7 +240,7 @@ class HomeKitDevice extends Device {
        var homekit_useGetToPost = settings.homekit_useGetToPost;
        var homekit_adapter = settings.homekit_adapter;
        var homekit_options = {};
-       this.log('firmware < v1.4.3 (then useGetToPost):', homekit_useGetToPost);
+       this.log('firmware < v2.0.1 (then useGetToPost):', homekit_useGetToPost);
        this.log('Adapter model:', homekit_adapter)
        
        if (homekit_useGetToPost) homekit_options = {'useGetToPost': true};

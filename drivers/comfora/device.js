@@ -154,12 +154,11 @@ class ComforaDevice extends Device {
         }
 
         var settings = this.getSettings();
-        var comfora_ip = settings.comfora_ip; this.log('Comfora ip-address: ', comfora_ip);        
-        var comfora_interval = settings.comfora_interval; this.log('Refresh interval: ', comfora_interval);
-
-        var currentmode = this.getState().airco_mode_comfora;   
-        if (currentmode != "off") this.deviceRequestControl(comfora_ip); // refresh only when the airco is powered on...             
-		this.deviceRequestSensor(comfora_ip);                            // always refresh sensors...
+        var comfora_ip = settings.comfora_ip; this.log('Comfora ip-address:', comfora_ip);        
+        var comfora_interval = settings.comfora_interval; this.log('Refresh interval:', comfora_interval);
+          
+        this.deviceRequestControl(comfora_ip); 
+		this.deviceRequestSensor(comfora_ip);
      
         setTimeout(this.refreshData.bind(this), comfora_interval * 1000);
         
@@ -199,7 +198,13 @@ class ComforaDevice extends Device {
         const capability_mode = this.getCapabilityValue('airco_mode_comfora');		
         this.log('mode:', airco_mode_comfora);
         this.log('capability_mode:', capability_mode);
+        // when the airco is tured off using Daikin AI show mode "OFF" and keep showing that mode
         if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_comfora', airco_mode_comfora);
+        // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
+        // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
+        if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_comfora', "auto");
+        // when the airo is powered off externally make sure that capability mode "OFF" is set
+        if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_comfora', "off");        
         
     //---- temperature
 		const atemp = Number(control_info[4]);
@@ -306,7 +311,7 @@ class ComforaDevice extends Device {
        var comfora_useGetToPost = settings.comfora_useGetToPost;
        var comfora_adapter = settings.comfora_adapter;
        var comfora_options = {};
-       this.log('firmware < v1.4.3 (then useGetToPost):', comfora_useGetToPost);
+       this.log('firmware < v2.0.1 (then useGetToPost):', comfora_useGetToPost);
        this.log('Adapter model:', comfora_adapter)
        
        if (comfora_useGetToPost) comfora_options = {'useGetToPost': true};
@@ -329,7 +334,7 @@ class ComforaDevice extends Device {
        var comfora_useGetToPost = settings.comfora_useGetToPost;
        var comfora_adapter = settings.comfora_adapter;
        var comfora_options = {};
-       this.log('firmware < v1.4.3 (then useGetToPost):', comfora_useGetToPost);
+       this.log('firmware < v2.0.1 (then useGetToPost):', comfora_useGetToPost);
        this.log('Adapter model:', comfora_adapter)
        
        if (comfora_useGetToPost) comfora_options = {'useGetToPost': true};
@@ -348,7 +353,7 @@ class ComforaDevice extends Device {
        var comfora_useGetToPost = settings.comfora_useGetToPost;
        var comfora_adapter = settings.comfora_adapter;
        var comfora_options = {};
-       this.log('firmware < v1.4.3 (then useGetToPost):', comfora_useGetToPost);
+       this.log('firmware < v2.0.1 (then useGetToPost):', comfora_useGetToPost);
        this.log('Adapter model:', comfora_adapter)
        
        if (comfora_useGetToPost) comfora_options = {'useGetToPost': true};
@@ -367,7 +372,7 @@ class ComforaDevice extends Device {
        var comfora_useGetToPost = settings.comfora_useGetToPost;
        var comfora_adapter = settings.comfora_adapter;
        var comfora_options = {};
-       this.log('firmware < v1.4.3 (then useGetToPost):', comfora_useGetToPost);
+       this.log('firmware < v2.0.1 (then useGetToPost):', comfora_useGetToPost);
        this.log('Adapter model:', comfora_adapter)
        
        if (comfora_useGetToPost) comfora_options = {'useGetToPost': true};
@@ -387,7 +392,7 @@ class ComforaDevice extends Device {
        var comfora_adapter = settings.comfora_adapter;
        var comfora_options = {};
        
-       this.log('firmware < v1.4.3 (then useGetToPost):', comfora_useGetToPost);
+       this.log('firmware < v2.0.1 (then useGetToPost):', comfora_useGetToPost);
        this.log('Adapter model:', comfora_adapter)
        
        if (comfora_useGetToPost) comfora_options = {'useGetToPost': true};
