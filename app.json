@@ -1,6 +1,6 @@
 {
     "id": "nl.climate.daikin",
-	"version": "1.0.6",
+	"version": "1.0.7",
     "compatibility": ">=1.5.3",
     "sdk": 2,
     "name": {

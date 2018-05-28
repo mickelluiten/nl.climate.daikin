@@ -161,12 +161,12 @@ class HomeKitDevice extends Device {
         this.log('mode:', thermostat_mode);
         this.log('capability_mode:', capability_mode);
         // when the airco is tured off using Daikin AI show mode "OFF" and keep showing that mode
-        if ((capability_mode != "off")) this.setCapabilityValue('thermostat_mode)', thermostat_mode));
+        if ((capability_mode != "off")) this.setCapabilityValue('thermostat_mode', thermostat_mode);
         // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
         // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
-        if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('thermostat_mode)', "auto");
+        if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('thermostat_mode', "auto");
         // when the airo is powered off externally make sure that capability mode "OFF" is set
-        if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('thermostat_mode)', "off");  
+        if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('thermostat_mode', "off");  
         
     //---- temperature
 		const atemp = Number(control_info[4]);

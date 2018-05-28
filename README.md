@@ -81,3 +81,4 @@ If you like the app, consider buying me a cup of coffee!
 - 17-MAY-18: Added support for the new model WiFi controller (BRP069B--).
 - 18-MAY-18: Cosmetic changes to pairing dialog.
 - 25-MAY-18: Fixed a problem that prevented the mode knob to update when the mode was set using either the IR remote control or Daikin Controller app.
+- 28-MAY-18: Fixed a bug which prevented flow action cards to function correctly for airco's equipped with the type B adapter.

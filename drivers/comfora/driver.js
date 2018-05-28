@@ -185,8 +185,17 @@ class ComforaDriver extends Driver {
             var atemp = args.atemp;
             device.setCapabilityValue('set_temperature', atemp);
             this.log('target temp', atemp);
-                        
-            comforactrl.daikinTempControl(atemp, ip_address);
+
+            // type B adapter logic
+            var useGetToPost = settings.comfora_useGetToPost;
+            var adapter = settings.comfora_adapter;
+            var options = {};
+            this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
+            this.log('Adapter model:', adapter)
+            if (useGetToPost) options = {'useGetToPost': true};
+            else options = {'useGetToPost': false};
+                                    
+            comforactrl.daikinTempControl(atemp, ip_address, options);
 			return Promise.resolve(atemp);
 		});  
         
@@ -202,8 +211,17 @@ class ComforaDriver extends Driver {
             var airco_mode = args.mode;
             device.setCapabilityValue('airco_mode_comfora', airco_mode);
             this.log('airco_mode', airco_mode); 
-                        
-            comforactrl.daikinModeControl(airco_mode, ip_address);
+
+            // type B adapter logic
+            var useGetToPost = settings.comfora_useGetToPost;
+            var adapter = settings.comfora_adapter;
+            var options = {};
+            this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
+            this.log('Adapter model:', adapter)
+            if (useGetToPost) options = {'useGetToPost': true};
+            else options = {'useGetToPost': false};
+                                    
+            comforactrl.daikinModeControl(airco_mode, ip_address, options);
 			return Promise.resolve(airco_mode);
 		});           
 
@@ -219,8 +237,17 @@ class ComforaDriver extends Driver {
             var fan_rate = args.frate;
             device.setCapabilityValue('fan_rate', fan_rate);
             this.log('fan_rate', fan_rate);
+
+            // type B adapter logic
+            var useGetToPost = settings.comfora_useGetToPost;
+            var adapter = settings.comfora_adapter;
+            var options = {};
+            this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
+            this.log('Adapter model:', adapter)
+            if (useGetToPost) options = {'useGetToPost': true};
+            else options = {'useGetToPost': false};
                         
-            comforactrl.daikinFanRateControl(fan_rate, ip_address);
+            comforactrl.daikinFanRateControl(fan_rate, ip_address, options);
 			return Promise.resolve(fan_rate);
 		});  
 
@@ -236,12 +263,20 @@ class ComforaDriver extends Driver {
             var fan_direction = args.fdir;
             device.setCapabilityValue('fan_direction', fan_direction);
             this.log('fan_direction', fan_direction);
-                        
-            comforactrl.daikinFanDirControl(fan_direction, ip_address);
+
+            // type B adapter logic
+            var useGetToPost = settings.comfora_useGetToPost;
+            var adapter = settings.comfora_adapter;
+            var options = {};
+            this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
+            this.log('Adapter model:', adapter)
+            if (useGetToPost) options = {'useGetToPost': true};
+            else options = {'useGetToPost': false};
+                                    
+            comforactrl.daikinFanDirControl(fan_direction, ip_address, options);
 			return Promise.resolve(fan_direction);
 		});  
-
-               
+      
 	}
 
 //--- METHODS FOR TEMPERATURE FLOWCARD TRIGGERS

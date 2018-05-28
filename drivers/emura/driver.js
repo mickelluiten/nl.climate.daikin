@@ -185,8 +185,17 @@ class EmuraDriver extends Driver {
             var atemp = args.atemp;
             device.setCapabilityValue('set_temperature', atemp);
             this.log('target temp', atemp);
-                        
-            emuractrl.daikinTempControl(atemp, ip_address);
+
+            // type B adapter logic
+            var useGetToPost = settings.emura_useGetToPost;
+            var adapter = settings.emura_adapter;
+            var options = {};
+            this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
+            this.log('Adapter model:', adapter)
+            if (useGetToPost) options = {'useGetToPost': true};
+            else options = {'useGetToPost': false};
+                                    
+            emuractrl.daikinTempControl(atemp, ip_address, options);
 			return Promise.resolve(atemp);
 		});  
         
@@ -201,9 +210,18 @@ class EmuraDriver extends Driver {
 
             var airco_mode = args.mode;
             device.setCapabilityValue('airco_mode_emura', airco_mode);
-            this.log('airco_mode', airco_mode); 
+            this.log('airco_mode', airco_mode);
+            
+            // type B adapter logic
+            var useGetToPost = settings.emura_useGetToPost;
+            var adapter = settings.emura_adapter;
+            var options = {};
+            this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
+            this.log('Adapter model:', adapter)
+            if (useGetToPost) options = {'useGetToPost': true};
+            else options = {'useGetToPost': false};
                         
-            emuractrl.daikinModeControl(airco_mode, ip_address);
+            emuractrl.daikinModeControl(airco_mode, ip_address, options);
 			return Promise.resolve(airco_mode);
 		});           
 
@@ -214,13 +232,22 @@ class EmuraDriver extends Driver {
             let settings = device.getSettings();   
                                     
             var ip_address = settings.emura_ip;    
-            this.log('ip_address', ip_address);                        
+            this.log('ip_address', ip_address);
 
             var fan_rate = args.frate;
             device.setCapabilityValue('fan_rate', fan_rate);
             this.log('fan_rate', fan_rate);
-                        
-            emuractrl.daikinFanRateControl(fan_rate, ip_address);
+
+            // type B adapter logic
+            var useGetToPost = settings.emura_useGetToPost;
+            var adapter = settings.emura_adapter;
+            var options = {};
+            this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
+            this.log('Adapter model:', adapter)
+            if (useGetToPost) options = {'useGetToPost': true};
+            else options = {'useGetToPost': false};
+                                    
+            emuractrl.daikinFanRateControl(fan_rate, ip_address, options);
 			return Promise.resolve(fan_rate);
 		});  
 
@@ -236,12 +263,20 @@ class EmuraDriver extends Driver {
             var fan_direction = args.fdir;
             device.setCapabilityValue('fan_direction', fan_direction);
             this.log('fan_direction', fan_direction);
+
+            // type B adapter logic
+            var useGetToPost = settings.emura_useGetToPost;
+            var adapter = settings.emura_adapter;
+            var options = {};
+            this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
+            this.log('Adapter model:', adapter)
+            if (useGetToPost) options = {'useGetToPost': true};
+            else options = {'useGetToPost': false};
                         
-            emuractrl.daikinFanDirControl(fan_direction, ip_address);
+            emuractrl.daikinFanDirControl(fan_direction, ip_address, options);
 			return Promise.resolve(fan_direction);
 		});  
-
-               
+      
 	}
 
 //--- METHODS FOR TEMPERATURE FLOWCARD TRIGGERS
