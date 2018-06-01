@@ -14,7 +14,7 @@ Control your Daikin air conditioner (or heatpump) through Homey. This app requir
   Note *: requires either HomeKit by Sprut, or HomeyKit by Bas Jansen. 
 
 ## Action flow cards
-When designing flows and you add multiple Daikin AI action flowcards to a flow, or serveral flows but with the same trigger condition, it might be necessary to spread these actions over several seconds to give the airco time to process all the commands as the interface handles all the commands separately.
+When designing flows and you add multiple Daikin AI action flowcards to a flow, or serveral flows but with the same trigger condition, it might be necessary to spread these actions over several seconds to give the airco time to process all the commands as the interface handles all the commands separately. The nature (asynchronous polling) of the Daikin interface still makes it possible that commands colide and as a result commands are not executed correctly which is something to keep in mind when building flows.
 
 ## Demo mode (upon pairing the demo mode is by default turned ON !!)
 Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows.
@@ -33,11 +33,15 @@ Daikin just recently introduced a new model WiFi adapter (BRP069B--) which uses 
 Note: the WiFi adapter its firmware version can be found in the Daikin Online Controller app (select your airco > click on the gear sysmbol > the firmware version shows under "Adapter information").  
 
 ## Change log
+#### v1.0.8
+- Error handling improvement.
+- Flow action card bug fix.
+
 ### v1.0.7
-- fixed a bug which prevented flow action cards to function correctly for airco's equipped with the type B adapter.
+- Fixed a bug which prevented flow action cards to function correctly for airco's equipped with the type B adapter.
 
 ### v1.0.6
-- fixed a problem that prevented the mode knob to update when the mode was set using either the IR remote control or Daikin Controller app. 
+- Fixed a problem that prevented the mode knob to update when the mode was set using either the IR remote control or Daikin Controller app. 
 
 ### v1.0.5
 - Removed Model Inverter.

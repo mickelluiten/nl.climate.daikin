@@ -82,3 +82,5 @@ If you like the app, consider buying me a cup of coffee!
 - 18-MAY-18: Cosmetic changes to pairing dialog.
 - 25-MAY-18: Fixed a problem that prevented the mode knob to update when the mode was set using either the IR remote control or Daikin Controller app.
 - 28-MAY-18: Fixed a bug which prevented flow action cards to function correctly for airco's equipped with the type B adapter.
+- 31-MAY-18: Check on correct Refresh Interval setting: when it is undefined for some reason the interval will be set to its default (10 seconds) value.
+- 01-JUN-18: Flow action card bug fix.

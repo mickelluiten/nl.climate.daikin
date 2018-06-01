@@ -208,6 +208,9 @@ class ComforaDriver extends Driver {
             var ip_address = settings.comfora_ip;    
             this.log('ip_address', ip_address);                        
 
+            var demo_mode = settings.comfora_demomode;    
+            this.log('demo_mode', demo_mode);  
+
             var airco_mode = args.mode;
             device.setCapabilityValue('airco_mode_comfora', airco_mode);
             this.log('airco_mode', airco_mode); 
@@ -221,8 +224,8 @@ class ComforaDriver extends Driver {
             if (useGetToPost) options = {'useGetToPost': true};
             else options = {'useGetToPost': false};
                                     
-            comforactrl.daikinModeControl(airco_mode, ip_address, options);
-			return Promise.resolve(airco_mode);
+            comforactrl.daikinModeControl(airco_mode, ip_address, options, demo_mode);
+            return Promise.resolve(airco_mode);
 		});           
 
     //--- FAN RATE ACTIONS

@@ -155,7 +155,8 @@ class ComforaDevice extends Device {
 
         var settings = this.getSettings();
         var comfora_ip = settings.comfora_ip; this.log('Comfora ip-address:', comfora_ip);        
-        var comfora_interval = settings.comfora_interval; this.log('Refresh interval:', comfora_interval);
+        var comfora_interval = settings.comfora_interval||10; // to prevent "undefined"...
+        this.log('Refresh interval:', comfora_interval);
           
         this.deviceRequestControl(comfora_ip); 
 		this.deviceRequestSensor(comfora_ip);
@@ -195,10 +196,11 @@ class ComforaDevice extends Device {
         // do not differentiate the modes: auto1 and auto2
         if ((amode == 1) || (amode == 7)) amode = 0 ;
         const airco_mode_comfora = airco_modes_comfora[amode];
-        const capability_mode = this.getCapabilityValue('airco_mode_comfora');		
+        const capability_mode = this.getCapabilityValue('airco_mode_comfora');	
         this.log('mode:', airco_mode_comfora);
         this.log('capability_mode:', capability_mode);
-        // when the airco is tured off using Daikin AI show mode "OFF" and keep showing that mode
+         
+        // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
         if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_comfora', airco_mode_comfora);
         // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
         // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop

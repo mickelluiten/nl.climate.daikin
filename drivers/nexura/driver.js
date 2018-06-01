@@ -208,6 +208,9 @@ class NexuraDriver extends Driver {
             var ip_address = settings.nexura_ip;    
             this.log('ip_address', ip_address);                        
 
+            var demo_mode = settings.nexura_demomode;    
+            this.log('demo_mode', demo_mode);  
+
             var airco_mode = args.mode;
             device.setCapabilityValue('airco_mode_nexura', airco_mode);
             this.log('airco_mode', airco_mode); 
@@ -221,7 +224,7 @@ class NexuraDriver extends Driver {
             if (useGetToPost) options = {'useGetToPost': true};
             else options = {'useGetToPost': false};
                        
-            nexuractrl.daikinModeControl(airco_mode, ip_address, options);
+            nexuractrl.daikinModeControl(airco_mode, ip_address, options, demo_mode);
 			return Promise.resolve(airco_mode);
 		});         
 

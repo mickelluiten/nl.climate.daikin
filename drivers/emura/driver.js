@@ -208,6 +208,9 @@ class EmuraDriver extends Driver {
             var ip_address = settings.emura_ip;    
             this.log('ip_address', ip_address);                        
 
+            var demo_mode = settings.emura_demomode;    
+            this.log('demo_mode', demo_mode);  
+
             var airco_mode = args.mode;
             device.setCapabilityValue('airco_mode_emura', airco_mode);
             this.log('airco_mode', airco_mode);
@@ -221,7 +224,7 @@ class EmuraDriver extends Driver {
             if (useGetToPost) options = {'useGetToPost': true};
             else options = {'useGetToPost': false};
                         
-            emuractrl.daikinModeControl(airco_mode, ip_address, options);
+            emuractrl.daikinModeControl(airco_mode, ip_address, options, demo_mode);
 			return Promise.resolve(airco_mode);
 		});           
 

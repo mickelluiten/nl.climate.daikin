@@ -155,7 +155,8 @@ class NexuraDevice extends Device {
 
         var settings = this.getSettings();
         var nexura_ip = settings.nexura_ip; this.log('Nexura ip-address: ', nexura_ip);        
-        var nexura_interval = settings.nexura_interval; this.log('Refresh interval: ', nexura_interval);
+        var nexura_interval = settings.nexura_interval||10; // to prevent "undefined"...
+        this.log('Refresh interval: ', nexura_interval);
 
         this.deviceRequestControl(nexura_ip);            
 		this.deviceRequestSensor(nexura_ip);
@@ -198,7 +199,8 @@ class NexuraDevice extends Device {
         const capability_mode = this.getCapabilityValue('airco_mode_nexura');
         this.log('mode:', airco_mode_nexura);
         this.log('capability_mode:', capability_mode);
-        // when the airco is tured off using Daikin AI show mode "OFF" and keep showing that mode
+        
+        // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
         if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_nexura', airco_mode_nexura);
         // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
         // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop

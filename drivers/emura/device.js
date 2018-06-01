@@ -155,7 +155,8 @@ class EmuraDevice extends Device {
 
         var settings = this.getSettings();
         var emura_ip = settings.emura_ip; this.log('Emura ip-address: ', emura_ip);        
-        var emura_interval = settings.emura_interval; this.log('Refresh interval: ', emura_interval);
+        var emura_interval = settings.emura_interval||10; // to prevent "undefined"...
+        this.log('Refresh interval: ', emura_interval);
 
         this.deviceRequestControl(emura_ip);      
 		this.deviceRequestSensor(emura_ip);
@@ -198,14 +199,14 @@ class EmuraDevice extends Device {
         const capability_mode = this.getCapabilityValue('airco_mode_emura');		
         this.log('mode:', airco_mode_emura);
         this.log('capability_mode:', capability_mode);
-        // when the airco is tured off using Daikin AI show mode "OFF" and keep showing that mode
+        
+        // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
         if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_emura', airco_mode_emura);
         // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
         // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
         if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_emura', "auto");
         // when the airo is powered off externally make sure that capability mode "OFF" is set
         if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_emura', "off");    
-
         
     //---- temperature
 		const atemp = Number(control_info[4]);

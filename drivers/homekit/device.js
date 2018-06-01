@@ -115,7 +115,8 @@ class HomeKitDevice extends Device {
 
         var settings = this.getSettings();
         var homekit_ip = settings.homekit_ip; this.log('HomeKit ip-address: ', homekit_ip);        
-        var homekit_interval = settings.homekit_interval; this.log('Refresh interval: ', homekit_interval);
+        var homekit_interval = settings.homekit_interval||10; // to prevent "undefined"...
+        this.log('Refresh interval: ', homekit_interval);
 
         this.deviceRequestControl(homekit_ip);          
 		this.deviceRequestSensor(homekit_ip);
