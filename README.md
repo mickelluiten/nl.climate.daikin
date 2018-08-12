@@ -7,7 +7,7 @@ Control your Daikin air conditioner (or heatpump) through Homey. This app requir
 ## Features
 - supports most Daikin airconditioners & heatpumps.
 - the mobile card shows target temperature, operating mode, fan rate and fan swing mode.
-- target temperature as well as operating mode can be controlled from the mobile card.
+- target temperature, fan speed, fan swing mode as well as AC operating mode can be controlled from the mobile card.
 
 ![Mobile card2](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/mobilecard2.png)
 

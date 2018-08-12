@@ -5,7 +5,7 @@ Control your Daikin air conditioner (or heatpump) through Homey. This app requir
 
 ## Features
 - supports Daikin airconditioners & heatpumps (aka inverters) through model range drivers.
-- the mobile card shows, depeding on the selected driver, target temperature, operating mode, inside temperature, fan rate and fan swing mode. Target temperature as well as operating mode can be controlled from the mobile card, fan rate and fan swing mode can only be controled via an action card.
+- the mobile card shows, depeding on the selected driver, target temperature, operating mode, inside temperature, fan rate and fan swing mode. Target temperature, fan speed, fan swing mode as well as AC operating mode can be controlled from the mobile card.
 
 ![Mobile card2](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/mobilecard2.png)
 
