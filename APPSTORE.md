@@ -6,12 +6,11 @@ Control your Daikin air conditioner (or heatpump) through Homey. This app requir
 ## Features
 - supports Daikin airconditioners & heatpumps (aka inverters) through model range drivers.
 - the mobile card shows, depeding on the selected driver, target temperature, operating mode, inside temperature, fan rate and fan swing mode. Target temperature, fan speed, fan swing mode as well as AC operating mode can be controlled from the mobile card.
-
-![Mobile card2](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/mobilecard2.png)
-
 - with the available 22 flowcards (9 trigger cards, 9 condition cards and 4 action cards) the options to automate are almost endless.
 - HomeKit support* for every WiFi capable Daikin Airconditioner thru the "Model HomeKit" driver. The "Model Homekit" driver has 2 trigger flowcards, no condition flowcards and 2 action flowcards. The AC control functionality is however limited to: airco's mode setting, target temperature setting and inside temperature measurement.
   Note *: requires either HomeKit by Sprut, or HomeyKit by Bas Jansen. 
+
+![Mobile card2](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/mobilecard2.png)
 
 ## Action flow cards
 When designing flows and you add multiple Daikin AI action flowcards to a flow, or serveral flows but with the same trigger condition, it might be necessary to spread these actions over several seconds to give the airco time to process all the commands as the interface handles all the commands separately. The nature (asynchronous polling) of the Daikin interface still makes it possible that commands colide and as a result commands are not executed correctly which is something to keep in mind when building flows.
@@ -33,9 +32,11 @@ Daikin just recently introduced a new model WiFi adapter (BRP069B--) which uses 
 Note: the WiFi adapter its firmware version can be found in the Daikin Online Controller app (select your airco > click on the gear sysmbol > the firmware version shows under "Adapter information").  
 
 ## Change log
+#### v1.0.10
+- Fan rate and Fan Swing mode can now be controlled from the mobile card.
+
 #### v1.0.9
 - Optimizations.
-- Fan rate and Fan Swing mode can now be controlled from the mobile card.
 
 #### v1.0.8
 - Error handling improvement.
