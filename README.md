@@ -8,12 +8,11 @@ Control your Daikin air conditioner (or heatpump) through Homey. This app requir
 - supports most Daikin airconditioners & heatpumps.
 - the mobile card shows target temperature, operating mode, fan rate and fan swing mode.
 - target temperature, fan speed, fan swing mode as well as AC operating mode can be controlled from the mobile card.
-
-![Mobile card2](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/mobilecard2.png)
-
 - with the available 22 flowcards (9 trigger cards, 9 condition cards and 4 action cards) the options to automate are almost endless.
 - HomeKit support* for every WiFi capable Daikin Airconditioner thru the "Model HomeKit" driver. The "Model Homekit" driver has 2 trigger flowcards, no condition flowcards and 2 action flowcards. The AC control functionality is however limited to: airco's mode setting, target temperature setting and inside temperature measurement.
   Note *: requires either HomeKit by Sprut, or HomeyKit by Bas Jansen. 
+
+![Mobile card2](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/mobilecard2.png)
 
 ## Demo mode (upon pairing the demo mode is by default turned ON !!)
 Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows.
