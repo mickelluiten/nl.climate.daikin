@@ -1,5 +1,5 @@
 
-![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/Daikin-logo-wide.png)
+![Daikin logo](https://raw.githubusercontent.com/PeterEIER/nl.climate.daikin/master/assets/images/images/Daikin-logo-wide.png)
 
 # Daikin AI
 Control your Daikin air conditioner (or heatpump) through Homey. This app requires that your Daikin air conditioner (or heatpump) is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--).
@@ -9,7 +9,7 @@ Control your Daikin air conditioner (or heatpump) through Homey. This app requir
 - the mobile card shows target temperature, operating mode, fan rate and fan swing mode.
 - target temperature as well as operating mode can be controlled from the mobile card.
 
-![Mobile card2](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/mobilecard2.png)
+![Mobile card2](https://raw.githubusercontent.com/PeterEIER/nl.climate.daikin/master/assets/images/mobilecard2.png)
 
 - with the available 22 flowcards (9 trigger cards, 9 condition cards and 4 action cards) the options to automate are almost endless.
 - HomeKit support* for every WiFi capable Daikin Airconditioner thru the "Model HomeKit" driver. The "Model Homekit" driver has 2 trigger flowcards, no condition flowcards and 2 action flowcards. The AC control functionality is however limited to: airco's mode setting, target temperature setting and inside temperature measurement.
