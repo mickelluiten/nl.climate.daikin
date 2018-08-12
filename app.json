@@ -1,6 +1,6 @@
 {
     "id": "nl.climate.daikin",
-	"version": "1.0.8",
+	"version": "1.0.9",
     "compatibility": ">=1.5.3",
     "sdk": 2,
     "name": {
@@ -12,8 +12,8 @@
 		"nl": "Maakt bediening van Daikin Airconditioners mogelijk."
     },
     "category": [
-        "appliances",
-        "climate"
+        "climate",
+        "appliances"
     ],
     "tags": {
            "en": [ "Daikin", "Emura", "Nextura", "Comfora", "Ururu Sarara", "Ururu", "Sarara", "Stylish", "Perfera", "Sensira", "airconditioner", "airconditioning", "thermostat", "fan", "homekit", "home" ],
@@ -2153,18 +2153,16 @@
                   ]             
              },
              {
-                 "id": "sensor",
+                 "id": "picker",
                  "capabilities": [
-                     "fan_rate",
-                     "fan_direction"
-                  ],
-                 "options": {
-                    "showTitle": true,
-                    "icons": {
-                        "fan_direction": "./drivers/comfora/assets/oscillation.svg",
-                        "fan_rate": "./drivers/comfora/assets/house.svg"
-                    }
-                }
+                    "fan_rate"
+                  ]             
+             },
+             {
+                 "id": "picker",
+                 "capabilities": [
+                    "fan_direction"
+                  ]
              },
              {
                "id": "thermostat",
@@ -2352,22 +2350,20 @@
              {
                  "id": "picker",
                  "capabilities": [
-                     "airco_mode_emura"
+                    "airco_mode_emura"
                   ]             
              },
              {
-                 "id": "sensor",
+                 "id": "picker",
                  "capabilities": [
-                     "fan_rate",
-                     "fan_direction"
-                  ],
-                 "options": {
-                    "showTitle": true,
-                    "icons": {
-                        "fan_direction": "./drivers/emura/assets/oscillation.svg",
-                        "fan_rate": "./drivers/emura/assets/house.svg"
-                    }
-                }
+                    "fan_rate"
+                  ]             
+             },
+             {
+                 "id": "picker",
+                 "capabilities": [
+                    "fan_direction"
+                  ]             
              },
              {
                "id": "thermostat",
@@ -2559,18 +2555,16 @@
                  ]             
             },
             {
-                "id": "sensor",
+                "id": "picker",
                 "capabilities": [
-                    "fan_rate",
-                    "fan_direction"
-                 ],
-                "options": {
-                   "showTitle": true,
-                   "icons": {
-                       "fan_direction": "./drivers/nexura/assets/oscillation.svg",
-                       "fan_rate": "./drivers/nexura/assets/house.svg"
-                   }
-               }
+                   "fan_rate"
+                 ]             
+            },
+            {
+                "id": "picker",
+                "capabilities": [
+                   "fan_direction"
+                 ]             
             },
             {
               "id": "thermostat",

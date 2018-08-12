@@ -9,7 +9,7 @@ Control your Daikin air conditioner (or heatpump) through Homey. This app requir
 - the mobile card shows target temperature, operating mode, fan rate and fan swing mode.
 - target temperature as well as operating mode can be controlled from the mobile card.
 
-![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/mobilecard.png)
+![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/mobilecard2.png)
 
 - with the available 22 flowcards (9 trigger cards, 9 condition cards and 4 action cards) the options to automate are almost endless.
 - HomeKit support* for every WiFi capable Daikin Airconditioner thru the "Model HomeKit" driver. The "Model Homekit" driver has 2 trigger flowcards, no condition flowcards and 2 action flowcards. The AC control functionality is however limited to: airco's mode setting, target temperature setting and inside temperature measurement.
@@ -84,3 +84,5 @@ If you like the app, consider buying me a cup of coffee!
 - 28-MAY-18: Fixed a bug which prevented flow action cards to function correctly for airco's equipped with the type B adapter.
 - 31-MAY-18: Check on correct Refresh Interval setting: when it is undefined for some reason the interval will be set to its default (10 seconds) value.
 - 01-JUN-18: Flow action card bug fix.
+- 01-JUL-18: Main category (appliance) and sub-category (climate) reversed to optimize Athom App Store search.
+- 12-AUG-18: Fan rate and Fan Swing mode can now be controlled from the mobile card. New mobile card photo added to description.
