@@ -1487,15 +1487,6 @@
      	  		 },
      	  		 { "id": "fan", 
      	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
-     	  		 },
-     	  		 { "id": "streamer", 
-     	  		   "label": { "en": "Streamer", "nl": "Streamer" } 
-     	  		 },
-     	  		 { "id": "powerful", 
-     	  		   "label": { "en": "Powerful", "nl": "Krachtig" } 
-     	  		 },
-     	  		 { "id": "econo", 
-     	  		   "label": { "en": "Economy", "nl": "Besparen" } 
      	  		 }
      	   	  ]
      	   }
@@ -1534,15 +1525,6 @@
      	  		 },
      	  		 { "id": "fan", 
      	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
-     	  		 },
-     	  		 { "id": "streamer", 
-     	  		   "label": { "en": "Streamer", "nl": "Streamer" } 
-     	  		 },
-     	  		 { "id": "powerful", 
-     	  		   "label": { "en": "Powerful", "nl": "Krachtig" } 
-     	  		 },
-     	  		 { "id": "econo", 
-     	  		   "label": { "en": "Economy", "nl": "Besparen" } 
      	  		 }
      	   	  ]
      	   }
@@ -1581,15 +1563,6 @@
      	  		 },
      	  		 { "id": "fan", 
      	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
-     	  		 },
-     	  		 { "id": "streamer", 
-     	  		   "label": { "en": "Streamer", "nl": "Streamer" } 
-     	  		 },
-     	  		 { "id": "powerful", 
-     	  		   "label": { "en": "Powerful", "nl": "Krachtig" } 
-     	  		 },
-     	  		 { "id": "econo", 
-     	  		   "label": { "en": "Economy", "nl": "Besparen" } 
      	  		 }
      	   	  ]
      	   }

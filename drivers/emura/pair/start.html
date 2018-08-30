@@ -92,9 +92,8 @@ function saveSettings () {
     			             "emura_interval": 10,
                              "emura_demomode": true,
                              "emura_spmode": true                    
-    			    }        
-            
-          }
+    			}
+            }
         };
 		Homey.emit('manual_add', device, function (err, result) {
             $('.err-msg').text(__('pair.start.add'));
