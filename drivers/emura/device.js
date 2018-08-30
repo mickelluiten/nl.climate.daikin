@@ -12,20 +12,22 @@ class EmuraDevice extends Device {
 		super.onInit();
 
 		this.log('Emura capability registration started...');
-        this.registerCapabilityListener('airco_mode_emura', this.onCapabilityMode.bind(this));
-		this.registerCapabilityListener('fan_rate', this.onCapabilityFanRate.bind(this));			
-		this.registerCapabilityListener('fan_direction', this.onCapabilityFanDir.bind(this));	       
+        this.registerCapabilityListener('airco_mode', this.onCapabilityMode.bind(this));
+        this.registerCapabilityListener('airco_mode_extended', this.onCapabilityExtendedMode.bind(this));
+		this.registerCapabilityListener('fan_rate', this.onCapabilityFanRate.bind(this));
+		this.registerCapabilityListener('fan_direction', this.onCapabilityFanDir.bind(this));
 		this.registerCapabilityListener('set_humidity', this.onCapabilityAircoHum.bind(this));
-        this.registerCapabilityListener('set_temperature', this.onCapabilityAircoTemp.bind(this));        
+        this.registerCapabilityListener('set_temperature', this.onCapabilityAircoTemp.bind(this));
 		this.registerCapabilityListener('measure_temperature.inside', this.onCapabilityMeasureTemperature.bind(this));
-        this.registerCapabilityListener('measure_temperature.outside', this.onCapabilityMeasureTemperature.bind(this));       
+        this.registerCapabilityListener('measure_temperature.outside', this.onCapabilityMeasureTemperature.bind(this));
                 
 		this.log('Emura registration of Capabilities and Report Listeners completed!');
         
         // for documentation about the Daikin API look at https://github.com/Apollon77/daikin-controller and at
         // https://github.com/Apollon77/daikin-controller
 
-    	this.setCapabilityValue('airco_mode_emura', "off");  // ensure a valid mode is shown at start up...
+    	this.setCapabilityValue('airco_mode', "off");  // ensure a valid mode is shown at start up...
+    	this.setCapabilityValue('airco_mode_extended', "off");  // ensure a valid mode is shown at start up...
         
         this.emuraIsDeleted = false;
         this.refreshData(); // refresh every x-seconds the Homey app with data retrieved from the airco...
@@ -51,13 +53,24 @@ class EmuraDevice extends Device {
 //-------- app capabilities --------------
     	
     // Capability 1: Device get/set mode
-    onCapabilityMode(airco_mode_emura) {
+    onCapabilityMode(airco_mode) {
 		this.log('onCapabilityMode');
-		this.log('mode:', airco_mode_emura);
+		this.log('mode:', airco_mode);
         
-    	this.setCapabilityValue('airco_mode_emura', airco_mode_emura);
+    	this.setCapabilityValue('airco_mode', airco_mode);
         
-        this.daikinModeControl(airco_mode_emura);
+        this.daikinModeControl(airco_mode);
+
+		return Promise.resolve();  
+	}
+    
+    onCapabilityExtendedMode(airco_mode_extended) {
+		this.log('onCapabilityExtendedMode');
+        this.log('extended mode:', airco_mode_extended);
+        
+    	this.setCapabilityValue('airco_mode_extended', airco_mode_extended);
+        
+        this.daikinModeControl(airco_mode_extended);
 
 		return Promise.resolve();  
 	}
@@ -191,23 +204,53 @@ class EmuraDevice extends Device {
         const apow = Number(control_info[1]);
         
     //---- mode
-        var airco_modes_emura = [ "auto", "auto1", "dehumid", "cooling", "heating", "off", "fan", "auto2" ];                        
-        var amode = Number(control_info[2]);
-        // do not differentiate the modes: auto1 and auto2
-        if ((amode == 1) || (amode == 7)) amode = 0 ;
-        const airco_mode_emura = airco_modes_emura[amode];
-        const capability_mode = this.getCapabilityValue('airco_mode_emura');		
-        this.log('mode:', airco_mode_emura);
-        this.log('capability_mode:', capability_mode);
+        var airco_modes = [ "auto", "auto1", "dehumid", "cooling", "heating", "off", "fan", "auto2", "streamer", "powerful", "econo" ]; 
         
-        // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
-        if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_emura', airco_mode_emura);
-        // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
-        // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
-        if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_emura', "auto");
-        // when the airo is powered off externally make sure that capability mode "OFF" is set
-        if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_emura', "off");    
+        var settings = this.getSettings();
+        var emura_spmode = settings.emura_spmode;
+        this.log('Special mode set:', emura_spmode);  
         
+        if (emura_spmode == true) {                      
+          var amode = Number(control_info[2]);
+          if ((amode == 1) || (amode == 7)) amode = 0; // do not differentiate the modes: auto1 and auto2
+                    
+          var advmode = Number(control_info[3]);
+          if (advmode == 13) amode = 8;
+          if (advmode == 2) amode = 9;
+          if (advmode == 12) amode = 10;
+
+          const airco_mode = airco_modes[amode];          
+          const capability_mode = this.getCapabilityValue('airco_mode_extended');
+          // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
+          if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_extended', airco_mode);
+          // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
+          // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
+          if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_extended', "auto");
+          // when the airo is powered off externally make sure that capability mode "OFF" is set
+          if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_extended', "off");
+          
+          this.log('extended mode:', airco_mode);
+          this.log('extended capability_mode:', capability_mode);
+          this.log('emura_spmode_kind:', advmode);
+        }
+        else {
+          var amode = Number(control_info[2]);
+          if ((amode == 1) || (amode == 7)) amode = 0; // do not differentiate the modes: auto1 and auto2
+          
+          const airco_mode = airco_modes[amode];
+          const capability_mode = this.getCapabilityValue('airco_mode');
+          // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
+          if ((capability_mode != "off")) this.setCapabilityValue('airco_mode', airco_mode);
+          // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
+          // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
+          if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode', "auto");
+          // when the airo is powered off externally make sure that capability mode "OFF" is set
+          if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode', "off");
+          
+          this.log('mode:', airco_mode);
+          this.log('capability_mode:', capability_mode);
+        } 
+            
     //---- temperature
 		const atemp = Number(control_info[4]);
         this.log('target temperature °C:', atemp);  
@@ -327,11 +370,12 @@ class EmuraDevice extends Device {
     }
 
     // POST new Mode settings to Airconditioner    
-    daikinModeControl(airco_mode_emura) {
+    daikinModeControl(acmode) {
        this.log('daikinModeControl');
 
        var settings = this.getSettings();
        var emura_ip = settings.emura_ip;
+       var emura_spmode = settings.emura_spmode;
        var demo_mode = settings.emura_demomode;
        var emura_useGetToPost = settings.emura_useGetToPost;
        var emura_adapter = settings.emura_adapter;
@@ -342,9 +386,40 @@ class EmuraDevice extends Device {
        if (emura_useGetToPost) emura_options = {'useGetToPost': true};
        else emura_options = {'useGetToPost': false};
        
-       util.daikinModeControl(airco_mode_emura, emura_ip, emura_options, demo_mode);
-      
-    }  
+       if (emura_spmode == false) {
+           this.log('airco_mode:', acmode);
+           
+           util.daikinModeControl(acmode, emura_ip, emura_options, demo_mode);           
+       } else {
+           this.log('airco_mode_extended:', acmode);
+           
+           // step 1 - set mode
+           util.daikinModeControl(acmode, emura_ip, emura_options, demo_mode);
+           
+           // step 2 - set advanced/special mode ON/OFF and function selection
+           switch (acmode) {
+               case "streamer":   var advstate = 1;
+                                  this.log('Special mode: ON, function: Streamer');
+                                  break;
+
+              case "powerful":    var advstate = 1;
+                                  this.log('Special mode: ON, function: Powerful');
+                                  break;
+                                  
+              case "econo":       var advstate = 1;
+                                  this.log('Special mode: ON, function: Economy');
+                                  break;
+                                                
+              default:            var advstate = 0;
+                                  this.log('Special mode: OFF');
+                                  return;
+              
+           }
+           
+           util.daikinSpecialModeControl(acmode, emura_ip, emura_options, advstate);           
+   
+       }
+    }
 
     // POST new Fan Rate settings to Airconditioner    
     daikinFanRateControl(fan_rate) {
@@ -393,6 +468,7 @@ class EmuraDevice extends Device {
        var emura_useGetToPost = settings.emura_useGetToPost;
        var emura_adapter = settings.emura_adapter;
        var emura_options = {};
+       
        this.log('firmware < v2.0.1 (then useGetToPost):', emura_useGetToPost);
        this.log('Adapter model:', emura_adapter)
        

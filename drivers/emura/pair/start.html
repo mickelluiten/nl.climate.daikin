@@ -8,7 +8,13 @@ function saveSettings () {
    // input variables           
    var inputIPAddress = $('#ipAddress').val();
    var inputDeviceName = $('#deviceName').val();
-   
+   // special mode checkbox
+   if ($('#specialMode').prop('checked')) {
+       var specialModeBool = true;
+   } else {
+       var specialModeBool = false;
+   }
+
    // ip-address can not be empty
    if (inputIPAddress == "") {
    	    Homey.alert(__('pair.start.required'));
@@ -27,6 +33,7 @@ function saveSettings () {
    	}
 
  	if (IPInputOK) {
+      if (specialModeBool == false) {
         var device = {
 			data: {
 				id: GetGUID(),
@@ -34,14 +41,61 @@ function saveSettings () {
                 ip: inputIPAddress 
 			},
 			    name: inputDeviceName,
-			    settings: {
-			            	"emura_ip": inputIPAddress,
-                            "emura_adapter": "BRP069Axx",
-                            "emura_useGetToPost": false,			
-			            	"emura_interval": 10,
-                            "emura_demomode": true                    
+		    	settings: {
+		    	         "emura_ip": inputIPAddress,
+                         "emura_adapter": "BRP069Axx",
+                         "emura_useGetToPost": false,			
+			             "emura_interval": 10,
+                         "emura_demomode": true,
+                         "emura_spmode": false                    
 			    }
-		};
+            }
+        } else {
+            var device = {
+    			data: {
+    				id: GetGUID(),
+                    inputdevicename: inputDeviceName,
+                    ip: inputIPAddress 
+    			},
+    			    name: inputDeviceName,
+                    mobile: {
+                    "components": [
+                        {
+                            "id": "picker",
+                            "capabilities": [
+                               "airco_mode_extended"
+                             ]             
+                        },
+                        {
+                            "id": "picker",
+                            "capabilities": [
+                               "fan_rate"
+                             ]             
+                        },
+                        {
+                            "id": "picker",
+                            "capabilities": [
+                               "fan_direction"
+                             ]             
+                        },
+                        {
+                            "id": "thermostat",
+                            "capabilities": [ "set_temperature"
+                             ]
+                        }
+                    ]
+                },
+    		    	settings: {
+    		    	         "emura_ip": inputIPAddress,
+                             "emura_adapter": "BRP069Axx",
+                             "emura_useGetToPost": false,			
+    			             "emura_interval": 10,
+                             "emura_demomode": true,
+                             "emura_spmode": true                    
+    			    }        
+            
+          }
+        };
 		Homey.emit('manual_add', device, function (err, result) {
             $('.err-msg').text(__('pair.start.add'));
 			if(err) {
@@ -92,6 +146,10 @@ function GetGUID() {
 			<tr>
 				<td style="width:100px;" data-i18n="pair.start.deviceName">Name</td>
 				<td><input id="deviceName" type="text" value="Emura 2" placeholder="Emura 2"/></td>
+			</tr>
+			<tr>
+				<td style="width:100px;" data-i18n="pair.start.specialMode">Special Mode</td>
+				<td><input id="specialMode" type="checkbox" unchecked="false"/></td>
 			</tr>
 		</table>
 		<p>&nbsp;</p>

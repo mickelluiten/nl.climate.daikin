@@ -1,6 +1,6 @@
 {
     "id": "nl.climate.daikin",
-	"version": "1.0.10",
+	"version": "1.1.0",
     "compatibility": ">=1.5.3",
     "sdk": 2,
     "name": {
@@ -43,6 +43,7 @@
       }
     },
     "athomForumDiscussionId": 2082,
+    "homeyCommunityTopicId": 158,
 	"flow": {
     "triggers": [
         {
@@ -1486,6 +1487,15 @@
      	  		 },
      	  		 { "id": "fan", 
      	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
+     	  		 },
+     	  		 { "id": "streamer", 
+     	  		   "label": { "en": "Streamer", "nl": "Streamer" } 
+     	  		 },
+     	  		 { "id": "powerful", 
+     	  		   "label": { "en": "Powerful", "nl": "Krachtig" } 
+     	  		 },
+     	  		 { "id": "econo", 
+     	  		   "label": { "en": "Economy", "nl": "Besparen" } 
      	  		 }
      	   	  ]
      	   }
@@ -1524,6 +1534,15 @@
      	  		 },
      	  		 { "id": "fan", 
      	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
+     	  		 },
+     	  		 { "id": "streamer", 
+     	  		   "label": { "en": "Streamer", "nl": "Streamer" } 
+     	  		 },
+     	  		 { "id": "powerful", 
+     	  		   "label": { "en": "Powerful", "nl": "Krachtig" } 
+     	  		 },
+     	  		 { "id": "econo", 
+     	  		   "label": { "en": "Economy", "nl": "Besparen" } 
      	  		 }
      	   	  ]
      	   }
@@ -1562,6 +1581,15 @@
      	  		 },
      	  		 { "id": "fan", 
      	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
+     	  		 },
+     	  		 { "id": "streamer", 
+     	  		   "label": { "en": "Streamer", "nl": "Streamer" } 
+     	  		 },
+     	  		 { "id": "powerful", 
+     	  		   "label": { "en": "Powerful", "nl": "Krachtig" } 
+     	  		 },
+     	  		 { "id": "econo", 
+     	  		   "label": { "en": "Economy", "nl": "Besparen" } 
      	  		 }
      	   	  ]
      	   }
@@ -1792,7 +1820,7 @@
     ]
   },
   "capabilities": {
-      "airco_mode_comfora": {
+      "airco_mode": {
           "type": "enum",
           "title": {
               "en": "Airco mode capability",
@@ -1845,11 +1873,11 @@
             }
          ]
       },
-      "airco_mode_emura": {
+      "airco_mode_extended": {
           "type": "enum",
           "title": {
-              "en": "Airco mode capability",
-              "nl": "Airco modus functionaliteit"
+              "en": "Airco extended mode capability",
+              "nl": "Airco uitgebreide modus functionaliteit"
           },
           "getable": true,
           "setable": true,
@@ -1895,58 +1923,26 @@
                 "en": "Dry",
                 "nl": "Ontvochtigen"
               }
-            }
-         ]
-      },
-      "airco_mode_nexura": {
-          "type": "enum",
-          "title": {
-              "en": "Airco mode capability",
-              "nl": "Airco modus functionaliteit"
-          },
-          "getable": true,
-          "setable": true,
-          "values": [
-            {
-                "id": "off",
-                "title": {
-                  "en": "Off",
-                  "nl": "Uit"
-                }
             },
             {
-              "id": "cooling",
+              "id": "powerful",
               "title": {
-                "en": "Cooling",
-                "nl": "Koelen"
+                "en": "Powerful",
+                "nl": "Krachtig"
               }
             },
             {
-              "id": "heating",
+              "id": "econo",
               "title": {
-                "en": "Heating",
-                "nl": "Verwarmen"
+                "en": "Economy",
+                "nl": "Besparen"
               }
             },
             {
-              "id": "auto",
+              "id": "streamer",
               "title": {
-                "en": "Auto",
-                "nl": "Auto"
-              }
-            },
-            {
-              "id": "fan",
-              "title": {
-                "en": "Fan",
-                "nl": "Ventilator"
-              }
-            },
-            {
-              "id": "dehumid",
-              "title": {
-                "en": "Dry",
-                "nl": "Ontvochtigen"
+                "en": "Streamer",
+                "nl": "Streamer"
               }
             }
          ]
@@ -2092,7 +2088,8 @@
      },
      "class": "other",     
      "capabilities": [
-       "airco_mode_comfora",
+       "airco_mode",
+       "airco_mode_extended",
        "fan_rate",
        "fan_direction",
        "set_humidity",
@@ -2101,12 +2098,18 @@
        "measure_temperature.outside" 
      ],
      "capabilitiesOptions": {
-   		"airco_mode_comfora": {
+   		"airco_mode": {
    			"title": {
    				"en": "Mode",
    				"nl": "Modus"
               }   
-          },
+        },
+    	"airco_mode_extended": {
+    		"title": {
+    			"en": "Mode",
+    	  		"nl": "Modus"
+              }   
+        },
    		"fan_rate": {
    			"title": {
    				"en": "Fan",
@@ -2149,7 +2152,7 @@
              {
                  "id": "picker",
                  "capabilities": [
-                     "airco_mode_comfora"
+                     "airco_mode"
                   ]             
              },
              {
@@ -2194,96 +2197,82 @@
          {
          "type": "group",
          "label": {
-         "en": "Network setting (note: a static IP-address is required, DHCP is not supported.)",
-         "nl": "Netwerk instellingen (opmerking: een statisch IP-adres is noodzakelijk, DHCP wordt niet ondersteund.)"
+         "en": "Network, adatper type and firmware settings",
+         "nl": "Netwerk, adapter type en firmware instellingen"
          },
          "children": [{
-              "id": "comfora_ip",
-              "type": "text",
-              "pattern": "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5]).){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$",
-              "label": {
-              "en": "Airconditioners IP address",
-              "nl": "Airconditioners IP adres"
-              },
-              "value": ""
-          }]
-      },
-      {
-      "type": "group",
-      "label": {
-      "en": "Application refresh (all settings in seconds)",
-      "nl": "Applicatie verversen (alle instellingen in seconden)"
-      },
-      "children": [{
-           "id": "comfora_interval",
-           "type": "number",
-           "label": {
-           "en": "Polling interval",
-           "nl": "Gegevens opvragen elke"
-           },
-           "value": 10,
-           "attr": {
-               "min": 5,
-               "max": 30
-           } 
+             "id": "comfora_ip",
+             "type": "text",
+             "pattern": "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5]).){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$",
+             "label": {
+             "en": "Airconditioners IP address",
+             "nl": "Airconditioners IP adres"
+             },
+             "value": ""
+             },
+             {
+             "id": "comfora_adapter",
+             "type": "radio",
+             "label": {
+             "en": "Model adapter",
+             "nl": "Model adapter"
+             },
+             "value": "BRP069Axx",
+             "values": [{
+                  "id": "BRP069Axx",
+                  "label": {
+                      "en": "Model BRP069A--",
+                      "nl": "Model BRP069A--"
+                      }
+                  },
+                  {
+                  "id": "BRP069Bxx",
+                  "label": {
+                      "en": "Model BRP069B--",
+                      "nl": "Model BRP069B--"
+                     }
+                  }
+                ]
+             },
+             {
+             "id": "comfora_useGetToPost",
+             "type": "checkbox",
+             "label": {
+             "en": "B-model fw <= v2.0.1",
+             "nl": "B-model fw <= v2.0.1"
+             },
+             "value": true
+             }]
+             },
+         {
+         "type": "group",
+         "label": {
+         "en": "Other settings",
+         "nl": "Overige instellingen"
+         },
+         "children": [{
+             "id": "comfora_interval",
+             "type": "number",
+             "label": {
+             "en": "Polling interval",
+             "nl": "Gegevens opvragen elke"
+             },
+             "value": 10,
+             "attr": {
+                 "min": 5,
+                 "max": 30
+             }
+          },       
+          {
+             "id": "comfora_demomode",
+             "type": "checkbox",
+             "label": {
+             "en": "Demo mode",
+             "nl": "Demonstratie mode"
+             },
+             "value": false
+           }]
        }]
-     },
-     {
-     "type": "group",
-     "label": {
-     "en": "WiFi adapter type and firmware version (note: for model A adapters, in general, the firmware checkbox should not be checked.)",
-     "nl": "WiFi adapter type en firmware versie (noot: voor model A adapters geldt in algemene zin dat de firmware checkbox niet behoeft te worden aangekruisd.)"
-     },
-     "children": [{
-          "id": "comfora_adapter",
-          "type": "radio",
-          "label": {
-          "en": "Model adapter",
-          "nl": "Model adapter"
-          },
-          "value": "BRP069Bxx",
-          "values": [
-               {
-                   "id": "BRP069Axx",
-                   "label": {
-                       "en": "Model BRP069A--",
-                       "nl": "Model BRP069A--"
-                   }
-               },
-               {
-                   "id": "BRP069Bxx",
-                   "label": {
-                       "en": "Model BRP069B--",
-                       "nl": "Model BRP069B--"
-                   }
-                }
-          ]
-      },
-      {   "id": "comfora_useGetToPost",
-          "type": "checkbox",
-          "label": {
-          "en": "B-model fw <= v2.0.1",
-          "nl": "B-model fw <= v2.0.1"
-          },
-          "value": false
-       }]
-    },
-     {
-     "type": "group",
-     "label": {
-     "en": "Demo mode (when checked; power OFF no matter which mode is selected)",
-     "nl": "Demonstratie mode (wanneer aangekruist; airco is altijd uitgeschakeld ongeacht de gekozen modus)"
-     },
-     "children": [{
-          "id": "comfora_demomode",
-          "type": "checkbox",
-          "label": {
-          "en": "Demo mode",
-          "nl": "Demonstratie mode"
-          },
-          "value": false
-      }]   
-    }]
    },
    {
      "id": "emura",
@@ -2293,7 +2282,8 @@
      },
      "class": "other",     
      "capabilities": [
-       "airco_mode_emura",
+       "airco_mode",
+       "airco_mode_extended",
        "fan_rate",
        "fan_direction",
        "set_humidity",
@@ -2302,12 +2292,18 @@
        "measure_temperature.outside" 
      ],
      "capabilitiesOptions": {
-   		"airco_mode_emura": {
+   		"airco_mode": {
    			"title": {
    				"en": "Mode",
    				"nl": "Modus"
               }   
-          },
+        },
+       	"airco_mode_extended": {
+       		"title": {
+       			"en": "Mode",
+       			"nl": "Modus"
+             }   
+        },
    		"fan_rate": {
    			"title": {
    				"en": "Fan",
@@ -2350,7 +2346,7 @@
              {
                  "id": "picker",
                  "capabilities": [
-                    "airco_mode_emura"
+                    "airco_mode"
                   ]             
              },
              {
@@ -2395,96 +2391,82 @@
          {
          "type": "group",
          "label": {
-         "en": "Network setting (note: a static IP-address is required, DHCP is not supported.)",
-         "nl": "Netwerk instellingen (opmerking: een statisch IP-adres is noodzakelijk, DHCP wordt niet ondersteund.)"
+         "en": "Network, adatper type and firmware settings",
+         "nl": "Netwerk, adapter type en firmware instellingen"
          },
          "children": [{
-              "id": "emura_ip",
-              "type": "text",
-              "pattern": "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5]).){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$",
-              "label": {
-              "en": "Airconditioners IP address",
-              "nl": "Airconditioners IP adres"
-              },
-              "value": ""
-          }]
-      },
-      {
-      "type": "group",
-      "label": {
-      "en": "Application refresh (all settings in seconds)",
-      "nl": "Applicatie verversen (alle instellingen in seconden)"
-      },
-      "children": [{
-           "id": "emura_interval",
-           "type": "number",
-           "label": {
-           "en": "Polling interval",
-           "nl": "Gegevens opvragen elke"
-           },
-           "value": 10,
-           "attr": {
-               "min": 5,
-               "max": 30
-           } 
+             "id": "emura_ip",
+             "type": "text",
+             "pattern": "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5]).){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$",
+             "label": {
+             "en": "Airconditioners IP address",
+             "nl": "Airconditioners IP adres"
+             },
+             "value": ""
+             },
+             {
+             "id": "emura_adapter",
+             "type": "radio",
+             "label": {
+             "en": "Model adapter",
+             "nl": "Model adapter"
+             },
+             "value": "BRP069Axx",
+             "values": [{
+                  "id": "BRP069Axx",
+                  "label": {
+                      "en": "Model BRP069A--",
+                      "nl": "Model BRP069A--"
+                      }
+                  },
+                  {
+                  "id": "BRP069Bxx",
+                  "label": {
+                      "en": "Model BRP069B--",
+                      "nl": "Model BRP069B--"
+                     }
+                  }
+                ]
+             },
+             {
+             "id": "emura_useGetToPost",
+             "type": "checkbox",
+             "label": {
+             "en": "B-model fw <= v2.0.1",
+             "nl": "B-model fw <= v2.0.1"
+             },
+             "value": true
+             }]
+             },
+         {
+         "type": "group",
+         "label": {
+         "en": "Other settings",
+         "nl": "Overige instellingen"
+         },
+         "children": [{
+             "id": "emura_interval",
+             "type": "number",
+             "label": {
+             "en": "Polling interval",
+             "nl": "Gegevens opvragen elke"
+             },
+             "value": 10,
+             "attr": {
+                 "min": 5,
+                 "max": 30
+             }
+          },       
+          {
+             "id": "emura_demomode",
+             "type": "checkbox",
+             "label": {
+             "en": "Demo mode",
+             "nl": "Demonstratie mode"
+             },
+             "value": false
+           }]
        }]
-     },
-     {
-     "type": "group",
-     "label": {
-     "en": "WiFi adapter type and firmware version (note: for model A adapters, in general, the firmware checkbox should not be checked.)",
-     "nl": "WiFi adapter type en firmware versie (noot: voor model A adapters geldt in algemene zin dat de firmware checkbox niet behoeft te worden aangekruisd.)"
-     },
-     "children": [{
-          "id": "emura_adapter",
-          "type": "radio",
-          "label": {
-          "en": "Model adapter",
-          "nl": "Model adapter"
-          },
-          "value": "BRP069Axx",
-          "values": [
-               {
-                   "id": "BRP069Axx",
-                   "label": {
-                       "en": "Model BRP069A--",
-                       "nl": "Model BRP069A--"
-                   }
-               },
-               {
-                   "id": "BRP069Bxx",
-                   "label": {
-                       "en": "Model BRP069B--",
-                       "nl": "Model BRP069B--"
-                   }
-                }
-          ]
-      },
-      {   "id": "emura_useGetToPost",
-          "type": "checkbox",
-          "label": {
-          "en": "B-model fw <= v2.0.1",
-          "nl": "B-model fw <= v2.0.1"
-          },
-          "value": true
-       }]
-    },
-     {
-     "type": "group",
-     "label": {
-     "en": "Demo mode (when checked; power OFF no matter which mode is selected)",
-     "nl": "Demonstratie mode (wanneer aangekruist; airco is altijd uitgeschakeld ongeacht de gekozen modus)"
-     },
-     "children": [{
-          "id": "emura_demomode",
-          "type": "checkbox",
-          "label": {
-          "en": "Demo mode",
-          "nl": "Demonstratie mode"
-          },
-          "value": false
-      }]   
-    }]
   },
   {
     "id": "nexura",
@@ -2494,7 +2476,8 @@
     },
     "class": "other",     
     "capabilities": [
-      "airco_mode_nexura",
+      "airco_mode",
+      "airco_mode_extended",
       "fan_rate",
       "fan_direction",
       "set_humidity",
@@ -2503,55 +2486,61 @@
       "measure_temperature.outside" 
     ],
     "capabilitiesOptions": {
-  		"airco_mode_nexura": {
+  		"airco_mode": {
   			"title": {
   				"en": "Mode",
   				"nl": "Modus"
              }   
-         },
+        },
+       	"airco_mode_extended": {
+       		"title": {
+       			"en": "Mode",
+       			"nl": "Modus"
+             }   
+        },
   		"fan_rate": {
   			"title": {
   				"en": "Fan",
   				"nl": "Vent."
              }   
-         },
+        },
     	"fan_direction": {
     		"title": {
     			"en": "Wings",
     			"nl": "Lamel"
-           }   
-       },
+             }   
+        },
     	"set_humidity": {
     		"title": {
     			"en": "Set",
     			"nl": "Doel"
-           }   
+             }   
        },
  		"set_temperature": {
  			"title": {
  				"en": "Set",
  				"nl": "Doel"
-            }   
+              }   
         },         
 		"measure_temperature.inside": {
 			"title": {
 				"en": "Inside",
 				"nl": "Binnen"
-           }   
+              }   
        },
-	"measure_temperature.outside": {
-		"title": {
-			"en": "Outside",
-			"nl": "Buiten"
-		}
-	}
+	    "measure_temperature.outside": {
+		    "title": {
+		    	"en": "Outside",
+			    "nl": "Buiten"
+		      }
+	   }
     },     
     "mobile": {
         "components": [
             {
                 "id": "picker",
                 "capabilities": [
-                    "airco_mode_nexura"
+                    "airco_mode"
                  ]             
             },
             {
@@ -2596,96 +2585,82 @@
         {
         "type": "group",
         "label": {
-        "en": "Network setting (note: a static IP-address is required, DHCP is not supported.)",
-        "nl": "Netwerk instellingen (opmerking: een statisch IP-adres is noodzakelijk, DHCP wordt niet ondersteund.)"
+        "en": "Network, adatper type and firmware settings",
+        "nl": "Netwerk, adapter type en firmware instellingen"
         },
         "children": [{
-             "id": "nexura_ip",
-             "type": "text",
-              "pattern": "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5]).){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$",
-             "label": {
-             "en": "Airconditioners IP address",
-             "nl": "Airconditioners IP adres"
-             },
-             "value": ""
-         }]
-     },
-     {
-     "type": "group",
-     "label": {
-     "en": "Application refresh (all settings in seconds)",
-     "nl": "Applicatie verversen (alle instellingen in seconden)"
-     },
-     "children": [{
-          "id": "nexura_interval",
-          "type": "number",
-          "label": {
-          "en": "Polling interval",
-          "nl": "Gegevens opvragen elke"
-          },
-          "value": 10,
-          "attr": {
-              "min": 5,
-              "max": 30
-          } 
+            "id": "nexura_ip",
+            "type": "text",
+            "pattern": "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5]).){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$",
+            "label": {
+            "en": "Airconditioners IP address",
+            "nl": "Airconditioners IP adres"
+            },
+            "value": ""
+            },
+            {
+            "id": "nexura_adapter",
+            "type": "radio",
+            "label": {
+            "en": "Model adapter",
+            "nl": "Model adapter"
+            },
+            "value": "BRP069Axx",
+            "values": [{
+                 "id": "BRP069Axx",
+                 "label": {
+                     "en": "Model BRP069A--",
+                     "nl": "Model BRP069A--"
+                     }
+                 },
+                 {
+                 "id": "BRP069Bxx",
+                 "label": {
+                     "en": "Model BRP069B--",
+                     "nl": "Model BRP069B--"
+                    }
+                 }
+               ]
+            },
+            {
+            "id": "nexura_useGetToPost",
+            "type": "checkbox",
+            "label": {
+            "en": "B-model fw <= v2.0.1",
+            "nl": "B-model fw <= v2.0.1"
+            },
+            "value": true
+            }]
+            },
+        {
+        "type": "group",
+        "label": {
+        "en": "Other settings",
+        "nl": "Overige instellingen"
+        },
+        "children": [{
+            "id": "nexura_interval",
+            "type": "number",
+            "label": {
+            "en": "Polling interval",
+            "nl": "Gegevens opvragen elke"
+            },
+            "value": 10,
+            "attr": {
+                "min": 5,
+                "max": 30
+            }
+         },       
+         {
+            "id": "nexura_demomode",
+            "type": "checkbox",
+            "label": {
+            "en": "Demo mode",
+            "nl": "Demonstratie mode"
+            },
+            "value": false
+          }]
       }]
-    },
-    {
-    "type": "group",
-    "label": {
-    "en": "WiFi adapter type and firmware version (note: for model A adapters, in general, the firmware checkbox should not be checked.)",
-    "nl": "WiFi adapter type en firmware versie (noot: voor model A adapters geldt in algemene zin dat de firmware checkbox niet behoeft te worden aangekruisd.)"
-    },
-    "children": [{
-         "id": "nexura_adapter",
-         "type": "radio",
-         "label": {
-         "en": "Model adapter",
-         "nl": "Model adapter"
-         },
-         "value": "BRP069Axx",
-         "values": [
-              {
-                  "id": "BRP069Axx",
-                  "label": {
-                      "en": "Model BRP069A--",
-                      "nl": "Model BRP069A--"
-                  }
-              },
-              {
-                  "id": "BRP069Bxx",
-                  "label": {
-                      "en": "Model BRP069B--",
-                      "nl": "Model BRP069B--"
-                  }
-               }
-         ]
-     },
-     {   "id": "nexura_useGetToPost",
-         "type": "checkbox",
-         "label": {
-         "en": "B-model fw <= v2.0.1",
-         "nl": "B-model fw <= v2.0.1"
-         },
-         "value": true
-      }]
-   },
-    {
-    "type": "group",
-    "label": {
-    "en": "Demo mode (when checked; power OFF no matter which mode is selected)",
-    "nl": "Demonstratie mode (wanneer aangekruist; airco is altijd uitgeschakeld ongeacht de gekozen modus)"
-    },
-    "children": [{
-         "id": "nexura_demomode",
-         "type": "checkbox",
-         "label": {
-         "en": "Demo mode",
-         "nl": "Demonstratie mode"
-         },
-         "value": false
-     }]   
-   }]
  },
  {
    "id": "homekit",
@@ -2748,95 +2723,81 @@
        {
        "type": "group",
        "label": {
-       "en": "Network setting (note: a static IP-address is required, DHCP is not supported.)",
-       "nl": "Netwerk instellingen (opmerking: een statisch IP-adres is noodzakelijk, DHCP wordt niet ondersteund.)"
+       "en": "Network, adatper type and firmware settings",
+       "nl": "Netwerk, adapter type en firmware instellingen"
        },
        "children": [{
-            "id": "homekit_ip",
-            "type": "text",
-             "pattern": "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5]).){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$",
-            "label": {
-            "en": "Airconditioners IP address",
-            "nl": "Airconditioners IP adres"
-            },
-            "value": ""
-        }]
-    },
-    {
-    "type": "group",
-    "label": {
-    "en": "Application refresh (all settings in seconds)",
-    "nl": "Applicatie verversen (alle instellingen in seconden)"
-    },
-    "children": [{
-         "id": "homekit_interval",
-         "type": "number",
-         "label": {
-         "en": "Polling interval",
-         "nl": "Gegevens opvragen elke"
-         },
-         "value": 10,
-         "attr": {
-             "min": 5,
-             "max": 30
-         } 
+           "id": "homekit_ip",
+           "type": "text",
+           "pattern": "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5]).){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$",
+           "label": {
+           "en": "Airconditioners IP address",
+           "nl": "Airconditioners IP adres"
+           },
+           "value": ""
+           },
+           {
+           "id": "homekit_adapter",
+           "type": "radio",
+           "label": {
+           "en": "Model adapter",
+           "nl": "Model adapter"
+           },
+           "value": "BRP069Axx",
+           "values": [{
+                "id": "BRP069Axx",
+                "label": {
+                    "en": "Model BRP069A--",
+                    "nl": "Model BRP069A--"
+                    }
+                },
+                {
+                "id": "BRP069Bxx",
+                "label": {
+                    "en": "Model BRP069B--",
+                    "nl": "Model BRP069B--"
+                   }
+                }
+              ]
+           },
+           {
+           "id": "homekit_useGetToPost",
+           "type": "checkbox",
+           "label": {
+           "en": "B-model fw <= v2.0.1",
+           "nl": "B-model fw <= v2.0.1"
+           },
+           "value": true
+           }]
+           },
+           {
+           "type": "group",
+           "label": {
+           "en": "Other settings",
+           "nl": "Overige instellingen"
+           },
+           "children": [{
+               "id": "homekit_interval",
+               "type": "number",
+               "label": {
+               "en": "Polling interval",
+               "nl": "Gegevens opvragen elke"
+               },
+               "value": 10,
+               "attr": {
+                   "min": 5,
+                   "max": 30
+               }
+            },       
+            {
+                "id": "homekit_demomode",
+                "type": "checkbox",
+                "label": {
+                "en": "Demo mode",
+                "nl": "Demonstratie mode"
+                },
+                "value": false
+             }]   
+         }]
      }]
-   },
-   {
-   "type": "group",
-   "label": {
-   "en": "WiFi adapter type and firmware version (note: for model A adapters, in general, the firmware checkbox should not be checked.)",
-   "nl": "WiFi adapter type en firmware versie (noot: voor model A adapters geldt in algemene zin dat de firmware checkbox niet behoeft te worden aangekruisd.)"
-   },
-   "children": [{
-        "id": "homekit_adapter",
-        "type": "radio",
-        "label": {
-        "en": "Model adapter",
-        "nl": "Model adapter"
-        },
-        "value": "BRP069Axx",
-        "values": [
-             {
-                 "id": "BRP069Axx",
-                 "label": {
-                     "en": "Model BRP069A--",
-                     "nl": "Model BRP069A--"
-                 }
-             },
-             {
-                 "id": "BRP069Bxx",
-                 "label": {
-                     "en": "Model BRP069B--",
-                     "nl": "Model BRP069B--"
-                 }
-              }
-        ]
-    },
-    {   "id": "homekit_useGetToPost",
-        "type": "checkbox",
-        "label": {
-        "en": "B-model fw <= v2.0.1",
-        "nl": "B-model fw <= v2.0.1"
-        },
-        "value": true
-     }]
-   },
-   {
-   "type": "group",
-   "label": {
-   "en": "Demo mode (when checked; power OFF no matter which mode is selected)",
-   "nl": "Demonstratie mode (wanneer aangekruist; airco is altijd uitgeschakeld ongeacht de gekozen modus)"
-   },
-   "children": [{
-        "id": "homekit_demomode",
-        "type": "checkbox",
-        "label": {
-        "en": "Demo mode",
-        "nl": "Demonstratie mode"
-        },
-        "value": false
-    }]   
-  }]
- }]
 }

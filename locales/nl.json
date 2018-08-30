@@ -10,6 +10,7 @@
             "deviceName":"Naam",
             "saveSettings":"Voeg toe",
             "add":"Uw instellingen worden nu opgeslagen...",
+            "specialMode":"Extra modi (Krachtig, Besparen, Streamer).",
             "deviceInterval":"Interval",
             "adaptersensira":"Standaard (BRP069B--, B-model FW <= 2.0.1) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond.",
             "adapteremura":"Standaard (BRP069A--, A-model FW >= 1.4.3) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond.",

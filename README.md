@@ -5,14 +5,14 @@
 Control your Daikin air conditioner (or heatpump) through Homey. This app requires that your Daikin air conditioner (or heatpump) is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--).
 
 ## Features
-- supports most Daikin airconditioners & heatpumps.
-- the mobile card shows target temperature, operating mode, fan rate and fan swing mode.
-- target temperature, fan speed, fan swing mode as well as AC operating mode can be controlled from the mobile card.
+- supports Daikin airconditioners & heatpumps (aka inverters) through model range drivers.
+- the mobile card shows, depeding on the selected driver, target temperature, operating mode, inside temperature, fan rate and fan swing mode. Target temperature, fan speed, fan swing mode as well as AC operating mode can be controlled from the mobile card.
+
+![Mobile card2](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/mobilecard2.png)
+
 - with the available 22 flowcards (9 trigger cards, 9 condition cards and 4 action cards) the options to automate are almost endless.
 - HomeKit support* for every WiFi capable Daikin Airconditioner thru the "Model HomeKit" driver. The "Model Homekit" driver has 2 trigger flowcards, no condition flowcards and 2 action flowcards. The AC control functionality is however limited to: airco's mode setting, target temperature setting and inside temperature measurement.
   Note *: requires either HomeKit by Sprut, or HomeyKit by Bas Jansen. 
-
-![Mobile card2](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/mobilecard2.png)
 
 ## Demo mode (upon pairing the demo mode is by default turned ON !!)
 Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows.
@@ -85,3 +85,6 @@ If you like the app, consider buying me a cup of coffee!
 - 01-JUN-18: Flow action card bug fix.
 - 01-JUL-18: Main category (appliance) and sub-category (climate) reversed to optimize Athom App Store search.
 - 12-AUG-18: Fan rate and Fan Swing mode can now be controlled from the mobile card. New mobile card photo added to description.
+- 20-AUG-18: Minor changes to app store description.
+- 28-AUG-18: Device settings menu cleanup and code optimizations.
+- 30-AUG-18: Special mode control added.

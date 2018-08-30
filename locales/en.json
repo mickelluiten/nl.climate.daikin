@@ -10,6 +10,7 @@
             "deviceName":"Device name",           
             "saveSettings":"Add device",
             "add":"Your settings are being saved now...",
+            "specialMode":"Additional modes (Powerful, Economy, Streamer).",
             "deviceInterval":"Interval",
             "adaptersensira":"Default (BRP069B--, B-model FW <= 2.0.1) adapter settings will be applied!! As necessary change these after pairing is completed.",
             "adapteremura":"Default (BRP069A--, A-model FW >= 1.4.3) adapter settings will be applied!! As necessary change these after pairing is completed.",
