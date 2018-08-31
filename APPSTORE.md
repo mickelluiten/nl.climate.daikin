@@ -12,7 +12,7 @@ Control your Daikin air conditioner (or heatpump) through Homey. This app requir
 - with the available 22 flowcards (9 trigger cards, 9 condition cards and 4 action cards) the options to automate are almost endless.
 - HomeKit support* for every WiFi capable Daikin Airconditioner thru the "Model HomeKit" driver. The "Model Homekit" driver has 2 trigger flowcards, no condition flowcards and 2 action flowcards. The AC control functionality is however limited to: airco's mode setting, target temperature setting and inside temperature measurement.
   Note *: requires either HomeKit by Sprut, or HomeyKit by Bas Jansen.
-- Special modes, i.e. POWERFUL, is supported for some models/model variants.
+- Special modes, i.e. POWERFUL, are supported for some models/model variants.
 
 ## Action flow cards
 When designing flows and you add multiple Daikin AI action flowcards to a flow, or serveral flows but with the same trigger condition, it might be necessary to spread these actions over several seconds to give the airco time to process all the commands as the interface handles all the commands separately. The nature (asynchronous polling) of the Daikin interface still makes it possible that commands colide and as a result commands are not executed correctly which is something to keep in mind when building flows.
