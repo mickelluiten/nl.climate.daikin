@@ -1,6 +1,6 @@
 {
     "id": "nl.climate.daikin",
-	"version": "1.1.0",
+	"version": "1.1.1",
     "compatibility": ">=1.5.3",
     "sdk": 2,
     "name": {
@@ -1846,7 +1846,388 @@
             }
          ]
       },
-      "airco_mode_extended": {
+      "airco_mode_ext1": {
+          "type": "enum",
+          "title": {
+              "en": "Airco extended mode capability",
+              "nl": "Airco uitgebreide modus functionaliteit"
+          },
+          "getable": true,
+          "setable": true,
+          "values": [
+            {
+                "id": "off",
+                "title": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+            },
+            {
+              "id": "cooling",
+              "title": {
+                "en": "Cooling",
+                "nl": "Koelen"
+              }
+            },
+            {
+              "id": "heating",
+              "title": {
+                "en": "Heating",
+                "nl": "Verwarmen"
+              }
+            },
+            {
+              "id": "auto",
+              "title": {
+                "en": "Auto",
+                "nl": "Auto"
+              }
+            },
+            {
+              "id": "fan",
+              "title": {
+                "en": "Fan",
+                "nl": "Ventilator"
+              }
+            },
+            {
+              "id": "dehumid",
+              "title": {
+                "en": "Dry",
+                "nl": "Ontvochtigen"
+              }
+            },
+            {
+              "id": "econo",
+              "title": {
+                "en": "Economy",
+                "nl": "Besparen"
+              }
+            }
+         ]
+      },
+      "airco_mode_ext2": {
+          "type": "enum",
+          "title": {
+              "en": "Airco extended mode capability",
+              "nl": "Airco uitgebreide modus functionaliteit"
+          },
+          "getable": true,
+          "setable": true,
+          "values": [
+            {
+                "id": "off",
+                "title": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+            },
+            {
+              "id": "cooling",
+              "title": {
+                "en": "Cooling",
+                "nl": "Koelen"
+              }
+            },
+            {
+              "id": "heating",
+              "title": {
+                "en": "Heating",
+                "nl": "Verwarmen"
+              }
+            },
+            {
+              "id": "auto",
+              "title": {
+                "en": "Auto",
+                "nl": "Auto"
+              }
+            },
+            {
+              "id": "fan",
+              "title": {
+                "en": "Fan",
+                "nl": "Ventilator"
+              }
+            },
+            {
+              "id": "dehumid",
+              "title": {
+                "en": "Dry",
+                "nl": "Ontvochtigen"
+              }
+            },
+            {
+              "id": "powerful",
+              "title": {
+                "en": "Powerful",
+                "nl": "Krachtig"
+              }
+            }
+         ]
+      },
+      "airco_mode_ext3": {
+          "type": "enum",
+          "title": {
+              "en": "Airco extended mode capability",
+              "nl": "Airco uitgebreide modus functionaliteit"
+          },
+          "getable": true,
+          "setable": true,
+          "values": [
+            {
+                "id": "off",
+                "title": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+            },
+            {
+              "id": "cooling",
+              "title": {
+                "en": "Cooling",
+                "nl": "Koelen"
+              }
+            },
+            {
+              "id": "heating",
+              "title": {
+                "en": "Heating",
+                "nl": "Verwarmen"
+              }
+            },
+            {
+              "id": "auto",
+              "title": {
+                "en": "Auto",
+                "nl": "Auto"
+              }
+            },
+            {
+              "id": "fan",
+              "title": {
+                "en": "Fan",
+                "nl": "Ventilator"
+              }
+            },
+            {
+              "id": "dehumid",
+              "title": {
+                "en": "Dry",
+                "nl": "Ontvochtigen"
+              }
+            },
+            {
+              "id": "econo",
+              "title": {
+                "en": "Economy",
+                "nl": "Besparen"
+              }
+            },
+            {
+              "id": "powerful",
+              "title": {
+                "en": "Powerful",
+                "nl": "Krachtig"
+              }
+            }
+         ]
+      },
+      "airco_mode_ext4": {
+          "type": "enum",
+          "title": {
+              "en": "Airco extended mode capability",
+              "nl": "Airco uitgebreide modus functionaliteit"
+          },
+          "getable": true,
+          "setable": true,
+          "values": [
+            {
+                "id": "off",
+                "title": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+            },
+            {
+              "id": "cooling",
+              "title": {
+                "en": "Cooling",
+                "nl": "Koelen"
+              }
+            },
+            {
+              "id": "heating",
+              "title": {
+                "en": "Heating",
+                "nl": "Verwarmen"
+              }
+            },
+            {
+              "id": "auto",
+              "title": {
+                "en": "Auto",
+                "nl": "Auto"
+              }
+            },
+            {
+              "id": "fan",
+              "title": {
+                "en": "Fan",
+                "nl": "Ventilator"
+              }
+            },
+            {
+              "id": "dehumid",
+              "title": {
+                "en": "Dry",
+                "nl": "Ontvochtigen"
+              }
+            },
+            {
+              "id": "streamer",
+              "title": {
+                "en": "Streamer",
+                "nl": "Streamer"
+              }
+            }
+         ]
+      },
+      "airco_mode_ext5": {
+          "type": "enum",
+          "title": {
+              "en": "Airco extended mode capability",
+              "nl": "Airco uitgebreide modus functionaliteit"
+          },
+          "getable": true,
+          "setable": true,
+          "values": [
+            {
+                "id": "off",
+                "title": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+            },
+            {
+              "id": "cooling",
+              "title": {
+                "en": "Cooling",
+                "nl": "Koelen"
+              }
+            },
+            {
+              "id": "heating",
+              "title": {
+                "en": "Heating",
+                "nl": "Verwarmen"
+              }
+            },
+            {
+              "id": "auto",
+              "title": {
+                "en": "Auto",
+                "nl": "Auto"
+              }
+            },
+            {
+              "id": "fan",
+              "title": {
+                "en": "Fan",
+                "nl": "Ventilator"
+              }
+            },
+            {
+              "id": "dehumid",
+              "title": {
+                "en": "Dry",
+                "nl": "Ontvochtigen"
+              }
+            },
+            {
+              "id": "econo",
+              "title": {
+                "en": "Economy",
+                "nl": "Besparen"
+              }
+            },
+            {
+              "id": "streamer",
+              "title": {
+                "en": "Streamer",
+                "nl": "Streamer"
+              }
+            }
+         ]
+      },
+      "airco_mode_ext6": {
+          "type": "enum",
+          "title": {
+              "en": "Airco extended mode capability",
+              "nl": "Airco uitgebreide modus functionaliteit"
+          },
+          "getable": true,
+          "setable": true,
+          "values": [
+            {
+                "id": "off",
+                "title": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+            },
+            {
+              "id": "cooling",
+              "title": {
+                "en": "Cooling",
+                "nl": "Koelen"
+              }
+            },
+            {
+              "id": "heating",
+              "title": {
+                "en": "Heating",
+                "nl": "Verwarmen"
+              }
+            },
+            {
+              "id": "auto",
+              "title": {
+                "en": "Auto",
+                "nl": "Auto"
+              }
+            },
+            {
+              "id": "fan",
+              "title": {
+                "en": "Fan",
+                "nl": "Ventilator"
+              }
+            },
+            {
+              "id": "dehumid",
+              "title": {
+                "en": "Dry",
+                "nl": "Ontvochtigen"
+              }
+            },
+            {
+              "id": "powerful",
+              "title": {
+                "en": "Powerful",
+                "nl": "Krachtig"
+              }
+            },
+            {
+              "id": "streamer",
+              "title": {
+                "en": "Streamer",
+                "nl": "Streamer"
+              }
+            }
+         ]
+      },
+      "airco_mode_ext7": {
           "type": "enum",
           "title": {
               "en": "Airco extended mode capability",
@@ -2062,7 +2443,13 @@
      "class": "other",     
      "capabilities": [
        "airco_mode",
-       "airco_mode_extended",
+       "airco_mode_ext1",
+       "airco_mode_ext2",
+       "airco_mode_ext3",
+       "airco_mode_ext4",
+       "airco_mode_ext5",
+       "airco_mode_ext6",
+       "airco_mode_ext7",
        "fan_rate",
        "fan_direction",
        "set_humidity",
@@ -2077,7 +2464,7 @@
    				"nl": "Modus"
               }   
         },
-    	"airco_mode_extended": {
+    	"airco_mode_ext7": {
     		"title": {
     			"en": "Mode",
     	  		"nl": "Modus"
@@ -2256,7 +2643,13 @@
      "class": "other",     
      "capabilities": [
        "airco_mode",
-       "airco_mode_extended",
+       "airco_mode_ext1",
+       "airco_mode_ext2",
+       "airco_mode_ext3",
+       "airco_mode_ext4",
+       "airco_mode_ext5",
+       "airco_mode_ext6",
+       "airco_mode_ext7",
        "fan_rate",
        "fan_direction",
        "set_humidity",
@@ -2271,7 +2664,43 @@
    				"nl": "Modus"
               }   
         },
-       	"airco_mode_extended": {
+       	"airco_mode_ext1": {
+       		"title": {
+       			"en": "Mode",
+       			"nl": "Modus"
+             }   
+        },
+       	"airco_mode_ext2": {
+       		"title": {
+       			"en": "Mode",
+       			"nl": "Modus"
+             }   
+        },
+       	"airco_mode_ext3": {
+       		"title": {
+       			"en": "Mode",
+       			"nl": "Modus"
+             }   
+        },
+       	"airco_mode_ext4": {
+       		"title": {
+       			"en": "Mode",
+       			"nl": "Modus"
+             }   
+        },
+       	"airco_mode_ext5": {
+       		"title": {
+       			"en": "Mode",
+       			"nl": "Modus"
+             }   
+        },
+       	"airco_mode_ext6": {
+       		"title": {
+       			"en": "Mode",
+       			"nl": "Modus"
+             }   
+        },
+       	"airco_mode_ext7": {
        		"title": {
        			"en": "Mode",
        			"nl": "Modus"
@@ -2450,7 +2879,13 @@
     "class": "other",     
     "capabilities": [
       "airco_mode",
-      "airco_mode_extended",
+      "airco_mode_ext1",
+      "airco_mode_ext2",
+      "airco_mode_ext3",
+      "airco_mode_ext4",
+      "airco_mode_ext5",
+      "airco_mode_ext6",
+      "airco_mode_ext7",
       "fan_rate",
       "fan_direction",
       "set_humidity",
@@ -2465,7 +2900,7 @@
   				"nl": "Modus"
              }   
         },
-       	"airco_mode_extended": {
+       	"airco_mode_ext7": {
        		"title": {
        			"en": "Mode",
        			"nl": "Modus"

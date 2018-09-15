@@ -34,9 +34,12 @@ Daikin just recently introduced a new model WiFi adapter (BRP069B--) which uses 
 Note: the WiFi adapter its firmware version can be found in the Daikin Online Controller app (select your airco > click on the gear sysmbol > the firmware version shows under "Adapter information").  
 
 ## Special Modes
-Special modes are not supported by all models, model variants and/or the WiFi adapter its firmware version, in addition it might be that not all 3 the special modes are supported. Check the Daikin Online Controller when special modes are shown by the Daikin Online Controller app check the Special Mode checkbox during device paring otherwise leave it as is (unchecked).
+Special modes are not supported by all models, model variants and/or the WiFi adapter its firmware version, in addition it might be that not all 3 special modes are supported. Check the Daikin Online Controller which special modes are supported by your airco, during paring you may enable supported Special Modes by checking the applicable checkboxes or leave them all unchecked.
 
 ## Change log
+#### v1.1.1
+- Special modes can now be enabled on a per special mode basis instead of all ON or all OFF.
+
 #### v1.1.0
 - Added support for special modes (POWERFUL, ECONO and STREAMER). Note: Model Homekit cannot support these special modes due to limitations of the HomeKit/HomeyKit apps.
 - Devices settings menu changes.
@@ -75,6 +78,7 @@ Special modes are not supported by all models, model variants and/or the WiFi ad
 - DHCP is not supported.
 - Not all Daikin airconditioner models / model seriers / combinations of indoor and outdoor units are supported. Due to the fact that Daikin does not disclose their interface specification reverse engineering of the interface is extremely difficult.
 - Homey speech is not supported (note: Homekit driver users have speech support through Siri and can set airconditioner mode and the target temperature).
+- Special modes can not be used in flows.
 
 ## Compatible units
 #### in combination with BRP069A41:

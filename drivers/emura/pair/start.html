@@ -8,13 +8,34 @@ function saveSettings () {
    // input variables           
    var inputIPAddress = $('#ipAddress').val();
    var inputDeviceName = $('#deviceName').val();
-   // special mode checkbox
-   if ($('#specialMode').prop('checked')) {
-       var specialModeBool = true;
+   // Streamer checkbox
+   if ($('#streamer').prop('checked')) {
+       var streamerBool = true;
    } else {
-       var specialModeBool = false;
-   }
-
+       var streamerBool = false;
+   }   
+   // Powerful checkbox
+   if ($('#powerful').prop('checked')) {
+       var powerfulBool = true;
+   } else {
+       var powerfulBool = false;
+   } 
+   // Econo checkbox
+   if ($('#econo').prop('checked')) {
+       var econoBool = true;
+   } else {
+       var econoBool = false;
+   } 
+   // special mode martrix
+   if ( (streamerBool == false) && (powerfulBool == false) && (econoBool == false) ) { var specialModeBool = false; }; // off
+   if ( (streamerBool == false) && (powerfulBool == false) && (econoBool == true ) ) { var specialModeBool = true;  var specialMode = 1 }; // econo
+   if ( (streamerBool == false) && (powerfulBool == true ) && (econoBool == false) ) { var specialModeBool = true;  var specialMode = 2 }; // powerful
+   if ( (streamerBool == false) && (powerfulBool == true ) && (econoBool == true ) ) { var specialModeBool = true;  var specialMode = 3 }; // powerful + econo 
+   if ( (streamerBool == true ) && (powerfulBool == false) && (econoBool == false) ) { var specialModeBool = true;  var specialMode = 4 }; // streamer
+   if ( (streamerBool == true ) && (powerfulBool == false) && (econoBool == true ) ) { var specialModeBool = true;  var specialMode = 5 }; // streamer + econo
+   if ( (streamerBool == true ) && (powerfulBool == true ) && (econoBool == false) ) { var specialModeBool = true;  var specialMode = 6 }; // streamer + powerful
+   if ( (streamerBool == true ) && (powerfulBool == true ) && (econoBool == true ) ) { var specialModeBool = true;  var specialMode = 7 }; // streamer + powerful + econo
+   
    // ip-address can not be empty
    if (inputIPAddress == "") {
    	    Homey.alert(__('pair.start.required'));
@@ -47,52 +68,279 @@ function saveSettings () {
                          "emura_useGetToPost": false,			
 			             "emura_interval": 10,
                          "emura_demomode": true,
-                         "emura_spmode": false                    
+                         "emura_spmode": 0                    
 			    }
             }
         } else {
-            var device = {
-    			data: {
-    				id: GetGUID(),
-                    inputdevicename: inputDeviceName,
-                    ip: inputIPAddress 
-    			},
-    			    name: inputDeviceName,
-                    mobile: {
-                    "components": [
-                        {
-                            "id": "picker",
-                            "capabilities": [
-                               "airco_mode_extended"
-                             ]             
-                        },
-                        {
-                            "id": "picker",
-                            "capabilities": [
-                               "fan_rate"
-                             ]             
-                        },
-                        {
-                            "id": "picker",
-                            "capabilities": [
-                               "fan_direction"
-                             ]             
-                        },
-                        {
-                            "id": "thermostat",
-                            "capabilities": [ "set_temperature"
-                             ]
-                        }
-                    ]
-                },
-    		    	settings: {
-    		    	         "emura_ip": inputIPAddress,
-                             "emura_adapter": "BRP069Axx",
-                             "emura_useGetToPost": false,			
-    			             "emura_interval": 10,
-                             "emura_demomode": true,
-                             "emura_spmode": true                    
-    			}
+            switch (specialMode) {
+
+                case 1: var device = {
+    	                	data: {
+    	                		 id: GetGUID(),
+                                 inputdevicename: inputDeviceName,
+                                 ip: inputIPAddress 
+    	                		},
+    	                		 name: inputDeviceName,
+                                 mobile: {
+                                 "components": [
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "airco_mode_ext1" ]             
+                                     },
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "fan_rate" ]             
+                                     },
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "fan_direction" ]             
+                                     },
+                                     {
+                                         "id": "thermostat",
+                                         "capabilities": [ "set_temperature" ]
+                                     }
+                                 ]
+                             },
+    	                	    settings: {
+    	                	    	         "emura_ip": inputIPAddress,
+                                             "emura_adapter": "BRP069Axx",
+                                             "emura_useGetToPost": false,			
+    	                		             "emura_interval": 10,
+                                             "emura_demomode": true,
+                                             "emura_spmode": 1                    
+    	                		}
+                         }
+                         break;
+
+                case 2: var device = {
+    	                	data: {
+    	                		 id: GetGUID(),
+                                 inputdevicename: inputDeviceName,
+                                 ip: inputIPAddress 
+    	                		},
+    	                		 name: inputDeviceName,
+                                 mobile: {
+                                 "components": [
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "airco_mode_ext2" ]             
+                                     },
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "fan_rate" ]             
+                                     },
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "fan_direction" ]             
+                                     },
+                                     {
+                                         "id": "thermostat",
+                                         "capabilities": [ "set_temperature" ]
+                                     }
+                                 ]
+                             },
+    	                	    settings: {
+    	                	    	         "emura_ip": inputIPAddress,
+                                             "emura_adapter": "BRP069Axx",
+                                             "emura_useGetToPost": false,			
+    	                		             "emura_interval": 10,
+                                             "emura_demomode": true,
+                                             "emura_spmode": 2                    
+    	                		}
+                         }
+                         break;
+
+                case 3: var device = {
+    	                	data: {
+    	                		 id: GetGUID(),
+                                 inputdevicename: inputDeviceName,
+                                 ip: inputIPAddress 
+    	                		},
+    	                		 name: inputDeviceName,
+                                 mobile: {
+                                 "components": [
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "airco_mode_ext3" ]             
+                                     },
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "fan_rate" ]             
+                                     },
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "fan_direction" ]             
+                                     },
+                                     {
+                                         "id": "thermostat",
+                                         "capabilities": [ "set_temperature" ]
+                                     }
+                                 ]
+                             },
+    	                	    settings: {
+    	                	    	         "emura_ip": inputIPAddress,
+                                             "emura_adapter": "BRP069Axx",
+                                             "emura_useGetToPost": false,			
+    	                		             "emura_interval": 10,
+                                             "emura_demomode": true,
+                                             "emura_spmode": 3                    
+    	                		}
+                         }
+                         break;
+
+                case 4: var device = {
+    	                	data: {
+    	                		 id: GetGUID(),
+                                 inputdevicename: inputDeviceName,
+                                 ip: inputIPAddress 
+    	                		},
+    	                		 name: inputDeviceName,
+                                 mobile: {
+                                 "components": [
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "airco_mode_ext4" ]             
+                                     },
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "fan_rate" ]             
+                                     },
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "fan_direction" ]             
+                                     },
+                                     {
+                                         "id": "thermostat",
+                                         "capabilities": [ "set_temperature" ]
+                                     }
+                                 ]
+                             },
+    	                	    settings: {
+    	                	    	         "emura_ip": inputIPAddress,
+                                             "emura_adapter": "BRP069Axx",
+                                             "emura_useGetToPost": false,			
+    	                		             "emura_interval": 10,
+                                             "emura_demomode": true,
+                                             "emura_spmode": 4                    
+    	                		}
+                         }
+                         break;
+
+                case 5: var device = {
+    	                	data: {
+    	                		 id: GetGUID(),
+                                 inputdevicename: inputDeviceName,
+                                 ip: inputIPAddress 
+    	                		},
+    	                		 name: inputDeviceName,
+                                 mobile: {
+                                 "components": [
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "airco_mode_ext5" ]             
+                                     },
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "fan_rate" ]             
+                                     },
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "fan_direction" ]             
+                                     },
+                                     {
+                                         "id": "thermostat",
+                                         "capabilities": [ "set_temperature" ]
+                                     }
+                                 ]
+                             },
+    	                	    settings: {
+    	                	    	         "emura_ip": inputIPAddress,
+                                             "emura_adapter": "BRP069Axx",
+                                             "emura_useGetToPost": false,			
+    	                		             "emura_interval": 10,
+                                             "emura_demomode": true,
+                                             "emura_spmode": 5                    
+    	                		}
+                         }
+                         break;
+
+                case 6: var device = {
+    	                	data: {
+    	                		 id: GetGUID(),
+                                 inputdevicename: inputDeviceName,
+                                 ip: inputIPAddress 
+    	                		},
+    	                		 name: inputDeviceName,
+                                 mobile: {
+                                 "components": [
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "airco_mode_ext6" ]             
+                                     },
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "fan_rate" ]             
+                                     },
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "fan_direction" ]             
+                                     },
+                                     {
+                                         "id": "thermostat",
+                                         "capabilities": [ "set_temperature" ]
+                                     }
+                                 ]
+                             },
+    	                	    settings: {
+    	                	    	         "emura_ip": inputIPAddress,
+                                             "emura_adapter": "BRP069Axx",
+                                             "emura_useGetToPost": false,			
+    	                		             "emura_interval": 10,
+                                             "emura_demomode": true,
+                                             "emura_spmode": 6                    
+    	                		}
+                         }
+                         break;
+
+                case 7: var device = {
+    	                	data: {
+    	                		 id: GetGUID(),
+                                 inputdevicename: inputDeviceName,
+                                 ip: inputIPAddress 
+    	                		},
+    	                		 name: inputDeviceName,
+                                 mobile: {
+                                 "components": [
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "airco_mode_ext7" ]             
+                                     },
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "fan_rate" ]             
+                                     },
+                                     {
+                                         "id": "picker",
+                                         "capabilities": [ "fan_direction" ]             
+                                     },
+                                     {
+                                         "id": "thermostat",
+                                         "capabilities": [ "set_temperature" ]
+                                     }
+                                 ]
+                             },
+    	                	    settings: {
+    	                	    	         "emura_ip": inputIPAddress,
+                                             "emura_adapter": "BRP069Axx",
+                                             "emura_useGetToPost": false,			
+    	                		             "emura_interval": 10,
+                                             "emura_demomode": true,
+                                             "emura_spmode": 7                    
+    	                		}
+                         }
+                         break;
+                
+                default: break;  
             }
         };
 		Homey.emit('manual_add', device, function (err, result) {
@@ -147,11 +395,18 @@ function GetGUID() {
 				<td><input id="deviceName" type="text" value="Emura 2" placeholder="Emura 2"/></td>
 			</tr>
 			<tr>
-				<td style="width:100px;" data-i18n="pair.start.specialMode">Special Mode</td>
-				<td><input id="specialMode" type="checkbox" unchecked="false"/></td>
+				<td style="width:100px;" data-i18n="pair.start.econo">Econo</td>
+				<td><input id="econo" type="checkbox" unchecked="false"/></td>
+			</tr>
+			<tr>
+				<td style="width:100px;" data-i18n="pair.start.powerful">Powerful</td>
+				<td><input id="powerful" type="checkbox" unchecked="false"/></td>
+			</tr>
+			<tr>
+				<td style="width:100px;" data-i18n="pair.start.streamer">Streamer</td>
+				<td><input id="streamer" type="checkbox" unchecked="false"/></td>
 			</tr>
 		</table>
-		<p>&nbsp;</p>
         <p style="font-size:12px; background-color:#00FF00; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;" data-i18n="pair.start.adapteremura">Adapter</p>
 <fieldset>
     <button class="button" data-i18n="pair.start.saveSettings" id="save" onclick="saveSettings()">Save</button>

@@ -1,13 +1,16 @@
 {
     "pair":{
         "start":{
-            "intro":"Enter your Airco's IP-address and give it a name. Note: the use of a static IP-address is mandatory, DHCP is not supported.",
+            "intro":"Enter your Airco's IP-address, give it a name and choose which 'special modes' you like to control. Notes: 1/ not all 'special modes' might be supported by your airco's model. 2/ the use of a static IP-address is preferred as DHCP is not supported." ,
             "title":"Daikin equipment settings",
             "error":"An error has occurred, check the just entered IP-address.",
             "required":"IP-address is required.",
             "invalidIP":"Enter a valid IPv4 address.",
             "ipAddress":"IP-address",
-            "deviceName":"Device name",           
+            "deviceName":"Device name",
+            "econo":"Economy",
+            "powerful":"Powerful",
+            "streamer":"Streamer",         
             "saveSettings":"Add device",
             "add":"Your settings are being saved now...",
             "specialMode":"Additional modes (Powerful, Economy, Streamer).",

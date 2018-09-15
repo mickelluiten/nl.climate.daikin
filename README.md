@@ -100,3 +100,4 @@ If you like the app, consider buying me a cup of coffee!
 - 20-AUG-18: Minor changes to app store description.
 - 28-AUG-18: Device settings menu cleanup and code optimizations.
 - 30-AUG-18: Special mode control added.
+- 15-SEP-18: Special modes: pick from a list instead of "on/off" switch.

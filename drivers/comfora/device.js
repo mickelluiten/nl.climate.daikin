@@ -12,8 +12,35 @@ class ComforaDevice extends Device {
 		super.onInit();
 
 		this.log('Comfora capability registration started...');
-        this.registerCapabilityListener('airco_mode', this.onCapabilityMode.bind(this));
-        this.registerCapabilityListener('airco_mode_extended', this.onCapabilityExtendedMode.bind(this));
+        var settings = this.getSettings();
+        var spmode_config = settings.comfora_spmode;
+        switch (spmode_config) {
+            case 0:  this.registerCapabilityListener('airco_mode', this.onCapabilityMode.bind(this));
+        	         this.setCapabilityValue('airco_mode', "off");  // ensure a valid mode is shown at start up...
+                     break;
+            case 1:  this.registerCapabilityListener('airco_mode_ext1', this.onCapabilityExtendedMode.bind(this));
+                	 this.setCapabilityValue('airco_mode_ext1', "off");  // ensure a valid mode is shown at start up...
+                     break;
+            case 2:  this.registerCapabilityListener('airco_mode_ext2', this.onCapabilityExtendedMode.bind(this));
+        	         this.setCapabilityValue('airco_mode_ext2', "off");  // ensure a valid mode is shown at start up...
+                     break;            
+            case 3:  this.registerCapabilityListener('airco_mode_ext3', this.onCapabilityExtendedMode.bind(this));
+        	         this.setCapabilityValue('airco_mode_ext3', "off");  // ensure a valid mode is shown at start up...
+                     break;
+            case 4:  this.registerCapabilityListener('airco_mode_ext4', this.onCapabilityExtendedMode.bind(this));
+        	         this.setCapabilityValue('airco_mode_ext4', "off");  // ensure a valid mode is shown at start up...
+                     break;
+            case 5:  this.registerCapabilityListener('airco_mode_ext5', this.onCapabilityExtendedMode.bind(this));
+                     this.setCapabilityValue('airco_mode_ext5', "off");  // ensure a valid mode is shown at start up...
+                     break;
+            case 6:  this.registerCapabilityListener('airco_mode_ext6', this.onCapabilityExtendedMode.bind(this));
+        	         this.setCapabilityValue('airco_mode_ext6', "off");  // ensure a valid mode is shown at start up...
+                     break;
+            case 7:  this.registerCapabilityListener('airco_mode_ext7', this.onCapabilityExtendedMode.bind(this));
+        	         this.setCapabilityValue('airco_mode_ext7', "off");  // ensure a valid mode is shown at start up...
+                     break;
+            default: break;    
+        }
 		this.registerCapabilityListener('fan_rate', this.onCapabilityFanRate.bind(this));			
 		this.registerCapabilityListener('fan_direction', this.onCapabilityFanDir.bind(this));	       
 		this.registerCapabilityListener('set_humidity', this.onCapabilityAircoHum.bind(this));
@@ -25,9 +52,6 @@ class ComforaDevice extends Device {
         
         // for documentation about the Daikin API look at https://github.com/Apollon77/daikin-controller and at
         // https://github.com/Apollon77/daikin-controller
-
-    	this.setCapabilityValue('airco_mode', "off");  // ensure a valid mode is shown at start up...
-    	this.setCapabilityValue('airco_mode_extended', "off");  // ensure a valid mode is shown at start up...
         
         this.comforaIsDeleted = false;
         this.refreshData(); // refresh every x-seconds the Homey app with data retrieved from the airco...
@@ -68,8 +92,25 @@ class ComforaDevice extends Device {
 		this.log('onCapabilityExtendedMode');
         this.log('extended mode:', airco_mode_extended);
         
-    	this.setCapabilityValue('airco_mode_extended', airco_mode_extended);
-        
+        var settings = this.getSettings();
+        var spmode_config = settings.comfora_spmode;
+        switch (spmode_config) {
+            case 1:  this.setCapabilityValue('airco_mode_ext1', airco_mode_extended);
+                     break;
+            case 2:  this.setCapabilityValue('airco_mode_ext2', airco_mode_extended);
+                     break;            
+            case 3:  this.setCapabilityValue('airco_mode_ext3', airco_mode_extended);
+                     break;
+            case 4:  this.setCapabilityValue('airco_mode_ext4', airco_mode_extended);
+                     break;
+            case 5:  this.setCapabilityValue('airco_mode_ext5', airco_mode_extended);
+                     break;
+            case 6:  this.setCapabilityValue('airco_mode_ext6', airco_mode_extended);
+                     break;
+            case 7:  this.setCapabilityValue('airco_mode_ext7', airco_mode_extended);
+                     break;
+            default: break;    
+        }        
         this.daikinModeControl(airco_mode_extended);
 
 		return Promise.resolve();  
@@ -210,7 +251,7 @@ class ComforaDevice extends Device {
         var comfora_spmode = settings.comfora_spmode;
         this.log('Special mode set:', comfora_spmode);  
         
-        if (comfora_spmode == true) {                      
+        if (comfora_spmode != 0) {                      
           var amode = Number(control_info[2]);
           if ((amode == 1) || (amode == 7)) amode = 0; // do not differentiate the modes: auto1 and auto2
                     
@@ -219,15 +260,74 @@ class ComforaDevice extends Device {
           if (advmode == 2) amode = 9;
           if (advmode == 12) amode = 10;
 
-          const airco_mode = airco_modes[amode];          
-          const capability_mode = this.getCapabilityValue('airco_mode_extended');
-          // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
-          if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_extended', airco_mode);
-          // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
-          // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
-          if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_extended', "auto");
-          // when the airo is powered off externally make sure that capability mode "OFF" is set
-          if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_extended', "off");
+          const airco_mode = airco_modes[amode];
+          var spmode_config = settings.comfora_spmode;
+          switch (spmode_config) { 
+              case 1:  var capability_mode = this.getCapabilityValue('airco_mode_ext1');
+                       // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
+                       if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_ext1', airco_mode);
+                       // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
+                       // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
+                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_ext1', "auto");
+                       // when the airo is powered off externally make sure that capability mode "OFF" is set
+                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_ext1', "off");                  
+                       break;
+              case 2:  var capability_mode = this.getCapabilityValue('airco_mode_ext2');
+                       // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
+                       if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_ext2', airco_mode);
+                       // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
+                       // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
+                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_ext2', "auto");
+                       // when the airo is powered off externally make sure that capability mode "OFF" is set
+                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_ext2', "off");                  
+                       break;
+              case 3:  var capability_mode = this.getCapabilityValue('airco_mode_ext3');
+                       // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
+                       if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_ext3', airco_mode);
+                       // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
+                       // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
+                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_ext3', "auto");
+                       // when the airo is powered off externally make sure that capability mode "OFF" is set
+                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_ext3', "off");                  
+                       break;
+              case 4:  var capability_mode = this.getCapabilityValue('airco_mode_ext4');
+                       // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
+                       if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_ext4', airco_mode);
+                       // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
+                       // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
+                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_ext4', "auto");
+                       // when the airo is powered off externally make sure that capability mode "OFF" is set
+                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_ext4', "off");                  
+                       break;
+              case 5:  var capability_mode = this.getCapabilityValue('airco_mode_ext5');
+                       // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
+                       if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_ext5', airco_mode);
+                       // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
+                       // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
+                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_ext5', "auto");
+                       // when the airo is powered off externally make sure that capability mode "OFF" is set
+                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_ext5', "off");                  
+                       break;
+              case 6:  var capability_mode = this.getCapabilityValue('airco_mode_ext6');
+                       // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
+                       if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_ext6', airco_mode);
+                       // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
+                       // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
+                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_ext6', "auto");
+                       // when the airo is powered off externally make sure that capability mode "OFF" is set
+                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_ext6', "off");                  
+                       break;
+              case 7:  var capability_mode = this.getCapabilityValue('airco_mode_ext7');
+                       // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
+                       if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_ext7', airco_mode);
+                       // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
+                       // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
+                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_ext7', "auto");
+                       // when the airo is powered off externally make sure that capability mode "OFF" is set
+                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_ext7', "off");                  
+                       break;
+              default: break;    
+          }
           
           this.log('extended mode:', airco_mode);
           this.log('extended capability_mode:', capability_mode);
@@ -238,7 +338,7 @@ class ComforaDevice extends Device {
           if ((amode == 1) || (amode == 7)) amode = 0; // do not differentiate the modes: auto1 and auto2
           
           const airco_mode = airco_modes[amode];
-          const capability_mode = this.getCapabilityValue('airco_mode');
+          var capability_mode = this.getCapabilityValue('airco_mode');
           // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
           if ((capability_mode != "off")) this.setCapabilityValue('airco_mode', airco_mode);
           // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
@@ -398,7 +498,7 @@ class ComforaDevice extends Device {
            
            // step 2 - set advanced/special mode ON/OFF and function selection
            switch (acmode) {
-               case "streamer":   var advstate = 1;
+              case "streamer":   var advstate = 1;
                                   this.log('Special mode: ON, function: Streamer');
                                   break;
 
