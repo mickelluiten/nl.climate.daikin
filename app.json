@@ -1,6 +1,6 @@
 {
     "id": "nl.climate.daikin",
-	"version": "1.1.1",
+	"version": "1.1.2",
     "compatibility": ">=1.5.3",
     "sdk": 2,
     "name": {
@@ -2568,6 +2568,10 @@
              "en": "Airconditioners IP address",
              "nl": "Airconditioners IP adres"
              },
+             "hint": {
+             "en": "A static IP-address is recommended as DHCP is not supported.",
+             "nl": "Het gebruik van een statisch IP-adres wordt aanbevolen aangezien DHCP niet ondersteund wordt."
+             },
              "value": ""
              },
              {
@@ -2576,6 +2580,10 @@
              "label": {
              "en": "Model adapter",
              "nl": "Model adapter"
+             },
+             "hint": {
+             "en": "The older model WiFi adapter is called type-A while the newest is called type-B.",
+             "nl": "Het oudere model WiFi adapter wordt type-A genoemd terwijl het nieuwste model wordt aangeduid als type-B."
              },
              "value": "BRP069Axx",
              "values": [{
@@ -2601,6 +2609,10 @@
              "en": "B-model fw <= v2.0.1",
              "nl": "B-model fw <= v2.0.1"
              },
+             "hint": {
+             "en": "Switch between the new and old Daikin communication protocol.",
+             "nl": "Schakel tussen het nieuwe en oude Daikin communicatie protocol."
+             },
              "value": true
              }]
              },
@@ -2617,6 +2629,10 @@
              "en": "Polling interval",
              "nl": "Gegevens opvragen elke"
              },
+             "hint": {
+             "en": "Every x seconds the app will refresh its information.",
+             "nl": "Iedere x seconden zal de app haar gegevens verversen."
+             },
              "value": 10,
              "attr": {
                  "min": 5,
@@ -2629,6 +2645,10 @@
              "label": {
              "en": "Demo mode",
              "nl": "Demonstratie mode"
+             },
+             "hint": {
+             "en": "When enabled the airco will not power ON no matter what mode is selected. This way one can experiment with flows without having to worry about damaging the airconditioner.",
+             "nl": "Wanneer aangezet zal de airco niet aanschakelen ongeacht de gekozen modus. Dit maakt het mogelijk om vrijuit te experimenteren met flows zonder bang hoeven te zijn dat de airconditoner beschadigd raakt."    
              },
              "value": false
            }]
@@ -2804,6 +2824,10 @@
              "en": "Airconditioners IP address",
              "nl": "Airconditioners IP adres"
              },
+             "hint": {
+             "en": "A static IP-address is recommended as DHCP is not supported.",
+             "nl": "Het gebruik van een statisch IP-adres wordt aanbevolen aangezien DHCP niet ondersteund wordt."
+             },
              "value": ""
              },
              {
@@ -2812,6 +2836,10 @@
              "label": {
              "en": "Model adapter",
              "nl": "Model adapter"
+             },
+             "hint": {
+             "en": "The older model WiFi adapter is called type-A while the newest is called type-B.",
+             "nl": "Het oudere model WiFi adapter wordt type-A genoemd terwijl het nieuwste model wordt aangeduid als type-B."
              },
              "value": "BRP069Axx",
              "values": [{
@@ -2837,6 +2865,10 @@
              "en": "B-model fw <= v2.0.1",
              "nl": "B-model fw <= v2.0.1"
              },
+             "hint": {
+             "en": "Switch between the new and old Daikin communication protocol.",
+             "nl": "Schakel tussen het nieuwe en oude Daikin communicatie protocol."
+             },
              "value": true
              }]
              },
@@ -2853,6 +2885,10 @@
              "en": "Polling interval",
              "nl": "Gegevens opvragen elke"
              },
+             "hint": {
+             "en": "Every x seconds the app will refresh its information.",
+             "nl": "Iedere x seconden zal de app haar gegevens verversen."
+             },
              "value": 10,
              "attr": {
                  "min": 5,
@@ -2865,6 +2901,10 @@
              "label": {
              "en": "Demo mode",
              "nl": "Demonstratie mode"
+             },
+             "hint": {
+             "en": "When enabled the airco will not power ON no matter what mode is selected. This way one can experiment with flows without having to worry about damaging the airconditioner.",
+             "nl": "Wanneer aangezet zal de airco niet aanschakelen ongeacht de gekozen modus. Dit maakt het mogelijk om vrijuit te experimenteren met flows zonder bang hoeven te zijn dat de airconditoner beschadigd raakt."    
              },
              "value": false
            }]
@@ -3004,6 +3044,10 @@
             "en": "Airconditioners IP address",
             "nl": "Airconditioners IP adres"
             },
+            "hint": {
+            "en": "A static IP-address is recommended as DHCP is not supported.",
+            "nl": "Het gebruik van een statisch IP-adres wordt aanbevolen aangezien DHCP niet ondersteund wordt."
+            },
             "value": ""
             },
             {
@@ -3012,6 +3056,10 @@
             "label": {
             "en": "Model adapter",
             "nl": "Model adapter"
+            },
+            "hint": {
+            "en": "The older model WiFi adapter is called type-A while the newest is called type-B.",
+            "nl": "Het oudere model WiFi adapter wordt type-A genoemd terwijl het nieuwste model wordt aangeduid als type-B."
             },
             "value": "BRP069Axx",
             "values": [{
@@ -3037,6 +3085,10 @@
             "en": "B-model fw <= v2.0.1",
             "nl": "B-model fw <= v2.0.1"
             },
+            "hint": {
+            "en": "Switch between the new and old Daikin communication protocol.",
+            "nl": "Schakel tussen het nieuwe en oude Daikin communicatie protocol."
+            },
             "value": true
             }]
             },
@@ -3053,6 +3105,10 @@
             "en": "Polling interval",
             "nl": "Gegevens opvragen elke"
             },
+            "hint": {
+            "en": "Every x seconds the app will refresh its information.",
+            "nl": "Iedere x seconden zal de app haar gegevens verversen."
+            },
             "value": 10,
             "attr": {
                 "min": 5,
@@ -3065,6 +3121,10 @@
             "label": {
             "en": "Demo mode",
             "nl": "Demonstratie mode"
+            },
+            "hint": {
+            "en": "When enabled the airco will not power ON no matter what mode is selected. This way one can experiment with flows without having to worry about damaging the airconditioner.",
+            "nl": "Wanneer aangezet zal de airco niet aanschakelen ongeacht de gekozen modus. Dit maakt het mogelijk om vrijuit te experimenteren met flows zonder bang hoeven te zijn dat de airconditoner beschadigd raakt."    
             },
             "value": false
           }]
@@ -3142,6 +3202,10 @@
            "en": "Airconditioners IP address",
            "nl": "Airconditioners IP adres"
            },
+           "hint": {
+           "en": "A static IP-address is recommended as DHCP is not supported.",
+           "nl": "Het gebruik van een statisch IP-adres wordt aanbevolen aangezien DHCP niet ondersteund wordt."
+           },
            "value": ""
            },
            {
@@ -3150,6 +3214,10 @@
            "label": {
            "en": "Model adapter",
            "nl": "Model adapter"
+           },
+           "hint": {
+           "en": "The older model WiFi adapter is called type-A while the newest is called type-B.",
+           "nl": "Het oudere model WiFi adapter wordt type-A genoemd terwijl het nieuwste model wordt aangeduid als type-B."
            },
            "value": "BRP069Axx",
            "values": [{
@@ -3175,6 +3243,10 @@
            "en": "B-model fw <= v2.0.1",
            "nl": "B-model fw <= v2.0.1"
            },
+           "hint": {
+           "en": "Switch between the new and old Daikin communication protocol.",
+           "nl": "Schakel tussen het nieuwe en oude Daikin communicatie protocol."
+           },
            "value": true
            }]
            },
@@ -3191,6 +3263,10 @@
                "en": "Polling interval",
                "nl": "Gegevens opvragen elke"
                },
+               "hint": {
+               "en": "Every x seconds the app will refresh its information.",
+               "nl": "Iedere x seconden zal de app haar gegevens verversen."
+               },
                "value": 10,
                "attr": {
                    "min": 5,
@@ -3203,6 +3279,10 @@
                 "label": {
                 "en": "Demo mode",
                 "nl": "Demonstratie mode"
+                },
+                "hint": {
+                "en": "When enabled the airco will not power ON no matter what mode is selected. This way one can experiment with flows without having to worry about damaging the airconditioner.",
+                "nl": "Wanneer aangezet zal de airco niet aanschakelen ongeacht de gekozen modus. Dit maakt het mogelijk om vrijuit te experimenteren met flows zonder bang hoeven te zijn dat de airconditoner beschadigd raakt."    
                 },
                 "value": false
              }]   
