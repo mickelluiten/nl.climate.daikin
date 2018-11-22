@@ -37,6 +37,9 @@ Note: the WiFi adapter its firmware version can be found in the Daikin Online Co
 Special modes are not supported by all models, model variants and/or the WiFi adapter its firmware version, in addition it might be that not all 3 special modes are supported. Check the Daikin Online Controller app which special modes are supported by your airco, during paring enable the supported Special Mode(s) by checking the applicable checkbox(es) or leave them all unchecked (disabled).
 
 ## Change log
+#### v1.1.3
+- Fixed an issue that prevented airconditioners equipped with an type B adapter that was using firmware v1.2.51 or above to pair with Homey.
+
 #### v1.1.2
 - added hints to the settings menu.
 
