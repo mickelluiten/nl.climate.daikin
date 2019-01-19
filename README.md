@@ -103,3 +103,5 @@ If you like the app, consider buying me a cup of coffee!
 - 15-SEP-18: Special modes: pick from a list instead of "on/off" switch.
 - 20-OCT-18: Added hints to settings menu.
 - 22-NOV-18: Fixed an issue that prevented airconditioners equipped with an type B adapter that was using firmware v1.2.51 or above to pair with Homey.
+- ---------- Start of the development of V2.x.x which makes the app compatible with Homey v2 firmware, the app will no longer support Homey v1 firmware.
+- 12-JAN-19: Changes in support of Homey v2 firmware.

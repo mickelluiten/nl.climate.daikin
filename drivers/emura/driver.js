@@ -16,23 +16,23 @@ class EmuraDriver extends Driver {
 		/*** TARGET TEMPERATURE TRIGGERS ***/        
         this._triggerTargetTemperatureMoreThan = new Homey.FlowCardTriggerDevice('change_emura_target_temperature_more_than').register();
 		this._triggerTargetTemperatureMoreThan.registerRunListener((args, state) => {
-			let conditionMet = state.set_temperature > args.target_temperature_more;
+			let conditionMet = state.target_temperature > args.target_temperature_more;
 
             this.log('trigger - args.target_temperature_more', args.target_temperature_more);
-            this.log('trigger - state.set_temperature', (state.set_temperature) );
+            this.log('trigger - state.target_temperature', (state.target_temperature) );
             this.log('trigger - conditionMet', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
 
 		this._triggerTargetTemperatureLessThan = new Homey.FlowCardTriggerDevice('change_emura_target_temperature_less_than').register();
 		this._triggerTargetTemperatureLessThan.registerRunListener((args, state) => {
-			let conditionMet = state.set_temperature < args.target_temperature_less;
+			let conditionMet = state.target_temperature < args.target_temperature_less;
 			return Promise.resolve(conditionMet);
 		});
 
 		this._triggerTargetTemperatureBetween = new Homey.FlowCardTriggerDevice('change_emura_target_temperature_between').register();
 		this._triggerTargetTemperatureBetween.registerRunListener((args, state) => {
-			let conditionMet = state.set_temperature > args.target_temperature_from && state.set_temperature < args.target_temperature_to;
+			let conditionMet = state.target_temperature > args.target_temperature_from && state.target_temperature < args.target_temperature_to;
 			return Promise.resolve(conditionMet);
 		});
 
@@ -89,10 +89,10 @@ class EmuraDriver extends Driver {
 		this._conditionTargetTemperatureMoreThan.registerRunListener((args, state) => {
 			let device = args.device;
             let devicestate = device.getState();
-			let conditionMet = devicestate.set_temperature > args.target_temperature_more;
+			let conditionMet = devicestate.target_temperature > args.target_temperature_more;
 
             this.log('condition args.target_temperature_more', args.target_temperature_more);            
-            this.log('condition devicestate.set_temperature', devicestate.set_temperature);
+            this.log('condition devicestate.target_temperature', devicestate.target_temperature);
             this.log('condition conditionMet', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
@@ -101,7 +101,7 @@ class EmuraDriver extends Driver {
 		this._conditionTargetTemperatureLessThan.registerRunListener((args, state) => {
 			let device = args.device;
             let devicestate = device.getState();
-			let conditionMet = devicestate.set_temperature < args.target_temperature_less;
+			let conditionMet = devicestate.target_temperature < args.target_temperature_less;
 			return Promise.resolve(conditionMet);
 		});
 
@@ -109,7 +109,7 @@ class EmuraDriver extends Driver {
 		this._conditionTargetTemperatureBetween.registerRunListener((args, state) => {
 			let device = args.device;
             let devicestate = device.getState();
-			let conditionMet = devicestate.set_temperature > args.target_temperature_from && devicestate.set_temperature < args.target_temperature_to;
+			let conditionMet = devicestate.target_temperature > args.target_temperature_from && devicestate.target_temperature < args.target_temperature_to;
 			return Promise.resolve(conditionMet);
 		});
 
@@ -183,7 +183,7 @@ class EmuraDriver extends Driver {
             this.log('ip_address', ip_address);                        
 
             var atemp = args.atemp;
-            device.setCapabilityValue('set_temperature', atemp);
+            device.setCapabilityValue('target_temperature', atemp);
             this.log('target temp', atemp);
 
             // type B adapter logic

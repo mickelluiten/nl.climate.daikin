@@ -1,5 +1,5 @@
-# Daikin AI
-Control your Daikin air conditioner (or heatpump) through Homey. This app requires that your Daikin air conditioner (or heatpump) is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--).
+# Daikin AI for Homey v2
+Control your Daikin air conditioner (or heatpump) through Homey (running v2 firmware). This app requires that your Daikin air conditioner (or heatpump) is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--).
 
 ![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/Daikin-logo-wide.png)
 
@@ -37,49 +37,11 @@ Note: the WiFi adapter its firmware version can be found in the Daikin Online Co
 Special modes are not supported by all models, model variants and/or the WiFi adapter its firmware version, in addition it might be that not all 3 special modes are supported. Check the Daikin Online Controller app which special modes are supported by your airco, during paring enable the supported Special Mode(s) by checking the applicable checkbox(es) or leave them all unchecked (disabled).
 
 ## Change log
-#### v1.1.3
-- Fixed an issue that prevented airconditioners equipped with an type B adapter that was using firmware v1.2.51 or above to pair with Homey.
-
-#### v1.1.2
-- added hints to the settings menu.
-
-#### v1.1.1
-- Special modes can now be enabled on a per special mode basis instead of all ON or all OFF.
-
-#### v1.1.0
-- Added support for special modes (POWERFUL, ECONO and STREAMER). Note: Model Homekit cannot support these special modes due to limitations of the HomeKit/HomeyKit apps.
-- Devices settings menu changes.
-- Changes to App store description. 
-
-#### v1.0.10
-- Fan rate and Fan Swing mode can now be controlled from the mobile card.
-
-#### v1.0.9
-- Optimizations.
-
-#### v1.0.8
-- Error handling improvement.
-- Flow action card bug fix.
-
-### v1.0.7
-- Fixed a bug which prevented flow action cards to function correctly for airco's equipped with the type B adapter.
-
-### v1.0.6
-- Fixed a problem that prevented the mode knob to update when the mode was set using either the IR remote control or Daikin Controller app. 
-
-### v1.0.5
-- Removed Model Inverter.
-- Multi model driver (Sensira, Stylish, Comfora, Ururu Sarara, Perfera) replaces the Comfora driver.
-- Fixed an compatibility issue with the type B WiFi adapter (BRP069B--) as a result of which the airco could not be controlled.
-
-### v0.6.2
-- Added support for model series Comfora.
-- Bug fixes (as provided by the Apollon77 Daikin Controller Library).
-
-### v0.5.0
-- first public beta
+#### v2.0.0
+- Changes in support of Homey v2 firmware.
 
 ## Limitations
+- The app is not compatible with Homey v1 firmware.
 - HomeKit support only applies for the 'Model HomeKit'.
 - DHCP is not supported.
 - Not all Daikin airconditioner models / model seriers / combinations of indoor and outdoor units are supported. Due to the fact that Daikin does not disclose their interface specification reverse engineering of the interface is extremely difficult.

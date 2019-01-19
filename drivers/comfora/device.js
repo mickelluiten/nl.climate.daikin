@@ -43,8 +43,9 @@ class ComforaDevice extends Device {
         }
 		this.registerCapabilityListener('fan_rate', this.onCapabilityFanRate.bind(this));			
 		this.registerCapabilityListener('fan_direction', this.onCapabilityFanDir.bind(this));	       
-		this.registerCapabilityListener('set_humidity', this.onCapabilityAircoHum.bind(this));
-        this.registerCapabilityListener('set_temperature', this.onCapabilityAircoTemp.bind(this));        
+		this.registerCapabilityListener('target_humidity', this.onCapabilityAircoHum.bind(this));
+        this.registerCapabilityListener('target_temperature', this.onCapabilityAircoTemp.bind(this));
+		this.registerCapabilityListener('measure_temperature', this.onCapabilityMeasureTemperature.bind(this));  
 		this.registerCapabilityListener('measure_temperature.inside', this.onCapabilityMeasureTemperature.bind(this));
         this.registerCapabilityListener('measure_temperature.outside', this.onCapabilityMeasureTemperature.bind(this));       
                 
@@ -145,7 +146,7 @@ class ComforaDevice extends Device {
 		this.log('onCapabilityAircoHum');
 
 		this.log('humidity %:', ahum);
-    	this.setCapabilityValue('set_humidity', ahum);
+    	this.setCapabilityValue('target_humidity', ahum);
         
         return Promise.resolve();  
 	}
@@ -154,12 +155,12 @@ class ComforaDevice extends Device {
     onCapabilityAircoTemp(atemp, opts) {
 		this.log('onCapabilityAircoTemp');
 
- 	    var oldTargetTemperature = this.getState().set_temperature;
+ 	    var oldTargetTemperature = this.getState().target_temperature;
         this.log('oldTargetTemperature: ', oldTargetTemperature);
  	    
         if (oldTargetTemperature != atemp) {
            this.log('new target airco temperature °C:', atemp);        
- 	   	   this.setCapabilityValue('set_temperature', atemp);
+ 	   	   this.setCapabilityValue('target_temperature', atemp);
        
  	   	   let device = this;
  	   	   let tokens = {
@@ -167,7 +168,7 @@ class ComforaDevice extends Device {
  	   	   };
        
  	   	   let state  = {
- 	   		   'set_temperature': atemp
+ 	   		   'target_temperature': atemp
  	   	   }
        
  	   	   // trigger temperature flows
@@ -354,11 +355,11 @@ class ComforaDevice extends Device {
     //---- temperature
 		const atemp = Number(control_info[4]);
         this.log('target temperature °C:', atemp);  
-        this.setCapabilityValue('set_temperature', atemp);
+        this.setCapabilityValue('target_temperature', atemp);
         
     //---- humidity
 		const ahum = Number(control_info[5]);      
-    	this.setCapabilityValue('set_humidity', ahum);              
+    	this.setCapabilityValue('target_humidity', ahum);              
         
     //---- fan rate
         var fan_rates = [ "A", "B", "3", "4", "5", "6", "7"];
@@ -392,6 +393,7 @@ class ComforaDevice extends Device {
 
 		const inside = Number(sensor_info[1]);
 		const outside = Number(sensor_info[3]);
+        this.setCapabilityValue('measure_temperature', inside);
 		this.setCapabilityValue('measure_temperature.inside', inside);
         this.log('Temp inside:', inside);     
         this.setCapabilityValue('measure_temperature.outside', outside);

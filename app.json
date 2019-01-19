@@ -1,7 +1,7 @@
 {
     "id": "nl.climate.daikin",
-	"version": "1.1.3",
-    "compatibility": ">=1.5.3",
+	"version": "2.0.0",
+    "compatibility": ">=2.0.0",
     "sdk": 2,
     "name": {
         "en": "Daikin AI",
@@ -16,8 +16,8 @@
         "appliances"
     ],
     "tags": {
-           "en": [ "Daikin", "Emura", "Nextura", "Comfora", "Ururu Sarara", "Ururu", "Sarara", "Stylish", "Perfera", "Sensira", "airconditioner", "airconditioning", "thermostat", "fan", "homekit", "home" ],
-           "nl": [ "Daikin", "Emura", "Nextura", "Comfora", "Ururu Sarara", "Ururu", "Sarara", "Stylish", "Perfera", "Sensira", "airconditioner", "airconditioning", "thermostaat", "ventilator", "homekit", "home" ]
+           "en": [ "Daikin", "Emura", "Nextura", "Comfora", "Ururu Sarara", "Ururu", "Sarara", "Stylish", "Perfera", "Sensira", "airconditioner", "airconditioning", "airco", "thermostat", "fan", "homekit", "home", "climate" ],
+           "nl": [ "Daikin", "Emura", "Nextura", "Comfora", "Ururu Sarara", "Ururu", "Sarara", "Stylish", "Perfera", "Sensira", "airconditioner", "airconditioning", "thermostaat", "airco", "ventilator", "homekit", "home", "klimaat" ]
      },
     "images": {
       "large": "/assets/images/large.png",
@@ -2400,12 +2400,13 @@
             }
          ]
       },
-      "set_humidity": {
+      "target_humidity": {
           "type": "number",
           "title": {
-              "en": "Humidity capability",
-              "nl": "Luchtvochtigheid functionaliteit"
+              "en": "Sets target humidity capability",
+              "nl": "Instelling doel luchtvochtigheid functionaliteit"
           },
+          "uiComponent": "slider",
           "getable": true,
           "setable": true,
           "units": {
@@ -2415,23 +2416,7 @@
               "min": 0,
               "max": 100,
               "step": 5                 
-      },
-      "set_temperature": {
-          "type": "number",
-          "title": {
-              "en": "Set temperature capability",
-              "nl": "Instelling doel temperatuur functionaliteit"
-          },
-          "getable": true,
-          "setable": true,
-          "units": {
-              "en": "°C",
-              "nl": "°C"
-          },
-          "min": 15,
-          "max": 35,
-          "step": 0.5          
-       }
+      }
   },          
   "drivers": [
    {
@@ -2440,20 +2425,14 @@
        "en": "Comfora, Sensira, Ururu Sarara, Perfera, Stylish etc.",
        "nl": "Comfora, Sensira, Ururu Sarara, Perfera, Stylish etc."
      },
-     "class": "other",     
+     "class": "thermostat",     
      "capabilities": [
        "airco_mode",
-       "airco_mode_ext1",
-       "airco_mode_ext2",
-       "airco_mode_ext3",
-       "airco_mode_ext4",
-       "airco_mode_ext5",
-       "airco_mode_ext6",
-       "airco_mode_ext7",
        "fan_rate",
        "fan_direction",
-       "set_humidity",
-       "set_temperature",
+       "target_humidity",
+       "target_temperature",
+	   "measure_temperature",       
 	   "measure_temperature.inside",
        "measure_temperature.outside" 
      ],
@@ -2482,16 +2461,16 @@
      			"nl": "Lamel"
             }   
         },
-     	"set_humidity": {
+     	"target_humidity": {
      		"title": {
-     			"en": "Set",
-     			"nl": "Doel"
+     			"en": "Target humidity",
+     			"nl": "Doel luchtvochtigheid"
             }   
         },
-  		"set_temperature": {
+  		"target_temperature": {
   			"title": {
-  				"en": "Set",
-  				"nl": "Doel"
+  				"en": "Target temperature",
+  				"nl": "Doel temperatuur"
              }   
          },         
  		"measure_temperature.inside": {
@@ -2506,32 +2485,6 @@
 				"nl": "Buiten"
 			}
 		}
-     },     
-     "mobile": {
-         "components": [
-             {
-                 "id": "picker",
-                 "capabilities": [
-                     "airco_mode"
-                  ]             
-             },
-             {
-                 "id": "picker",
-                 "capabilities": [
-                    "fan_rate"
-                  ]             
-             },
-             {
-                 "id": "picker",
-                 "capabilities": [
-                    "fan_direction"
-                  ]
-             },
-             {
-               "id": "thermostat",
-               "capabilities": [ "set_temperature" ]
-             }
-         ]
      },
      "images": {
        "large": "/drivers/comfora/assets/images/large.png",
@@ -2660,20 +2613,14 @@
        "en": "Emura",
        "nl": "Emura"
      },
-     "class": "other",     
+     "class": "thermostat",     
      "capabilities": [
        "airco_mode",
-       "airco_mode_ext1",
-       "airco_mode_ext2",
-       "airco_mode_ext3",
-       "airco_mode_ext4",
-       "airco_mode_ext5",
-       "airco_mode_ext6",
-       "airco_mode_ext7",
        "fan_rate",
        "fan_direction",
-       "set_humidity",
-       "set_temperature",
+       "target_humidity",
+       "target_temperature",
+	   "measure_temperature",       
 	   "measure_temperature.inside",
        "measure_temperature.outside" 
      ],
@@ -2738,16 +2685,16 @@
      			"nl": "Lamel"
             }   
         },
-     	"set_humidity": {
+     	"target_humidity": {
      		"title": {
-     			"en": "Set",
-     			"nl": "Doel"
+     			"en": "Target humidity",
+     			"nl": "Doel luchtvochtigheid"
             }   
         },
-  		"set_temperature": {
+  		"target_temperature": {
   			"title": {
-  				"en": "Set",
-  				"nl": "Doel"
+  				"en": "Target temperature",
+  				"nl": "Doel temperatuur"
              }   
          },         
  		"measure_temperature.inside": {
@@ -2762,32 +2709,6 @@
 				"nl": "Buiten"
 			}
 		}
-     },     
-     "mobile": {
-         "components": [
-             {
-                 "id": "picker",
-                 "capabilities": [
-                    "airco_mode"
-                  ]             
-             },
-             {
-                 "id": "picker",
-                 "capabilities": [
-                    "fan_rate"
-                  ]             
-             },
-             {
-                 "id": "picker",
-                 "capabilities": [
-                    "fan_direction"
-                  ]             
-             },
-             {
-               "id": "thermostat",
-               "capabilities": [ "set_temperature" ]
-             }
-         ]
      },
      "images": {
        "large": "/drivers/emura/assets/images/large.png",
@@ -2916,20 +2837,14 @@
       "en": "Nexura",
       "nl": "Nexura"
     },
-    "class": "other",     
+    "class": "thermostat",     
     "capabilities": [
       "airco_mode",
-      "airco_mode_ext1",
-      "airco_mode_ext2",
-      "airco_mode_ext3",
-      "airco_mode_ext4",
-      "airco_mode_ext5",
-      "airco_mode_ext6",
-      "airco_mode_ext7",
       "fan_rate",
       "fan_direction",
-      "set_humidity",
-      "set_temperature",
+      "target_humidity",
+      "target_temperature",
+      "measure_temperature",       
       "measure_temperature.inside",
       "measure_temperature.outside" 
     ],
@@ -2958,16 +2873,16 @@
     			"nl": "Lamel"
              }   
         },
-    	"set_humidity": {
+    	"target_humidity": {
     		"title": {
-    			"en": "Set",
-    			"nl": "Doel"
+    			"en": "Target humidity",
+    			"nl": "Doel luchtvochtigheid"
              }   
        },
- 		"set_temperature": {
+ 		"target_temperature": {
  			"title": {
- 				"en": "Set",
- 				"nl": "Doel"
+ 				"en": "Target temperature",
+ 				"nl": "Doel temperatuur"
               }   
         },         
 		"measure_temperature.inside": {
@@ -2982,32 +2897,6 @@
 			    "nl": "Buiten"
 		      }
 	   }
-    },     
-    "mobile": {
-        "components": [
-            {
-                "id": "picker",
-                "capabilities": [
-                    "airco_mode"
-                 ]             
-            },
-            {
-                "id": "picker",
-                "capabilities": [
-                   "fan_rate"
-                 ]             
-            },
-            {
-                "id": "picker",
-                "capabilities": [
-                   "fan_direction"
-                 ]             
-            },
-            {
-              "id": "thermostat",
-              "capabilities": [ "set_temperature" ]
-            }
-        ]
     },
     "images": {
       "large": "/drivers/nexura/assets/images/large.png",
@@ -3149,23 +3038,6 @@
  				"nl": "Binnen temp."
          }   
       }
-   },
-   "mobile": {
-       "components": [
-           {
-               "id": "picker",
-               "capabilities": [ "thermostat_mode" ]           
-           },
-           {
-               "id": "sensor",
-               "capabilities": [ "measure_temperature" ],
-               "options": { "showTitle": true }
-           },
-           {
-               "id": "thermostat",
-               "capabilities": [ "target_temperature" ]
-           }
-       ]
    },
    "images": {
      "large": "/drivers/homekit/assets/images/large.png",
