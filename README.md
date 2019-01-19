@@ -5,12 +5,9 @@ Control your Daikin air conditioner (or heatpump) through Homey. This app requir
 ## Features
 - supports Daikin airconditioners & heatpumps (aka inverters) through model range drivers.
 - the mobile card shows, depeding on the selected driver, target temperature, operating mode, inside temperature, fan rate and fan swing mode. Target temperature, fan speed, fan swing mode as well as AC operating mode can be controlled from the mobile card.
-
-![Mobile card2](https://github.com/PeterEIER/nl.climate.daikin/raw/alpha/assets/images/mobilecard3.png)
-
 - with the available 22 flowcards (9 trigger cards, 9 condition cards and 4 action cards) the options to automate are almost endless.
-- HomeKit support* for every WiFi capable Daikin Airconditioner thru the "Model HomeKit" driver. The "Model Homekit" driver has 2 trigger flowcards, no condition flowcards and 2 action flowcards. The AC control functionality is however limited to: airco's mode setting, target temperature setting and inside temperature measurement.
-  Note *: requires either HomeKit by Sprut, or HomeyKit by Bas Jansen.
+- HomeKit support (see note) for every WiFi capable Daikin Airconditioner thru the "Model HomeKit" driver. The "Model Homekit" driver has 2 trigger flowcards, no condition flowcards and 2 action flowcards. The AC control functionality is however limited to: airco's mode setting, target temperature setting and inside temperature measurement.
+  Note: requires either Homey's experimental Apple Homekit feature enabled or one of the following apps: "HomeKit by Sprut", "HomeyKit by Bas Jansen".
 - Special modes, i.e. POWERFUL, are supported for some models/model variants.
 
 ## Action flow cards
@@ -105,3 +102,4 @@ If you like the app, consider buying me a cup of coffee!
 - 22-NOV-18: Fixed an issue that prevented airconditioners equipped with an type B adapter that was using firmware v1.2.51 or above to pair with Homey.
 - ---------- Start of the development of V2.x.x which makes the app compatible with Homey v2 firmware, the app will no longer support Homey v1 firmware.
 - 12-JAN-19: Changes in support of Homey v2 firmware.
+- 19-JAN-19: More changes in support of Homey v2 firmware.

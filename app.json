@@ -1,6 +1,6 @@
 {
     "id": "nl.climate.daikin",
-	"version": "2.0.0",
+	"version": "2.0.1",
     "compatibility": ">=2.0.0",
     "sdk": 2,
     "name": {
@@ -1793,7 +1793,7 @@
     ]
   },
   "capabilities": {
-      "airco_mode": {
+      "thermostat_mode": {
           "type": "enum",
           "title": {
               "en": "Airco mode capability",
@@ -1810,14 +1810,14 @@
                 }
             },
             {
-              "id": "cooling",
+              "id": "cool",
               "title": {
                 "en": "Cooling",
                 "nl": "Koelen"
               }
             },
             {
-              "id": "heating",
+              "id": "heat",
               "title": {
                 "en": "Heating",
                 "nl": "Verwarmen"
@@ -1846,7 +1846,7 @@
             }
          ]
       },
-      "airco_mode_ext1": {
+      "thermostat_mode_ext1": {
           "type": "enum",
           "title": {
               "en": "Airco extended mode capability",
@@ -1863,14 +1863,14 @@
                 }
             },
             {
-              "id": "cooling",
+              "id": "cool",
               "title": {
                 "en": "Cooling",
                 "nl": "Koelen"
               }
             },
             {
-              "id": "heating",
+              "id": "heat",
               "title": {
                 "en": "Heating",
                 "nl": "Verwarmen"
@@ -1906,7 +1906,7 @@
             }
          ]
       },
-      "airco_mode_ext2": {
+      "thermostat_mode_ext2": {
           "type": "enum",
           "title": {
               "en": "Airco extended mode capability",
@@ -1923,14 +1923,14 @@
                 }
             },
             {
-              "id": "cooling",
+              "id": "cool",
               "title": {
                 "en": "Cooling",
                 "nl": "Koelen"
               }
             },
             {
-              "id": "heating",
+              "id": "heat",
               "title": {
                 "en": "Heating",
                 "nl": "Verwarmen"
@@ -1966,7 +1966,7 @@
             }
          ]
       },
-      "airco_mode_ext3": {
+      "thermostat_mode_ext3": {
           "type": "enum",
           "title": {
               "en": "Airco extended mode capability",
@@ -1983,14 +1983,14 @@
                 }
             },
             {
-              "id": "cooling",
+              "id": "cool",
               "title": {
                 "en": "Cooling",
                 "nl": "Koelen"
               }
             },
             {
-              "id": "heating",
+              "id": "heat",
               "title": {
                 "en": "Heating",
                 "nl": "Verwarmen"
@@ -2033,7 +2033,7 @@
             }
          ]
       },
-      "airco_mode_ext4": {
+      "thermostat_mode_ext4": {
           "type": "enum",
           "title": {
               "en": "Airco extended mode capability",
@@ -2050,14 +2050,14 @@
                 }
             },
             {
-              "id": "cooling",
+              "id": "cool",
               "title": {
                 "en": "Cooling",
                 "nl": "Koelen"
               }
             },
             {
-              "id": "heating",
+              "id": "heat",
               "title": {
                 "en": "Heating",
                 "nl": "Verwarmen"
@@ -2093,7 +2093,7 @@
             }
          ]
       },
-      "airco_mode_ext5": {
+      "thermostat_mode_ext5": {
           "type": "enum",
           "title": {
               "en": "Airco extended mode capability",
@@ -2110,14 +2110,14 @@
                 }
             },
             {
-              "id": "cooling",
+              "id": "cool",
               "title": {
                 "en": "Cooling",
                 "nl": "Koelen"
               }
             },
             {
-              "id": "heating",
+              "id": "heat",
               "title": {
                 "en": "Heating",
                 "nl": "Verwarmen"
@@ -2160,7 +2160,7 @@
             }
          ]
       },
-      "airco_mode_ext6": {
+      "thermostat_mode_ext6": {
           "type": "enum",
           "title": {
               "en": "Airco extended mode capability",
@@ -2177,14 +2177,14 @@
                 }
             },
             {
-              "id": "cooling",
+              "id": "cool",
               "title": {
                 "en": "Cooling",
                 "nl": "Koelen"
               }
             },
             {
-              "id": "heating",
+              "id": "heat",
               "title": {
                 "en": "Heating",
                 "nl": "Verwarmen"
@@ -2227,7 +2227,7 @@
             }
          ]
       },
-      "airco_mode_ext7": {
+      "thermostat_mode_ext7": {
           "type": "enum",
           "title": {
               "en": "Airco extended mode capability",
@@ -2244,14 +2244,14 @@
                 }
             },
             {
-              "id": "cooling",
+              "id": "cool",
               "title": {
                 "en": "Cooling",
                 "nl": "Koelen"
               }
             },
             {
-              "id": "heating",
+              "id": "heat",
               "title": {
                 "en": "Heating",
                 "nl": "Verwarmen"
@@ -2427,7 +2427,7 @@
      },
      "class": "thermostat",     
      "capabilities": [
-       "airco_mode",
+       "thermostat_mode",
        "fan_rate",
        "fan_direction",
        "target_humidity",
@@ -2437,16 +2437,10 @@
        "measure_temperature.outside" 
      ],
      "capabilitiesOptions": {
-   		"airco_mode": {
+   		"thermostat_mode": {
    			"title": {
    				"en": "Mode",
    				"nl": "Modus"
-              }   
-        },
-    	"airco_mode_ext7": {
-    		"title": {
-    			"en": "Mode",
-    	  		"nl": "Modus"
               }   
         },
    		"fan_rate": {
@@ -2559,8 +2553,8 @@
              "id": "comfora_useGetToPost",
              "type": "checkbox",
              "label": {
-             "en": "B-model fw <= v2.0.1",
-             "nl": "B-model fw <= v2.0.1"
+             "en": "B-model fw ≤ v2.0.1",
+             "nl": "B-model fw ≤ v2.0.1"
              },
              "hint": {
              "en": "Switch between the new and old Daikin communication protocol.",
@@ -2615,7 +2609,7 @@
      },
      "class": "thermostat",     
      "capabilities": [
-       "airco_mode",
+       "thermostat_mode",
        "fan_rate",
        "fan_direction",
        "target_humidity",
@@ -2625,53 +2619,11 @@
        "measure_temperature.outside" 
      ],
      "capabilitiesOptions": {
-   		"airco_mode": {
+   		"thermostat_mode": {
    			"title": {
    				"en": "Mode",
    				"nl": "Modus"
               }   
-        },
-       	"airco_mode_ext1": {
-       		"title": {
-       			"en": "Mode",
-       			"nl": "Modus"
-             }   
-        },
-       	"airco_mode_ext2": {
-       		"title": {
-       			"en": "Mode",
-       			"nl": "Modus"
-             }   
-        },
-       	"airco_mode_ext3": {
-       		"title": {
-       			"en": "Mode",
-       			"nl": "Modus"
-             }   
-        },
-       	"airco_mode_ext4": {
-       		"title": {
-       			"en": "Mode",
-       			"nl": "Modus"
-             }   
-        },
-       	"airco_mode_ext5": {
-       		"title": {
-       			"en": "Mode",
-       			"nl": "Modus"
-             }   
-        },
-       	"airco_mode_ext6": {
-       		"title": {
-       			"en": "Mode",
-       			"nl": "Modus"
-             }   
-        },
-       	"airco_mode_ext7": {
-       		"title": {
-       			"en": "Mode",
-       			"nl": "Modus"
-             }   
         },
    		"fan_rate": {
    			"title": {
@@ -2783,8 +2735,8 @@
              "id": "emura_useGetToPost",
              "type": "checkbox",
              "label": {
-             "en": "B-model fw <= v2.0.1",
-             "nl": "B-model fw <= v2.0.1"
+             "en": "B-model fw ≤ v2.0.1",
+             "nl": "B-model fw ≤ v2.0.1"
              },
              "hint": {
              "en": "Switch between the new and old Daikin communication protocol.",
@@ -2839,7 +2791,7 @@
     },
     "class": "thermostat",     
     "capabilities": [
-      "airco_mode",
+      "thermostat_mode",
       "fan_rate",
       "fan_direction",
       "target_humidity",
@@ -2849,16 +2801,10 @@
       "measure_temperature.outside" 
     ],
     "capabilitiesOptions": {
-  		"airco_mode": {
+  		"thermostat_mode": {
   			"title": {
   				"en": "Mode",
   				"nl": "Modus"
-             }   
-        },
-       	"airco_mode_ext7": {
-       		"title": {
-       			"en": "Mode",
-       			"nl": "Modus"
              }   
         },
   		"fan_rate": {
@@ -2971,8 +2917,8 @@
             "id": "nexura_useGetToPost",
             "type": "checkbox",
             "label": {
-            "en": "B-model fw <= v2.0.1",
-            "nl": "B-model fw <= v2.0.1"
+            "en": "B-model fw ≤ v2.0.1",
+            "nl": "B-model fw ≤ v2.0.1"
             },
             "hint": {
             "en": "Switch between the new and old Daikin communication protocol.",
@@ -3112,8 +3058,8 @@
            "id": "homekit_useGetToPost",
            "type": "checkbox",
            "label": {
-           "en": "B-model fw <= v2.0.1",
-           "nl": "B-model fw <= v2.0.1"
+           "en": "B-model fw ≤ v2.0.1",
+           "nl": "B-model fw ≤ v2.0.1"
            },
            "hint": {
            "en": "Switch between the new and old Daikin communication protocol.",

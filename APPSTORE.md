@@ -6,12 +6,9 @@ Control your Daikin air conditioner (or heatpump) through Homey (running v2 firm
 ## Features
 - supports Daikin airconditioners & heatpumps (aka inverters) through model range drivers.
 - the mobile card shows, depeding on the selected driver, target temperature, operating mode, inside temperature, fan rate and fan swing mode. Target temperature, fan speed, fan swing mode as well as AC operating mode can be controlled from the mobile card.
-
-![Mobile card2](https://github.com/PeterEIER/nl.climate.daikin/raw/alpha/assets/images/mobilecard3.png)
-
 - with the available 22 flowcards (9 trigger cards, 9 condition cards and 4 action cards) the options to automate are almost endless.
-- HomeKit support* for every WiFi capable Daikin Airconditioner thru the "Model HomeKit" driver. The "Model Homekit" driver has 2 trigger flowcards, no condition flowcards and 2 action flowcards. The AC control functionality is however limited to: airco's mode setting, target temperature setting and inside temperature measurement.
-  Note *: requires either HomeKit by Sprut, or HomeyKit by Bas Jansen.
+- HomeKit support (see note) for every WiFi capable Daikin Airconditioner thru the "Model HomeKit" driver. The "Model Homekit" driver has 2 trigger flowcards, no condition flowcards and 2 action flowcards. The AC control functionality is however limited to: airco's mode setting, target temperature setting and inside temperature measurement.
+  Note: requires either Homey's experimental Apple Homekit feature enabled or one of the following apps: "HomeKit by Sprut", "HomeyKit by Bas Jansen".
 - Special modes, i.e. POWERFUL, are supported for some models/model variants.
 
 ## Action flow cards
@@ -37,6 +34,9 @@ Note: the WiFi adapter its firmware version can be found in the Daikin Online Co
 Special modes are not supported by all models, model variants and/or the WiFi adapter its firmware version, in addition it might be that not all 3 special modes are supported. Check the Daikin Online Controller app which special modes are supported by your airco, during paring enable the supported Special Mode(s) by checking the applicable checkbox(es) or leave them all unchecked (disabled).
 
 ## Change log
+#### v2.0.1
+- More changes in support of Homey v2 firmware.
+
 #### v2.0.0
 - Changes in support of Homey v2 firmware.
 

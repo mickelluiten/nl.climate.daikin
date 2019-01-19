@@ -15,29 +15,29 @@ class NexuraDevice extends Device {
         var settings = this.getSettings();
         var spmode_config = settings.nexura_spmode;
         switch (spmode_config) {
-            case 0:  this.registerCapabilityListener('airco_mode', this.onCapabilityMode.bind(this));
-        	         this.setCapabilityValue('airco_mode', "off");  // ensure a valid mode is shown at start up...
+            case 0:  this.registerCapabilityListener('thermostat_mode', this.onCapabilityMode.bind(this));
+        	         this.setCapabilityValue('thermostat_mode', "off");  // ensure a valid mode is shown at start up...
                      break;
-            case 1:  this.registerCapabilityListener('airco_mode_ext1', this.onCapabilityExtendedMode.bind(this));
-                	 this.setCapabilityValue('airco_mode_ext1', "off");  // ensure a valid mode is shown at start up...
+            case 1:  this.registerCapabilityListener('thermostat_mode_ext1', this.onCapabilityExtendedMode.bind(this));
+                	 this.setCapabilityValue('thermostat_mode_ext1', "off");  // ensure a valid mode is shown at start up...
                      break;
-            case 2:  this.registerCapabilityListener('airco_mode_ext2', this.onCapabilityExtendedMode.bind(this));
-        	         this.setCapabilityValue('airco_mode_ext2', "off");  // ensure a valid mode is shown at start up...
+            case 2:  this.registerCapabilityListener('thermostat_mode_ext2', this.onCapabilityExtendedMode.bind(this));
+        	         this.setCapabilityValue('thermostat_mode_ext2', "off");  // ensure a valid mode is shown at start up...
                      break;            
-            case 3:  this.registerCapabilityListener('airco_mode_ext3', this.onCapabilityExtendedMode.bind(this));
-        	         this.setCapabilityValue('airco_mode_ext3', "off");  // ensure a valid mode is shown at start up...
+            case 3:  this.registerCapabilityListener('thermostat_mode_ext3', this.onCapabilityExtendedMode.bind(this));
+        	         this.setCapabilityValue('thermostat_mode_ext3', "off");  // ensure a valid mode is shown at start up...
                      break;
-            case 4:  this.registerCapabilityListener('airco_mode_ext4', this.onCapabilityExtendedMode.bind(this));
-        	         this.setCapabilityValue('airco_mode_ext4', "off");  // ensure a valid mode is shown at start up...
+            case 4:  this.registerCapabilityListener('thermostat_mode_ext4', this.onCapabilityExtendedMode.bind(this));
+        	         this.setCapabilityValue('thermostat_mode_ext4', "off");  // ensure a valid mode is shown at start up...
                      break;
-            case 5:  this.registerCapabilityListener('airco_mode_ext5', this.onCapabilityExtendedMode.bind(this));
-                     this.setCapabilityValue('airco_mode_ext5', "off");  // ensure a valid mode is shown at start up...
+            case 5:  this.registerCapabilityListener('thermostat_mode_ext5', this.onCapabilityExtendedMode.bind(this));
+                     this.setCapabilityValue('thermostat_mode_ext5', "off");  // ensure a valid mode is shown at start up...
                      break;
-            case 6:  this.registerCapabilityListener('airco_mode_ext6', this.onCapabilityExtendedMode.bind(this));
-        	         this.setCapabilityValue('airco_mode_ext6', "off");  // ensure a valid mode is shown at start up...
+            case 6:  this.registerCapabilityListener('thermostat_mode_ext6', this.onCapabilityExtendedMode.bind(this));
+        	         this.setCapabilityValue('thermostat_mode_ext6', "off");  // ensure a valid mode is shown at start up...
                      break;
-            case 7:  this.registerCapabilityListener('airco_mode_ext7', this.onCapabilityExtendedMode.bind(this));
-        	         this.setCapabilityValue('airco_mode_ext7', "off");  // ensure a valid mode is shown at start up...
+            case 7:  this.registerCapabilityListener('thermostat_mode_ext7', this.onCapabilityExtendedMode.bind(this));
+        	         this.setCapabilityValue('thermostat_mode_ext7', "off");  // ensure a valid mode is shown at start up...
                      break;
             default: break;    
         }
@@ -78,41 +78,41 @@ class NexuraDevice extends Device {
 //-------- app capabilities --------------
     	
     // Capability 1: Device get/set mode
-    onCapabilityMode(airco_mode) {
+    onCapabilityMode(thermostat_mode) {
 		this.log('onCapabilityMode');
-		this.log('mode:', airco_mode);
+		this.log('mode:', thermostat_mode);
         
-    	this.setCapabilityValue('airco_mode', airco_mode);
+    	this.setCapabilityValue('thermostat_mode', thermostat_mode);
         
-        this.daikinModeControl(airco_mode);
+        this.daikinModeControl(thermostat_mode);
 
 		return Promise.resolve();  
 	}
 
-    onCapabilityExtendedMode(airco_mode_extended) {
+    onCapabilityExtendedMode(thermostat_mode_extended) {
 		this.log('onCapabilityExtendedMode');
-        this.log('extended mode:', airco_mode_extended);
+        this.log('extended mode:', thermostat_mode_extended);
         
         var settings = this.getSettings();
         var spmode_config = settings.comfora_spmode;
         switch (spmode_config) {
-            case 1:  this.setCapabilityValue('airco_mode_ext1', airco_mode_extended);
+            case 1:  this.setCapabilityValue('thermostat_mode_ext1', thermostat_mode_extended);
                      break;
-            case 2:  this.setCapabilityValue('airco_mode_ext2', airco_mode_extended);
+            case 2:  this.setCapabilityValue('thermostat_mode_ext2', thermostat_mode_extended);
                      break;            
-            case 3:  this.setCapabilityValue('airco_mode_ext3', airco_mode_extended);
+            case 3:  this.setCapabilityValue('thermostat_mode_ext3', thermostat_mode_extended);
                      break;
-            case 4:  this.setCapabilityValue('airco_mode_ext4', airco_mode_extended);
+            case 4:  this.setCapabilityValue('thermostat_mode_ext4', thermostat_mode_extended);
                      break;
-            case 5:  this.setCapabilityValue('airco_mode_ext5', airco_mode_extended);
+            case 5:  this.setCapabilityValue('thermostat_mode_ext5', thermostat_mode_extended);
                      break;
-            case 6:  this.setCapabilityValue('airco_mode_ext6', airco_mode_extended);
+            case 6:  this.setCapabilityValue('thermostat_mode_ext6', thermostat_mode_extended);
                      break;
-            case 7:  this.setCapabilityValue('airco_mode_ext7', airco_mode_extended);
+            case 7:  this.setCapabilityValue('thermostat_mode_ext7', thermostat_mode_extended);
                      break;
             default: break;    
         }   
-        this.daikinModeControl(airco_mode_extended);
+        this.daikinModeControl(thermostat_mode_extended);
 
 		return Promise.resolve();  
 	}
@@ -246,7 +246,7 @@ class NexuraDevice extends Device {
         const apow = Number(control_info[1]);
 
     //---- mode
-        var airco_modes = [ "auto", "auto1", "dehumid", "cooling", "heating", "off", "fan", "auto2", "streamer", "powerful", "econo" ];
+        var thermostat_modes = [ "auto", "auto1", "dehumid", "cool", "heat", "off", "fan", "auto2", "streamer", "powerful", "econo" ];
                             
         var settings = this.getSettings();
         var nexura_spmode = settings.nexura_spmode;
@@ -261,76 +261,76 @@ class NexuraDevice extends Device {
           if (advmode == 2) amode = 9;
           if (advmode == 12) amode = 10;
 
-          const airco_mode = airco_modes[amode];
+          const thermostat_mode = thermostat_modes[amode];
           var spmode_config = settings.nexura_spmode;
           switch (spmode_config) { 
-              case 1:  var capability_mode = this.getCapabilityValue('airco_mode_ext1');
+              case 1:  var capability_mode = this.getCapabilityValue('thermostat_mode_ext1');
                        // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
-                       if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_ext1', airco_mode);
+                       if ((capability_mode != "off")) this.setCapabilityValue('thermostat_mode_ext1', thermostat_mode);
                        // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
                        // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
-                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_ext1', "auto");
+                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('thermostat_mode_ext1', "auto");
                        // when the airo is powered off externally make sure that capability mode "OFF" is set
-                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_ext1', "off");                  
+                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('thermostat_mode_ext1', "off");                  
                        break;
-              case 2:  var capability_mode = this.getCapabilityValue('airco_mode_ext2');
+              case 2:  var capability_mode = this.getCapabilityValue('thermostat_mode_ext2');
                        // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
-                       if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_ext2', airco_mode);
+                       if ((capability_mode != "off")) this.setCapabilityValue('thermostat_mode_ext2', thermostat_mode);
                        // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
                        // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
-                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_ext2', "auto");
+                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('thermostat_mode_ext2', "auto");
                        // when the airo is powered off externally make sure that capability mode "OFF" is set
-                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_ext2', "off");                  
+                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('thermostat_mode_ext2', "off");                  
                        break;
-              case 3:  var capability_mode = this.getCapabilityValue('airco_mode_ext3');
+              case 3:  var capability_mode = this.getCapabilityValue('thermostat_mode_ext3');
                        // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
-                       if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_ext3', airco_mode);
+                       if ((capability_mode != "off")) this.setCapabilityValue('thermostat_mode_ext3', thermostat_mode);
                        // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
                        // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
-                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_ext3', "auto");
+                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('thermostat_mode_ext3', "auto");
                        // when the airo is powered off externally make sure that capability mode "OFF" is set
-                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_ext3', "off");                  
+                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('thermostat_mode_ext3', "off");                  
                        break;
-              case 4:  var capability_mode = this.getCapabilityValue('airco_mode_ext4');
+              case 4:  var capability_mode = this.getCapabilityValue('thermostat_mode_ext4');
                        // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
-                       if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_ext4', airco_mode);
+                       if ((capability_mode != "off")) this.setCapabilityValue('thermostat_mode_ext4', thermostat_mode);
                        // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
                        // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
-                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_ext4', "auto");
+                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('thermostat_mode_ext4', "auto");
                        // when the airo is powered off externally make sure that capability mode "OFF" is set
-                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_ext4', "off");                  
+                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('thermostat_mode_ext4', "off");                  
                        break;
-              case 5:  var capability_mode = this.getCapabilityValue('airco_mode_ext5');
+              case 5:  var capability_mode = this.getCapabilityValue('thermostat_mode_ext5');
                        // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
-                       if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_ext5', airco_mode);
+                       if ((capability_mode != "off")) this.setCapabilityValue('thermostat_mode_ext5', thermostat_mode);
                        // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
                        // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
-                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_ext5', "auto");
+                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('thermostat_mode_ext5', "auto");
                        // when the airo is powered off externally make sure that capability mode "OFF" is set
-                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_ext5', "off");                  
+                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('thermostat_mode_ext5', "off");                  
                        break;
-              case 6:  var capability_mode = this.getCapabilityValue('airco_mode_ext6');
+              case 6:  var capability_mode = this.getCapabilityValue('thermostat_mode_ext6');
                        // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
-                       if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_ext6', airco_mode);
+                       if ((capability_mode != "off")) this.setCapabilityValue('thermostat_mode_ext6', thermostat_mode);
                        // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
                        // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
-                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_ext6', "auto");
+                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('thermostat_mode_ext6', "auto");
                        // when the airo is powered off externally make sure that capability mode "OFF" is set
-                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_ext6', "off");                  
+                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('thermostat_mode_ext6', "off");                  
                        break;
-              case 7:  var capability_mode = this.getCapabilityValue('airco_mode_ext7');
+              case 7:  var capability_mode = this.getCapabilityValue('thermostat_mode_ext7');
                        // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
-                       if ((capability_mode != "off")) this.setCapabilityValue('airco_mode_ext7', airco_mode);
+                       if ((capability_mode != "off")) this.setCapabilityValue('thermostat_mode_ext7', thermostat_mode);
                        // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
                        // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
-                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode_ext7', "auto");
+                       if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('thermostat_mode_ext7', "auto");
                        // when the airo is powered off externally make sure that capability mode "OFF" is set
-                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode_ext7', "off");                  
+                       if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('thermostat_mode_ext7', "off");                  
                        break;
               default: break;    
           }
           
-          this.log('extended mode:', airco_mode);
+          this.log('extended mode:', thermostat_mode);
           this.log('extended capability_mode:', capability_mode);
           this.log('nexura_spmode_kind:', advmode);
         }
@@ -338,17 +338,17 @@ class NexuraDevice extends Device {
           var amode = Number(control_info[2]);
           if ((amode == 1) || (amode == 7)) amode = 0; // do not differentiate the modes: auto1 and auto2
           
-          const airco_mode = airco_modes[amode];
-          var capability_mode = this.getCapabilityValue('airco_mode');
+          const thermostat_mode = thermostat_modes[amode];
+          var capability_mode = this.getCapabilityValue('thermostat_mode');
           // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
-          if ((capability_mode != "off")) this.setCapabilityValue('airco_mode', airco_mode);
+          if ((capability_mode != "off")) this.setCapabilityValue('thermostat_mode', thermostat_mode);
           // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
           // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
-          if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('airco_mode', "auto");
+          if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('thermostat_mode', "auto");
           // when the airo is powered off externally make sure that capability mode "OFF" is set
-          if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('airco_mode', "off");
+          if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('thermostat_mode', "off");
           
-          this.log('mode:', airco_mode);
+          this.log('mode:', thermostat_mode);
           this.log('capability_mode:', capability_mode);
         } 
         
@@ -489,11 +489,11 @@ class NexuraDevice extends Device {
        else nexura_options = {'useGetToPost': false};
        
        if (nexura_spmode == false) {
-           this.log('airco_mode:', acmode);
+           this.log('thermostat_mode:', acmode);
            
            util.daikinModeControl(acmode, nexura_ip, nexura_options, demo_mode);           
        } else {
-           this.log('airco_mode_extended:', acmode);
+           this.log('thermostat_mode_extended:', acmode);
            
            // step 1 - set mode
            util.daikinModeControl(acmode, nexura_ip, nexura_options, demo_mode);
