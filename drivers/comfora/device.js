@@ -28,22 +28,25 @@ class ComforaDevice extends Device {
         	         this.setCapabilityValue('thermostat_mode_ext3', "off");  // ensure a valid mode is shown at start up...
                      break;
             case 4:  this.registerCapabilityListener('thermostat_mode_ext4', this.onCapabilityExtendedMode.bind(this));
+            		 this.registerCapabilityListener('target_humidity', this.onCapabilityAircoHum.bind(this));
         	         this.setCapabilityValue('thermostat_mode_ext4', "off");  // ensure a valid mode is shown at start up...
                      break;
             case 5:  this.registerCapabilityListener('thermostat_mode_ext5', this.onCapabilityExtendedMode.bind(this));
+            		 this.registerCapabilityListener('target_humidity', this.onCapabilityAircoHum.bind(this));
                      this.setCapabilityValue('thermostat_mode_ext5', "off");  // ensure a valid mode is shown at start up...
                      break;
             case 6:  this.registerCapabilityListener('thermostat_mode_ext6', this.onCapabilityExtendedMode.bind(this));
+            		 this.registerCapabilityListener('target_humidity', this.onCapabilityAircoHum.bind(this));
         	         this.setCapabilityValue('thermostat_mode_ext6', "off");  // ensure a valid mode is shown at start up...
                      break;
             case 7:  this.registerCapabilityListener('thermostat_mode_ext7', this.onCapabilityExtendedMode.bind(this));
+            		 this.registerCapabilityListener('target_humidity', this.onCapabilityAircoHum.bind(this));
         	         this.setCapabilityValue('thermostat_mode_ext7', "off");  // ensure a valid mode is shown at start up...
                      break;
             default: break;    
         }
 		this.registerCapabilityListener('fan_rate', this.onCapabilityFanRate.bind(this));			
 		this.registerCapabilityListener('fan_direction', this.onCapabilityFanDir.bind(this));	       
-		this.registerCapabilityListener('target_humidity', this.onCapabilityAircoHum.bind(this));
         this.registerCapabilityListener('target_temperature', this.onCapabilityAircoTemp.bind(this));
 		this.registerCapabilityListener('measure_temperature', this.onCapabilityMeasureTemperature.bind(this));  
 		this.registerCapabilityListener('measure_temperature.inside', this.onCapabilityMeasureTemperature.bind(this));
@@ -358,8 +361,10 @@ class ComforaDevice extends Device {
         this.setCapabilityValue('target_temperature', atemp);
         
     //---- humidity
-		const ahum = Number(control_info[5]);      
-    	this.setCapabilityValue('target_humidity', ahum);              
+        if ( (spmode_config == 4) ||(spmode_config == 5) ||(spmode_config == 6) ||(spmode_config == 7) ) {        
+		  const ahum = Number(control_info[5]);      
+    	  this.setCapabilityValue('target_humidity', ahum);
+        }              
         
     //---- fan rate
         var fan_rates = [ "A", "B", "3", "4", "5", "6", "7"];

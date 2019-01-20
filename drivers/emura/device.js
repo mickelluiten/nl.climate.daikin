@@ -43,7 +43,7 @@ class EmuraDevice extends Device {
         }
 		this.registerCapabilityListener('fan_rate', this.onCapabilityFanRate.bind(this));
 		this.registerCapabilityListener('fan_direction', this.onCapabilityFanDir.bind(this));
-		this.registerCapabilityListener('target_humidity', this.onCapabilityAircoHum.bind(this));
+		//this.registerCapabilityListener('target_humidity', this.onCapabilityAircoHum.bind(this));
         this.registerCapabilityListener('target_temperature', this.onCapabilityAircoTemp.bind(this));
 		this.registerCapabilityListener('measure_temperature', this.onCapabilityMeasureTemperature.bind(this));
 		this.registerCapabilityListener('measure_temperature.inside', this.onCapabilityMeasureTemperature.bind(this));
@@ -141,6 +141,7 @@ class EmuraDevice extends Device {
 		return Promise.resolve();  
 	}
 
+/*
     // Capability 4: Device get/set humidity
     onCapabilityAircoHum(ahum) {
 		this.log('onCapabilityAircoHum');
@@ -150,6 +151,7 @@ class EmuraDevice extends Device {
         
         return Promise.resolve();  
 	}
+*/
       
     // Capability 5: Device get/set target temperature
     onCapabilityAircoTemp(atemp, opts) {
@@ -356,10 +358,12 @@ class EmuraDevice extends Device {
 		const atemp = Number(control_info[4]);
         this.log('target temperature °C:', atemp);  
         this.setCapabilityValue('target_temperature', atemp);
-        
+
+/*        
     //---- humidity
 		const ahum = Number(control_info[5]);      
     	this.setCapabilityValue('target_humidity', ahum);              
+*/
         
     //---- fan rate
         var fan_rates = [ "A", "B", "3", "4", "5", "6", "7"];

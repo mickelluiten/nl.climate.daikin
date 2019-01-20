@@ -103,3 +103,6 @@ If you like the app, consider buying me a cup of coffee!
 - ---------- Start of the development of V2.x.x which makes the app compatible with Homey v2 firmware, the app will no longer support Homey v1 firmware.
 - 12-JAN-19: Changes in support of Homey v2 firmware.
 - 19-JAN-19: More changes in support of Homey v2 firmware.
+- 20-JAN-19: Even more changes in support of Homey v2 firmware.
+- 20-JAN-19: Removed the special mode "Streamer" and replaced "Dehumidify" by the "Dry" selection for Emura and Nexura driver. "Dry" is a on/off capability therfor the target humidity control is not show in the UI.
+- 20-JAN-19: Combined "Dehumidify" and "Streamer" functionality for Comfora, Sensira etc driver, the "Dehumidify" function enables the ability to set a target humidity % via the UI. 

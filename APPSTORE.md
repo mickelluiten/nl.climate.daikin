@@ -34,6 +34,11 @@ Note: the WiFi adapter its firmware version can be found in the Daikin Online Co
 Special modes are not supported by all models, model variants and/or the WiFi adapter its firmware version, in addition it might be that not all 3 special modes are supported. Check the Daikin Online Controller app which special modes are supported by your airco, during paring enable the supported Special Mode(s) by checking the applicable checkbox(es) or leave them all unchecked (disabled).
 
 ## Change log
+#### v2.0.2
+- Even more changes in support of Homey v2 firmware.
+- Removed the special mode "Streamer" and replaced "Dehumidify" by the "Dry" selection for Emura and Nexura driver. "Dry" is a on/off capability therfor the target humidity control is not show in the UI.
+- Combined "Dehumidify" and "Streamer" functionality for Comfora, Sensira etc driver, the "Dehumidify" function enables the ability to set a target humidity % via the UI. 
+
 #### v2.0.1
 - More changes in support of Homey v2 firmware.
 

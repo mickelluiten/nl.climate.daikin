@@ -1,6 +1,6 @@
 {
     "id": "nl.climate.daikin",
-	"version": "2.0.1",
+	"version": "2.0.2",
     "compatibility": ">=2.0.0",
     "sdk": 2,
     "name": {
@@ -1841,7 +1841,7 @@
               "id": "dehumid",
               "title": {
                 "en": "Dry",
-                "nl": "Ontvochtigen"
+                "nl": "Drogen"
               }
             }
          ]
@@ -1894,7 +1894,7 @@
               "id": "dehumid",
               "title": {
                 "en": "Dry",
-                "nl": "Ontvochtigen"
+                "nl": "Drogen"
               }
             },
             {
@@ -1954,7 +1954,7 @@
               "id": "dehumid",
               "title": {
                 "en": "Dry",
-                "nl": "Ontvochtigen"
+                "nl": "Drogen"
               }
             },
             {
@@ -2014,7 +2014,7 @@
               "id": "dehumid",
               "title": {
                 "en": "Dry",
-                "nl": "Ontvochtigen"
+                "nl": "Drogen"
               }
             },
             {
@@ -2080,7 +2080,7 @@
             {
               "id": "dehumid",
               "title": {
-                "en": "Dry",
+                "en": "Dehumify",
                 "nl": "Ontvochtigen"
               }
             },
@@ -2140,7 +2140,7 @@
             {
               "id": "dehumid",
               "title": {
-                "en": "Dry",
+                "en": "Dehumify",
                 "nl": "Ontvochtigen"
               }
             },
@@ -2207,7 +2207,7 @@
             {
               "id": "dehumid",
               "title": {
-                "en": "Dry",
+                "en": "Dehumify",
                 "nl": "Ontvochtigen"
               }
             },
@@ -2274,7 +2274,7 @@
             {
               "id": "dehumid",
               "title": {
-                "en": "Dry",
+                "en": "Dehumify",
                 "nl": "Ontvochtigen"
               }
             },
@@ -2403,8 +2403,8 @@
       "target_humidity": {
           "type": "number",
           "title": {
-              "en": "Sets target humidity capability",
-              "nl": "Instelling doel luchtvochtigheid functionaliteit"
+              "en": "Target humidity",
+              "nl": "Doel luchtvochtigheid"
           },
           "uiComponent": "slider",
           "getable": true,
@@ -2430,7 +2430,6 @@
        "thermostat_mode",
        "fan_rate",
        "fan_direction",
-       "target_humidity",
        "target_temperature",
 	   "measure_temperature",       
 	   "measure_temperature.inside",
@@ -2453,12 +2452,6 @@
      		"title": {
      			"en": "Wings",
      			"nl": "Lamel"
-            }   
-        },
-     	"target_humidity": {
-     		"title": {
-     			"en": "Target humidity",
-     			"nl": "Doel luchtvochtigheid"
             }   
         },
   		"target_temperature": {
@@ -2612,7 +2605,6 @@
        "thermostat_mode",
        "fan_rate",
        "fan_direction",
-       "target_humidity",
        "target_temperature",
 	   "measure_temperature",       
 	   "measure_temperature.inside",
@@ -2635,12 +2627,6 @@
      		"title": {
      			"en": "Wings",
      			"nl": "Lamel"
-            }   
-        },
-     	"target_humidity": {
-     		"title": {
-     			"en": "Target humidity",
-     			"nl": "Doel luchtvochtigheid"
             }   
         },
   		"target_temperature": {
@@ -2794,7 +2780,6 @@
       "thermostat_mode",
       "fan_rate",
       "fan_direction",
-      "target_humidity",
       "target_temperature",
       "measure_temperature",       
       "measure_temperature.inside",
@@ -2819,12 +2804,6 @@
     			"nl": "Lamel"
              }   
         },
-    	"target_humidity": {
-    		"title": {
-    			"en": "Target humidity",
-    			"nl": "Doel luchtvochtigheid"
-             }   
-       },
  		"target_temperature": {
  			"title": {
  				"en": "Target temperature",
