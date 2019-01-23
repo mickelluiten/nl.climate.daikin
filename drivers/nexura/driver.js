@@ -211,9 +211,9 @@ class NexuraDriver extends Driver {
             var demo_mode = settings.nexura_demomode;    
             this.log('demo_mode', demo_mode);  
 
-            var thermostat_mode = args.mode;
-            device.setCapabilityValue('thermostat_mode_nexura', thermostat_mode);
-            this.log('thermostat_mode', thermostat_mode); 
+            var thermostat_mode_std = args.mode;
+            device.setCapabilityValue('thermostat_mode_std_nexura', thermostat_mode_std);
+            this.log('thermostat_mode_std', thermostat_mode_std); 
 
             // type B adapter logic
             var useGetToPost = settings.nexura_useGetToPost;
@@ -224,8 +224,8 @@ class NexuraDriver extends Driver {
             if (useGetToPost) options = {'useGetToPost': true};
             else options = {'useGetToPost': false};
                        
-            nexuractrl.daikinModeControl(thermostat_mode, ip_address, options, demo_mode);
-			return Promise.resolve(thermostat_mode);
+            nexuractrl.daikinModeControl(thermostat_mode_std, ip_address, options, demo_mode);
+			return Promise.resolve(thermostat_mode_std);
 		});         
 
     //--- FAN RATE ACTIONS

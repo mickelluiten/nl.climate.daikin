@@ -1,8 +1,9 @@
 {
     "id": "nl.climate.daikin",
-	"version": "2.0.2",
+	"version": "2.0.3",
     "compatibility": ">=2.0.0",
     "sdk": 2,
+    "brandColor": "#2E96D0",
     "name": {
         "en": "Daikin AI",
 		"nl": "Daikin AI"
@@ -1793,7 +1794,7 @@
     ]
   },
   "capabilities": {
-      "thermostat_mode": {
+      "thermostat_mode_std": {
           "type": "enum",
           "title": {
               "en": "Airco mode capability",
@@ -2427,7 +2428,7 @@
      },
      "class": "thermostat",     
      "capabilities": [
-       "thermostat_mode",
+       "thermostat_mode_std",
        "fan_rate",
        "fan_direction",
        "target_temperature",
@@ -2436,7 +2437,7 @@
        "measure_temperature.outside" 
      ],
      "capabilitiesOptions": {
-   		"thermostat_mode": {
+   		"thermostat_mode_std": {
    			"title": {
    				"en": "Mode",
    				"nl": "Modus"
@@ -2602,7 +2603,7 @@
      },
      "class": "thermostat",     
      "capabilities": [
-       "thermostat_mode",
+       "thermostat_mode_std",
        "fan_rate",
        "fan_direction",
        "target_temperature",
@@ -2611,7 +2612,7 @@
        "measure_temperature.outside" 
      ],
      "capabilitiesOptions": {
-   		"thermostat_mode": {
+   		"thermostat_mode_std": {
    			"title": {
    				"en": "Mode",
    				"nl": "Modus"
@@ -2777,7 +2778,7 @@
     },
     "class": "thermostat",     
     "capabilities": [
-      "thermostat_mode",
+      "thermostat_mode_std",
       "fan_rate",
       "fan_direction",
       "target_temperature",
@@ -2786,7 +2787,7 @@
       "measure_temperature.outside" 
     ],
     "capabilitiesOptions": {
-  		"thermostat_mode": {
+  		"thermostat_mode_std": {
   			"title": {
   				"en": "Mode",
   				"nl": "Modus"

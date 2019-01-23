@@ -15,8 +15,8 @@ class NexuraDevice extends Device {
         var settings = this.getSettings();
         var spmode_config = settings.nexura_spmode;
         switch (spmode_config) {
-            case 0:  this.registerCapabilityListener('thermostat_mode', this.onCapabilityMode.bind(this));
-        	         this.setCapabilityValue('thermostat_mode', "off");  // ensure a valid mode is shown at start up...
+            case 0:  this.registerCapabilityListener('thermostat_mode_std', this.onCapabilityMode.bind(this));
+        	         this.setCapabilityValue('thermostat_mode_std', "off");  // ensure a valid mode is shown at start up...
                      break;
             case 1:  this.registerCapabilityListener('thermostat_mode_ext1', this.onCapabilityExtendedMode.bind(this));
                 	 this.setCapabilityValue('thermostat_mode_ext1', "off");  // ensure a valid mode is shown at start up...
@@ -78,13 +78,13 @@ class NexuraDevice extends Device {
 //-------- app capabilities --------------
     	
     // Capability 1: Device get/set mode
-    onCapabilityMode(thermostat_mode) {
+    onCapabilityMode(thermostat_mode_standard) {
 		this.log('onCapabilityMode');
-		this.log('mode:', thermostat_mode);
+		this.log('mode:', thermostat_mode_standard);
         
-    	this.setCapabilityValue('thermostat_mode', thermostat_mode);
+    	this.setCapabilityValue('thermostat_mode_std', thermostat_mode_standard);
         
-        this.daikinModeControl(thermostat_mode);
+        this.daikinModeControl(thermostat_mode_standard);
 
 		return Promise.resolve();  
 	}
@@ -341,14 +341,14 @@ class NexuraDevice extends Device {
           if ((amode == 1) || (amode == 7)) amode = 0; // do not differentiate the modes: auto1 and auto2
           
           const thermostat_mode = thermostat_modes[amode];
-          var capability_mode = this.getCapabilityValue('thermostat_mode');
+          var capability_mode = this.getCapabilityValue('thermostat_mode_std');
           // when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
-          if ((capability_mode != "off")) this.setCapabilityValue('thermostat_mode', thermostat_mode);
+          if ((capability_mode != "off")) this.setCapabilityValue('thermostat_mode_std', thermostat_mode);
           // but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
           // setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
-          if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('thermostat_mode', "auto");
+          if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('thermostat_mode_std', "auto");
           // when the airo is powered off externally make sure that capability mode "OFF" is set
-          if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('thermostat_mode', "off");
+          if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('thermostat_mode_std', "off");
           
           this.log('mode:', thermostat_mode);
           this.log('capability_mode:', capability_mode);
@@ -358,6 +358,18 @@ class NexuraDevice extends Device {
 		const atemp = Number(control_info[4]);
         this.log('target temperature °C:', atemp);  
         this.setCapabilityValue('target_temperature', atemp);
+
+        // turn thermostat ui component black when AC is turned off (note: a custom airco_mode capability and the thermostat ui component do not work properly together...)
+        if ((capability_mode == "off")) {
+            var inside_temp = this.getCapabilityValue('measure_temperature.inside');
+            var target_temp = this.getCapabilityValue('target_temperature');
+            this.setCapabilityValue('target_temperature', inside_temp); // inside = targer results in black thermostat ui component
+            
+            // update the airco its settings as necessary      
+            if (target_temp != inside_temp) {
+             this.daikinTempControl(inside_temp);
+            }
+        }
 
 /*        
     //---- humidity
@@ -493,7 +505,7 @@ class NexuraDevice extends Device {
        else nexura_options = {'useGetToPost': false};
        
        if (nexura_spmode == false) {
-           this.log('thermostat_mode:', acmode);
+           this.log('thermostat_mode_std:', acmode);
            
            util.daikinModeControl(acmode, nexura_ip, nexura_options, demo_mode);           
        } else {

@@ -211,9 +211,9 @@ class EmuraDriver extends Driver {
             var demo_mode = settings.emura_demomode;    
             this.log('demo_mode', demo_mode);  
 
-            var thermostat_mode = args.mode;
-            device.setCapabilityValue('thermostat_mode_emura', thermostat_mode);
-            this.log('thermostat_mode', thermostat_mode);
+            var thermostat_mode_std = args.mode;
+            device.setCapabilityValue('thermostat_mode_std_emura', thermostat_mode_std);
+            this.log('thermostat_mode_std', thermostat_mode_std);
             
             // type B adapter logic
             var useGetToPost = settings.emura_useGetToPost;
@@ -224,8 +224,8 @@ class EmuraDriver extends Driver {
             if (useGetToPost) options = {'useGetToPost': true};
             else options = {'useGetToPost': false};
                         
-            emuractrl.daikinModeControl(thermostat_mode, ip_address, options, demo_mode);
-			return Promise.resolve(thermostat_mode);
+            emuractrl.daikinModeControl(thermostat_mode_std, ip_address, options, demo_mode);
+			return Promise.resolve(thermostat_mode_std);
 		});           
 
     //--- FAN RATE ACTIONS

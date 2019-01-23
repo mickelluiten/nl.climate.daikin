@@ -211,9 +211,9 @@ class ComforaDriver extends Driver {
             var demo_mode = settings.comfora_demomode;    
             this.log('demo_mode', demo_mode);  
 
-            var thermostat_mode = args.mode;
-            device.setCapabilityValue('thermostat_mode_comfora', thermostat_mode);
-            this.log('thermostat_mode', thermostat_mode); 
+            var thermostat_mode_std = args.mode;
+            device.setCapabilityValue('thermostat_mode_std_comfora', thermostat_mode_std);
+            this.log('thermostat_mode_std', thermostat_mode_std); 
 
             // type B adapter logic
             var useGetToPost = settings.comfora_useGetToPost;
@@ -224,8 +224,8 @@ class ComforaDriver extends Driver {
             if (useGetToPost) options = {'useGetToPost': true};
             else options = {'useGetToPost': false};
                                     
-            comforactrl.daikinModeControl(thermostat_mode, ip_address, options, demo_mode);
-            return Promise.resolve(thermostat_mode);
+            comforactrl.daikinModeControl(thermostat_mode_std, ip_address, options, demo_mode);
+            return Promise.resolve(thermostat_mode_std);
 		});           
 
     //--- FAN RATE ACTIONS
