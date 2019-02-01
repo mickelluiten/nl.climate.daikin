@@ -33,14 +33,18 @@ To prevent unreliable behavior of the application the use of a fixed (static) IP
 Note: your airconditioner its current IP-address can be found in the Daikin Online Controller app (select your airco > click on the gear sysmbol > the IP-address shows under "Adapter information").
 
 ## Change log
+#### v2.0.4
+- Changed the AC function naming for several "picker" selections.
+
 #### v2.0.3
 - Fixed a bug (missing flow cards) that was introduced with v2.0.2 and impacted Model Homekit.
 - Made customizations to the thermostat knob its color appearance for all models except Model Homekit. The behaviour is however still very different, due to SDK software constraints, from that of Model Homekit which behavior is Homey's "Thermostat control standard" (both for the knob and thermostat mode selector).
 
 #### v2.0.2
 - Even more changes in support of Homey v2 firmware.
-- Removed the special mode "Streamer" and replaced "Dehumidify" by the "Dry" selection for Emura and Nexura driver. "Dry" is a on/off capability therefor the target humidity control is not show in the UI.
-- Combined "Dehumidify" and "Streamer" functionality for Comfora, Sensira etc driver, the "Dehumidify" function enables the ability to set a target humidity % via the UI. 
+- Removed the special mode "Streamer" for the Emura and Nexura model as these models do not support this special mode.
+- Replaced the "Dehumidify" mode selection with "Dry" for the Emura and Nexura model, the "Dry" fucntion is either ON or OFF for these models.
+- Combined the "Dehumidify" and "Streamer" functionality for the Comfora, Sensira etc. model. The combined "Dehumidify/Streamer" function makes it possible to set the target humidity % thru an extra slider control. 
 
 #### v2.0.1
 - More changes in support of Homey v2 firmware.
@@ -53,7 +57,7 @@ Note: your airconditioner its current IP-address can be found in the Daikin Onli
 - The "Fan Speed" and "Fan Swing" can not be controlled due to this https://github.com/athombv/homey-apps-sdk-issues/issues/25 limitation/issue.
 - HomeKit support only applies for the 'Model HomeKit'.
 - DHCP is not supported.
-- Not all Daikin airconditioner models / model seriers / combinations of indoor and outdoor units are supported. Due to the fact that Daikin does not disclose their interface specification reverse engineering of the interface is extremely difficult.
+- Not all Daikin airconditioner models / model series / combinations of indoor and outdoor units are supported. Due to the fact that Daikin does not disclose their interface specification reverse engineering of the interface is extremely difficult.
 - Homey speech is not supported (note: Homekit driver users have speech support through Siri and can set airconditioner mode and the target temperature).
 - Special modes can not be used in flows.
 

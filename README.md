@@ -105,3 +105,4 @@ If you like the app, consider buying me a cup of coffee!
 - 20-JAN-19: Combined "Dehumidify" and "Streamer" functionality for Comfora, Sensira etc driver, the "Dehumidify" function enables the ability to set a target humidity % via the UI.
 - 21-JAN-19: Fixed a bug (missing flow cards) introduced with v2.0.2 that impacted Model Homekit.
 - 23-JAN-19: Made customizations to the thermostat knob its color appearance for all models except Model Homekit. The behaviour is however still very different, due to SDK software constraints, from that of Model Homekit which behavior is Homey's "Thermostat control standard" (both for the knob and thermostat mode selector).
+- 01-FEB-19: Changed the AC function naming for several "picker" selections.

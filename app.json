@@ -1,6 +1,6 @@
 {
     "id": "nl.climate.daikin",
-	"version": "2.0.3",
+	"version": "2.0.4",
     "compatibility": ">=2.0.0",
     "sdk": 2,
     "brandColor": "#2E96D0",
@@ -1797,8 +1797,8 @@
       "thermostat_mode_std": {
           "type": "enum",
           "title": {
-              "en": "Airco mode capability",
-              "nl": "Airco modus functionaliteit"
+   			"en": "Operation Mode",
+   			"nl": "Bedrijfsmodus"
           },
           "getable": true,
           "setable": true,
@@ -1850,8 +1850,8 @@
       "thermostat_mode_ext1": {
           "type": "enum",
           "title": {
-              "en": "Airco extended mode capability",
-              "nl": "Airco uitgebreide modus functionaliteit"
+   			"en": "Operation Mode",
+   			"nl": "Bedrijfsmodus"
           },
           "getable": true,
           "setable": true,
@@ -1910,8 +1910,8 @@
       "thermostat_mode_ext2": {
           "type": "enum",
           "title": {
-              "en": "Airco extended mode capability",
-              "nl": "Airco uitgebreide modus functionaliteit"
+   			"en": "Operation Mode",
+   			"nl": "Bedrijfsmodus"
           },
           "getable": true,
           "setable": true,
@@ -1970,8 +1970,8 @@
       "thermostat_mode_ext3": {
           "type": "enum",
           "title": {
-              "en": "Airco extended mode capability",
-              "nl": "Airco uitgebreide modus functionaliteit"
+   			"en": "Operation Mode",
+   			"nl": "Bedrijfsmodus"
           },
           "getable": true,
           "setable": true,
@@ -2037,8 +2037,8 @@
       "thermostat_mode_ext4": {
           "type": "enum",
           "title": {
-              "en": "Airco extended mode capability",
-              "nl": "Airco uitgebreide modus functionaliteit"
+   			"en": "Operation Mode",
+   			"nl": "Bedrijfsmodus"
           },
           "getable": true,
           "setable": true,
@@ -2097,8 +2097,8 @@
       "thermostat_mode_ext5": {
           "type": "enum",
           "title": {
-              "en": "Airco extended mode capability",
-              "nl": "Airco uitgebreide modus functionaliteit"
+   			"en": "Operation Mode",
+   			"nl": "Bedrijfsmodus"
           },
           "getable": true,
           "setable": true,
@@ -2164,8 +2164,8 @@
       "thermostat_mode_ext6": {
           "type": "enum",
           "title": {
-              "en": "Airco extended mode capability",
-              "nl": "Airco uitgebreide modus functionaliteit"
+   			"en": "Operation Mode",
+   			"nl": "Bedrijfsmodus"
           },
           "getable": true,
           "setable": true,
@@ -2231,8 +2231,8 @@
       "thermostat_mode_ext7": {
           "type": "enum",
           "title": {
-              "en": "Airco extended mode capability",
-              "nl": "Airco uitgebreide modus functionaliteit"
+ 			"en": "Operation Mode",
+ 			"nl": "Bedrijfsmodus"
           },
           "getable": true,
           "setable": true,
@@ -2305,8 +2305,8 @@
       "fan_rate": {
           "type": "enum",
           "title": {
-              "en": "Airco fan rate capability",
-              "nl": "Airco ventilator snelheid functionaliteit"
+ 				"en": "Airflow Rate",
+ 				"nl": "Luchtdebiet"
           },
           "getable": true,
           "setable": true,
@@ -2365,8 +2365,8 @@
       "fan_direction": {
           "type": "enum",
           "title": {
-              "en": "Airco swing direction capability",
-              "nl": "Airco lamellen richting functionaliteit"
+   		  	"en": "Swing",
+   			"nl": "Zwenken"
           },
           "getable": true,
           "setable": true,
@@ -2439,20 +2439,20 @@
      "capabilitiesOptions": {
    		"thermostat_mode_std": {
    			"title": {
-   				"en": "Mode",
-   				"nl": "Modus"
+   				"en": "Operation Mode",
+   				"nl": "Bedrijfsmodus"
               }   
         },
    		"fan_rate": {
    			"title": {
-   				"en": "Fan",
-   				"nl": "Vent."
+   				"en": "Airflow Rate",
+   				"nl": "Luchtdebiet"
               }   
           },
      	"fan_direction": {
      		"title": {
-     			"en": "Wings",
-     			"nl": "Lamel"
+     			"en": "Swing",
+     			"nl": "Zwenken"
             }   
         },
   		"target_temperature": {
@@ -2614,20 +2614,20 @@
      "capabilitiesOptions": {
    		"thermostat_mode_std": {
    			"title": {
-   				"en": "Mode",
-   				"nl": "Modus"
+   				"en": "Operation Mode",
+   				"nl": "Bedrijfsmodus"
               }   
         },
    		"fan_rate": {
    			"title": {
-   				"en": "Fan",
-   				"nl": "Vent."
+   				"en": "Airflow Rate",
+   				"nl": "Luchtdebiet"
               }   
           },
      	"fan_direction": {
      		"title": {
-     			"en": "Wings",
-     			"nl": "Lamel"
+     			"en": "Swing",
+     			"nl": "Zwenken"
             }   
         },
   		"target_temperature": {
@@ -2789,20 +2789,20 @@
     "capabilitiesOptions": {
   		"thermostat_mode_std": {
   			"title": {
-  				"en": "Mode",
-  				"nl": "Modus"
+   				"en": "Operation Mode",
+   				"nl": "Bedrijfsmodus"
              }   
         },
   		"fan_rate": {
   			"title": {
-  				"en": "Fan",
-  				"nl": "Vent."
+   				"en": "Airflow Rate",
+   				"nl": "Luchtdebiet"
              }   
         },
     	"fan_direction": {
     		"title": {
-    			"en": "Wings",
-    			"nl": "Lamel"
+    			"en": "Swing",
+    			"nl": "Zwenken"
              }   
         },
  		"target_temperature": {
