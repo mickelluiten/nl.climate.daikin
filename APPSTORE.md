@@ -54,7 +54,6 @@ Note: your airconditioner its current IP-address can be found in the Daikin Onli
 
 ## Limitations
 - The app is not compatible with Homey v1 firmware.
-- The "Fan Speed" and "Fan Swing" can not be controlled due to this https://github.com/athombv/homey-apps-sdk-issues/issues/25 limitation/issue.
 - HomeKit support only applies for the 'Model HomeKit'.
 - DHCP is not supported.
 - Not all Daikin airconditioner models / model series / combinations of indoor and outdoor units are supported. Due to the fact that Daikin does not disclose their interface specification reverse engineering of the interface is extremely difficult.
