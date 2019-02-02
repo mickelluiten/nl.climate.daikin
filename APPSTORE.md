@@ -33,6 +33,12 @@ To prevent unreliable behavior of the application the use of a fixed (static) IP
 Note: your airconditioner its current IP-address can be found in the Daikin Online Controller app (select your airco > click on the gear sysmbol > the IP-address shows under "Adapter information").
 
 ## Change log
+#### v2.0.6
+- Updates to this readme file.
+
+#### v2.0.5
+- Updates to this readme file.
+
 #### v2.0.4
 - Changed the AC function naming for several "picker" selections.
 
