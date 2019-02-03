@@ -33,7 +33,7 @@ To prevent unreliable behavior of the application the use of a fixed (static) IP
 Note: your airconditioner its current IP-address can be found in the Daikin Online Controller app (select your airco > click on the gear sysmbol > the IP-address shows under "Adapter information").
 
 ## Installation and/or updating the software
-It is advised to turn your airconditioner OFF before and keep it switched OFF during software installation or when upgrading the software as the software will initialize itself immediately after installation and because of that some of the airconditioner settings might change i.e. the target temperature might be set to a lower of higher temperature.
+It is advised to turn your airconditioner OFF before and keep it switched OFF during Daikin AI software installation/upgrade/restart or when rebooting your Homey as the software will initialize itself immediately after software installation/upgrade/app restart/Homey reboot and because of that some of the airconditioner settings might change i.e. the target temperature might be set to a lower of higher temperature.
 
 ## Credits
 - This Homey (by Athom) App is based on the great work of the unofficial Daikin API documentation project (https://github.com/ael-code/daikin-control) as well as the Apollon77 Daikin Controller library (https://github.com/Apollon77/daikin-controller).
