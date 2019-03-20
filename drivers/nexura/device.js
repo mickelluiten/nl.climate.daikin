@@ -354,8 +354,12 @@ class NexuraDevice extends Device {
           if ((apow == 1) && (capability_mode == "off")) this.setCapabilityValue('thermostat_mode_std', "auto");
           // when the airo is powered off externally make sure that capability mode "OFF" is set
           if ((apow == 0) && (capability_mode != "off")) this.setCapabilityValue('thermostat_mode_std', "off");
+<<<<<<< HEAD
 
           this.setSettings({capability_mode: capability_mode});          
+=======
+          
+>>>>>>> 823a19691db6f9db12ae53cdc3e0fba2e02e89c6
           this.log('mode:', thermostat_mode);
           this.log('capability_mode:', capability_mode);
         } 
@@ -388,7 +392,11 @@ class NexuraDevice extends Device {
         if ((capability_mode == "off")) {
             var inside_temp = this.getCapabilityValue('measure_temperature.inside');
             var target_temp = this.getCapabilityValue('target_temperature');
+<<<<<<< HEAD
             this.setCapabilityValue('target_temperature', inside_temp); // inside = target results in black thermostat ui component
+=======
+            this.setCapabilityValue('target_temperature', inside_temp); // inside = targer results in black thermostat ui component
+>>>>>>> 823a19691db6f9db12ae53cdc3e0fba2e02e89c6
             
             // update the airco its settings as necessary      
             if (target_temp != inside_temp) {

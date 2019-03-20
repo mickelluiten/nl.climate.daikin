@@ -236,8 +236,13 @@ class EmuraDriver extends Driver {
             //this.log('demo_mode', demo_mode);  
 
             var thermostat_mode_std = args.mode;
+<<<<<<< HEAD
             device.setCapabilityValue('thermostat_mode_std', thermostat_mode_std);
             //this.log('thermostat_mode_std', thermostat_mode_std);
+=======
+            device.setCapabilityValue('thermostat_mode_std_emura', thermostat_mode_std);
+            this.log('thermostat_mode_std', thermostat_mode_std);
+>>>>>>> 823a19691db6f9db12ae53cdc3e0fba2e02e89c6
             
             // type B adapter logic
             var useGetToPost = settings.emura_useGetToPost;
