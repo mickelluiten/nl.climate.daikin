@@ -1,7 +1,7 @@
 "use strict";
 
 const Homey = require('homey');
-const Device = require('../../lib/device');
+const Device = require('../../drivers/device');
 const util = require('../../lib/daikin');
 
 // Device for a Daikin Model HomeKit device

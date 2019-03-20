@@ -1,8 +1,9 @@
 {
     "id": "nl.climate.daikin",
-	"version": "2.0.1",
+	"version": "2.0.9",
     "compatibility": ">=2.0.0",
     "sdk": 2,
+    "brandColor": "#2E96D0",
     "name": {
         "en": "Daikin AI",
 		"nl": "Daikin AI"
@@ -711,7 +712,121 @@
                     }
                 }
             ]
-        }
+        },
+        {
+          "id": "mode_comfora_changed",
+          "title": {
+              "en": "When the operating mode has changed to",
+              "nl": "Wanneer de werkmodus is veranderd in"
+          },
+          "args": [
+            {
+              "type": "device",
+              "name": "device",
+              "filter": "driver_id=comfora"
+            },
+       	  {
+       	  	"name": "mode",
+       	  	"type": "dropdown",
+       	  	"values": [ 
+     		     { "id": "off", 
+     	  	       "label": { "en": "Off", "nl": "Uit" } 
+     	  	     },
+       	  		 { "id": "cool", 
+       	  		   "label": { "en": "Cooling", "nl": "Koelen" } 
+       	  		 },
+       	  		 { "id": "heat", 
+       	  		   "label": { "en": "Heating", "nl": "Verwarmen" } 
+       	  		 },
+       	  		 { "id": "auto", 
+       	  		   "label": { "en": "Auto", "nl": "Auto" } 
+       	  		 },
+       	  		 { "id": "dehumid", 
+       	  		   "label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
+       	  		 },
+       	  		 { "id": "fan", 
+       	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
+       	  		 }
+       	   	  ]
+       	    }
+          ]
+        },
+        {
+          "id": "mode_emura_changed",
+          "title": {
+              "en": "When the operating mode has changed to",
+              "nl": "Wanneer de werkmodus is veranderd in"
+          },
+          "args": [
+            {
+              "type": "device",
+              "name": "device",
+              "filter": "driver_id=emura"
+            },
+       	  {
+       	  	"name": "mode",
+       	  	"type": "dropdown",
+       	  	"values": [ 
+	  		     { "id": "off", 
+       		       "label": { "en": "Off", "nl": "Uit" } 
+     		     },
+       	  		 { "id": "cool", 
+       	  		   "label": { "en": "Cooling", "nl": "Koelen" } 
+       	  		 },
+       	  		 { "id": "heat", 
+       	  		   "label": { "en": "Heating", "nl": "Verwarmen" } 
+       	  		 },
+       	  		 { "id": "auto", 
+       	  		   "label": { "en": "Auto", "nl": "Auto" } 
+       	  		 },
+       	  		 { "id": "dehumid", 
+       	  		   "label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
+       	  		 },
+       	  		 { "id": "fan", 
+       	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
+       	  		 }
+       	   	  ]
+       	    }
+          ]
+        },
+        {
+          "id": "mode_nexura_changed",
+          "title": {
+              "en": "When the operating mode has changed to",
+              "nl": "Wanneer de werkmodus is veranderd in"
+          },
+          "args": [
+            {
+              "type": "device",
+              "name": "device",
+              "filter": "driver_id=nexura"
+            },
+       	  {
+       	  	"name": "mode",
+       	  	"type": "dropdown",
+       	  	"values": [ 
+ 	  		     { "id": "off", 
+	  			   "label": { "en": "Off", "nl": "Uit" } 
+	   		     },
+       	  		 { "id": "cool", 
+       	  		   "label": { "en": "Cooling", "nl": "Koelen" } 
+       	  		 },
+       	  		 { "id": "heat", 
+       	  		   "label": { "en": "Heating", "nl": "Verwarmen" } 
+       	  		 },
+       	  		 { "id": "auto", 
+       	  		   "label": { "en": "Auto", "nl": "Auto" } 
+       	  		 },
+       	  		 { "id": "dehumid", 
+       	  		   "label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
+       	  		 },
+       	  		 { "id": "fan", 
+       	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
+       	  		 }
+       	   	  ]
+       	   }
+         ]
+       }
     ],
     "conditions": [
         {
@@ -778,7 +893,7 @@
                         "nl": "in C"
                     }
                 }
-            ]
+            ]     
         },
         {
             "id": "has_comfora_target_temperature_less_than",
@@ -1379,7 +1494,121 @@
                     }
                 }
             ]
-        }
+        },
+        {
+          "id": "mode_comfora_equals",
+          "title": {
+              "en": "The operating mode equals",
+              "nl": "De werkmodus komt overeen met"
+          },
+          "args": [
+            {
+              "type": "device",
+              "name": "device",
+              "filter": "driver_id=comfora"
+            },
+       	  {
+       	  	"name": "mode",
+       	  	"type": "dropdown",
+       	  	"values": [ 
+     	  	     { "id": "off", 
+     		       "label": { "en": "Off", "nl": "Uit" } 
+	  		     },
+       	  		 { "id": "cool", 
+       	  		   "label": { "en": "Cooling", "nl": "Koelen" } 
+       	  		 },
+       	  		 { "id": "heat", 
+       	  		   "label": { "en": "Heating", "nl": "Verwarmen" } 
+       	  		 },
+       	  		 { "id": "auto", 
+       	  		   "label": { "en": "Auto", "nl": "Auto" } 
+       	  		 },
+       	  		 { "id": "dehumid", 
+       	  		   "label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
+       	  		 },
+       	  		 { "id": "fan", 
+       	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
+       	  		 }
+       	   	  ]
+       	    }
+          ]
+        },
+        {
+          "id": "mode_emura_equals",
+          "title": {
+              "en": "The operating mode equals",
+              "nl": "De werkmodus komt overeen met"
+          },
+          "args": [
+            {
+              "type": "device",
+              "name": "device",
+              "filter": "driver_id=emura"
+            },
+       	  {
+       	  	"name": "mode",
+       	  	"type": "dropdown",
+       	  	"values": [ 
+     	  	     { "id": "off", 
+     	  	       "label": { "en": "Off", "nl": "Uit" } 
+     	  		 },
+       	  		 { "id": "cool", 
+       	  		   "label": { "en": "Cooling", "nl": "Koelen" } 
+       	  		 },
+       	  		 { "id": "heat", 
+       	  		   "label": { "en": "Heating", "nl": "Verwarmen" } 
+       	  		 },
+       	  		 { "id": "auto", 
+       	  		   "label": { "en": "Auto", "nl": "Auto" } 
+       	  		 },
+       	  		 { "id": "dehumid", 
+       	  		   "label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
+       	  		 },
+       	  		 { "id": "fan", 
+       	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
+       	  		 }
+       	   	  ]
+       	    }
+          ]
+        },
+        {
+          "id": "mode_nexura_equals",
+          "title": {
+              "en": "The operating mode equals",
+              "nl": "De werkmodus komt overeen met"
+          },
+          "args": [
+            {
+              "type": "device",
+              "name": "device",
+              "filter": "driver_id=nexura"
+            },
+       	  {
+       	  	"name": "mode",
+       	  	"type": "dropdown",
+       	  	"values": [ 
+     	  	     { "id": "off", 
+     	  		   "label": { "en": "Off", "nl": "Uit" } 
+     	   		 },
+       	  		 { "id": "cool", 
+       	  		   "label": { "en": "Cooling", "nl": "Koelen" } 
+       	  		 },
+       	  		 { "id": "heat", 
+       	  		   "label": { "en": "Heating", "nl": "Verwarmen" } 
+       	  		 },
+       	  		 { "id": "auto", 
+       	  		   "label": { "en": "Auto", "nl": "Auto" } 
+       	  		 },
+       	  		 { "id": "dehumid", 
+       	  		   "label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
+       	  		 },
+       	  		 { "id": "fan", 
+       	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
+       	  		 }
+       	   	  ]
+       	   }
+         ]
+       }
     ],
     "actions": [
       {
@@ -1455,124 +1684,10 @@
 		]
       },
       {
-        "id": "turn_comfora_on",
-        "title": {
-            "en": "Select operating mode",
-            "nl": "Kies werkmodus"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=comfora"
-          },
-     	  {
-     	  	"name": "mode",
-     	  	"type": "dropdown",
-     	  	"values": [ 
-   	  		     { "id": "off", 
-   	  		       "label": { "en": "Off", "nl": "Uit" } 
-   	  		     },
-     	  		 { "id": "cooling", 
-     	  		   "label": { "en": "Cooling", "nl": "Koelen" } 
-     	  		 },
-     	  		 { "id": "heating", 
-     	  		   "label": { "en": "Heating", "nl": "Verwarmen" } 
-     	  		 },
-     	  		 { "id": "auto", 
-     	  		   "label": { "en": "Auto", "nl": "Auto" } 
-     	  		 },
-     	  		 { "id": "dehumid", 
-     	  		   "label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
-     	  		 },
-     	  		 { "id": "fan", 
-     	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
-     	  		 }
-     	   	  ]
-     	   }
-         ]
-      },
-      {
-        "id": "turn_emura_on",
-        "title": {
-            "en": "Select operating mode",
-            "nl": "Kies werkmodus"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=emura"
-          },
-     	  {
-     	  	"name": "mode",
-     	  	"type": "dropdown",
-     	  	"values": [ 
-   	  		     { "id": "off", 
-   	  		       "label": { "en": "Off", "nl": "Uit" } 
-   	  		     },
-     	  		 { "id": "cooling", 
-     	  		   "label": { "en": "Cooling", "nl": "Koelen" } 
-     	  		 },
-     	  		 { "id": "heating", 
-     	  		   "label": { "en": "Heating", "nl": "Verwarmen" } 
-     	  		 },
-     	  		 { "id": "auto", 
-     	  		   "label": { "en": "Auto", "nl": "Auto" } 
-     	  		 },
-     	  		 { "id": "dehumid", 
-     	  		   "label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
-     	  		 },
-     	  		 { "id": "fan", 
-     	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
-     	  		 }
-     	   	  ]
-     	   }
-         ]
-      },
-      {
-        "id": "turn_nexura_on",
-        "title": {
-          "en": "Select operating mode",
-          "nl": "Kies werkmodus"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=nexura"
-          },
-     	  {
-     	  	"name": "mode",
-     	  	"type": "dropdown",
-     	  	"values": [ 
-   	  		     { "id": "off", 
-   	  			   "label": { "en": "Off", "nl": "Uit" } 
-   	   		     },
-     	  		 { "id": "cooling", 
-     	  		   "label": { "en": "Cooling", "nl": "Koelen" } 
-     	  		 },
-     	  		 { "id": "heating", 
-     	  		   "label": { "en": "Heating", "nl": "Verwarmen" } 
-     	  		 },
-     	  		 { "id": "auto", 
-     	  		   "label": { "en": "Auto", "nl": "Auto" } 
-     	  		 },
-     	  		 { "id": "dehumid", 
-     	  		   "label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
-     	  		 },
-     	  		 { "id": "fan", 
-     	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
-     	  		 }
-     	   	  ]
-     	   }
-         ]
-      },
-      {
         "id": "change_comfora_fan_rate",
         "title": {
-          "en": "Select a fan rate",
-          "nl": "Kies een ventilator snelheid"
+          "en": "Select the fan rate",
+          "nl": "Kies de ventilator snelheid"
         },
         "args": [
           {
@@ -1613,8 +1728,8 @@
       {
         "id": "change_emura_fan_rate",
         "title": {
-          "en": "Select a fan rate",
-          "nl": "Kies een ventilator snelheid"
+            "en": "Select the fan rate",
+            "nl": "Kies de ventilator snelheid"
         },
         "args": [
           {
@@ -1655,8 +1770,8 @@
       {
         "id": "change_nexura_fan_rate",
         "title": {
-          "en": "Select a fan rate",
-          "nl": "Kies een ventilator snelheid"
+            "en": "Select the fan rate",
+            "nl": "Kies de ventilator snelheid"
         },
         "args": [
           {
@@ -1697,8 +1812,8 @@
       {
         "id": "change_comfora_fan_direction",
         "title": {
-          "en": "Select sweep",
-          "nl": "Kies lamellen richting"
+          "en": "Select the sweep mode",
+          "nl": "Kies de gewenste lamellen richting modus"
         },
         "args": [
           {
@@ -1729,8 +1844,8 @@
       {
         "id": "change_emura_fan_direction",
         "title": {
-          "en": "Select sweep",
-          "nl": "Kies lamellen richting"
+            "en": "Select the sweep mode",
+            "nl": "Kies de gewenste lamellen richting modus"
         },
         "args": [
           {
@@ -1761,8 +1876,8 @@
       {
         "id": "change_nexura_fan_direction",
         "title": {
-          "en": "Select sweep",
-          "nl": "Kies lamellen richting"
+            "en": "Select the sweep mode",
+            "nl": "Kies de gewenste lamellen richting modus"
         },
         "args": [
           {
@@ -1789,25 +1904,139 @@
      	   	  ]
      	    }
          ]
-      }      
+      },      
+      {
+        "id": "change_comfora_mode",
+        "title": {
+            "en": "Select the operating mode",
+            "nl": "Kies de werkmodus"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=comfora"
+          },
+     	  {
+     	  	"name": "mode",
+     	  	"type": "dropdown",
+     	  	"values": [ 
+   	  		     { "id": "off", 
+   	  		       "label": { "en": "Off", "nl": "Uit" } 
+   	  		     },
+     	  		 { "id": "cool", 
+     	  		   "label": { "en": "Cooling", "nl": "Koelen" } 
+     	  		 },
+     	  		 { "id": "heat", 
+     	  		   "label": { "en": "Heating", "nl": "Verwarmen" } 
+     	  		 },
+     	  		 { "id": "auto", 
+     	  		   "label": { "en": "Auto", "nl": "Auto" } 
+     	  		 },
+     	  		 { "id": "dehumid", 
+     	  		   "label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
+     	  		 },
+     	  		 { "id": "fan", 
+     	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
+     	  		 }
+     	   	  ]
+     	   }
+         ]
+      },
+      {
+        "id": "change_emura_mode",
+        "title": {
+            "en": "Select the operating mode",
+            "nl": "Kies de werkmodus"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=emura"
+          },
+     	  {
+     	  	"name": "mode",
+     	  	"type": "dropdown",
+     	  	"values": [ 
+   	  		     { "id": "off", 
+   	  		       "label": { "en": "Off", "nl": "Uit" } 
+   	  		     },
+     	  		 { "id": "cool", 
+     	  		   "label": { "en": "Cooling", "nl": "Koelen" } 
+     	  		 },
+     	  		 { "id": "heat", 
+     	  		   "label": { "en": "Heating", "nl": "Verwarmen" } 
+     	  		 },
+     	  		 { "id": "auto", 
+     	  		   "label": { "en": "Auto", "nl": "Auto" } 
+     	  		 },
+     	  		 { "id": "dehumid", 
+     	  		   "label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
+     	  		 },
+     	  		 { "id": "fan", 
+     	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
+     	  		 }
+     	   	  ]
+     	   }
+         ]
+      },
+      {
+        "id": "change_nexura_mode",
+        "title": {
+            "en": "Select the operating mode",
+            "nl": "Kies de werkmodus"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=nexura"
+          },
+     	  {
+     	  	"name": "mode",
+     	  	"type": "dropdown",
+     	  	"values": [ 
+   	  		     { "id": "off", 
+   	  			   "label": { "en": "Off", "nl": "Uit" } 
+   	   		     },
+     	  		 { "id": "cool", 
+     	  		   "label": { "en": "Cooling", "nl": "Koelen" } 
+     	  		 },
+     	  		 { "id": "heat", 
+     	  		   "label": { "en": "Heating", "nl": "Verwarmen" } 
+     	  		 },
+     	  		 { "id": "auto", 
+     	  		   "label": { "en": "Auto", "nl": "Auto" } 
+     	  		 },
+     	  		 { "id": "dehumid", 
+     	  		   "label": { "en": "Dehumidfication", "nl": "Ontvochtigen" } 
+     	  		 },
+     	  		 { "id": "fan", 
+     	  		   "label": { "en": "Fan", "nl": "Ventilator" } 
+     	  		 }
+     	   	  ]
+     	   }
+         ]
+      }
     ]
   },
   "capabilities": {
-      "thermostat_mode": {
+      "thermostat_mode_std": {
           "type": "enum",
           "title": {
-              "en": "Airco mode capability",
-              "nl": "Airco modus functionaliteit"
+   			"en": "Operation Mode",
+   			"nl": "Bedrijfsmodus"
           },
           "getable": true,
           "setable": true,
           "values": [
             {
-                "id": "off",
-                "title": {
-                  "en": "Off",
-                  "nl": "Uit"
-                }
+              "id": "off",
+              "title": {
+                "en": "Off",
+                "nl": "Uit"
+              }
             },
             {
               "id": "cool",
@@ -1841,7 +2070,7 @@
               "id": "dehumid",
               "title": {
                 "en": "Dry",
-                "nl": "Ontvochtigen"
+                "nl": "Drogen"
               }
             }
          ]
@@ -1849,18 +2078,18 @@
       "thermostat_mode_ext1": {
           "type": "enum",
           "title": {
-              "en": "Airco extended mode capability",
-              "nl": "Airco uitgebreide modus functionaliteit"
+   			"en": "Operation Mode",
+   			"nl": "Bedrijfsmodus"
           },
           "getable": true,
           "setable": true,
           "values": [
             {
-                "id": "off",
-                "title": {
-                  "en": "Off",
-                  "nl": "Uit"
-                }
+              "id": "off",
+              "title": {
+                "en": "Off",
+                "nl": "Uit"
+              }
             },
             {
               "id": "cool",
@@ -1894,7 +2123,7 @@
               "id": "dehumid",
               "title": {
                 "en": "Dry",
-                "nl": "Ontvochtigen"
+                "nl": "Drogen"
               }
             },
             {
@@ -1909,18 +2138,18 @@
       "thermostat_mode_ext2": {
           "type": "enum",
           "title": {
-              "en": "Airco extended mode capability",
-              "nl": "Airco uitgebreide modus functionaliteit"
+   			"en": "Operation Mode",
+   			"nl": "Bedrijfsmodus"
           },
           "getable": true,
           "setable": true,
           "values": [
             {
-                "id": "off",
-                "title": {
-                  "en": "Off",
-                  "nl": "Uit"
-                }
+              "id": "off",
+              "title": {
+                "en": "Off",
+                "nl": "Uit"
+              }
             },
             {
               "id": "cool",
@@ -1954,7 +2183,7 @@
               "id": "dehumid",
               "title": {
                 "en": "Dry",
-                "nl": "Ontvochtigen"
+                "nl": "Drogen"
               }
             },
             {
@@ -1969,18 +2198,18 @@
       "thermostat_mode_ext3": {
           "type": "enum",
           "title": {
-              "en": "Airco extended mode capability",
-              "nl": "Airco uitgebreide modus functionaliteit"
+   			"en": "Operation Mode",
+   			"nl": "Bedrijfsmodus"
           },
           "getable": true,
           "setable": true,
           "values": [
             {
-                "id": "off",
-                "title": {
-                  "en": "Off",
-                  "nl": "Uit"
-                }
+              "id": "off",
+              "title": {
+                "en": "Off",
+                "nl": "Uit"
+              }
             },
             {
               "id": "cool",
@@ -2014,7 +2243,7 @@
               "id": "dehumid",
               "title": {
                 "en": "Dry",
-                "nl": "Ontvochtigen"
+                "nl": "Drogen"
               }
             },
             {
@@ -2036,18 +2265,18 @@
       "thermostat_mode_ext4": {
           "type": "enum",
           "title": {
-              "en": "Airco extended mode capability",
-              "nl": "Airco uitgebreide modus functionaliteit"
+   			"en": "Operation Mode",
+   			"nl": "Bedrijfsmodus"
           },
           "getable": true,
           "setable": true,
           "values": [
             {
-                "id": "off",
-                "title": {
-                  "en": "Off",
-                  "nl": "Uit"
-                }
+              "id": "off",
+              "title": {
+                "en": "Off",
+                "nl": "Uit"
+              }
             },
             {
               "id": "cool",
@@ -2080,7 +2309,7 @@
             {
               "id": "dehumid",
               "title": {
-                "en": "Dry",
+                "en": "Dehumify",
                 "nl": "Ontvochtigen"
               }
             },
@@ -2096,18 +2325,18 @@
       "thermostat_mode_ext5": {
           "type": "enum",
           "title": {
-              "en": "Airco extended mode capability",
-              "nl": "Airco uitgebreide modus functionaliteit"
+   			"en": "Operation Mode",
+   			"nl": "Bedrijfsmodus"
           },
           "getable": true,
           "setable": true,
           "values": [
             {
-                "id": "off",
-                "title": {
-                  "en": "Off",
-                  "nl": "Uit"
-                }
+              "id": "off",
+              "title": {
+                "en": "Off",
+                "nl": "Uit"
+              }
             },
             {
               "id": "cool",
@@ -2140,7 +2369,7 @@
             {
               "id": "dehumid",
               "title": {
-                "en": "Dry",
+                "en": "Dehumify",
                 "nl": "Ontvochtigen"
               }
             },
@@ -2163,18 +2392,18 @@
       "thermostat_mode_ext6": {
           "type": "enum",
           "title": {
-              "en": "Airco extended mode capability",
-              "nl": "Airco uitgebreide modus functionaliteit"
+   			"en": "Operation Mode",
+   			"nl": "Bedrijfsmodus"
           },
           "getable": true,
           "setable": true,
           "values": [
             {
-                "id": "off",
-                "title": {
-                  "en": "Off",
-                  "nl": "Uit"
-                }
+              "id": "off",
+              "title": {
+                "en": "Off",
+                "nl": "Uit"
+              }
             },
             {
               "id": "cool",
@@ -2207,7 +2436,7 @@
             {
               "id": "dehumid",
               "title": {
-                "en": "Dry",
+                "en": "Dehumify",
                 "nl": "Ontvochtigen"
               }
             },
@@ -2230,18 +2459,18 @@
       "thermostat_mode_ext7": {
           "type": "enum",
           "title": {
-              "en": "Airco extended mode capability",
-              "nl": "Airco uitgebreide modus functionaliteit"
+ 			"en": "Operation Mode",
+ 			"nl": "Bedrijfsmodus"
           },
           "getable": true,
           "setable": true,
           "values": [
             {
-                "id": "off",
-                "title": {
-                  "en": "Off",
-                  "nl": "Uit"
-                }
+              "id": "off",
+              "title": {
+                "en": "Off",
+                "nl": "Uit"
+              }
             },
             {
               "id": "cool",
@@ -2274,7 +2503,7 @@
             {
               "id": "dehumid",
               "title": {
-                "en": "Dry",
+                "en": "Dehumify",
                 "nl": "Ontvochtigen"
               }
             },
@@ -2304,8 +2533,8 @@
       "fan_rate": {
           "type": "enum",
           "title": {
-              "en": "Airco fan rate capability",
-              "nl": "Airco ventilator snelheid functionaliteit"
+ 				"en": "Airflow Rate",
+ 				"nl": "Luchtdebiet"
           },
           "getable": true,
           "setable": true,
@@ -2364,8 +2593,8 @@
       "fan_direction": {
           "type": "enum",
           "title": {
-              "en": "Airco swing direction capability",
-              "nl": "Airco lamellen richting functionaliteit"
+   		  	"en": "Swing",
+   			"nl": "Zwenken"
           },
           "getable": true,
           "setable": true,
@@ -2403,8 +2632,8 @@
       "target_humidity": {
           "type": "number",
           "title": {
-              "en": "Sets target humidity capability",
-              "nl": "Instelling doel luchtvochtigheid functionaliteit"
+              "en": "Target humidity",
+              "nl": "Doel luchtvochtigheid"
           },
           "uiComponent": "slider",
           "getable": true,
@@ -2427,38 +2656,31 @@
      },
      "class": "thermostat",     
      "capabilities": [
-       "thermostat_mode",
+       "thermostat_mode_std",
        "fan_rate",
        "fan_direction",
-       "target_humidity",
        "target_temperature",
 	   "measure_temperature",       
 	   "measure_temperature.inside",
        "measure_temperature.outside" 
      ],
      "capabilitiesOptions": {
-   		"thermostat_mode": {
+   		"thermostat_mode_std": {
    			"title": {
-   				"en": "Mode",
-   				"nl": "Modus"
+   				"en": "Operation Mode",
+   				"nl": "Bedrijfsmodus"
               }   
         },
    		"fan_rate": {
    			"title": {
-   				"en": "Fan",
-   				"nl": "Vent."
+   				"en": "Airflow Rate",
+   				"nl": "Luchtdebiet"
               }   
           },
      	"fan_direction": {
      		"title": {
-     			"en": "Wings",
-     			"nl": "Lamel"
-            }   
-        },
-     	"target_humidity": {
-     		"title": {
-     			"en": "Target humidity",
-     			"nl": "Doel luchtvochtigheid"
+     			"en": "Swing",
+     			"nl": "Zwenken"
             }   
         },
   		"target_temperature": {
@@ -2609,38 +2831,31 @@
      },
      "class": "thermostat",     
      "capabilities": [
-       "thermostat_mode",
+       "thermostat_mode_std",
        "fan_rate",
        "fan_direction",
-       "target_humidity",
        "target_temperature",
 	   "measure_temperature",       
 	   "measure_temperature.inside",
        "measure_temperature.outside" 
      ],
      "capabilitiesOptions": {
-   		"thermostat_mode": {
+   		"thermostat_mode_std": {
    			"title": {
-   				"en": "Mode",
-   				"nl": "Modus"
+   				"en": "Operation Mode",
+   				"nl": "Bedrijfsmodus"
               }   
         },
    		"fan_rate": {
    			"title": {
-   				"en": "Fan",
-   				"nl": "Vent."
+   				"en": "Airflow Rate",
+   				"nl": "Luchtdebiet"
               }   
           },
      	"fan_direction": {
      		"title": {
-     			"en": "Wings",
-     			"nl": "Lamel"
-            }   
-        },
-     	"target_humidity": {
-     		"title": {
-     			"en": "Target humidity",
-     			"nl": "Doel luchtvochtigheid"
+     			"en": "Swing",
+     			"nl": "Zwenken"
             }   
         },
   		"target_temperature": {
@@ -2791,40 +3006,33 @@
     },
     "class": "thermostat",     
     "capabilities": [
-      "thermostat_mode",
+      "thermostat_mode_std",
       "fan_rate",
       "fan_direction",
-      "target_humidity",
       "target_temperature",
       "measure_temperature",       
       "measure_temperature.inside",
       "measure_temperature.outside" 
     ],
     "capabilitiesOptions": {
-  		"thermostat_mode": {
+  		"thermostat_mode_std": {
   			"title": {
-  				"en": "Mode",
-  				"nl": "Modus"
+   				"en": "Operation Mode",
+   				"nl": "Bedrijfsmodus"
              }   
         },
   		"fan_rate": {
   			"title": {
-  				"en": "Fan",
-  				"nl": "Vent."
+   				"en": "Airflow Rate",
+   				"nl": "Luchtdebiet"
              }   
         },
     	"fan_direction": {
     		"title": {
-    			"en": "Wings",
-    			"nl": "Lamel"
+    			"en": "Swing",
+    			"nl": "Zwenken"
              }   
         },
-    	"target_humidity": {
-    		"title": {
-    			"en": "Target humidity",
-    			"nl": "Doel luchtvochtigheid"
-             }   
-       },
  		"target_temperature": {
  			"title": {
  				"en": "Target temperature",

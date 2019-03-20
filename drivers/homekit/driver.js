@@ -1,7 +1,7 @@
 "use strict";
 
 const Homey = require('homey');
-const Driver = require('../../lib/driver');
+const Driver = require('../../drivers/driver');
 const homekitctrl = require('../../lib/daikin');
 
 //Driver adds HomeKit support for the basic functions of every Daikin airconditioner

@@ -1,7 +1,7 @@
 "use strict";
 
 const Homey = require('homey');
-const Driver = require('../../lib/driver');
+const Driver = require('../../drivers/driver');
 const nexuractrl = require('../../lib/daikin');
 
 //Driver for a Daikin Nexura type Airconditioner
@@ -18,9 +18,9 @@ class NexuraDriver extends Driver {
 		this._triggerTargetTemperatureMoreThan.registerRunListener((args, state) => {
 			let conditionMet = state.target_temperature > args.target_temperature_more;
 
-            this.log('trigger - args.target_temperature_more', args.target_temperature_more);
-            this.log('trigger - state.target_temperature', (state.target_temperature) );
-            this.log('trigger - conditionMet', conditionMet);
+            //this.log('trigger - args.target_temperature_more', args.target_temperature_more);
+            //this.log('trigger - state.target_temperature', (state.target_temperature) );
+            //this.log('trigger - conditionMet', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
 
@@ -41,9 +41,9 @@ class NexuraDriver extends Driver {
 		this._triggerInsideTemperatureMoreThan.registerRunListener((args, state) => {
 			let conditionMet = state['measure_temperature.inside'] > args.inside_temperature_more;
 
-            this.log('trigger - args.inside_temperature_more', args.inside_temperature_more);
-            this.log('trigger - state()[measure_temperature.inside]', ( state['measure_temperature.inside']) );
-            this.log('trigger - conditionMet inside temp', conditionMet);
+            //this.log('trigger - args.inside_temperature_more', args.inside_temperature_more);
+            //this.log('trigger - state()[measure_temperature.inside]', ( state['measure_temperature.inside']) );
+            //this.log('trigger - conditionMet inside temp', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
 
@@ -64,9 +64,9 @@ class NexuraDriver extends Driver {
 		this._triggerOutsideTemperatureMoreThan.registerRunListener((args, state) => {
 			let conditionMet = state['measure_temperature.outside'] > args.outside_temperature_more;
 
-            this.log('trigger - args.outside_temperature_more', args.outside_temperature_more);
-            this.log('trigger - state[measure_temperature.outside]', ( state['measure_temperature.outside']) );
-            this.log('trigger - conditionMet outside temp', conditionMet);
+            //this.log('trigger - args.outside_temperature_more', args.outside_temperature_more);
+            //this.log('trigger - state[measure_temperature.outside]', ( state['measure_temperature.outside']) );
+            //this.log('trigger - conditionMet outside temp', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
 
@@ -81,6 +81,17 @@ class NexuraDriver extends Driver {
 			let conditionMet = state['measure_temperature.outside'] > args.outside_temperature_from && state['measure_temperature.outside'] < args.outside_temperature_to;
 			return Promise.resolve(conditionMet);
 		});
+        
+         /*** MODE CHANGE TRIGGERS ***/
+		this._triggerAircoMode = new Homey.FlowCardTriggerDevice('mode_nexura_changed').register();
+		this._triggerAircoMode.registerRunListener((args, state) => {
+			let conditionMet = state['capability_mode'] == args.mode;
+            
+            //this.log('trigger - args.mode', args.mode);
+            //this.log('trigger - state[capability_mode]', ( state['capability_mode']) );
+            //this.log('trigger - conditionMet capability_mode', conditionMet);
+            return Promise.resolve(conditionMet);
+		}); 
 
 //*** CONDITION FLOWCARDS *******************************************************************************************
         
@@ -91,9 +102,9 @@ class NexuraDriver extends Driver {
             let devicestate = device.getState();
 			let conditionMet = devicestate.target_temperature > args.target_temperature_more;
 
-            this.log('condition args.target_temperature_more', args.target_temperature_more);            
-            this.log('condition device.getState().target_temperature', devicestate.target_temperature);
-            this.log('condition conditionMet', conditionMet);
+            //this.log('condition args.target_temperature_more', args.target_temperature_more);            
+            //this.log('condition device.getState().target_temperature', devicestate.target_temperature);
+            //this.log('condition conditionMet', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
 
@@ -120,9 +131,9 @@ class NexuraDriver extends Driver {
             let devicestate = device.getState();
 			let conditionMet = devicestate['measure_temperature.inside'] > args.inside_temperature_more;
 
-            this.log('condition - [measure_temperature.inside]', devicestate['measure_temperature.inside']);
-            this.log('condition - args.inside_temperature_more', args.inside_temperature_more);
-            this.log('condition - conditionMet inside temp', conditionMet);
+            //this.log('condition - [measure_temperature.inside]', devicestate['measure_temperature.inside']);
+            //this.log('condition - args.inside_temperature_more', args.inside_temperature_more);
+            //this.log('condition - conditionMet inside temp', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
 
@@ -149,9 +160,9 @@ class NexuraDriver extends Driver {
             let devicestate = device.getState();
 			let conditionMet = devicestate['measure_temperature.outside'] > args.outside_temperature_more;
 
-            this.log('condition - [measure_temperature.outside]', devicestate['measure_temperature.outside']);
-            this.log('condition - args.outside_temperature_more', args.outside_temperature_more);
-            this.log('condition - conditionMet outside temp', conditionMet);
+            //this.log('condition - [measure_temperature.outside]', devicestate['measure_temperature.outside']);
+            //this.log('condition - args.outside_temperature_more', args.outside_temperature_more);
+            //this.log('condition - conditionMet outside temp', conditionMet);
 			return Promise.resolve(conditionMet);
 		});
 
@@ -170,6 +181,19 @@ class NexuraDriver extends Driver {
 			let conditionMet = devicestate['measure_temperature.outside'] > args.outside_temperature_from && devicestate['measure_temperature.outside'] < args.outside_temperature_to;
 			return Promise.resolve(conditionMet);
 		});
+        
+         /*** MODE CHANGE CONDITIONS ***/
+		this._conditionAircoMode = new Homey.FlowCardCondition('mode_nexura_equals').register();
+		this._conditionAircoMode.registerRunListener((args, state) => {
+			let device = args.device;
+            let settings = device.getSettings();  
+            let conditionMet = settings.capability_mode == args.mode;
+            
+            //this.log('condition - [settings.capability_mode]', settings.capability_mode);
+            //this.log('condition - args.mode', args.mode);
+            //this.log('condition - conditionMet capability_mode', conditionMet);
+            return Promise.resolve(conditionMet);
+		});
 
 //*** ACTION FLOWCARDS *******************************************************************************************
                            
@@ -180,18 +204,18 @@ class NexuraDriver extends Driver {
             let settings = device.getSettings();   
                                     
             var ip_address = settings.nexura_ip;    
-            this.log('ip_address', ip_address);                        
+            //this.log('ip_address', ip_address);                        
 
             var atemp = args.atemp;
             device.setCapabilityValue('target_temperature', atemp);
-            this.log('target temp', atemp);
+            //this.log('target temp', atemp);
 
             // type B adapter logic
             var useGetToPost = settings.nexura_useGetToPost;
             var adapter = settings.nexura_adapter;
             var options = {};
-            this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
-            this.log('Adapter model:', adapter)
+            //this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
+            //this.log('Adapter model:', adapter)
             if (useGetToPost) options = {'useGetToPost': true};
             else options = {'useGetToPost': false};                        
 
@@ -200,32 +224,32 @@ class NexuraDriver extends Driver {
 		});  
         
     //--- MODE CHANGE ACTIONS
-		this._actionAircoOn = new Homey.FlowCardAction('turn_nexura_on').register();
-		this._actionAircoOn.registerRunListener((args, state) => {
+		this._actionAircoMode = new Homey.FlowCardAction('change_nexura_mode').register();
+		this._actionAircoMode.registerRunListener((args, state) => {
 			let device = args.device;           
             let settings = device.getSettings();   
                                     
             var ip_address = settings.nexura_ip;    
-            this.log('ip_address', ip_address);                        
+            //this.log('ip_address', ip_address);                        
 
             var demo_mode = settings.nexura_demomode;    
-            this.log('demo_mode', demo_mode);  
+            //this.log('demo_mode', demo_mode);  
 
-            var thermostat_mode = args.mode;
-            device.setCapabilityValue('thermostat_mode_nexura', thermostat_mode);
-            this.log('thermostat_mode', thermostat_mode); 
+            var thermostat_mode_std = args.mode;
+            device.setCapabilityValue('thermostat_mode_std', thermostat_mode_std);
+            //this.log('thermostat_mode_std', thermostat_mode_std); 
 
             // type B adapter logic
             var useGetToPost = settings.nexura_useGetToPost;
             var adapter = settings.nexura_adapter;
             var options = {};
-            this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
-            this.log('Adapter model:', adapter)
+            //this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
+            //this.log('Adapter model:', adapter)
             if (useGetToPost) options = {'useGetToPost': true};
             else options = {'useGetToPost': false};
                        
-            nexuractrl.daikinModeControl(thermostat_mode, ip_address, options, demo_mode);
-			return Promise.resolve(thermostat_mode);
+            nexuractrl.daikinModeControl(thermostat_mode_std, ip_address, options, demo_mode);
+			return Promise.resolve(thermostat_mode_std);
 		});         
 
     //--- FAN RATE ACTIONS
@@ -235,18 +259,18 @@ class NexuraDriver extends Driver {
             let settings = device.getSettings();   
                                     
             var ip_address = settings.nexura_ip;    
-            this.log('ip_address', ip_address);                        
+            //this.log('ip_address', ip_address);                        
 
             var fan_rate = args.frate;
             device.setCapabilityValue('fan_rate', fan_rate);
-            this.log('fan_rate', fan_rate);
+            //this.log('fan_rate', fan_rate);
 
             // type B adapter logic
             var useGetToPost = settings.nexura_useGetToPost;
             var adapter = settings.nexura_adapter;
             var options = {};
-            this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
-            this.log('Adapter model:', adapter)
+            //this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
+            //this.log('Adapter model:', adapter)
             if (useGetToPost) options = {'useGetToPost': true};
             else options = {'useGetToPost': false};
                         
@@ -261,18 +285,18 @@ class NexuraDriver extends Driver {
             let settings = device.getSettings();   
                                     
             var ip_address = settings.nexura_ip;    
-            this.log('ip_address', ip_address);                        
+            //this.log('ip_address', ip_address);                        
 
             var fan_direction = args.fdir;
             device.setCapabilityValue('fan_direction', fan_direction);
-            this.log('fan_direction', fan_direction);
+            //this.log('fan_direction', fan_direction);
 
             // type B adapter logic
             var useGetToPost = settings.nexura_useGetToPost;
             var adapter = settings.nexura_adapter;
             var options = {};
-            this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
-            this.log('Adapter model:', adapter)
+            //this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
+            //this.log('Adapter model:', adapter)
             if (useGetToPost) options = {'useGetToPost': true};
             else options = {'useGetToPost': false};
                         
@@ -283,6 +307,12 @@ class NexuraDriver extends Driver {
 	}
 
 //--- METHODS FOR TEMPERATURE FLOWCARD TRIGGERS
+  /*
+   * Triggers the 'luminance more than x' flow
+   * @param {Device} device - A Device instance
+   * @param {Object} tokens - An object with tokens and their typed values, as defined in the app.json
+   * @param {Object} state - An object with properties which are accessible throughout the Flow
+  */
     //--- Target Temperature triggering
 	triggerTargetTemperatureMoreThan(device, tokens, state) {
 		this.triggerFlow(this._triggerTargetTemperatureMoreThan, device, tokens, state);
@@ -322,6 +352,13 @@ class NexuraDriver extends Driver {
 	}
 	triggerOutsideTemperatureBetween(device, tokens, state) {
 		this.triggerFlow(this._triggerOusideTemperatureBetween, device, tokens, state);
+		return this;
+	} 
+
+//--- METHODS FOR MODE FLOWCARD TRIGGERS   
+    //--- Mode triggering 
+	triggerCapabilityModeChange(device, tokens, state) {
+		this.triggerFlow(this._triggerAircoMode, device, tokens, state);
 		return this;
 	} 
 }
