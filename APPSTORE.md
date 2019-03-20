@@ -33,7 +33,6 @@ To prevent unreliable behavior of the application the use of a fixed (static) IP
 Note: your airconditioner its current IP-address can be found in the Daikin Online Controller app (select your airco > click on the gear sysmbol > the IP-address shows under "Adapter information").
 
 ## Installation and/or updating the software
-<<<<<<< HEAD
 It is advised to turn your airconditioner OFF before and keep it switched OFF during Daikin AI software installation/upgrade/restart or when rebooting your Homey as the software will initialize itself immediately after software installation/upgrade/app restart/Homey reboot and because of that some of the airconditioner settings might change i.e. the target temperature might be set to a lower or higher temperature.
 
 ## Change log
@@ -41,11 +40,6 @@ It is advised to turn your airconditioner OFF before and keep it switched OFF du
 - Added additional action and condition flowcard.
 - Fixed an action flow card bug.
 
-=======
-It is advised to turn your airconditioner OFF before and keep it switched OFF during Daikin AI software installation/upgrade/restart or when rebooting your Homey as the software will initialize itself immediately after software installation/upgrade/app restart/Homey reboot and because of that some of the airconditioner settings might change i.e. the target temperature might be set to a lower of higher temperature.
-
-## Change log
->>>>>>> 823a19691db6f9db12ae53cdc3e0fba2e02e89c6
 #### v2.0.8,  v2.0.7, v2.0.6 and v2.0.5
 - Updates to this user manual.
 

@@ -388,11 +388,7 @@ class EmuraDevice extends Device {
         if ((capability_mode == "off")) {
             var inside_temp = this.getCapabilityValue('measure_temperature.inside');
             var target_temp = this.getCapabilityValue('target_temperature');
-<<<<<<< HEAD
             this.setCapabilityValue('target_temperature', inside_temp); // inside = target results in black thermostat ui component
-=======
-            this.setCapabilityValue('target_temperature', inside_temp); // inside = targer results in black thermostat ui component
->>>>>>> 823a19691db6f9db12ae53cdc3e0fba2e02e89c6
             
             // update the airco its settings as necessary      
             if (target_temp != inside_temp) {
