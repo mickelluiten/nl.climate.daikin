@@ -1,6 +1,6 @@
 {
     "id": "nl.climate.daikin",
-	"version": "2.0.9",
+	"version": "2.0.10",
     "compatibility": ">=2.0.0",
     "sdk": 2,
     "brandColor": "#2E96D0",
@@ -832,8 +832,8 @@
         {
             "id": "has_comfora_target_temperature_more_than",
             "title": {
-                "en": "The target temperature is more than",
-                "nl": "De doeltemperatuur is meer dan"
+                "en": "The target temperature !{{is|isn't}} more than",
+                "nl": "De doeltemperatuur !{{is|is niet}} meer dan"
             },
             "args": [
                 {
@@ -854,8 +854,8 @@
         {
             "id": "has_emura_target_temperature_more_than",
             "title": {
-                "en": "The target temperature is more than",
-                "nl": "De doeltemperatuur is meer dan"
+                "en": "The target temperature !{{is|isn't}} more than",
+                "nl": "De doeltemperatuur !{{is|is niet}} meer dan"
             },
             "args": [
                 {
@@ -876,8 +876,8 @@
         {
             "id": "has_nexura_target_temperature_more_than",
             "title": {
-                "en": "The target temperature is more than",
-                "nl": "De doeltemperatuur is meer dan"
+                "en": "The target temperature !{{is|isn't}} more than",
+                "nl": "De doeltemperatuur !{{is|is niet}} meer dan"
             },
             "args": [
                 {
@@ -1498,8 +1498,8 @@
         {
           "id": "mode_comfora_equals",
           "title": {
-              "en": "The operating mode equals",
-              "nl": "De werkmodus komt overeen met"
+              "en": "The operating mode !{{equals|does not equal}}",
+              "nl": "De werkmodus komt !{{overeen met|komt niet overeen met}}"
           },
           "args": [
             {
@@ -1536,8 +1536,8 @@
         {
           "id": "mode_emura_equals",
           "title": {
-              "en": "The operating mode equals",
-              "nl": "De werkmodus komt overeen met"
+              "en": "The operating mode !{{equals|does not equal}}",
+              "nl": "De werkmodus komt !{{overeen met|komt niet overeen met}}"
           },
           "args": [
             {
@@ -1574,8 +1574,8 @@
         {
           "id": "mode_nexura_equals",
           "title": {
-              "en": "The operating mode equals",
-              "nl": "De werkmodus komt overeen met"
+              "en": "The operating mode !{{equals|does not equal}}",
+              "nl": "De werkmodus komt !{{overeen met|komt niet overeen met}}"
           },
           "args": [
             {

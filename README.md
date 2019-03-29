@@ -111,4 +111,5 @@ If you like the app, consider buying me a cup of coffee!
 - 01-FEB-19: Changed the AC function naming for several "picker" selections.
 - 17-MAR-19: Added additional action and condition flowcard.
 - 20-MAR-19: Fixed an action flow card bug.
+- 29-MAR-19: Fixed a bug: condition card invert flag did not change the condition card text.
 
