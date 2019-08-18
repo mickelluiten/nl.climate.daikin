@@ -1,6 +1,6 @@
 {
     "id": "nl.climate.daikin",
-	"version": "2.0.10",
+	"version": "2.0.11",
     "compatibility": ">=2.0.0",
     "sdk": 2,
     "brandColor": "#2E96D0",
@@ -2030,6 +2030,9 @@
           },
           "getable": true,
           "setable": true,
+          "min": 10,
+          "max": 32,
+          "step": 1.0,
           "values": [
             {
               "id": "off",
@@ -2083,6 +2086,9 @@
           },
           "getable": true,
           "setable": true,
+          "min": 10,
+          "max": 32,
+          "step": 1.0,
           "values": [
             {
               "id": "off",
@@ -2143,6 +2149,9 @@
           },
           "getable": true,
           "setable": true,
+          "min": 10,
+          "max": 32,
+          "step": 1.0,
           "values": [
             {
               "id": "off",
@@ -2203,6 +2212,9 @@
           },
           "getable": true,
           "setable": true,
+          "min": 10,
+          "max": 32,
+          "step": 1.0,
           "values": [
             {
               "id": "off",
@@ -2270,6 +2282,9 @@
           },
           "getable": true,
           "setable": true,
+          "min": 10,
+          "max": 32,
+          "step": 1.0,
           "values": [
             {
               "id": "off",
@@ -2330,6 +2345,9 @@
           },
           "getable": true,
           "setable": true,
+          "min": 10,
+          "max": 32,
+          "step": 1.0,
           "values": [
             {
               "id": "off",
@@ -2397,6 +2415,9 @@
           },
           "getable": true,
           "setable": true,
+          "min": 10,
+          "max": 32,
+          "step": 1.0,
           "values": [
             {
               "id": "off",
@@ -2464,6 +2485,9 @@
           },
           "getable": true,
           "setable": true,
+          "min": 10,
+          "max": 32,
+          "step": 1.0,
           "values": [
             {
               "id": "off",

@@ -112,4 +112,4 @@ If you like the app, consider buying me a cup of coffee!
 - 17-MAR-19: Added additional action and condition flowcard.
 - 20-MAR-19: Fixed an action flow card bug.
 - 29-MAR-19: Fixed a bug: condition card invert flag did not change the condition card text.
-
+- 18-AUG-19: Bug fix (dry mode related).

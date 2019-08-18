@@ -36,6 +36,9 @@ Note: your airconditioner its current IP-address can be found in the Daikin Onli
 It is advised to turn your airconditioner OFF before and keep it switched OFF during Daikin AI software installation/upgrade/restart or when rebooting your Homey as the software will initialize itself immediately after software installation/upgrade/app restart/Homey reboot and because of that some of the airconditioner settings might change i.e. the target temperature might be set to a lower or higher temperature.
 
 ## Change log
+#### v2.0.11
+- Bug fix (dry mode related).
+
 #### v2.0.10
 - Fixed a bug: condition card invert flag did not change the condition card text.
 
