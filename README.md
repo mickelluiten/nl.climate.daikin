@@ -1,20 +1,20 @@
 ![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/Daikin-logo-wide.png)
 
-# Daikin AI for Homey v2
-Control your Daikin air conditioner (or heatpump) through Homey (running v2 firmware). This app requires that your Daikin air conditioner (or heatpump) is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--).
+# Daikin AI for Homey
+Control your Daikin air conditioner through Homey. This app requires that your Daikin air conditioner is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--).
 
 ## Features
-- supports Daikin airconditioners & heatpumps (aka inverters) through model range drivers.
-- the user interface, depeding on the selected driver, can show target temperature, operating mode, inside temperature, outside temperature, fan speed and fan swing mode.
+- supports Daikin airconditioners through model range drivers.
+- the user interface, depending on the selected driver, can show target temperature, operating mode, inside temperature, outside temperature, fan speed and fan swing mode.
 - HomeKit support (see note) for every WiFi capable Daikin Airconditioner thru the "Model HomeKit" driver. The AC control functionality is however limited to: airco's mode setting, target temperature setting and inside temperature measurement.
   Note: requires either Homey's experimental Apple Homekit feature enabled or one of the following apps: "HomeKit by Sprut", "HomeyKit by Bas Jansen".
 - special modes, i.e. POWERFUL, are supported for some models/model variants.
 
 ## Action flow cards
-When designing flows and you add multiple Daikin AI action flowcards to a flow, or serveral flows but with the same trigger condition, it might be necessary to spread these actions over several seconds to give the airco time to process all the commands as the interface handles all the commands separately. The nature (asynchronous polling) of the Daikin interface still makes it possible that commands colide and as a result commands are not executed correctly which is something to keep in mind when building flows.
+When designing flows and you add multiple Daikin AI action flowcards to a flow, or several flows but with the same trigger condition, it might be necessary to spread these actions over several seconds to give the airco time to process all the commands as the interface handles all the commands separately. The nature (asynchronous polling) of the Daikin interface still makes it possible that commands collide and as a result commands are not executed correctly which is something to keep in mind when building flows.
 
 ## Refresh interval
-Daikin designed an interface that is based on polling which means the airconditioner must be interogated once in a while to know its current status. The polling interval of the official Daikin Online Controller app is between 30 and 60 seconds. With the refresh interval setting of the Daikin AI app it is possible to set its polling interval between 5 and 30 seconds which is up to 6 times faster. A higher refresh interval means that your Homey has more work to do. When your setup involves more than one airconditioner a polling interval of less than 10 seconds is not recommended. As a result of the polling mechanism a change made with the app, either the official Daikin Online Controller app or the Homey Daikin AI app, may not show immediately in either app. It should be noted that the refresh interval (setting) has no influence for sending commands to the airconditioner, a mode, target temperature etc. change is always executed immediately.
+Daikin designed an interface that is based on polling which means the airconditioner must be interrogated once in a while to know its current status. The polling interval of the official Daikin Online Controller app is between 30 and 60 seconds. With the refresh interval setting of the Daikin AI app it is possible to set its polling interval between 5 and 30 seconds which is up to 6 times faster. A higher refresh interval means that your Homey has more work to do. When your setup involves more than one airconditioner a polling interval of less than 10 seconds is not recommended. As a result of the polling mechanism a change made with the app, either the official Daikin Online Controller app or the Homey Daikin AI app, may not show immediately in either app. It should be noted that the refresh interval (setting) has no influence for sending commands to the airconditioner, a mode, target temperature etc. change is always executed immediately.
 
 ## Demo mode (upon pairing the demo mode is by default turned ON !!)
 Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows.
@@ -25,18 +25,43 @@ Special modes are not supported by all models, model variants and/or the WiFi ad
 ## WiFi adapter models
 Daikin just recently introduced a new model WiFi adapter (BRP069B--) which uses a different way to sent commands to the airconditioner. During paring the app will pair your airconditioner with model specific default settings, in some cases you have to change these default settings which can be done in the device settings menu.
 
-Note: the WiFi adapter its firmware version can be found in the Daikin Online Controller app (select your airco > click on the gear sysmbol > the firmware version shows under "Adapter information").  
+Note: the WiFi adapter its firmware version can be found in the Daikin Online Controller app (select your airco > click on the gear symbol > the firmware version shows under "Adapter information").  
 
 ## IP-address: the use of a static IP-address is recommended
-To prevent unreliable behavior of the application the use of a fixed (static) IP-address is required. When DHCP changes your airconditioners IP-address the application will not be aware of this change and as a result the application can no longer controle the airconditioner till you manually update the IP-address in the devices its settings menu. 
+To prevent unreliable behaviour of the application the use of a fixed (static) IP-address is required. When DHCP changes your airconditioners IP-address the application will not be aware of this change and as a result the application can no longer controle the airconditioner till you manually update the IP-address in the devices its settings menu. 
 
-Note: your airconditioner its current IP-address can be found in the Daikin Online Controller app (select your airco > click on the gear sysmbol > the IP-address shows under "Adapter information").
+Note: your airconditioner its current IP-address can be found in the Daikin Online Controller app (select your airco > click on the gear symbol > the IP-address shows under "Adapter information").
 
 ## Installation and/or updating the software
-It is advised to turn your airconditioner OFF before and keep it switched OFF during Daikin AI software installation/upgrade/restart or when rebooting your Homey as the software will initialize itself immediately after software installation/upgrade/app restart/Homey reboot and because of that some of the airconditioner settings might change i.e. the target temperature might be set to a lower or higher temperature.
+It is advised to turn your airconditioner OFF before and keep it switched OFF during Daikin AI software installation/upgrade/restart or when rebooting your Homey as the software will initialise itself immediately after software installation/upgrade/app restart/Homey reboot and because of that some of the airconditioner settings might change i.e. the target temperature might be set to a lower or higher temperature.
+
+##Limitations
+- The app is not compatible with Homey v1 firmware.
+- The "Airflow Rate" and "Swing" (a picker) control requires Homey mobile app version 2.0.6 or higher to be shown.
+- HomeKit support only applies for the 'Model HomeKit'.
+- DHCP is not supported.
+- Not all Daikin airconditioner models / model series / combinations of indoor and outdoor units are supported. Due to the fact that Daikin does not disclose their interface specification reverse engineering of the interface is extremely difficult.
+- Homey speech is not supported (note: Homekit driver users have speech support through Siri and can set airconditioner mode and the target temperature).
+- Special modes can not be used in flows.
+
+##Compatible Daikin Air Conditioning Units
+### in combination with BRP069A41:
+FTXG20LV1BW, FTXG20LV1BS , FTXG25LV1BW, FTXG25LV1BS, FTXG35LV1BW, FTXG35LV1BS, FTXG50LV1BW, FTXG50LV1BS, FTXJ20LV1BW, FTXJ20LV1BS, FTXJ25LV1BW, FTXJ25LV1BS, FTXJ35LV1BW, FTXJ35LV1BS, FTXJ50LV1BW, FTXJ50LV1BS.
+
+### in combination with BRP069A42:
+FTXZ25NV1B, FTXZ35NV1B, FTXZ50NV1B, FTXS35K2V1B, FTXS35K3V1B, FTXS42K2V1B, FTXS42K3V1B, FTXS50K2V1B, FTXS50K3V1B, FTXLS25K2V1B, FTXLS35K2V1B,FTXM35K3V1B, FTXM42K3V1B, FTXM50K3V1B, , FTXS60GV1B, FTXS71GV1B, ATXS35K2V1B, ATXS35K3V1B, ATXS50K2V1B, ATXS50K3V1B, FTX50GV1B, FTX60GV1B, FTX71GV1B, FVXG25K2V1B, FVXG35K2V1B, FVXG50K2V1B, , FVXS25FV1B, FVXS35FV1B, FVXS50FV1B, FLXS25BAVMB, FLXS25BVMA, FLXS25BVMB, FLXS35BAVMB, FLXS35BAVMB9, FLXS35BVMA, FLXS35BVMB, FLXS50BAVMB, FLXS50BVMA, FLXS50BVMB, FLXS60BAVMB, FLXS60BVMA, FLXS60BVMB.
+
+### in combination with BRP069A43 (?):
+CTXS15K2V1B, CTXS15K3V1B, FTXS20K2V1B, FTXS20K3V1B, FTXS25K2V1B, FTXS25K3V1B, CTXS35K2V1B, CTXS35K3V1B, FTXM20K3V1B, FTXM25K3V1B, , ATXS20K2V1B, ATXS20K3V1B, ATXS25K2V1B, ATXS25K3V1B, FTX20J2V1B, FTX25J2V1B, FTX35J2V1B, FTX20J3V1B, FTX25J3V1B, FTX35J3V1B, , FTXL25J2V1B, FTXL35J2V1B, , FTX20KV1B, FTX25KV1B, FTX35KV1B, FTX20GV1B, FTX25GV1B, FTX35GV1B, ATX20J2V1B, ATX20J3V1B, ATX25J2V1B, ATX25J3V1B, ATX35J2V1B, ATX35J3V1B, ATX20KV1B, ATX25KV1B, ATX35KV1B, , ATXL25J2V1B, ATXL35J2V1B,
+
+### in combination with BRP069A44 (?):
+FTX50KV1B, FTX60KV1B
+
+## in combination with BRP069Bxx  (?):
+No model information available.
 
 ## Credits
-- This Homey (by Athom) App is based on the great work of the unofficial Daikin API documentation project (https://github.com/ael-code/daikin-control) as well as the Apollon77 Daikin Controller library (https://github.com/Apollon77/daikin-controller).
+- This Homey (by Athom) App is based on the great work of the unofficial Daikin API documentation project ( https://github.com/ael-code/daikin-control ) as well as the Apollon77 Daikin Controller library ( https://github.com/Apollon77/daikin-controller ).
 - App uses icons that where created by http://www.freepik.com from https://www.flaticon.com is licensed by Creative Commons.
 
 ## Donations
@@ -50,13 +75,13 @@ If you like the app, consider buying me a cup of coffee!
 - 31-JAN-18: inside / outside / target temperature (fixed value for now) show on mobile card.
 - 02-FEB-18: all data shown on mobile card is read from the airconditioner.
 - 03-FEB-18: lifted the requirement to use experimental firmware v1.5.6, can now be previewed with Homey stable firmware v1.5.3.
-- 04-FEB-18: translations of mode, fan, wing etc code in to meaningfull strings. Work done on changing airco setting.
+- 04-FEB-18: translations of mode, fan, wing etc code in to meaningful strings. Work done on changing airco setting.
 - 07-FEB-18: Mobile card: temperature control is functional, mode selection functional.
 - 11-FEB-18: 1/ Implemented the Apollon77 library. Note: for testing/troubleshooting purposes the airco power is always set to OFF.
 - 11-FEB-18: 2/ Working on flow cards... not functional!
 - 15-FEB-18: Added a trigger, condition and action flowcard.
 - 16-FEB-18: 1/ Action triggers to set the: Airco Operation Mode, Fan rate, Fan direction and Target temperature.
-- 16-FEB-18: 2/ Several code optimizations
+- 16-FEB-18: 2/ Several code optimisations
 - 16-FEB-18: 3/ Asset updates, now passes the Homey App Store validation cli
 - 18-FEB-18: 1/ New pairing dialog
 - 18-FEB-18: 2/ Emura driver enabled (still needs refinement...)  
@@ -66,7 +91,7 @@ If you like the app, consider buying me a cup of coffee!
 - 20-FEB-18: The airco can now also be switched off with the mode settings wheel
 - 21-FEB-18: Added a whole bunch of condition flowcards
 - 22-FEB-18: Completed the flowcards for trigger (9x), condition (9x) and action (5x).
-- 24-FEB-18: Code optimizations, crushed bugs that I introduced with adding of the flowcards.
+- 24-FEB-18: Code optimisations, crushed bugs that I introduced with adding of the flowcards.
 - 25-FEB-18: Added Nexura driver. Fixed a bug that prevented the inside/outside flowcard triggers from triggering.
 - 25-FEB-18: First beta (v0.3.0) pubilished to the Athom app store.
 - 28-FEB-18: 1/ Added validation to IP-address (IPv4 validation) input field when paring, removed interval setting from paring dialog.
@@ -95,7 +120,7 @@ If you like the app, consider buying me a cup of coffee!
 - 01-JUL-18: Main category (appliance) and sub-category (climate) reversed to optimize Athom App Store search.
 - 12-AUG-18: Fan rate and Fan Swing mode can now be controlled from the mobile card. New mobile card photo added to description.
 - 20-AUG-18: Minor changes to app store description.
-- 28-AUG-18: Device settings menu cleanup and code optimizations.
+- 28-AUG-18: Device settings menu cleanup and code optimisations.
 - 30-AUG-18: Special mode control added.
 - 15-SEP-18: Special modes: pick from a list instead of "on/off" switch.
 - 20-OCT-18: Added hints to settings menu.
@@ -113,3 +138,4 @@ If you like the app, consider buying me a cup of coffee!
 - 20-MAR-19: Fixed an action flow card bug.
 - 29-MAR-19: Fixed a bug: condition card invert flag did not change the condition card text.
 - 18-AUG-19: Bug fix (dry mode related).
+- 13-NOV-19: Updates related to Athoms refresh app store.
