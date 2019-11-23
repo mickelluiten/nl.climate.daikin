@@ -229,7 +229,8 @@ class ComforaDevice extends Device {
 	deviceRequestControl(comfora_ip) {
 		this.log('deviceRequestControl');
 	    
-	    util.request_control(comfora_ip, this.updateControlListeners.bind(this));
+        var data = this.getData();
+	    util.request_control(comfora_ip, data.epp, this.updateControlListeners.bind(this));
 		
 		return Promise.resolve();
     }
@@ -237,8 +238,9 @@ class ComforaDevice extends Device {
     // Interrogate Airconditioner Temperature Sensor
 	deviceRequestSensor(comfora_ip) {
 		this.log('deviceRequestSensor');
-				
-	    util.request_sensor(comfora_ip, this.updateSensorListeners.bind(this));
+
+        var data = this.getData();				
+	    util.request_sensor(comfora_ip, data.epp, this.updateSensorListeners.bind(this));
 		
 		return Promise.resolve();
     }
@@ -505,8 +507,9 @@ class ComforaDevice extends Device {
        
        if (comfora_useGetToPost) comfora_options = {'useGetToPost': true};
        else comfora_options = {'useGetToPost': false};
-              
-       var daikin = new DaikinAC(comfora_ip, comfora_options, function(err) {
+
+       var data = this.getData();	              
+       var daikin = new DaikinAC(comfora_ip, data.epp, comfora_options, function(err) {
 
            daikin.setACControlInfo({"pow":pow});           
        });
@@ -530,15 +533,16 @@ class ComforaDevice extends Device {
        if (comfora_useGetToPost) comfora_options = {'useGetToPost': true};
        else comfora_options = {'useGetToPost': false};
        
+       var data = this.getData();	
        if (comfora_spmode == false) {
            this.log('thermostat_mode_std:', acmode);
            
-           util.daikinModeControl(acmode, comfora_ip, comfora_options, demo_mode);           
+           util.daikinModeControl(acmode, comfora_ip, data.epp, comfora_options, demo_mode);           
        } else {
            this.log('thermostat_mode_extended:', acmode);
            
            // step 1 - set mode
-           util.daikinModeControl(acmode, comfora_ip, comfora_options, demo_mode);
+           util.daikinModeControl(acmode, comfora_ip, data.epp, comfora_options, demo_mode);
            
            // step 2 - set advanced/special mode ON/OFF and function selection
            switch (acmode) {
@@ -560,7 +564,7 @@ class ComforaDevice extends Device {
               
            }
            
-           util.daikinSpecialModeControl(acmode, comfora_ip, comfora_options, advstate);           
+           util.daikinSpecialModeControl(acmode, comfora_ip, data.epp, comfora_options, advstate);           
    
        }
     }
@@ -579,8 +583,9 @@ class ComforaDevice extends Device {
        
        if (comfora_useGetToPost) comfora_options = {'useGetToPost': true};
        else comfora_options = {'useGetToPost': false};
-       
-       util.daikinFanRateControl(fan_rate, comfora_ip, comfora_options);
+
+       var data = this.getData();	
+       util.daikinFanRateControl(fan_rate, comfora_ip, data.epp, comfora_options);
        
     }  
 
@@ -598,8 +603,9 @@ class ComforaDevice extends Device {
        
        if (comfora_useGetToPost) comfora_options = {'useGetToPost': true};
        else comfora_options = {'useGetToPost': false};
-       
-       util.daikinFanDirControl(fan_direction, comfora_ip, comfora_options);
+
+       var data = this.getData();	       
+       util.daikinFanDirControl(fan_direction, comfora_ip, data.epp, comfora_options);
       
     }  
        
@@ -619,7 +625,8 @@ class ComforaDevice extends Device {
        if (comfora_useGetToPost) comfora_options = {'useGetToPost': true};
        else comfora_options = {'useGetToPost': false};
 
-       util.daikinTempControl(atemp, comfora_ip, comfora_options);
+       var data = this.getData();	
+       util.daikinTempControl(atemp, comfora_ip, data.epp, comfora_options);
 
     }
 

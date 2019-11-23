@@ -2,10 +2,16 @@ This app requires that your Daikin air conditioner is equipped with a WiFi adapt
 
 <<Features>>
 - supports Daikin airconditioners through model range drivers.
+
 - the user interface, depending on the selected driver, can show target temperature, operating mode, inside temperature, outside temperature, fan speed and fan swing mode.
+
 - HomeKit support (see note) for every WiFi capable Daikin Airconditioner thru the "Model HomeKit" driver. The AC control functionality is however limited to: airco's mode setting, target temperature setting and inside temperature measurement.
-  Note: requires either Homey's experimental Apple Homekit feature enabled or one of the following apps: "HomeKit by Sprut", "HomeyKit by Bas Jansen".
+
+Note: requires either Homey's experimental Apple Homekit feature enabled or one of the following apps: "HomeKit by Sprut", "HomeyKit by Bas Jansen".
+
 - special modes, i.e. POWERFUL, are supported for some models/model variants.
+
+- Limited support for airco's using an Airbase (formerly SkyFi) WiFi adapter.
 
 <<Action flow cards>>
 When designing flows and you add multiple Daikin AI action flowcards to a flow, or several flows but with the same trigger condition, it might be necessary to spread these actions over several seconds to give the airco time to process all the commands as the interface handles all the commands separately. The nature (asynchronous polling) of the Daikin interface still makes it possible that commands collide and as a result commands are not executed correctly which is something to keep in mind when building flows.
@@ -13,8 +19,10 @@ When designing flows and you add multiple Daikin AI action flowcards to a flow, 
 <<Refresh interval>>
 Daikin designed an interface that is based on polling which means the airconditioner must be interrogated once in a while to know its current status. The polling interval of the official Daikin Online Controller app is between 30 and 60 seconds. With the refresh interval setting of the Daikin AI app it is possible to set its polling interval between 5 and 30 seconds which is up to 6 times faster. A higher refresh interval means that your Homey has more work to do. When your setup involves more than one airconditioner a polling interval of less than 10 seconds is not recommended. As a result of the polling mechanism a change made with the app, either the official Daikin Online Controller app or the Homey Daikin AI app, may not show immediately in either app. It should be noted that the refresh interval (setting) has no influence for sending commands to the airconditioner, a mode, target temperature etc. change is always executed immediately.
 
-<<Demo mode (upon pairing the demo mode is by default turned ON !!)>>
+<<Demo mode>>
 Demo mode can be disabled in the device its settings menu. Demo mode can be very useful when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows.
+
+Note: after initial pairing demo mode is by default turned ON !!
 
 <<Special Modes>>
 Special modes are not supported by all models, model variants and/or the WiFi adapter its firmware version, in addition it might be that not all 3 special modes are supported. Check the Daikin Online Controller app which special modes are supported by your airco, during paring enable the supported Special Mode(s) by checking the applicable checkbox(es) or leave them all unchecked (disabled).
@@ -22,12 +30,16 @@ Special modes are not supported by all models, model variants and/or the WiFi ad
 <<WiFi adapter models>>
 Daikin just recently introduced a new model WiFi adapter (BRP069B--) which uses a different way to sent commands to the airconditioner. During paring the app will pair your airconditioner with model specific default settings, in some cases you have to change these default settings which can be done in the device settings menu.
 
-Note: the WiFi adapter its firmware version can be found in the Daikin Online Controller app (select your airco > click on the gear symbol > the firmware version shows under "Adapter information").  
+During paring one can select if Daikin AI should use the Airbase / SkyFi communication protocol which is used in some countries i.e. in Australia.
 
-<<IP-address: the use of a static IP-address is recommended>>
+Note: the WiFi adapter its firmware version can be found in the Daikin Online Controller app (select your airco > click on the gear symbol > the firmware version shows under "Adapter information").
+
+<<IP-address>>
 To prevent unreliable behaviour of the application the use of a fixed (static) IP-address is required. When DHCP changes your airconditioners IP-address the application will not be aware of this change and as a result the application can no longer controle the airconditioner till you manually update the IP-address in the devices its settings menu. 
 
-Note: your airconditioner its current IP-address can be found in the Daikin Online Controller app (select your airco > click on the gear symbol > the IP-address shows under "Adapter information").
+Notes:
+- the use of a static IP-address is recommended.
+- your airconditioner its current IP-address can be found in the Daikin Online Controller app (select your airco > click on the gear symbol > the IP-address shows under "Adapter information").
 
 <<Installation and/or updating the software>>
 It is advised to turn your airconditioner OFF before and keep it switched OFF during Daikin AI software installation/upgrade/restart or when rebooting your Homey as the software will initialise itself immediately after software installation/upgrade/app restart/Homey reboot and because of that some of the airconditioner settings might change i.e. the target temperature might be set to a lower or higher temperature.

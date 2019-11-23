@@ -128,8 +128,9 @@ class HomeKitDevice extends Device {
     // Interrogate Airconditioner Status
 	deviceRequestControl(homekit_ip) {
 		this.log('deviceRequestControl');
-	    
-	    util.request_control(homekit_ip, this.updateControlListeners.bind(this));
+
+        var data = this.getData();	    
+	    util.request_control(homekit_ip, data.epp, this.updateControlListeners.bind(this));
 		
 		return Promise.resolve();
     }
@@ -137,8 +138,9 @@ class HomeKitDevice extends Device {
     // Interrogate Airconditioner Temperature Sensor
 	deviceRequestSensor(homekit_ip) {
 		this.log('deviceRequestSensor');
-				
-	    util.request_sensor(homekit_ip, this.updateSensorListeners.bind(this));
+
+        var data = this.getData();				
+	    util.request_sensor(homekit_ip, data.epp, this.updateSensorListeners.bind(this));
 		
 		return Promise.resolve();
     }
@@ -204,8 +206,9 @@ class HomeKitDevice extends Device {
        
        if (homekit_useGetToPost) homekit_options = {'useGetToPost': true};
        else homekit_options = {'useGetToPost': false};
-              
-       var daikin = new DaikinAC(homekit_ip, homekit_options, function(err) {
+
+       var data = this.getData();               
+       var daikin = new DaikinAC(homekit_ip, data.epp, homekit_options, function(err) {
 
            daikin.setACControlInfo({"pow":pow});           
        });
@@ -227,8 +230,9 @@ class HomeKitDevice extends Device {
        
        if (homekit_useGetToPost) homekit_options = {'useGetToPost': true};
        else homekit_options = {'useGetToPost': false};
-       
-       util.daikinModeControl(thermostat_mode, homekit_ip, homekit_options, demo_mode);
+
+       var data = this.getData();        
+       util.daikinModeControl(thermostat_mode, homekit_ip, data.epp, homekit_options, demo_mode);
       
     }  
        
@@ -247,7 +251,8 @@ class HomeKitDevice extends Device {
        if (homekit_useGetToPost) homekit_options = {'useGetToPost': true};
        else homekit_options = {'useGetToPost': false};
 
-       util.daikinTempControl(atemp, homekit_ip, homekit_options);
+       var data = this.getData(); 
+       util.daikinTempControl(atemp, homekit_ip, data.epp, homekit_options);
 
     }
 
