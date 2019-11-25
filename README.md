@@ -1,7 +1,7 @@
 ![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/Daikin-logo-wide.png)
 
 # Daikin AI for Homey
-Control your Daikin air conditioner through Homey. This app requires that your Daikin air conditioner is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--).
+Control your Daikin air conditioner through Homey. This app requires that your Daikin air conditioner is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--). This app does NOT support ducted/ceiling models.
 
 ## Features
 - supports Daikin airconditioners through model range drivers.
@@ -39,6 +39,7 @@ Note: your airconditioner its current IP-address can be found in the Daikin Onli
 It is advised to turn your airconditioner OFF before and keep it switched OFF during Daikin AI software installation/upgrade/restart or when rebooting your Homey as the software will initialise itself immediately after software installation/upgrade/app restart/Homey reboot and because of that some of the airconditioner settings might change i.e. the target temperature might be set to a lower or higher temperature.
 
 ##Limitations
+- Ducted/ceiling models are NOT supported by this app.
 - The app is not compatible with Homey v1 firmware.
 - The "Airflow Rate" and "Swing" (a picker) control requires Homey mobile app version 2.0.6 or higher to be shown.
 - HomeKit support only applies for the 'Model HomeKit'.
@@ -46,6 +47,7 @@ It is advised to turn your airconditioner OFF before and keep it switched OFF du
 - Not all Daikin airconditioner models / model series / combinations of indoor and outdoor units are supported. Due to the fact that Daikin does not disclose their interface specification reverse engineering of the interface is extremely difficult.
 - Homey speech is not supported (note: Homekit driver users have speech support through Siri and can set airconditioner mode and the target temperature).
 - Special modes can not be used in flows.
+
 
 ##Compatible Daikin Air Conditioning Units
 ### in combination with BRP069A41:

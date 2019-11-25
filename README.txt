@@ -1,4 +1,4 @@
-This app requires that your Daikin air conditioner is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--).
+This app requires that your Daikin air conditioner is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--). This app does NOT support ducted/ceiling models.
 
 <<Features>>
 - supports Daikin airconditioners through model range drivers.
@@ -45,6 +45,7 @@ Notes:
 It is advised to turn your airconditioner OFF before and keep it switched OFF during Daikin AI software installation/upgrade/restart or when rebooting your Homey as the software will initialise itself immediately after software installation/upgrade/app restart/Homey reboot and because of that some of the airconditioner settings might change i.e. the target temperature might be set to a lower or higher temperature.
 
 << Known limitations>>
+- Ducted/ceiling models are NOT supported by this app.
 - The app is not compatible with Homey v1 firmware.
 - The "Airflow Rate" and "Swing" (a picker) control requires Homey mobile app version 2.0.6 or higher to be shown.
 - HomeKit support only applies for the 'Model HomeKit'.
