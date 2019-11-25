@@ -12,8 +12,7 @@ class Driver extends Homey.Driver {
            
            var devices = {};    
            var request = require('request');
-           // note: epp = endpointprefix, prefix "/" or "/skyfi/" which is used in Australia
-		   var url = 'http://' + device.data.ip + device.data.epp + 'aircon/get_control_info';
+		   var url = 'http://' + device.data.ip + '/aircon/get_control_info';
 		   console.log('Connecting to: '+ url);
            // to be done: add check to prevent that another airco is assigned with same ip-address...
 		   request(url, function (error, response, body) {
@@ -28,13 +27,11 @@ class Driver extends Homey.Driver {
 		                devices[device.data.id] = {
 		                  id: device.data.id,
 		                  name: device.data.name,
-	                      ip: device.data.ip,
-                          epp: device.data.epp
+	                      ip: device.data.ip
                         };
 						console.log('Device ID: ', device.data.id);
 						console.log('Device name: ', device.data.inputdevicename);
 						console.log('Device ip-address: ', device.data.ip);
-						console.log('Device endpoint prefix: ', device.data.epp);
 		                callback( null, devices );
 		                socket.emit("success", device);
 				  	} else {

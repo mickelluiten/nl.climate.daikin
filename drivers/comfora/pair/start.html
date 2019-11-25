@@ -8,12 +8,6 @@ function saveSettings () {
    // input variables           
    var inputIPAddress = $('#ipAddress').val();
    var inputDeviceName = $('#deviceName').val();
-   // Skyfi checkbox
-   if ($('#epp').prop('checked')) {
-       var endpointprefix = "/skyfi/";
-   } else {
-       var endpointprefix = "/";
-   }  
    // Streamer checkbox
    if ($('#streamer').prop('checked')) {
        var streamerBool = true;
@@ -65,8 +59,7 @@ function saveSettings () {
   			data: {
   				id: GetGUID(),
                 inputdevicename: inputDeviceName,
-                ip: inputIPAddress,
-                epp: endpointprefix
+                ip: inputIPAddress 
   			},
   			    name: inputDeviceName,
   		    	settings: {
@@ -85,8 +78,7 @@ function saveSettings () {
       	                	data: {
       	                		 id: GetGUID(),
                                    inputdevicename: inputDeviceName,
-                                   ip: inputIPAddress,
-                                   epp: endpointprefix
+                                   ip: inputIPAddress 
       	                		},
       	                		 name: inputDeviceName,
                                  "capabilities": [
@@ -113,8 +105,7 @@ function saveSettings () {
       	                	data: {
       	                		 id: GetGUID(),
                                    inputdevicename: inputDeviceName,
-                                   ip: inputIPAddress,
-                                   epp: endpointprefix
+                                   ip: inputIPAddress 
       	                		},
       	                		 name: inputDeviceName,
      	                		 name: inputDeviceName,
@@ -142,8 +133,7 @@ function saveSettings () {
       	                	data: {
       	                		 id: GetGUID(),
                                    inputdevicename: inputDeviceName,
-                                   ip: inputIPAddress,
-                                   epp: endpointprefix
+                                   ip: inputIPAddress 
       	                		},
       	                		 name: inputDeviceName,
                                  "capabilities": [
@@ -170,8 +160,7 @@ function saveSettings () {
       	                	data: {
       	                		 id: GetGUID(),
                                    inputdevicename: inputDeviceName,
-                                   ip: inputIPAddress,
-                                   epp: endpointprefix
+                                   ip: inputIPAddress 
       	                		},
       	                		 name: inputDeviceName,
                                  "capabilities": [
@@ -199,8 +188,7 @@ function saveSettings () {
       	                	data: {
       	                		 id: GetGUID(),
                                    inputdevicename: inputDeviceName,
-                                   ip: inputIPAddress,
-                                   epp: endpointprefix                        
+                                   ip: inputIPAddress 
       	                		},
       	                		 name: inputDeviceName,
                                  "capabilities": [
@@ -228,8 +216,7 @@ function saveSettings () {
       	                	data: {
       	                		 id: GetGUID(),
                                    inputdevicename: inputDeviceName,
-                                   ip: inputIPAddress,
-                                   epp: endpointprefix
+                                   ip: inputIPAddress 
       	                		},
       	                		 name: inputDeviceName,
                                  "capabilities": [
@@ -257,8 +244,7 @@ function saveSettings () {
       	                	data: {
       	                		 id: GetGUID(),
                                    inputdevicename: inputDeviceName,
-                                   ip: inputIPAddress,
-                                   epp: endpointprefix
+                                   ip: inputIPAddress 
       	                		},
       	                		 name: inputDeviceName,
                                  "capabilities": [
@@ -335,10 +321,6 @@ function GetGUID() {
 			<tr>
 				<td style="width:100px;" data-i18n="pair.start.deviceName">Name</td>
 				<td><input id="deviceName" type="text" value="Sensira" placeholder="Sensira"/></td>
-			</tr>
-			<tr>
-				<td style="width:100px;" data-i18n="pair.start.epp">Airbase (SkyFi)</td>
-				<td><input id="epp" type="checkbox" unchecked="false"/></td>
 			</tr>
 			<tr>
 				<td style="width:100px;" data-i18n="pair.start.econo">Econo</td>

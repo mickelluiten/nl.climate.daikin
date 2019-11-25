@@ -1,6 +1,6 @@
 {
     "id": "nl.climate.daikin",
-	"version": "3.1.1",
+	"version": "3.1.2",
     "compatibility": ">=2.0.0",
     "sdk": 2,
     "brandColor": "#2E96D0",

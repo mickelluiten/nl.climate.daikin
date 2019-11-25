@@ -11,8 +11,6 @@ Note: requires either Homey's experimental Apple Homekit feature enabled or one 
 
 - special modes, i.e. POWERFUL, are supported for some models/model variants.
 
-- Limited support for airco's using an Airbase (formerly SkyFi) WiFi adapter.
-
 <<Action flow cards>>
 When designing flows and you add multiple Daikin AI action flowcards to a flow, or several flows but with the same trigger condition, it might be necessary to spread these actions over several seconds to give the airco time to process all the commands as the interface handles all the commands separately. The nature (asynchronous polling) of the Daikin interface still makes it possible that commands collide and as a result commands are not executed correctly which is something to keep in mind when building flows.
 
@@ -30,9 +28,7 @@ Special modes are not supported by all models, model variants and/or the WiFi ad
 <<WiFi adapter models>>
 Daikin just recently introduced a new model WiFi adapter (BRP069B--) which uses a different way to sent commands to the airconditioner. During paring the app will pair your airconditioner with model specific default settings, in some cases you have to change these default settings which can be done in the device settings menu.
 
-During paring one can select if Daikin AI should use the Airbase / SkyFi communication protocol which is used in some countries i.e. in Australia.
-
-Note: the WiFi adapter its firmware version can be found in the Daikin Online Controller app (select your airco > click on the gear symbol > the firmware version shows under "Adapter information").
+Note: the WiFi adapter its firmware version can be found in the Daikin Online Controller app (select your airco > click on the gear symbol > the firmware version shows under "Adapter information").  
 
 <<IP-address>>
 To prevent unreliable behaviour of the application the use of a fixed (static) IP-address is required. When DHCP changes your airconditioners IP-address the application will not be aware of this change and as a result the application can no longer controle the airconditioner till you manually update the IP-address in the devices its settings menu. 

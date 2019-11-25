@@ -9,7 +9,6 @@ Control your Daikin air conditioner through Homey. This app requires that your D
 - HomeKit support (see note) for every WiFi capable Daikin Airconditioner thru the "Model HomeKit" driver. The AC control functionality is however limited to: airco's mode setting, target temperature setting and inside temperature measurement.
   Note: requires either Homey's experimental Apple Homekit feature enabled or one of the following apps: "HomeKit by Sprut", "HomeyKit by Bas Jansen".
 - special modes, i.e. POWERFUL, are supported for some models/model variants.
-- Limited support for airco's using an Airbase (formerly SkyFi) WiFi adapter.
 
 ## Action flow cards
 When designing flows and you add multiple Daikin AI action flowcards to a flow, or several flows but with the same trigger condition, it might be necessary to spread these actions over several seconds to give the airco time to process all the commands as the interface handles all the commands separately. The nature (asynchronous polling) of the Daikin interface still makes it possible that commands collide and as a result commands are not executed correctly which is something to keep in mind when building flows.
@@ -29,9 +28,7 @@ Daikin just recently introduced a new model WiFi adapter (BRP069B--) which uses 
 Note: the WiFi adapter its firmware version can be found in the Daikin Online Controller app (select your airco > click on the gear symbol > the firmware version shows under "Adapter information").  
 
 ## IP-address: the use of a static IP-address is recommended
-To prevent unreliable behaviour of the application the use of a fixed (static) IP-address is required. When DHCP changes your airconditioners IP-address the application will not be aware of this change and as a result the application can no longer controle the airconditioner till you manually update the IP-address in the devices its settings menu.
-
-During paring one can select if Daikin AI should use the Airbase / SkyFi communication protocol which is used in some countries i.e. in Australia.
+To prevent unreliable behaviour of the application the use of a fixed (static) IP-address is required. When DHCP changes your airconditioners IP-address the application will not be aware of this change and as a result the application can no longer controle the airconditioner till you manually update the IP-address in the devices its settings menu. 
 
 Note: your airconditioner its current IP-address can be found in the Daikin Online Controller app (select your airco > click on the gear symbol > the IP-address shows under "Adapter information").
 
@@ -47,7 +44,6 @@ It is advised to turn your airconditioner OFF before and keep it switched OFF du
 - Not all Daikin airconditioner models / model series / combinations of indoor and outdoor units are supported. Due to the fact that Daikin does not disclose their interface specification reverse engineering of the interface is extremely difficult.
 - Homey speech is not supported (note: Homekit driver users have speech support through Siri and can set airconditioner mode and the target temperature).
 - Special modes can not be used in flows.
-
 
 ##Compatible Daikin Air Conditioning Units
 ### in combination with BRP069A41:
@@ -146,3 +142,4 @@ If you like the app, consider buying me a cup of coffee!
 - ---------- Start of the development of V3.x.x (compatible with Homey v3 firmware, but no energy functionality support as realtime power consumption is not available from the airco's)
 - 13-NOV-19: Updates related to Athoms refresh app store.
 - 23-NOV-19: Added support for Daikin Airbase (SkyFi) used in some countries i.e. Australia.
+- 25-NOV-19: Removed code changes in relation to Daikin Airbase (SkyFi). Will not support ducted/ceiling models due to lack of documentation regarding these models.

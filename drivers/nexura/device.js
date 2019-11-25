@@ -227,9 +227,8 @@ class NexuraDevice extends Device {
     // Interrogate Airconditioner Status
 	deviceRequestControl(nexura_ip) {
 		this.log('deviceRequestControl');
-
-        var data = this.getData();	    
-	    util.request_control(nexura_ip, data.epp, this.updateControlListeners.bind(this));
+	    
+	    util.request_control(nexura_ip, this.updateControlListeners.bind(this));
 		
 		return Promise.resolve();
     }
@@ -237,9 +236,8 @@ class NexuraDevice extends Device {
     // Interrogate Airconditioner Temperature Sensor
 	deviceRequestSensor(nexura_ip) {
 		this.log('deviceRequestSensor');
-
-        var data = this.getData();				
-	    util.request_sensor(nexura_ip, data.epp, this.updateSensorListeners.bind(this));
+				
+	    util.request_sensor(nexura_ip, this.updateSensorListeners.bind(this));
 		
 		return Promise.resolve();
     }
@@ -506,9 +504,8 @@ class NexuraDevice extends Device {
        
        if (nexura_useGetToPost) nexura_options = {'useGetToPost': true};
        else nexura_options = {'useGetToPost': false};
-
-       var data = this.getData();               
-       var daikin = new DaikinAC(nexura_ip, data.epp, nexura_options, function(err) {
+              
+       var daikin = new DaikinAC(nexura_ip, nexura_options, function(err) {
 
            daikin.setACControlInfo({"pow":pow});           
        });
@@ -531,17 +528,16 @@ class NexuraDevice extends Device {
        
        if (nexura_useGetToPost) nexura_options = {'useGetToPost': true};
        else nexura_options = {'useGetToPost': false};
-
-       var data = this.getData();        
+       
        if (nexura_spmode == false) {
            this.log('thermostat_mode_std:', acmode);
            
-           util.daikinModeControl(acmode, nexura_ip, data.epp, nexura_options, demo_mode);           
+           util.daikinModeControl(acmode, nexura_ip, nexura_options, demo_mode);           
        } else {
            this.log('thermostat_mode_extended:', acmode);
            
            // step 1 - set mode
-           util.daikinModeControl(acmode, nexura_ip, data.epp, nexura_options, demo_mode);
+           util.daikinModeControl(acmode, nexura_ip, nexura_options, demo_mode);
            
            // step 2 - set advanced/special mode ON/OFF and function selection
            switch (acmode) {
@@ -563,7 +559,7 @@ class NexuraDevice extends Device {
               
            }
            
-           util.daikinSpecialModeControl(acmode, nexura_ip, data.epp, nexura_options, advstate);           
+           util.daikinSpecialModeControl(acmode, nexura_ip, nexura_options, advstate);           
    
        }
     } 
@@ -582,9 +578,8 @@ class NexuraDevice extends Device {
        
        if (nexura_useGetToPost) nexura_options = {'useGetToPost': true};
        else nexura_options = {'useGetToPost': false};
-
-       var data = this.getData();        
-       util.daikinFanRateControl(fan_rate, nexura_ip, data.epp, nexura_options);
+       
+       util.daikinFanRateControl(fan_rate, nexura_ip, nexura_options);
        
     }  
 
@@ -602,9 +597,8 @@ class NexuraDevice extends Device {
        
        if (nexura_useGetToPost) nexura_options = {'useGetToPost': true};
        else nexura_options = {'useGetToPost': false};
-
-       var data = this.getData();        
-       util.daikinFanDirControl(fan_direction, nexura_ip, data.epp, nexura_options);
+       
+       util.daikinFanDirControl(fan_direction, nexura_ip, nexura_options);
       
     }  
        
@@ -624,8 +618,7 @@ class NexuraDevice extends Device {
        if (nexura_useGetToPost) nexura_options = {'useGetToPost': true};
        else nexura_options = {'useGetToPost': false};
 
-       var data = this.getData(); 
-       util.daikinTempControl(atemp, nexura_ip, data.epp, nexura_options);
+       util.daikinTempControl(atemp, nexura_ip, nexura_options);
 
     }
 
