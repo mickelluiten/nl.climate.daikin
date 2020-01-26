@@ -1,0 +1,20 @@
+{
+    "id": "outside_comfora_temperature_more_than",
+    "deprecated": true,
+    "title": {
+        "en": "The outside temperature is more than",
+        "nl": "De buitentemperatuur is meer dan"
+    },
+    "args": [{
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=comfora"
+    }, {
+        "name": "outside_temperature_more",
+        "type": "number",
+        "placeholder": {
+            "en": "in C",
+            "nl": "in C"
+        }
+    }]
+}

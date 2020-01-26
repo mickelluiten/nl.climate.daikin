@@ -1,0 +1,20 @@
+{
+    "id": "change_emura_target_temperature_less_than",
+    "deprecated": true,
+    "title": {
+        "en": "The target temperature is less than",
+        "nl": "De doeltemperatuur is minder dan"
+    },
+    "args": [{
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=emura"
+    }, {
+        "name": "target_temperature_less",
+        "type": "number",
+        "placeholder": {
+            "en": "in C",
+            "nl": "in C"
+        }
+    }]
+}

@@ -1,0 +1,22 @@
+{
+    "id": "change_nexura_target_temp",
+    "deprecated": true,
+    "title": {
+        "en": "Change target temperature",
+        "nl": "Wijzig doel temperatuur"
+    },
+    "args": [{
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=nexura"
+    }, {
+        "name": "atemp",
+        "type": "number",
+        "min": 15,
+        "max": 35,
+        "placeholder": {
+            "en": "°C",
+            "nl": "°C"
+        }
+    }]
+}

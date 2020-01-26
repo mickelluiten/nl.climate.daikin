@@ -5,13 +5,14 @@
     "nl": "Daikin AI"
   },
   "description": {
-    "en": "Adds support for Daikin Air Conditioners"
+    "en": "Adds support for Daikin Air Conditioners",
+    "nl": "Maakt de bediening van Daikin Air Conditioners mogelijk"
   },
   "category": [
     "climate",
     "appliances"
   ],
-  "version": "3.1.3",
+  "version": "3.1.4",
   "compatibility": ">=2.0.0",
   "athomForumDiscussionId": 2082,
   "homeyCommunityTopicId": 158,
@@ -85,6 +86,237 @@
   "flow": {
     "triggers": [
       {
+        "id": "change_comfora_target_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature is between",
+          "nl": "De doeltemperatuur is tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "target_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "target_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "change_comfora_target_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature is less than",
+          "nl": "De doeltemperatuur is minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "target_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "change_comfora_target_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature is more than",
+          "nl": "De doeltemperatuur is meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "target_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "change_emura_target_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature is between",
+          "nl": "De doeltemperatuur is tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "target_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "target_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "change_emura_target_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature is less than",
+          "nl": "De doeltemperatuur is minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "target_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "change_emura_target_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature is more than",
+          "nl": "De doeltemperatuur is meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "target_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "change_nexura_target_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature is between",
+          "nl": "De doeltemperatuur is tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "target_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "target_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "change_nexura_target_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature is less than",
+          "nl": "De doeltemperatuur is minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "target_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "change_nexura_target_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature is more than",
+          "nl": "De doeltemperatuur is meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "target_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
         "id": "change_target_temperature_between",
         "title": {
           "en": "The target temperature is between",
@@ -150,6 +382,237 @@
           },
           {
             "name": "target_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "inside_comfora_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature is between",
+          "nl": "De binnentemperatuur is tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "inside_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "inside_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "inside_comfora_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature is less than",
+          "nl": "De binnentemperatuur is minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "inside_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "inside_comfora_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature is more than",
+          "nl": "De binnentemperatuur is meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "inside_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "inside_emura_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature is between",
+          "nl": "De binnentemperatuur is tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "inside_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "inside_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "inside_emura_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature is less than",
+          "nl": "De binnentemperatuur is minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "inside_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "inside_emura_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature is more than",
+          "nl": "De binnentemperatuur is meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "inside_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "inside_nexura_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature is between",
+          "nl": "De binnentemperatuur is tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "inside_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "inside_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "inside_nexura_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature is less than",
+          "nl": "De binnentemperatuur is minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "inside_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "inside_nexura_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature is more than",
+          "nl": "De binnentemperatuur is meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "inside_temperature_more",
             "type": "number",
             "placeholder": {
               "en": "in C",
@@ -295,6 +758,426 @@
         ]
       },
       {
+        "id": "mode_comfora_changed",
+        "deprecated": true,
+        "title": {
+          "en": "When the operating mode has changed to",
+          "nl": "Wanneer de werkmodus is veranderd in"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "cool",
+                "label": {
+                  "en": "Cooling",
+                  "nl": "Koelen"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Heating",
+                  "nl": "Verwarmen"
+                }
+              },
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "dehumid",
+                "label": {
+                  "en": "Dehumidfication",
+                  "nl": "Ontvochtigen"
+                }
+              },
+              {
+                "id": "fan",
+                "label": {
+                  "en": "Fan",
+                  "nl": "Ventilator"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mode_emura_changed",
+        "deprecated": true,
+        "title": {
+          "en": "When the operating mode has changed to",
+          "nl": "Wanneer de werkmodus is veranderd in"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "cool",
+                "label": {
+                  "en": "Cooling",
+                  "nl": "Koelen"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Heating",
+                  "nl": "Verwarmen"
+                }
+              },
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "dehumid",
+                "label": {
+                  "en": "Dehumidfication",
+                  "nl": "Ontvochtigen"
+                }
+              },
+              {
+                "id": "fan",
+                "label": {
+                  "en": "Fan",
+                  "nl": "Ventilator"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mode_nexura_changed",
+        "deprecated": true,
+        "title": {
+          "en": "When the operating mode has changed to",
+          "nl": "Wanneer de werkmodus is veranderd in"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "cool",
+                "label": {
+                  "en": "Cooling",
+                  "nl": "Koelen"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Heating",
+                  "nl": "Verwarmen"
+                }
+              },
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "dehumid",
+                "label": {
+                  "en": "Dehumidfication",
+                  "nl": "Ontvochtigen"
+                }
+              },
+              {
+                "id": "fan",
+                "label": {
+                  "en": "Fan",
+                  "nl": "Ventilator"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "outside_comfora_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature is between",
+          "nl": "De buitentemperatuur is tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "outside_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "outside_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "outside_comfora_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature is less than",
+          "nl": "De buitentemperatuur is minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "ouside_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "outside_comfora_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature is more than",
+          "nl": "De buitentemperatuur is meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "outside_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "outside_emura_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature is between",
+          "nl": "De buitentemperatuur is tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "outside_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "outside_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "outside_emura_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature is less than",
+          "nl": "De buitentemperatuur is minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "ouside_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "outside_emura_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature is more than",
+          "nl": "De buitentemperatuur is meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "outside_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "outside_nexura_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature is between",
+          "nl": "De buitentemperatuur is tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "outside_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "outside_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "outside_nexura_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature is less than",
+          "nl": "De buitentemperatuur is minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "ouside_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "outside_nexura_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature is more than",
+          "nl": "De buitentemperatuur is meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "outside_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
         "id": "outside_temperature_between",
         "title": {
           "en": "The outside temperature is between",
@@ -371,6 +1254,468 @@
     ],
     "conditions": [
       {
+        "id": "has_comfora_inside_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature !{{is|isn't}} between",
+          "nl": "De binnentemperatuur !{{is|is niet}} tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "inside_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "inside_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_comfora_inside_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature !{{is|isn't}} less than",
+          "nl": "De binnentemperatuur !{{is|is niet}} minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "inside_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_comfora_inside_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature !{{is|isn't}} more than",
+          "nl": "De binnentemperatuur !{{is|is niet}} meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "inside_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_comfora_outside_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature !{{is|isn't}} between",
+          "nl": "De buitentemperatuur !{{is|is niet}} tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "outside_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "outside_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_comfora_outside_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature !{{is|isn't}} less than",
+          "nl": "De buitentemperatuur !{{is|is niet}} minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "outside_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_comfora_outside_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature !{{is|isn't}} more than",
+          "nl": "De buitentemperatuur !{{is|is niet}} meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "outside_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_comfora_target_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature !{{is|isn't}} between",
+          "nl": "De doeltemperatuur !{{is|is niet}} tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "target_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "target_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_comfora_target_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature !{{is|isn't}} less than",
+          "nl": "De doeltemperatuur !{{is|is niet}} minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "target_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_comfora_target_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature !{{is|isn't}} more than",
+          "nl": "De doeltemperatuur !{{is|is niet}} meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "target_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_emura_inside_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature !{{is|isn't}} between",
+          "nl": "De binnentemperatuur !{{is|is niet}} tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "inside_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "inside_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_emura_inside_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature !{{is|isn't}} less than",
+          "nl": "De binnentemperatuur !{{is|is niet}} minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "inside_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_emura_inside_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature !{{is|isn't}} more than",
+          "nl": "De binnentemperatuur !{{is|is niet}} meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "inside_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_emura_outside_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature !{{is|isn't}} between",
+          "nl": "De buitentemperatuur !{{is|is niet}} tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "outside_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "outside_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_emura_outside_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature !{{is|isn't}} less than",
+          "nl": "De buitentemperatuur !{{is|is niet}} minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "outside_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_emura_outside_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature !{{is|isn't}} more than",
+          "nl": "De buitentemperatuur !{{is|is niet}} meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "outside_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_emura_target_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature !{{is|isn't}} between",
+          "nl": "De doeltemperatuur !{{is|is niet}} tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "target_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "target_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_emura_target_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature !{{is|isn't}} less than",
+          "nl": "De doeltemperatuur !{{is|is niet}} minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "target_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_emura_target_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature !{{is|isn't}} more than",
+          "nl": "De doeltemperatuur !{{is|is niet}} meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "target_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
         "id": "has_inside_temperature_between",
         "title": {
           "en": "The inside temperature !{{is|isn't}} between",
@@ -436,6 +1781,237 @@
           },
           {
             "name": "inside_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_nexura_inside_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature !{{is|isn't}} between",
+          "nl": "De binnentemperatuur !{{is|is niet}} tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "inside_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "inside_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_nexura_inside_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature !{{is|isn't}} less than",
+          "nl": "De binnentemperatuur !{{is|is niet}} minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "inside_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_nexura_inside_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The inside temperature !{{is|isn't}} more than",
+          "nl": "De binnentemperatuur !{{is|is niet}} meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "inside_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_nexura_outside_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature !{{is|isn't}} between",
+          "nl": "De buitentemperatuur !{{is|is niet}} tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "outside_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "outside_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_nexura_outside_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature !{{is|isn't}} less than",
+          "nl": "De buitentemperatuur !{{is|is niet}} minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "outside_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_nexura_outside_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The outside temperature !{{is|isn't}} more than",
+          "nl": "De buitentemperatuur !{{is|is niet}} meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "outside_temperature_more",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_nexura_target_temperature_between",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature !{{is|isn't}} between",
+          "nl": "De doeltemperatuur !{{is|is niet}} tussen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "target_temperature_from",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          },
+          {
+            "name": "target_temperature_to",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_nexura_target_temperature_less_than",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature !{{is|isn't}} less than",
+          "nl": "De doeltemperatuur !{{is|is niet}} minder dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "target_temperature_less",
+            "type": "number",
+            "placeholder": {
+              "en": "in C",
+              "nl": "in C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "has_nexura_target_temperature_more_than",
+        "deprecated": true,
+        "title": {
+          "en": "The target temperature !{{is|isn't}} more than",
+          "nl": "De doeltemperatuur !{{is|is niet}} meer dan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "target_temperature_more",
             "type": "number",
             "placeholder": {
               "en": "in C",
@@ -593,6 +2169,132 @@
         ]
       },
       {
+        "id": "mode_comfora_equals",
+        "deprecated": true,
+        "title": {
+          "en": "The operating mode !{{equals|does not equal}}",
+          "nl": "De werkmodus komt !{{overeen met|komt niet overeen met}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "cool",
+                "label": {
+                  "en": "Cooling",
+                  "nl": "Koelen"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Heating",
+                  "nl": "Verwarmen"
+                }
+              },
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "dehumid",
+                "label": {
+                  "en": "Dehumidfication",
+                  "nl": "Ontvochtigen"
+                }
+              },
+              {
+                "id": "fan",
+                "label": {
+                  "en": "Fan",
+                  "nl": "Ventilator"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mode_emura_equals",
+        "deprecated": true,
+        "title": {
+          "en": "The operating mode !{{equals|does not equal}}",
+          "nl": "De werkmodus komt !{{overeen met|komt niet overeen met}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "cool",
+                "label": {
+                  "en": "Cooling",
+                  "nl": "Koelen"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Heating",
+                  "nl": "Verwarmen"
+                }
+              },
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "dehumid",
+                "label": {
+                  "en": "Dehumidfication",
+                  "nl": "Ontvochtigen"
+                }
+              },
+              {
+                "id": "fan",
+                "label": {
+                  "en": "Fan",
+                  "nl": "Ventilator"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "mode_equals",
         "title": {
           "en": "The operating mode !{{equals|does not equal}}",
@@ -653,9 +2355,486 @@
             ]
           }
         ]
+      },
+      {
+        "id": "mode_nexura_equals",
+        "deprecated": true,
+        "title": {
+          "en": "The operating mode !{{equals|does not equal}}",
+          "nl": "De werkmodus komt !{{overeen met|komt niet overeen met}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "cool",
+                "label": {
+                  "en": "Cooling",
+                  "nl": "Koelen"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Heating",
+                  "nl": "Verwarmen"
+                }
+              },
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "dehumid",
+                "label": {
+                  "en": "Dehumidfication",
+                  "nl": "Ontvochtigen"
+                }
+              },
+              {
+                "id": "fan",
+                "label": {
+                  "en": "Fan",
+                  "nl": "Ventilator"
+                }
+              }
+            ]
+          }
+        ]
       }
     ],
     "actions": [
+      {
+        "id": "change_comfora_fan_direction",
+        "deprecated": true,
+        "title": {
+          "en": "Select the sweep mode",
+          "nl": "Kies de gewenste lamellen richting modus"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "fdir",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Stop",
+                  "nl": "Stop"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "Vertical",
+                  "nl": "Vertikaal"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Horizontal",
+                  "nl": "Horizontaal"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "3D",
+                  "nl": "3D"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "change_comfora_fan_rate",
+        "deprecated": true,
+        "title": {
+          "en": "Select the fan rate",
+          "nl": "Kies de ventilator snelheid"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "frate",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "A",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "B",
+                "label": {
+                  "en": "Quiet",
+                  "nl": "Stil"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Level 1",
+                  "nl": "Niveau 1"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Level 2",
+                  "nl": "Niveau 2"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Level 3",
+                  "nl": "Niveau 3"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Level 4",
+                  "nl": "Niveau 4"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Level 5",
+                  "nl": "Niveau 5"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "change_comfora_mode",
+        "deprecated": true,
+        "title": {
+          "en": "Select the operating mode",
+          "nl": "Kies de werkmodus"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "cool",
+                "label": {
+                  "en": "Cooling",
+                  "nl": "Koelen"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Heating",
+                  "nl": "Verwarmen"
+                }
+              },
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "dehumid",
+                "label": {
+                  "en": "Dehumidfication",
+                  "nl": "Ontvochtigen"
+                }
+              },
+              {
+                "id": "fan",
+                "label": {
+                  "en": "Fan",
+                  "nl": "Ventilator"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "change_comfora_target_temp",
+        "deprecated": true,
+        "title": {
+          "en": "Change target temperature",
+          "nl": "Wijzig doel temperatuur"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=comfora"
+          },
+          {
+            "name": "atemp",
+            "type": "number",
+            "min": 15,
+            "max": 35,
+            "placeholder": {
+              "en": "°C",
+              "nl": "°C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "change_emura_fan_direction",
+        "deprecated": true,
+        "title": {
+          "en": "Select the sweep mode",
+          "nl": "Kies de gewenste lamellen richting modus"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "fdir",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Stop",
+                  "nl": "Stop"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "Vertical",
+                  "nl": "Vertikaal"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Horizontal",
+                  "nl": "Horizontaal"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "3D",
+                  "nl": "3D"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "change_emura_fan_rate",
+        "deprecated": true,
+        "title": {
+          "en": "Select the fan rate",
+          "nl": "Kies de ventilator snelheid"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "frate",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "A",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "B",
+                "label": {
+                  "en": "Quiet",
+                  "nl": "Stil"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Level 1",
+                  "nl": "Niveau 1"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Level 2",
+                  "nl": "Niveau 2"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Level 3",
+                  "nl": "Niveau 3"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Level 4",
+                  "nl": "Niveau 4"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Level 5",
+                  "nl": "Niveau 5"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "change_emura_mode",
+        "deprecated": true,
+        "title": {
+          "en": "Select the operating mode",
+          "nl": "Kies de werkmodus"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "cool",
+                "label": {
+                  "en": "Cooling",
+                  "nl": "Koelen"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Heating",
+                  "nl": "Verwarmen"
+                }
+              },
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "dehumid",
+                "label": {
+                  "en": "Dehumidfication",
+                  "nl": "Ontvochtigen"
+                }
+              },
+              {
+                "id": "fan",
+                "label": {
+                  "en": "Fan",
+                  "nl": "Ventilator"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "change_emura_target_temp",
+        "deprecated": true,
+        "title": {
+          "en": "Change target temperature",
+          "nl": "Wijzig doel temperatuur"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=emura"
+          },
+          {
+            "name": "atemp",
+            "type": "number",
+            "min": 15,
+            "max": 35,
+            "placeholder": {
+              "en": "°C",
+              "nl": "°C"
+            }
+          }
+        ]
+      },
       {
         "id": "change_fan_direction",
         "title": {
@@ -832,6 +3011,213 @@
                 }
               }
             ]
+          }
+        ]
+      },
+      {
+        "id": "change_nexura_fan_direction",
+        "deprecated": true,
+        "title": {
+          "en": "Select the sweep mode",
+          "nl": "Kies de gewenste lamellen richting modus"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "fdir",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Stop",
+                  "nl": "Stop"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "Vertical",
+                  "nl": "Vertikaal"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Horizontal",
+                  "nl": "Horizontaal"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "3D",
+                  "nl": "3D"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "change_nexura_fan_rate",
+        "deprecated": true,
+        "title": {
+          "en": "Select the fan rate",
+          "nl": "Kies de ventilator snelheid"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "frate",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "A",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "B",
+                "label": {
+                  "en": "Quiet",
+                  "nl": "Stil"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Level 1",
+                  "nl": "Niveau 1"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Level 2",
+                  "nl": "Niveau 2"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Level 3",
+                  "nl": "Niveau 3"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Level 4",
+                  "nl": "Niveau 4"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Level 5",
+                  "nl": "Niveau 5"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "change_nexura_mode",
+        "deprecated": true,
+        "title": {
+          "en": "Select the operating mode",
+          "nl": "Kies de werkmodus"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "cool",
+                "label": {
+                  "en": "Cooling",
+                  "nl": "Koelen"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Heating",
+                  "nl": "Verwarmen"
+                }
+              },
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "dehumid",
+                "label": {
+                  "en": "Dehumidfication",
+                  "nl": "Ontvochtigen"
+                }
+              },
+              {
+                "id": "fan",
+                "label": {
+                  "en": "Fan",
+                  "nl": "Ventilator"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "change_nexura_target_temp",
+        "deprecated": true,
+        "title": {
+          "en": "Change target temperature",
+          "nl": "Wijzig doel temperatuur"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=nexura"
+          },
+          {
+            "name": "atemp",
+            "type": "number",
+            "min": 15,
+            "max": 35,
+            "placeholder": {
+              "en": "°C",
+              "nl": "°C"
+            }
           }
         ]
       },

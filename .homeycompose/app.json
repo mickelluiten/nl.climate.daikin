@@ -5,13 +5,14 @@
         "nl": "Daikin AI"
     },
     "description": {
-        "en": "Adds support for Daikin Air Conditioners"
+        "en": "Adds support for Daikin Air Conditioners",
+        "nl": "Maakt de bediening van Daikin Air Conditioners mogelijk"
     },
     "category": [
         "climate",
         "appliances"
     ],
-    "version": "3.1.3",
+    "version": "3.1.4",
     "compatibility": ">=2.0.0",
     "athomForumDiscussionId": 2082,
     "homeyCommunityTopicId": 158,

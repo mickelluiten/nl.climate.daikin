@@ -1,0 +1,41 @@
+{
+    "id": "change_emura_fan_direction",
+    "deprecated": true,
+    "title": {
+        "en": "Select the sweep mode",
+        "nl": "Kies de gewenste lamellen richting modus"
+    },
+    "args": [{
+        "type": "device",
+        "name": "device",
+        "filter": "driver_id=emura"
+    }, {
+        "name": "fdir",
+        "type": "dropdown",
+        "values": [{
+            "id": "0",
+            "label": {
+                "en": "Stop",
+                "nl": "Stop"
+            }
+        }, {
+            "id": "1",
+            "label": {
+                "en": "Vertical",
+                "nl": "Vertikaal"
+            }
+        }, {
+            "id": "2",
+            "label": {
+                "en": "Horizontal",
+                "nl": "Horizontaal"
+            }
+        }, {
+            "id": "3",
+            "label": {
+                "en": "3D",
+                "nl": "3D"
+            }
+        }]
+    }]
+}

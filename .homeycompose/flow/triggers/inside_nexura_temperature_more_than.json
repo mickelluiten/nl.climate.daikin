@@ -1,0 +1,20 @@
+{
+    "id": "inside_nexura_temperature_more_than",
+    "deprecated": true,
+    "title": {
+        "en": "The inside temperature is more than",
+        "nl": "De binnentemperatuur is meer dan"
+    },
+    "args": [{
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=nexura"
+    }, {
+        "name": "inside_temperature_more",
+        "type": "number",
+        "placeholder": {
+            "en": "in C",
+            "nl": "in C"
+        }
+    }]
+}

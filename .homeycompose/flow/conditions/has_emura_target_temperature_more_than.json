@@ -1,0 +1,20 @@
+{
+    "id": "has_emura_target_temperature_more_than",
+    "deprecated": true,
+    "title": {
+        "en": "The target temperature !{{is|isn't}} more than",
+        "nl": "De doeltemperatuur !{{is|is niet}} meer dan"
+    },
+    "args": [{
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=emura"
+    }, {
+        "name": "target_temperature_more",
+        "type": "number",
+        "placeholder": {
+            "en": "in C",
+            "nl": "in C"
+        }
+    }]
+}
