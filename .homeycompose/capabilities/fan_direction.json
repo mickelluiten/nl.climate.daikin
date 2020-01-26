@@ -1,0 +1,34 @@
+{
+    "type": "enum",
+    "title": {
+        "en": "Swing",
+        "nl": "Zwenken"
+    },
+    "getable": true,
+    "setable": true,
+    "values": [{
+        "id": "0",
+        "title": {
+            "en": "Stop",
+            "nl": "Stop"
+        }
+    }, {
+        "id": "1",
+        "title": {
+            "en": "Vertical",
+            "nl": "Vertikaal"
+        }
+    }, {
+        "id": "2",
+        "title": {
+            "en": "Horizontal",
+            "nl": "Horizontaal"
+        }
+    }, {
+        "id": "3",
+        "title": {
+            "en": "3D",
+            "nl": "3D"
+        }
+    }]
+}

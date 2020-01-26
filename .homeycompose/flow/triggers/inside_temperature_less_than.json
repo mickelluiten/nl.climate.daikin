@@ -1,0 +1,19 @@
+{
+    "id": "inside_temperature_less_than",
+    "title": {
+        "en": "The inside temperature is less than",
+        "nl": "De binnentemperatuur is minder dan"
+    },
+    "args": [{
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=comfora|emura|nexura"
+    }, {
+        "name": "inside_temperature_less",
+        "type": "number",
+        "placeholder": {
+            "en": "in C",
+            "nl": "in C"
+        }
+    }]
+}

@@ -1,24 +1,24 @@
 {
-    "pair":{
-        "start":{
-            "intro":"Voer het IP-adres van de airconditioner in, geef deze een naam en kies welke 'speciale modi' u wilt kunnen bedienen. Opmerkingen: 1/ mogelijk worden niet alle 'speciale modi' ondersteund door uw model airco. 2/ het gebruik van een statisch IP-adres wordt geadviseerd daar DHCP niet wordt ondersteund.",
-            "title":"Daikin apparaat instellingen",
-            "error":"Er is een fout opgetreden, controleer het zojuist ingevoerde IP-adres.",
-            "required":"IP-adres is verplicht.",
-            "invalidIP":"Voer een geldig IPv4 adres in.",
-            "ipAddress":"IP-adres",
-            "deviceName":"Naam",
-            "econo":"Besparen",
-            "powerful":"Krachtig",
-            "streamer":"Streamer & Ontvochtigen",
-            "saveSettings":"Voeg toe",
-            "add":"Uw instellingen worden nu opgeslagen...",
-            "specialMode":"Extra modi (Krachtig, Besparen, Streamer).",
-            "deviceInterval":"Interval",
-            "adaptersensira":"Standaard (BRP069B--, B-model FW ≤ 2.0.1) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond.",
-            "adapteremura":"Standaard (BRP069A--, A-model FW ≥ 1.4.3) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond.",
-            "adapternexura":"Standaard (BRP069A--, A-model FW ≥ 1.4.3) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond.",
-            "adapterhomekit":"Standaard (BRP069A--, A-model FW ≥ 1.4.3) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond."
+    "pair": {
+        "start": {
+            "intro": "Voer het IP-adres van de airconditioner in, geef deze een naam en kies welke 'speciale modi' u wilt kunnen bedienen. Opmerkingen: 1/ mogelijk worden niet alle 'speciale modi' ondersteund door uw model airco. 2/ het gebruik van een statisch IP-adres wordt geadviseerd daar DHCP niet wordt ondersteund.",
+            "title": "Daikin apparaat instellingen",
+            "error": "Er is een fout opgetreden, controleer het zojuist ingevoerde IP-adres.",
+            "required": "IP-adres is verplicht.",
+            "invalidIP": "Voer een geldig IPv4 adres in.",
+            "ipAddress": "IP-adres",
+            "deviceName": "Naam",
+            "econo": "Besparen",
+            "powerful": "Krachtig",
+            "streamer": "Streamer & Ontvochtigen",
+            "saveSettings": "Voeg toe",
+            "add": "Uw instellingen worden nu opgeslagen...",
+            "specialMode": "Extra modi (Krachtig, Besparen, Streamer).",
+            "deviceInterval": "Interval",
+            "adaptersensira": "Standaard (BRP069B--, B-model FW ≤ 2.0.1) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond.",
+            "adapteremura": "Standaard (BRP069A--, A-model FW ≥ 1.4.3) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond.",
+            "adapternexura": "Standaard (BRP069A--, A-model FW ≥ 1.4.3) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond.",
+            "adapterhomekit": "Standaard (BRP069A--, A-model FW ≥ 1.4.3) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond."
         }
     }
 }

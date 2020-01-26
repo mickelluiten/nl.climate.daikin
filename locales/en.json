@@ -1,24 +1,24 @@
 {
-    "pair":{
-        "start":{
-            "intro":"Enter your Airco's IP-address, give it a name and choose which 'special modes' you like to control. Notes: 1/ not all 'special modes' might be supported by your airco's model. 2/ the use of a static IP-address is preferred as DHCP is not supported." ,
-            "title":"Daikin equipment settings",
-            "error":"An error has occurred, check the just entered IP-address.",
-            "required":"IP-address is required.",
-            "invalidIP":"Enter a valid IPv4 address.",
-            "ipAddress":"IP-address",
-            "deviceName":"Device name",
-            "econo":"Economy",
-            "powerful":"Powerful",
-            "streamer":"Streamer & Dehumidify",         
-            "saveSettings":"Add device",
-            "add":"Your settings are being saved now...",
-            "specialMode":"Additional modes (Powerful, Economy, Streamer).",
-            "deviceInterval":"Interval",
-            "adaptersensira":"Default (BRP069B--, B-model FW ≤ 2.0.1) adapter settings will be applied!! As necessary change these after pairing is completed.",
-            "adapteremura":"Default (BRP069A--, A-model FW ≥ 1.4.3) adapter settings will be applied!! As necessary change these after pairing is completed.",
-            "adapternexura":"Default (BRP069A--, A-model FW ≥ 1.4.3) adapter settings will be applied!! As necessary change these after pairing is completed.",
-            "adapterhomekit":"Default (BRP069A--, A-model FW ≥ 1.4.3) adapter settings will be applied!! As necessary change these after pairing is completed."
+    "pair": {
+        "start": {
+            "intro": "Enter your Airco's IP-address, give it a name and choose which 'special modes' you like to control. Notes: 1/ not all 'special modes' might be supported by your airco's model. 2/ the use of a static IP-address is preferred as DHCP is not supported.",
+            "title": "Daikin equipment settings",
+            "error": "An error has occurred, check the just entered IP-address.",
+            "required": "IP-address is required.",
+            "invalidIP": "Enter a valid IPv4 address.",
+            "ipAddress": "IP-address",
+            "deviceName": "Device name",
+            "econo": "Economy",
+            "powerful": "Powerful",
+            "streamer": "Streamer & Dehumidify",
+            "saveSettings": "Add device",
+            "add": "Your settings are being saved now...",
+            "specialMode": "Additional modes (Powerful, Economy, Streamer).",
+            "deviceInterval": "Interval",
+            "adaptersensira": "Default (BRP069B--, B-model FW ≤ 2.0.1) adapter settings will be applied!! As necessary change these after pairing is completed.",
+            "adapteremura": "Default (BRP069A--, A-model FW ≥ 1.4.3) adapter settings will be applied!! As necessary change these after pairing is completed.",
+            "adapternexura": "Default (BRP069A--, A-model FW ≥ 1.4.3) adapter settings will be applied!! As necessary change these after pairing is completed.",
+            "adapterhomekit": "Default (BRP069A--, A-model FW ≥ 1.4.3) adapter settings will be applied!! As necessary change these after pairing is completed."
         }
     }
 }

@@ -1,0 +1,17 @@
+{
+    "type": "number",
+    "title": {
+        "en": "Target humidity",
+        "nl": "Doel luchtvochtigheid"
+    },
+    "uiComponent": "slider",
+    "getable": true,
+    "setable": true,
+    "units": {
+        "en": "%",
+        "nl": "%"
+    },
+    "min": 0,
+    "max": 100,
+    "step": 5
+}

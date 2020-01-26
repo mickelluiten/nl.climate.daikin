@@ -1,0 +1,21 @@
+{
+    "id": "change_target_temp",
+    "title": {
+        "en": "Change target temperature",
+        "nl": "Wijzig doel temperatuur"
+    },
+    "args": [{
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=comfora|emura|nexura"
+    }, {
+        "name": "atemp",
+        "type": "number",
+        "min": 15,
+        "max": 35,
+        "placeholder": {
+            "en": "°C",
+            "nl": "°C"
+        }
+    }]
+}

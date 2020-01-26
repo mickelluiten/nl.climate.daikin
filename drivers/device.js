@@ -1,31 +1,29 @@
-"use strict";
+'use strict';
 
 const Homey = require('homey');
 
 class Device extends Homey.Device {
+  onInit() {
+    this.log('Device initialization...');
+    this.log('Driver name:', this.getName());
+    this.log('Driver class:', this.getClass());
+  }
 
-	onInit() {
-		this.log('Device initialization...');    
-		this.log('Driver name:', this.getName());
-        this.log('Driver class:', this.getClass());
-	}
+  onAdded() {
+    this.log('Daikin airconditioner added');
+  }
 
-	onAdded() {
-		this.log('Daikin airconditioner added');
-	}
+  onDeleted() {
+    this.log('Daikin airconditioner deleted');
+  }
 
-	onDeleted() {
-		this.log('Daikin airconditioner deleted');
-	}
+  getDeviceUrl() {
+    return this.getData().deviceURL;
+  }
 
-	getDeviceUrl() {
-		return this.getData().deviceURL;
-	}
-
-	getDeviceType() {
-		this.getDriver().getDeviceType();
-	}
-
+  getDeviceType() {
+    this.getDriver().getDeviceType();
+  }
 }
 
 module.exports = Device;

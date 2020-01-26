@@ -1,0 +1,45 @@
+{
+    "id": "nl.climate.daikin",
+    "name": {
+        "en": "Daikin AI",
+        "nl": "Daikin AI"
+    },
+    "description": {
+        "en": "Adds support for Daikin Air Conditioners"
+    },
+    "category": [
+        "climate",
+        "appliances"
+    ],
+    "version": "3.1.3",
+    "compatibility": ">=2.0.0",
+    "athomForumDiscussionId": 2082,
+    "homeyCommunityTopicId": 158,
+    "sdk": 2,
+    "brandColor": "#2E96D0",
+    "author": {
+        "name": "Peter Eier",
+        "email": "peter.eier@upcmail.nl"
+    },
+    "contributors": {
+        "developers": [{
+            "name": "Peter EIER",
+            "email": "peter.eier@upcmail.nl"
+        }]
+    },
+    "contributing": {
+        "donate": {
+            "paypal": {
+                "username": "donations4petereier"
+            }
+        }
+    },
+    "tags": {
+        "en": ["Daikin", "Emura", "Nextura", "Comfora", "Ururu Sarara", "Ururu", "Sarara", "Stylish", "Perfera", "Sensira", "airconditioner", "airconditioning", "airco", "thermostat", "fan", "homekit", "home", "climate"],
+        "nl": ["Daikin", "Emura", "Nextura", "Comfora", "Ururu Sarara", "Ururu", "Sarara", "Stylish", "Perfera", "Sensira", "airconditioner", "airconditioning", "thermostaat", "airco", "ventilator", "homekit", "home", "klimaat"]
+    },
+    "images": {
+        "large": "/assets/images/large.png",
+        "small": "/assets/images/small.png"
+    }
+}

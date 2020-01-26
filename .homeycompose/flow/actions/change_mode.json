@@ -1,0 +1,52 @@
+{
+    "id": "change_mode",
+    "title": {
+        "en": "Select the operating mode",
+        "nl": "Kies de werkmodus"
+    },
+    "args": [{
+        "type": "device",
+        "name": "device",
+        "filter": "driver_id=comfora|emura|nexura"
+    }, {
+        "name": "mode",
+        "type": "dropdown",
+        "values": [{
+            "id": "off",
+            "label": {
+                "en": "Off",
+                "nl": "Uit"
+            }
+        }, {
+            "id": "cool",
+            "label": {
+                "en": "Cooling",
+                "nl": "Koelen"
+            }
+        }, {
+            "id": "heat",
+            "label": {
+                "en": "Heating",
+                "nl": "Verwarmen"
+            }
+        }, {
+            "id": "auto",
+            "label": {
+                "en": "Auto",
+                "nl": "Auto"
+            }
+        }, {
+            "id": "dehumid",
+            "label": {
+                "en": "Dehumidfication",
+                "nl": "Ontvochtigen"
+            }
+        }, {
+            "id": "fan",
+            "label": {
+                "en": "Fan",
+                "nl": "Ventilator"
+            }
+        }]
+    }]
+}

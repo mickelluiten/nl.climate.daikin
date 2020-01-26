@@ -1,0 +1,163 @@
+{
+    "name": {
+        "en": "Comfora, Sensira, Ururu Sarara, Perfera, Stylish etc.",
+        "nl": "Comfora, Sensira, Ururu Sarara, Perfera, Stylish etc."
+    },
+    "class": "thermostat",
+    "capabilities": [
+        "thermostat_mode_std",
+        "fan_rate",
+        "fan_direction",
+        "target_temperature",
+        "measure_temperature",
+        "measure_temperature.inside",
+        "measure_temperature.outside"
+    ],
+    "capabilitiesOptions": {
+        "thermostat_mode_std": {
+            "title": {
+                "en": "Operation Mode",
+                "nl": "Bedrijfsmodus"
+            }
+        },
+        "fan_rate": {
+            "title": {
+                "en": "Airflow Rate",
+                "nl": "Luchtdebiet"
+            }
+        },
+        "fan_direction": {
+            "title": {
+                "en": "Swing",
+                "nl": "Zwenken"
+            }
+        },
+        "target_temperature": {
+            "title": {
+                "en": "Target temperature",
+                "nl": "Doel temperatuur"
+            }
+        },
+        "measure_temperature.inside": {
+            "title": {
+                "en": "Inside",
+                "nl": "Binnen"
+            }
+        },
+        "measure_temperature.outside": {
+            "title": {
+                "en": "Outside",
+                "nl": "Buiten"
+            }
+        }
+    },
+    "images": {
+        "large": "/drivers/comfora/assets/images/large.png",
+        "small": "/drivers/comfora/assets/images/small.png"
+    },
+    "pair": [{
+        "id": "start"
+    }, {
+        "id": "list_my_devices",
+        "template": "list_devices",
+        "navigation": {
+            "next": "add_my_devices"
+        }
+    }, {
+        "id": "add_my_devices",
+        "template": "add_devices"
+    }],
+    "settings": [{
+        "type": "group",
+        "label": {
+            "en": "Network, adatper type and firmware settings",
+            "nl": "Netwerk, adapter type en firmware instellingen"
+        },
+        "children": [{
+            "id": "comfora_ip",
+            "type": "text",
+            "pattern": "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5]).){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$",
+            "label": {
+                "en": "Airconditioners IP address",
+                "nl": "Airconditioners IP adres"
+            },
+            "hint": {
+                "en": "A static IP-address is recommended as DHCP is not supported.",
+                "nl": "Het gebruik van een statisch IP-adres wordt aanbevolen aangezien DHCP niet ondersteund wordt."
+            },
+            "value": ""
+        }, {
+            "id": "comfora_adapter",
+            "type": "radio",
+            "label": {
+                "en": "Model adapter",
+                "nl": "Model adapter"
+            },
+            "hint": {
+                "en": "The older model WiFi adapter is called type-A while the newest is called type-B.",
+                "nl": "Het oudere model WiFi adapter wordt type-A genoemd terwijl het nieuwste model wordt aangeduid als type-B."
+            },
+            "value": "BRP069Axx",
+            "values": [{
+                "id": "BRP069Axx",
+                "label": {
+                    "en": "Model BRP069A--",
+                    "nl": "Model BRP069A--"
+                }
+            }, {
+                "id": "BRP069Bxx",
+                "label": {
+                    "en": "Model BRP069B--",
+                    "nl": "Model BRP069B--"
+                }
+            }]
+        }, {
+            "id": "comfora_useGetToPost",
+            "type": "checkbox",
+            "label": {
+                "en": "B-model fw ≤ v2.0.1",
+                "nl": "B-model fw ≤ v2.0.1"
+            },
+            "hint": {
+                "en": "Switch between the new and old Daikin communication protocol.",
+                "nl": "Schakel tussen het nieuwe en oude Daikin communicatie protocol."
+            },
+            "value": true
+        }]
+    }, {
+        "type": "group",
+        "label": {
+            "en": "Other settings",
+            "nl": "Overige instellingen"
+        },
+        "children": [{
+            "id": "comfora_interval",
+            "type": "number",
+            "label": {
+                "en": "Polling interval",
+                "nl": "Gegevens opvragen elke"
+            },
+            "hint": {
+                "en": "Every x seconds the app will refresh its information.",
+                "nl": "Iedere x seconden zal de app haar gegevens verversen."
+            },
+            "value": 10,
+            "attr": {
+                "min": 5,
+                "max": 30
+            }
+        }, {
+            "id": "comfora_demomode",
+            "type": "checkbox",
+            "label": {
+                "en": "Demo mode",
+                "nl": "Demonstratie mode"
+            },
+            "hint": {
+                "en": "When enabled the airco will not power ON no matter what mode is selected. This way one can experiment with flows without having to worry about damaging the airconditioner.",
+                "nl": "Wanneer aangezet zal de airco niet aanschakelen ongeacht de gekozen modus. Dit maakt het mogelijk om vrijuit te experimenteren met flows zonder bang hoeven te zijn dat de airconditoner beschadigd raakt."
+            },
+            "value": false
+        }]
+    }]
+}

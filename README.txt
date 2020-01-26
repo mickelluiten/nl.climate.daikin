@@ -26,7 +26,7 @@ Note: after initial pairing demo mode is by default turned ON !!
 Special modes are not supported by all models, model variants and/or the WiFi adapter its firmware version, in addition it might be that not all 3 special modes are supported. Check the Daikin Online Controller app which special modes are supported by your airco, during paring enable the supported Special Mode(s) by checking the applicable checkbox(es) or leave them all unchecked (disabled).
 
 <<WiFi adapter models>>
-Daikin just recently introduced a new model WiFi adapter (BRP069B--) which uses a different way to sent commands to the airconditioner. During paring the app will pair your airconditioner with model specific default settings, in some cases you have to change these default settings which can be done in the device settings menu.
+The more recent Daikin WiFi adapter models such as the BRP069B-- use a different way to sent commands to the airconditioner. During paring the app will pair your airconditioner with model specific default settings, in some cases you have to change these default settings which can be done in the device settings menu.
 
 Note: the WiFi adapter its firmware version can be found in the Daikin Online Controller app (select your airco > click on the gear symbol > the firmware version shows under "Adapter information").  
 

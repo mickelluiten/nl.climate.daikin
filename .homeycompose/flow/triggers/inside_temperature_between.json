@@ -1,0 +1,26 @@
+{
+    "id": "inside_temperature_between",
+    "title": {
+        "en": "The inside temperature is between",
+        "nl": "De binnentemperatuur is tussen"
+    },
+    "args": [{
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=comfora|emura|nexura"
+    }, {
+        "name": "inside_temperature_from",
+        "type": "number",
+        "placeholder": {
+            "en": "in C",
+            "nl": "in C"
+        }
+    }, {
+        "name": "inside_temperature_to",
+        "type": "number",
+        "placeholder": {
+            "en": "in C",
+            "nl": "in C"
+        }
+    }]
+}
