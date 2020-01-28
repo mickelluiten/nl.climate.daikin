@@ -2,8 +2,8 @@
     "id": "change_nexura_fan_direction",
     "deprecated": true,
     "title": {
-        "en": "Select the sweep mode",
-        "nl": "Kies de gewenste lamellen richting modus"
+        "en": "[v2]Select the sweep mode",
+        "nl": "[v2]Kies de gewenste lamellen richting modus"
     },
     "args": [{
         "type": "device",

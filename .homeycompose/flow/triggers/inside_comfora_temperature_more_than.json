@@ -2,8 +2,8 @@
     "id": "inside_comfora_temperature_more_than",
     "deprecated": true,
     "title": {
-        "en": "The inside temperature is more than",
-        "nl": "De binnentemperatuur is meer dan"
+        "en": "[v2]The inside temperature is more than",
+        "nl": "[v2]De binnentemperatuur is meer dan"
     },
     "args": [{
         "name": "device",

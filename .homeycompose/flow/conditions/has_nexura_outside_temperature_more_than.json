@@ -2,8 +2,8 @@
     "id": "has_nexura_outside_temperature_more_than",
     "deprecated": true,
     "title": {
-        "en": "The outside temperature !{{is|isn't}} more than",
-        "nl": "De buitentemperatuur !{{is|is niet}} meer dan"
+        "en": "[v2[The outside temperature !{{is|isn't}} more than",
+        "nl": "[v2]De buitentemperatuur !{{is|is niet}} meer dan"
     },
     "args": [{
         "name": "device",

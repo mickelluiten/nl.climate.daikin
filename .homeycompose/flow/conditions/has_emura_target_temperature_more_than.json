@@ -2,8 +2,8 @@
     "id": "has_emura_target_temperature_more_than",
     "deprecated": true,
     "title": {
-        "en": "The target temperature !{{is|isn't}} more than",
-        "nl": "De doeltemperatuur !{{is|is niet}} meer dan"
+        "en": "[v2]The target temperature !{{is|isn't}} more than",
+        "nl": "[v2]De doeltemperatuur !{{is|is niet}} meer dan"
     },
     "args": [{
         "name": "device",

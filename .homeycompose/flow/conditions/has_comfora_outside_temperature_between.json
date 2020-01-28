@@ -2,8 +2,8 @@
     "id": "has_comfora_outside_temperature_between",
     "deprecated": true,
     "title": {
-        "en": "The outside temperature !{{is|isn't}} between",
-        "nl": "De buitentemperatuur !{{is|is niet}} tussen"
+        "en": "[v2]The outside temperature !{{is|isn't}} between",
+        "nl": "[v2]De buitentemperatuur !{{is|is niet}} tussen"
     },
     "args": [{
         "name": "device",

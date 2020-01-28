@@ -2,8 +2,8 @@
     "id": "has_comfora_inside_temperature_less_than",
     "deprecated": true,
     "title": {
-        "en": "The inside temperature !{{is|isn't}} less than",
-        "nl": "De binnentemperatuur !{{is|is niet}} minder dan"
+        "en": "[v2]The inside temperature !{{is|isn't}} less than",
+        "nl": "[v2]De binnentemperatuur !{{is|is niet}} minder dan"
     },
     "args": [{
         "name": "device",

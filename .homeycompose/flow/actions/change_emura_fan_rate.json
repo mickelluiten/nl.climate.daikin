@@ -2,8 +2,8 @@
     "id": "change_emura_fan_rate",
     "deprecated": true,
     "title": {
-        "en": "Select the fan rate",
-        "nl": "Kies de ventilator snelheid"
+        "en": "[v2]Select the fan rate",
+        "nl": "[v2]Kies de ventilator snelheid"
     },
     "args": [{
         "type": "device",

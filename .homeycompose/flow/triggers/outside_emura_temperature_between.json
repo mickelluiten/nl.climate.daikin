@@ -2,8 +2,8 @@
     "id": "outside_emura_temperature_between",
     "deprecated": true,
     "title": {
-        "en": "The outside temperature is between",
-        "nl": "De buitentemperatuur is tussen"
+        "en": "[v2]The outside temperature is between",
+        "nl": "[v2]De buitentemperatuur is tussen"
     },
     "args": [{
         "name": "device",

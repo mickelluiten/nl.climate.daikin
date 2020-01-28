@@ -143,4 +143,4 @@ If you like the app, consider buying me a cup of coffee!
 - 13-NOV-19: Updates related to Athoms refresh app store.
 - 23-NOV-19: Added support for Daikin Airbase (SkyFi) used in some countries i.e. Australia.
 - 25-NOV-19: Removed code changes in relation to Daikin Airbase (SkyFi). Will not support ducted/ceiling models due to lack of documentation regarding these models.
-- 26-JAN-20: Restructure app with .homeycompose.
+- 28-JAN-20: Restructure app with .homeycompose, and version 2 flow cards depreciated.

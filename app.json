@@ -12,7 +12,7 @@
     "climate",
     "appliances"
   ],
-  "version": "3.1.4",
+  "version": "3.1.5",
   "compatibility": ">=2.0.0",
   "athomForumDiscussionId": 2082,
   "homeyCommunityTopicId": 158,
@@ -89,8 +89,8 @@
         "id": "change_comfora_target_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The target temperature is between",
-          "nl": "De doeltemperatuur is tussen"
+          "en": "[v2]The target temperature is between",
+          "nl": "[v2]De doeltemperatuur is tussen"
         },
         "args": [
           {
@@ -120,8 +120,8 @@
         "id": "change_comfora_target_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The target temperature is less than",
-          "nl": "De doeltemperatuur is minder dan"
+          "en": "[v2]The target temperature is less than",
+          "nl": "[v2]De doeltemperatuur is minder dan"
         },
         "args": [
           {
@@ -143,8 +143,8 @@
         "id": "change_comfora_target_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The target temperature is more than",
-          "nl": "De doeltemperatuur is meer dan"
+          "en": "[v2]The target temperature is more than",
+          "nl": "[v2]De doeltemperatuur is meer dan"
         },
         "args": [
           {
@@ -166,8 +166,8 @@
         "id": "change_emura_target_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The target temperature is between",
-          "nl": "De doeltemperatuur is tussen"
+          "en": "[v2]The target temperature is between",
+          "nl": "[v2]De doeltemperatuur is tussen"
         },
         "args": [
           {
@@ -197,8 +197,8 @@
         "id": "change_emura_target_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The target temperature is less than",
-          "nl": "De doeltemperatuur is minder dan"
+          "en": "[v2]The target temperature is less than",
+          "nl": "[v2]De doeltemperatuur is minder dan"
         },
         "args": [
           {
@@ -220,8 +220,8 @@
         "id": "change_emura_target_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The target temperature is more than",
-          "nl": "De doeltemperatuur is meer dan"
+          "en": "[v2]The target temperature is more than",
+          "nl": "[v2]De doeltemperatuur is meer dan"
         },
         "args": [
           {
@@ -243,7 +243,7 @@
         "id": "change_nexura_target_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The target temperature is between",
+          "en": "[v2]The target temperature is between",
           "nl": "De doeltemperatuur is tussen"
         },
         "args": [
@@ -274,7 +274,7 @@
         "id": "change_nexura_target_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The target temperature is less than",
+          "en": "[v2]The target temperature is less than",
           "nl": "De doeltemperatuur is minder dan"
         },
         "args": [
@@ -297,7 +297,7 @@
         "id": "change_nexura_target_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The target temperature is more than",
+          "en": "[v2]The target temperature is more than",
           "nl": "De doeltemperatuur is meer dan"
         },
         "args": [
@@ -394,7 +394,7 @@
         "id": "inside_comfora_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature is between",
+          "en": "[v2]The inside temperature is between",
           "nl": "De binnentemperatuur is tussen"
         },
         "args": [
@@ -425,8 +425,8 @@
         "id": "inside_comfora_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature is less than",
-          "nl": "De binnentemperatuur is minder dan"
+          "en": "[v2]The inside temperature is less than",
+          "nl": "[v2]De binnentemperatuur is minder dan"
         },
         "args": [
           {
@@ -448,8 +448,8 @@
         "id": "inside_comfora_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature is more than",
-          "nl": "De binnentemperatuur is meer dan"
+          "en": "[v2]The inside temperature is more than",
+          "nl": "[v2]De binnentemperatuur is meer dan"
         },
         "args": [
           {
@@ -471,8 +471,8 @@
         "id": "inside_emura_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature is between",
-          "nl": "De binnentemperatuur is tussen"
+          "en": "[v2]The inside temperature is between",
+          "nl": "[v2]De binnentemperatuur is tussen"
         },
         "args": [
           {
@@ -502,8 +502,8 @@
         "id": "inside_emura_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature is less than",
-          "nl": "De binnentemperatuur is minder dan"
+          "en": "[v2]The inside temperature is less than",
+          "nl": "[v2]De binnentemperatuur is minder dan"
         },
         "args": [
           {
@@ -525,8 +525,8 @@
         "id": "inside_emura_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature is more than",
-          "nl": "De binnentemperatuur is meer dan"
+          "en": "[v2]The inside temperature is more than",
+          "nl": "[v2]De binnentemperatuur is meer dan"
         },
         "args": [
           {
@@ -548,8 +548,8 @@
         "id": "inside_nexura_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature is between",
-          "nl": "De binnentemperatuur is tussen"
+          "en": "[v2]The inside temperature is between",
+          "nl": "[v2]De binnentemperatuur is tussen"
         },
         "args": [
           {
@@ -579,8 +579,8 @@
         "id": "inside_nexura_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature is less than",
-          "nl": "De binnentemperatuur is minder dan"
+          "en": "[v2]The inside temperature is less than",
+          "nl": "[v2]De binnentemperatuur is minder dan"
         },
         "args": [
           {
@@ -602,8 +602,8 @@
         "id": "inside_nexura_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature is more than",
-          "nl": "De binnentemperatuur is meer dan"
+          "en": "[v2]The inside temperature is more than",
+          "nl": "[v2]De binnentemperatuur is meer dan"
         },
         "args": [
           {
@@ -761,8 +761,8 @@
         "id": "mode_comfora_changed",
         "deprecated": true,
         "title": {
-          "en": "When the operating mode has changed to",
-          "nl": "Wanneer de werkmodus is veranderd in"
+          "en": "[v2]When the operating mode has changed to",
+          "nl": "[v2]Wanneer de werkmodus is veranderd in"
         },
         "args": [
           {
@@ -824,8 +824,8 @@
         "id": "mode_emura_changed",
         "deprecated": true,
         "title": {
-          "en": "When the operating mode has changed to",
-          "nl": "Wanneer de werkmodus is veranderd in"
+          "en": "[v2]When the operating mode has changed to",
+          "nl": "[v2]Wanneer de werkmodus is veranderd in"
         },
         "args": [
           {
@@ -887,8 +887,8 @@
         "id": "mode_nexura_changed",
         "deprecated": true,
         "title": {
-          "en": "When the operating mode has changed to",
-          "nl": "Wanneer de werkmodus is veranderd in"
+          "en": "[v2]When the operating mode has changed to",
+          "nl": "[v2]Wanneer de werkmodus is veranderd in"
         },
         "args": [
           {
@@ -950,8 +950,8 @@
         "id": "outside_comfora_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature is between",
-          "nl": "De buitentemperatuur is tussen"
+          "en": "[v2]The outside temperature is between",
+          "nl": "[v2]De buitentemperatuur is tussen"
         },
         "args": [
           {
@@ -981,8 +981,8 @@
         "id": "outside_comfora_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature is less than",
-          "nl": "De buitentemperatuur is minder dan"
+          "en": "[v2]The outside temperature is less than",
+          "nl": "[v2]De buitentemperatuur is minder dan"
         },
         "args": [
           {
@@ -1004,8 +1004,8 @@
         "id": "outside_comfora_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature is more than",
-          "nl": "De buitentemperatuur is meer dan"
+          "en": "[v2]The outside temperature is more than",
+          "nl": "[v2]De buitentemperatuur is meer dan"
         },
         "args": [
           {
@@ -1027,8 +1027,8 @@
         "id": "outside_emura_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature is between",
-          "nl": "De buitentemperatuur is tussen"
+          "en": "[v2]The outside temperature is between",
+          "nl": "[v2]De buitentemperatuur is tussen"
         },
         "args": [
           {
@@ -1058,8 +1058,8 @@
         "id": "outside_emura_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature is less than",
-          "nl": "De buitentemperatuur is minder dan"
+          "en": "[v2]The outside temperature is less than",
+          "nl": "[v2]De buitentemperatuur is minder dan"
         },
         "args": [
           {
@@ -1081,8 +1081,8 @@
         "id": "outside_emura_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature is more than",
-          "nl": "De buitentemperatuur is meer dan"
+          "en": "[v2]The outside temperature is more than",
+          "nl": "[v2]De buitentemperatuur is meer dan"
         },
         "args": [
           {
@@ -1104,8 +1104,8 @@
         "id": "outside_nexura_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature is between",
-          "nl": "De buitentemperatuur is tussen"
+          "en": "[v2]The outside temperature is between",
+          "nl": "[v2]De buitentemperatuur is tussen"
         },
         "args": [
           {
@@ -1135,8 +1135,8 @@
         "id": "outside_nexura_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature is less than",
-          "nl": "De buitentemperatuur is minder dan"
+          "en": "[v2]The outside temperature is less than",
+          "nl": "[v2]De buitentemperatuur is minder dan"
         },
         "args": [
           {
@@ -1158,8 +1158,8 @@
         "id": "outside_nexura_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature is more than",
-          "nl": "De buitentemperatuur is meer dan"
+          "en": "[v2]The outside temperature is more than",
+          "nl": "[v2]De buitentemperatuur is meer dan"
         },
         "args": [
           {
@@ -1257,8 +1257,8 @@
         "id": "has_comfora_inside_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature !{{is|isn't}} between",
-          "nl": "De binnentemperatuur !{{is|is niet}} tussen"
+          "en": "[v2]The inside temperature !{{is|isn't}} between",
+          "nl": "[v2]De binnentemperatuur !{{is|is niet}} tussen"
         },
         "args": [
           {
@@ -1288,8 +1288,8 @@
         "id": "has_comfora_inside_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature !{{is|isn't}} less than",
-          "nl": "De binnentemperatuur !{{is|is niet}} minder dan"
+          "en": "[v2]The inside temperature !{{is|isn't}} less than",
+          "nl": "[v2]De binnentemperatuur !{{is|is niet}} minder dan"
         },
         "args": [
           {
@@ -1311,8 +1311,8 @@
         "id": "has_comfora_inside_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature !{{is|isn't}} more than",
-          "nl": "De binnentemperatuur !{{is|is niet}} meer dan"
+          "en": "[v2]The inside temperature !{{is|isn't}} more than",
+          "nl": "[v2]De binnentemperatuur !{{is|is niet}} meer dan"
         },
         "args": [
           {
@@ -1334,8 +1334,8 @@
         "id": "has_comfora_outside_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature !{{is|isn't}} between",
-          "nl": "De buitentemperatuur !{{is|is niet}} tussen"
+          "en": "[v2]The outside temperature !{{is|isn't}} between",
+          "nl": "[v2]De buitentemperatuur !{{is|is niet}} tussen"
         },
         "args": [
           {
@@ -1365,8 +1365,8 @@
         "id": "has_comfora_outside_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature !{{is|isn't}} less than",
-          "nl": "De buitentemperatuur !{{is|is niet}} minder dan"
+          "en": "[v2]The outside temperature !{{is|isn't}} less than",
+          "nl": "[v2]De buitentemperatuur !{{is|is niet}} minder dan"
         },
         "args": [
           {
@@ -1388,8 +1388,8 @@
         "id": "has_comfora_outside_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature !{{is|isn't}} more than",
-          "nl": "De buitentemperatuur !{{is|is niet}} meer dan"
+          "en": "[v2]The outside temperature !{{is|isn't}} more than",
+          "nl": "[v2]De buitentemperatuur !{{is|is niet}} meer dan"
         },
         "args": [
           {
@@ -1411,8 +1411,8 @@
         "id": "has_comfora_target_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The target temperature !{{is|isn't}} between",
-          "nl": "De doeltemperatuur !{{is|is niet}} tussen"
+          "en": "[v2]The target temperature !{{is|isn't}} between",
+          "nl": "[v2]De doeltemperatuur !{{is|is niet}} tussen"
         },
         "args": [
           {
@@ -1442,8 +1442,8 @@
         "id": "has_comfora_target_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The target temperature !{{is|isn't}} less than",
-          "nl": "De doeltemperatuur !{{is|is niet}} minder dan"
+          "en": "[v2]The target temperature !{{is|isn't}} less than",
+          "nl": "[v2]De doeltemperatuur !{{is|is niet}} minder dan"
         },
         "args": [
           {
@@ -1465,8 +1465,8 @@
         "id": "has_comfora_target_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The target temperature !{{is|isn't}} more than",
-          "nl": "De doeltemperatuur !{{is|is niet}} meer dan"
+          "en": "[v2]The target temperature !{{is|isn't}} more than",
+          "nl": "[v2]De doeltemperatuur !{{is|is niet}} meer dan"
         },
         "args": [
           {
@@ -1488,8 +1488,8 @@
         "id": "has_emura_inside_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature !{{is|isn't}} between",
-          "nl": "De binnentemperatuur !{{is|is niet}} tussen"
+          "en": "[v2]The inside temperature !{{is|isn't}} between",
+          "nl": "[v2]De binnentemperatuur !{{is|is niet}} tussen"
         },
         "args": [
           {
@@ -1519,8 +1519,8 @@
         "id": "has_emura_inside_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature !{{is|isn't}} less than",
-          "nl": "De binnentemperatuur !{{is|is niet}} minder dan"
+          "en": "[v2]The inside temperature !{{is|isn't}} less than",
+          "nl": "[v2]De binnentemperatuur !{{is|is niet}} minder dan"
         },
         "args": [
           {
@@ -1542,8 +1542,8 @@
         "id": "has_emura_inside_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature !{{is|isn't}} more than",
-          "nl": "De binnentemperatuur !{{is|is niet}} meer dan"
+          "en": "[v2]The inside temperature !{{is|isn't}} more than",
+          "nl": "[v2]De binnentemperatuur !{{is|is niet}} meer dan"
         },
         "args": [
           {
@@ -1565,8 +1565,8 @@
         "id": "has_emura_outside_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature !{{is|isn't}} between",
-          "nl": "De buitentemperatuur !{{is|is niet}} tussen"
+          "en": "[v2]The outside temperature !{{is|isn't}} between",
+          "nl": "[v2]De buitentemperatuur !{{is|is niet}} tussen"
         },
         "args": [
           {
@@ -1596,8 +1596,8 @@
         "id": "has_emura_outside_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature !{{is|isn't}} less than",
-          "nl": "De buitentemperatuur !{{is|is niet}} minder dan"
+          "en": "[v2]The outside temperature !{{is|isn't}} less than",
+          "nl": "[v2]De buitentemperatuur !{{is|is niet}} minder dan"
         },
         "args": [
           {
@@ -1619,8 +1619,8 @@
         "id": "has_emura_outside_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature !{{is|isn't}} more than",
-          "nl": "De buitentemperatuur !{{is|is niet}} meer dan"
+          "en": "[v2]The outside temperature !{{is|isn't}} more than",
+          "nl": "[v2]De buitentemperatuur !{{is|is niet}} meer dan"
         },
         "args": [
           {
@@ -1642,8 +1642,8 @@
         "id": "has_emura_target_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The target temperature !{{is|isn't}} between",
-          "nl": "De doeltemperatuur !{{is|is niet}} tussen"
+          "en": "[v2]The target temperature !{{is|isn't}} between",
+          "nl": "[v2]De doeltemperatuur !{{is|is niet}} tussen"
         },
         "args": [
           {
@@ -1673,8 +1673,8 @@
         "id": "has_emura_target_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The target temperature !{{is|isn't}} less than",
-          "nl": "De doeltemperatuur !{{is|is niet}} minder dan"
+          "en": "[v2]The target temperature !{{is|isn't}} less than",
+          "nl": "[v2]De doeltemperatuur !{{is|is niet}} minder dan"
         },
         "args": [
           {
@@ -1696,8 +1696,8 @@
         "id": "has_emura_target_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The target temperature !{{is|isn't}} more than",
-          "nl": "De doeltemperatuur !{{is|is niet}} meer dan"
+          "en": "[v2]The target temperature !{{is|isn't}} more than",
+          "nl": "[v2]De doeltemperatuur !{{is|is niet}} meer dan"
         },
         "args": [
           {
@@ -1793,8 +1793,8 @@
         "id": "has_nexura_inside_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature !{{is|isn't}} between",
-          "nl": "De binnentemperatuur !{{is|is niet}} tussen"
+          "en": "[v2]The inside temperature !{{is|isn't}} between",
+          "nl": "[v2]De binnentemperatuur !{{is|is niet}} tussen"
         },
         "args": [
           {
@@ -1824,8 +1824,8 @@
         "id": "has_nexura_inside_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature !{{is|isn't}} less than",
-          "nl": "De binnentemperatuur !{{is|is niet}} minder dan"
+          "en": "[v2]The inside temperature !{{is|isn't}} less than",
+          "nl": "[v2]De binnentemperatuur !{{is|is niet}} minder dan"
         },
         "args": [
           {
@@ -1847,8 +1847,8 @@
         "id": "has_nexura_inside_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The inside temperature !{{is|isn't}} more than",
-          "nl": "De binnentemperatuur !{{is|is niet}} meer dan"
+          "en": "[v2]The inside temperature !{{is|isn't}} more than",
+          "nl": "[v2]De binnentemperatuur !{{is|is niet}} meer dan"
         },
         "args": [
           {
@@ -1870,8 +1870,8 @@
         "id": "has_nexura_outside_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature !{{is|isn't}} between",
-          "nl": "De buitentemperatuur !{{is|is niet}} tussen"
+          "en": "[v2]The outside temperature !{{is|isn't}} between",
+          "nl": "[v2]De buitentemperatuur !{{is|is niet}} tussen"
         },
         "args": [
           {
@@ -1901,8 +1901,8 @@
         "id": "has_nexura_outside_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature !{{is|isn't}} less than",
-          "nl": "De buitentemperatuur !{{is|is niet}} minder dan"
+          "en": "[v2]The outside temperature !{{is|isn't}} less than",
+          "nl": "[v2]De buitentemperatuur !{{is|is niet}} minder dan"
         },
         "args": [
           {
@@ -1924,8 +1924,8 @@
         "id": "has_nexura_outside_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The outside temperature !{{is|isn't}} more than",
-          "nl": "De buitentemperatuur !{{is|is niet}} meer dan"
+          "en": "[v2[The outside temperature !{{is|isn't}} more than",
+          "nl": "[v2]De buitentemperatuur !{{is|is niet}} meer dan"
         },
         "args": [
           {
@@ -1947,8 +1947,8 @@
         "id": "has_nexura_target_temperature_between",
         "deprecated": true,
         "title": {
-          "en": "The target temperature !{{is|isn't}} between",
-          "nl": "De doeltemperatuur !{{is|is niet}} tussen"
+          "en": "[v2]The target temperature !{{is|isn't}} between",
+          "nl": "[v2]De doeltemperatuur !{{is|is niet}} tussen"
         },
         "args": [
           {
@@ -1978,8 +1978,8 @@
         "id": "has_nexura_target_temperature_less_than",
         "deprecated": true,
         "title": {
-          "en": "The target temperature !{{is|isn't}} less than",
-          "nl": "De doeltemperatuur !{{is|is niet}} minder dan"
+          "en": "[v2]The target temperature !{{is|isn't}} less than",
+          "nl": "[v2]De doeltemperatuur !{{is|is niet}} minder dan"
         },
         "args": [
           {
@@ -2001,8 +2001,8 @@
         "id": "has_nexura_target_temperature_more_than",
         "deprecated": true,
         "title": {
-          "en": "The target temperature !{{is|isn't}} more than",
-          "nl": "De doeltemperatuur !{{is|is niet}} meer dan"
+          "en": "[v2]The target temperature !{{is|isn't}} more than",
+          "nl": "[v2]De doeltemperatuur !{{is|is niet}} meer dan"
         },
         "args": [
           {
@@ -2172,8 +2172,8 @@
         "id": "mode_comfora_equals",
         "deprecated": true,
         "title": {
-          "en": "The operating mode !{{equals|does not equal}}",
-          "nl": "De werkmodus komt !{{overeen met|komt niet overeen met}}"
+          "en": "[v2]The operating mode !{{equals|does not equal}}",
+          "nl": "[v2]De werkmodus komt !{{overeen met|komt niet overeen met}}"
         },
         "args": [
           {
@@ -2235,8 +2235,8 @@
         "id": "mode_emura_equals",
         "deprecated": true,
         "title": {
-          "en": "The operating mode !{{equals|does not equal}}",
-          "nl": "De werkmodus komt !{{overeen met|komt niet overeen met}}"
+          "en": "[v2]The operating mode !{{equals|does not equal}}",
+          "nl": "[v2]De werkmodus komt !{{overeen met|komt niet overeen met}}"
         },
         "args": [
           {
@@ -2360,8 +2360,8 @@
         "id": "mode_nexura_equals",
         "deprecated": true,
         "title": {
-          "en": "The operating mode !{{equals|does not equal}}",
-          "nl": "De werkmodus komt !{{overeen met|komt niet overeen met}}"
+          "en": "[v2]The operating mode !{{equals|does not equal}}",
+          "nl": "[v2]De werkmodus komt !{{overeen met|komt niet overeen met}}"
         },
         "args": [
           {
@@ -2425,8 +2425,8 @@
         "id": "change_comfora_fan_direction",
         "deprecated": true,
         "title": {
-          "en": "Select the sweep mode",
-          "nl": "Kies de gewenste lamellen richting modus"
+          "en": "[v2]Select the sweep mode",
+          "nl": "[v2]Kies de gewenste lamellen richting modus"
         },
         "args": [
           {
@@ -2474,8 +2474,8 @@
         "id": "change_comfora_fan_rate",
         "deprecated": true,
         "title": {
-          "en": "Select the fan rate",
-          "nl": "Kies de ventilator snelheid"
+          "en": "[v2]Select the fan rate",
+          "nl": "[v2]Kies de ventilator snelheid"
         },
         "args": [
           {
@@ -2544,8 +2544,8 @@
         "id": "change_comfora_mode",
         "deprecated": true,
         "title": {
-          "en": "Select the operating mode",
-          "nl": "Kies de werkmodus"
+          "en": "[v2]Select the operating mode",
+          "nl": "[v2]Kies de werkmodus"
         },
         "args": [
           {
@@ -2607,8 +2607,8 @@
         "id": "change_comfora_target_temp",
         "deprecated": true,
         "title": {
-          "en": "Change target temperature",
-          "nl": "Wijzig doel temperatuur"
+          "en": "[v2]Change target temperature",
+          "nl": "[v2]Wijzig doel temperatuur"
         },
         "args": [
           {
@@ -2632,8 +2632,8 @@
         "id": "change_emura_fan_direction",
         "deprecated": true,
         "title": {
-          "en": "Select the sweep mode",
-          "nl": "Kies de gewenste lamellen richting modus"
+          "en": "[v2]Select the sweep mode",
+          "nl": "[v2]Kies de gewenste lamellen richting modus"
         },
         "args": [
           {
@@ -2681,8 +2681,8 @@
         "id": "change_emura_fan_rate",
         "deprecated": true,
         "title": {
-          "en": "Select the fan rate",
-          "nl": "Kies de ventilator snelheid"
+          "en": "[v2]Select the fan rate",
+          "nl": "[v2]Kies de ventilator snelheid"
         },
         "args": [
           {
@@ -2751,8 +2751,8 @@
         "id": "change_emura_mode",
         "deprecated": true,
         "title": {
-          "en": "Select the operating mode",
-          "nl": "Kies de werkmodus"
+          "en": "[v2]Select the operating mode",
+          "nl": "[v2]Kies de werkmodus"
         },
         "args": [
           {
@@ -2814,8 +2814,8 @@
         "id": "change_emura_target_temp",
         "deprecated": true,
         "title": {
-          "en": "Change target temperature",
-          "nl": "Wijzig doel temperatuur"
+          "en": "[v2]Change target temperature",
+          "nl": "[v2]Wijzig doel temperatuur"
         },
         "args": [
           {
@@ -3018,8 +3018,8 @@
         "id": "change_nexura_fan_direction",
         "deprecated": true,
         "title": {
-          "en": "Select the sweep mode",
-          "nl": "Kies de gewenste lamellen richting modus"
+          "en": "[v2]Select the sweep mode",
+          "nl": "[v2]Kies de gewenste lamellen richting modus"
         },
         "args": [
           {
@@ -3067,8 +3067,8 @@
         "id": "change_nexura_fan_rate",
         "deprecated": true,
         "title": {
-          "en": "Select the fan rate",
-          "nl": "Kies de ventilator snelheid"
+          "en": "[v2]Select the fan rate",
+          "nl": "[v2]Kies de ventilator snelheid"
         },
         "args": [
           {
@@ -3137,8 +3137,8 @@
         "id": "change_nexura_mode",
         "deprecated": true,
         "title": {
-          "en": "Select the operating mode",
-          "nl": "Kies de werkmodus"
+          "en": "[v2]Select the operating mode",
+          "nl": "[v2]Kies de werkmodus"
         },
         "args": [
           {
@@ -3200,8 +3200,8 @@
         "id": "change_nexura_target_temp",
         "deprecated": true,
         "title": {
-          "en": "Change target temperature",
-          "nl": "Wijzig doel temperatuur"
+          "en": "[v2]Change target temperature",
+          "nl": "[v2]Wijzig doel temperatuur"
         },
         "args": [
           {

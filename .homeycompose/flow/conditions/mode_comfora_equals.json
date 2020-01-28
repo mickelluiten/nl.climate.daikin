@@ -2,8 +2,8 @@
     "id": "mode_comfora_equals",
     "deprecated": true,
     "title": {
-        "en": "The operating mode !{{equals|does not equal}}",
-        "nl": "De werkmodus komt !{{overeen met|komt niet overeen met}}"
+        "en": "[v2]The operating mode !{{equals|does not equal}}",
+        "nl": "[v2]De werkmodus komt !{{overeen met|komt niet overeen met}}"
     },
     "args": [{
         "type": "device",

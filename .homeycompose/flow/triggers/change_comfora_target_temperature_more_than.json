@@ -2,8 +2,8 @@
     "id": "change_comfora_target_temperature_more_than",
     "deprecated": true,
     "title": {
-        "en": "The target temperature is more than",
-        "nl": "De doeltemperatuur is meer dan"
+        "en": "[v2]The target temperature is more than",
+        "nl": "[v2]De doeltemperatuur is meer dan"
     },
     "args": [{
         "name": "device",

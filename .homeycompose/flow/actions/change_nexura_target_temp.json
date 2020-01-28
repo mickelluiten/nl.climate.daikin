@@ -2,8 +2,8 @@
     "id": "change_nexura_target_temp",
     "deprecated": true,
     "title": {
-        "en": "Change target temperature",
-        "nl": "Wijzig doel temperatuur"
+        "en": "[v2]Change target temperature",
+        "nl": "[v2]Wijzig doel temperatuur"
     },
     "args": [{
         "name": "device",

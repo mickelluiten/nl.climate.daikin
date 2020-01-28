@@ -197,8 +197,10 @@ class EmuraDevice extends Device {
       driver
         .triggerTargetTemperatureMoreThan(device, tokens, state)
         .triggerTargetTemperatureLessThan(device, tokens, state)
-        .triggerTargetTemperatureBetween(device, tokens, state);
-
+        .triggerTargetTemperatureBetween(device, tokens, state)
+        .v3triggerTargetTemperatureMoreThan(device, tokens, state)
+        .v3triggerTargetTemperatureLessThan(device, tokens, state)
+        .v3triggerTargetTemperatureBetween(device, tokens, state);
       // update the airco its settings
       this.daikinTempControl(atemp);
     }
@@ -402,7 +404,8 @@ class EmuraDevice extends Device {
       // trigger action flows as necessary (see driver.js)
       const driver = this.getDriver();
       driver
-        .triggerCapabilityModeChange(device, tokens, state);
+        .triggerCapabilityModeChange(device, tokens, state)
+        .v3triggerCapabilityModeChange(device, tokens, state);
     }
 
     // ---- temperature
@@ -491,7 +494,10 @@ class EmuraDevice extends Device {
       driver
         .triggerInsideTemperatureMoreThan(device, tokens, state)
         .triggerInsideTemperatureLessThan(device, tokens, state)
-        .triggerInsideTemperatureBetween(device, tokens, state);
+        .triggerInsideTemperatureBetween(device, tokens, state)
+        .v3triggerInsideTemperatureMoreThan(device, tokens, state)
+        .v3triggerInsideTemperatureLessThan(device, tokens, state)
+        .v3triggerInsideTemperatureBetween(device, tokens, state);
     }
 
     if (oldOutsideTemperature !== outside) {
@@ -512,7 +518,10 @@ class EmuraDevice extends Device {
       driver
         .triggerOutsideTemperatureMoreThan(device, tokens, state)
         .triggerOutsideTemperatureLessThan(device, tokens, state)
-        .triggerOutsideTemperatureBetween(device, tokens, state);
+        .triggerOutsideTemperatureBetween(device, tokens, state)
+        .v3triggerOutsideTemperatureMoreThan(device, tokens, state)
+        .v3triggerOutsideTemperatureLessThan(device, tokens, state)
+        .v3triggerOutsideTemperatureBetween(device, tokens, state);
     }
 
     return Promise.resolve();

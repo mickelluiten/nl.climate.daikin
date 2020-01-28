@@ -2,8 +2,8 @@
     "id": "change_nexura_target_temperature_between",
     "deprecated": true,
     "title": {
-        "en": "The target temperature is between",
-        "nl": "De doeltemperatuur is tussen"
+        "en": "[v2]The target temperature is between",
+        "nl": "[v2]De doeltemperatuur is tussen"
     },
     "args": [{
         "name": "device",

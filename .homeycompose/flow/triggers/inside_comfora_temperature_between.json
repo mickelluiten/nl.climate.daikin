@@ -2,8 +2,8 @@
     "id": "inside_comfora_temperature_between",
     "deprecated": true,
     "title": {
-        "en": "The inside temperature is between",
-        "nl": "De binnentemperatuur is tussen"
+        "en": "[v2]The inside temperature is between",
+        "nl": "[v2]De binnentemperatuur is tussen"
     },
     "args": [{
         "name": "device",

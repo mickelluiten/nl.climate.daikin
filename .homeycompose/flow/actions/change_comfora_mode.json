@@ -2,8 +2,8 @@
     "id": "change_comfora_mode",
     "deprecated": true,
     "title": {
-        "en": "Select the operating mode",
-        "nl": "Kies de werkmodus"
+        "en": "[v2]Select the operating mode",
+        "nl": "[v2]Kies de werkmodus"
     },
     "args": [{
         "type": "device",

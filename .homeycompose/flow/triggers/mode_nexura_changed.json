@@ -2,8 +2,8 @@
     "id": "mode_nexura_changed",
     "deprecated": true,
     "title": {
-        "en": "When the operating mode has changed to",
-        "nl": "Wanneer de werkmodus is veranderd in"
+        "en": "[v2]When the operating mode has changed to",
+        "nl": "[v2]Wanneer de werkmodus is veranderd in"
     },
     "args": [{
         "type": "device",

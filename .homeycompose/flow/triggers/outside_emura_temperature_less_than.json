@@ -2,8 +2,8 @@
     "id": "outside_emura_temperature_less_than",
     "deprecated": true,
     "title": {
-        "en": "The outside temperature is less than",
-        "nl": "De buitentemperatuur is minder dan"
+        "en": "[v2]The outside temperature is less than",
+        "nl": "[v2]De buitentemperatuur is minder dan"
     },
     "args": [{
         "name": "device",
