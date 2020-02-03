@@ -1,10 +1,10 @@
 ![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/Daikin-logo-wide.png)
 
 # Daikin AI for Homey
-Control your Daikin air conditioner through Homey. This app requires that your Daikin air conditioner is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--). This app does NOT support ducted/ceiling models.
+Control your Daikin air conditioner through Homey. This app requires that your Daikin air conditioner is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--). This app does NOT support "Sky Air" ducted/ceiling models.
 
 ## Features
-- supports Daikin airconditioners through model range drivers.
+- supports most Daikin airconditioners that belonging to Daikin's "Air-to-air heat pumps" productgroup through a single driver. Note for existing users; the "range model" drivers are as of now depreciated.
 - the user interface, depending on the selected driver, can show target temperature, operating mode, inside temperature, outside temperature, fan speed and fan swing mode.
 - HomeKit support (see note) for every WiFi capable Daikin Airconditioner thru the "Model HomeKit" driver. The AC control functionality is however limited to: airco's mode setting, target temperature setting and inside temperature measurement.
   Note: requires either Homey's experimental Apple Homekit feature enabled or one of the following apps: "HomeKit by Sprut", "HomeyKit by Bas Jansen".
@@ -23,9 +23,7 @@ Demo mode can be disabled in the device its settings menu. Demo mode can be very
 Special modes are not supported by all models, model variants and/or the WiFi adapter its firmware version, in addition it might be that not all 3 special modes are supported. Check the Daikin Online Controller app which special modes are supported by your airco, during paring enable the supported Special Mode(s) by checking the applicable checkbox(es) or leave them all unchecked (disabled).
 
 ## WiFi adapter models
-Daikin just recently introduced a new model WiFi adapter (BRP069B--) which uses a different way to sent commands to the airconditioner. During paring the app will pair your airconditioner with model specific default settings, in some cases you have to change these default settings which can be done in the device settings menu.
-
-Note: the WiFi adapter its firmware version can be found in the Daikin Online Controller app (select your airco > click on the gear symbol > the firmware version shows under "Adapter information").  
+In the settings menu for your airconditioner device you can switch between the old (model A) and the new (model B) communication protocol.   
 
 ## IP-address: the use of a static IP-address is recommended
 To prevent unreliable behaviour of the application the use of a fixed (static) IP-address is required. When DHCP changes your airconditioners IP-address the application will not be aware of this change and as a result the application can no longer controle the airconditioner till you manually update the IP-address in the devices its settings menu. 
@@ -36,7 +34,7 @@ Note: your airconditioner its current IP-address can be found in the Daikin Onli
 It is advised to turn your airconditioner OFF before and keep it switched OFF during Daikin AI software installation/upgrade/restart or when rebooting your Homey as the software will initialise itself immediately after software installation/upgrade/app restart/Homey reboot and because of that some of the airconditioner settings might change i.e. the target temperature might be set to a lower or higher temperature.
 
 ##Limitations
-- Ducted/ceiling models are NOT supported by this app.
+- "Sky Air" ducted/ceiling models are NOT supported by this app.
 - The app is not compatible with Homey v1 firmware.
 - The "Airflow Rate" and "Swing" (a picker) control requires Homey mobile app version 2.0.6 or higher to be shown.
 - HomeKit support only applies for the 'Model HomeKit'.
@@ -144,3 +142,4 @@ If you like the app, consider buying me a cup of coffee!
 - 23-NOV-19: Added support for Daikin Airbase (SkyFi) used in some countries i.e. Australia.
 - 25-NOV-19: Removed code changes in relation to Daikin Airbase (SkyFi). Will not support ducted/ceiling models due to lack of documentation regarding these models.
 - 28-JAN-20: Restructure app with .homeycompose, and version 2 flow cards depreciated.
+- 02-FEB-20: Model range drivers are replaced by the AirAirHP driver which now supports most of the Air Air Heatpumps from Diakin.

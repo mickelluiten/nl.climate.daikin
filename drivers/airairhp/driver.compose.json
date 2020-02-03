@@ -1,8 +1,7 @@
 {
-    "deprecated": true,
     "name": {
-        "en": "Nexura",
-        "nl": "Nexura"
+        "en": "Air/Air Heatpump series",
+        "nl": "Lucht/Lucht Warmtepomp reeks"
     },
     "class": "thermostat",
     "capabilities": [
@@ -53,8 +52,8 @@
         }
     },
     "images": {
-        "large": "/drivers/nexura/assets/images/large.png",
-        "small": "/drivers/nexura/assets/images/small.png"
+        "large": "/drivers/comfora/assets/images/large.png",
+        "small": "/drivers/comfora/assets/images/small.png"
     },
     "pair": [{
         "id": "start"
@@ -75,7 +74,7 @@
             "nl": "Netwerk, adapter type en firmware instellingen"
         },
         "children": [{
-            "id": "nexura_ip",
+            "id": "ip",
             "type": "text",
             "pattern": "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5]).){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$",
             "label": {
@@ -88,7 +87,7 @@
             },
             "value": ""
         }, {
-            "id": "nexura_adapter",
+            "id": "adapter",
             "type": "radio",
             "label": {
                 "en": "Model adapter",
@@ -113,11 +112,11 @@
                 }
             }]
         }, {
-            "id": "nexura_useGetToPost",
+            "id": "useGetToPost",
             "type": "checkbox",
             "label": {
-                "en": "B-model fw ≤ v2.0.1",
-                "nl": "B-model fw ≤ v2.0.1"
+                "en": "Use new protocol",
+                "nl": "Gebruik nieuw protocol"
             },
             "hint": {
                 "en": "Switch between the new and old Daikin communication protocol.",
@@ -132,7 +131,7 @@
             "nl": "Overige instellingen"
         },
         "children": [{
-            "id": "nexura_interval",
+            "id": "interval",
             "type": "number",
             "label": {
                 "en": "Polling interval",
@@ -148,7 +147,7 @@
                 "max": 30
             }
         }, {
-            "id": "nexura_demomode",
+            "id": "demomode",
             "type": "checkbox",
             "label": {
                 "en": "Demo mode",

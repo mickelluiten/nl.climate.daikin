@@ -16,5 +16,8 @@
   },
   "3.1.4": {
     "en": "Restructured the app in support of \"Homey compose\". Flow card names are changed which is the result of program code optimizations, old flow cards are depreciated!! and will be removed in future updates. Users are advised to upgrade their flow cards asap preventing that flow get broken in the future."
+  },
+  "3.1.5": {
+    "en": "Restructured the app in support of \"Homey compose\". Flow card changes which is the result of program code optimizations, version 2 flow cards are depreciated!! and will be removed in future updates. Please replace the old \"[v2]\" flow cards by new ones (without the [v2] marking). Users are advised to upgrade their flow cards asap preventing that flow get broken in the future."
   }
 }

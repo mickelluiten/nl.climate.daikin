@@ -1,7 +1,7 @@
-Voor een juiste werking van deze Homey App is het noodzakelijk dat uw Daikin airconditioner is uitgerust met een WiFi adapter (zijnde model BRP069A-- of BRP069B--). Deze applicatie is niet geschikt om kanaal of plafond modellen te bedienen.
+Voor een juiste werking van deze Homey App is het noodzakelijk dat uw Daikin airconditioner is uitgerust met een WiFi adapter (zijnde model BRP069A-- of BRP069B--). Deze applicatie is niet geschikt om kanaal of plafond "Sky Air" modellen te bedienen.
 
 <<Mogelijkheden>>
-- maakt bediening van een breed scala Daikin airconditioners mogelijk middels model reeks stuurprogramma's.
+- maakt de bediening van de meeste airconditioners behorende tot Daikin's lucht/lucht warmtepompen productgroep mogelijk middels 1 enkel stuurprogramma. Opmerking voor bestaande gebruikers; het nieuwe stuurprogramma vervangt per direct de model reeks stuurprogramma's.
 
 - afhankelijk van het geselecteerde stuurprogramma kunnen zaken als doel temperatuur, werkmodus, binnen temperatuur, buiten temperatuur, ventilator snelheid en lamel richting worden bediend en/of getoond in deze Homey App.
 
@@ -26,11 +26,8 @@ Opmerking: na het initieel toevoegen van de airconditioner is demonstratie mode 
 <<Speciale Modi>>
 Speciale modi worden slechts door een beperkt aantal modellen, model reeksen en/of WiFi adapter firmware versies ondersteund, raadpleeg hiervoor de gebruiksaanwijzing van uw airconditioner. Speciale Modi kunnen alleen tijdens het aanmelden van het apparaat worden aan of uitgezet.
 
-
 <<WiFi adapter typen>>
-In de afgelopen jaren heeft Daikin verschillende modellen WiFi adapter's geintroduceerd, zoals de BRP069B-- met ook nieuwe firmware, die op een andere manier communiceren met de airconditioner als voorheen. Tijdens het initieel toevoegen van het apparaat wordt er op basis van het model airconditioner een bepaald type WiFi adapter geselecteerd, in sommige gevallen zal dat helaas de verkeerde zijn en dient u het door de toepassing geselecteerde WiFi adapter type zelf te wijzigen in de juiste. 
-
-Opmerking: het type WiFi adapter en de gebruikte firmware is te achterhalen in de Daikin Online Controller app, selecteer uw airco > klik op het tandwiel symbool > de firmware versie wordt getoond onder "Adapter information".  
+In het settings menu van het airconditioner apparaat kunt u kiezen tussen het oude (model A) en nieuwe (model B) communicatie protocol. 
 
 <<IP-adres>>
 Het gebruik van een statisch IP-adres wordt aangeraden. Wanneer er toch gebruik gemaakt wordt van DHCP kan het IP-adres van de airconditioner wijzigen waardoor Homey niet meer in staat is om de airconditioner te bedienen, in dat geval dient u het IP-adres in het Daikin AI instellingen menu handmatig aan te passen naar het door DHCP nieuw toegekende IP-adres.
@@ -41,12 +38,12 @@ Opmerking: het actueel door de airconditioner gebruikte IP-adres kan worden teru
 U wordt geadviseerd om uw airconditioner uit te schakelen wanneer u de Daikin AI software bijwerkt, of Homey van nieuwe firmware voorziet dan wel Homey herstart aangezien het mogelijk is dat de doel temperatuur naar beneden danwel boven wordt aangepast. Wanneer u vervolgens de airconditioner weer inschakelt dient gecontroleerd te worden of doel temperatuur etc. nog juist zijn.
 
 <<Beperkingen>>
-- Kanaal en plafond modellen worden NIET ondersteund door de Daikin AI app.
+- "Sky Air" kanaal en plafond modellen worden NIET ondersteund door de Daikin AI app.
 - Daikin AI app is niet geschikt voor gebruik in combinatie met Homey v1 firmware, Homey firmware v2.0.6 of hoger is noodzakelijk voor het gebruik van deze app.
 - Voor bediening vanuit de Apple Home app (HomeKit) dient het 'Model HomeKit' stuurprogramma te worden gebruikt.
 - DHCP is niet ondersteund.
 - Niet alle Daikin airconditioner modellen / model reeksen / combinaties van binnen en buiten units worden ondersteund. Daikin als fabrikant stelt geen interface specificaties beschikbaar hetgeen het extra lastig maakt om software te ontwikkelen voor Daikin airconditioners.
-- Homey spraak wordt niet ondersteund (opmerking: er bestaat een beperkte spraakondersteuning middels Siri wanneer het HomeKit stuurprogramma wordt gebruikt. Gebruikers hebben laten weten dat het HomeKit stuurprogramma ook goed samen werkt met Google Home...).
+- Homey spraak wordt niet ondersteund (opmerking: er bestaat een beperkte spraakondersteuning middels Siri wanneer het HomeKit stuurprogramma wordt gebruikt).
 - Speciale modi kunnen niet gebruikt worden in flows.
 
 <<Ondersteunde modellen>
