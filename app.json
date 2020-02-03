@@ -326,7 +326,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "target_temperature_from",
@@ -356,7 +356,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "target_temperature_less",
@@ -378,7 +378,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "target_temperature_more",
@@ -631,7 +631,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "inside_temperature_from",
@@ -661,7 +661,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "inside_temperature_less",
@@ -683,7 +683,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "inside_temperature_more",
@@ -705,7 +705,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "mode",
@@ -1187,7 +1187,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "outside_temperature_from",
@@ -1217,7 +1217,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "ouside_temperature_less",
@@ -1239,7 +1239,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "outside_temperature_more",
@@ -1725,7 +1725,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "inside_temperature_from",
@@ -1755,7 +1755,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "inside_temperature_less",
@@ -1777,7 +1777,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "inside_temperature_more",
@@ -2030,7 +2030,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "outside_temperature_from",
@@ -2060,7 +2060,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "outside_temperature_less",
@@ -2082,7 +2082,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "outside_temperature_more",
@@ -2104,7 +2104,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "target_temperature_from",
@@ -2134,7 +2134,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "target_temperature_less",
@@ -2156,7 +2156,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "target_temperature_more",
@@ -2304,7 +2304,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "mode",
@@ -2845,7 +2845,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "fdir",
@@ -2893,7 +2893,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "frate",
@@ -2962,7 +2962,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "mode",
@@ -3231,7 +3231,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=comfora|emura|nexura"
+            "filter": "driver_id=airairhp|comfora|emura|nexura"
           },
           {
             "name": "atemp",

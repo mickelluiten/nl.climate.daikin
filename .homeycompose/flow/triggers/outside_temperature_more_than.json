@@ -7,7 +7,7 @@
     "args": [{
         "name": "device",
         "type": "device",
-        "filter": "driver_id=comfora|emura|nexura"
+        "filter": "driver_id=airairhp|comfora|emura|nexura"
     }, {
         "name": "outside_temperature_more",
         "type": "number",

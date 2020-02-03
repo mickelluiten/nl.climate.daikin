@@ -2,12 +2,12 @@
 
 const Homey = require('homey');
 const Driver = require('../../drivers/driver');
-const comforactrl = require('../../lib/daikin');
+const airairhpctrl = require('../../lib/daikin');
 
 // Driver for a Daikin Comfora type Airconditioner
-class ComforaDriver extends Driver {
+class AirAirHPDriver extends Driver {
     onInit() {
-        this.deviceType = 'comfora';
+        this.deviceType = 'airairhp';
 
 //* ** TRIGGER FLOWCARDS *******************************************************************************************
     // --- Temperature flowcards
@@ -234,7 +234,7 @@ class ComforaDriver extends Driver {
                 const device = args.device;
                 const settings = device.getSettings();
 
-                const ip_address = settings.comfora_ip;
+                const ip_address = settings.ip;
                 // this.log('ip_address', ip_address);
 
                 const atemp = args.atemp;
@@ -242,8 +242,8 @@ class ComforaDriver extends Driver {
                 // this.log('target temp', atemp);
 
                 // type B adapter logic
-                const useGetToPost = settings.comfora_useGetToPost;
-                const adapter = settings.comfora_adapter;
+                const useGetToPost = settings.useGetToPost;
+                const adapter = settings.adapter;
                 let options = {};
                 // this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
                 // this.log('Adapter model:', adapter)
@@ -254,7 +254,7 @@ class ComforaDriver extends Driver {
                     useGetToPost: false,
                 };
 
-                comforactrl.daikinTempControl(atemp, ip_address, options);
+                airairhpctrl.daikinTempControl(atemp, ip_address, options);
                 return Promise.resolve(atemp);
             });
 
@@ -266,10 +266,10 @@ class ComforaDriver extends Driver {
                 const device = args.device;
                 const settings = device.getSettings();
 
-                const ip_address = settings.comfora_ip;
+                const ip_address = settings.ip;
                 // this.log('ip_address', ip_address);
 
-                const demo_mode = settings.comfora_demomode;
+                const demo_mode = settings.demomode;
                 // this.log('demo_mode', demo_mode);
 
                 const thermostat_mode_std = args.mode;
@@ -277,8 +277,8 @@ class ComforaDriver extends Driver {
                 // this.log('thermostat_mode_std', thermostat_mode_std);
 
                 // type B adapter logic
-                const useGetToPost = settings.comfora_useGetToPost;
-                const adapter = settings.comfora_adapter;
+                const useGetToPost = settings.useGetToPost;
+                const adapter = settings.adapter;
                 let options = {};
                 // this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
                 // this.log('Adapter model:', adapter)
@@ -289,7 +289,7 @@ class ComforaDriver extends Driver {
                     useGetToPost: false,
                 };
 
-                comforactrl.daikinModeControl(thermostat_mode_std, ip_address, options, demo_mode);
+                airairhpctrl.daikinModeControl(thermostat_mode_std, ip_address, options, demo_mode);
                 return Promise.resolve(thermostat_mode_std);
             });
 
@@ -301,7 +301,7 @@ class ComforaDriver extends Driver {
                 const device = args.device;
                 const settings = device.getSettings();
 
-                const ip_address = settings.comfora_ip;
+                const ip_address = settings.ip;
                 // this.log('ip_address', ip_address);
 
                 const fan_rate = args.frate;
@@ -309,8 +309,8 @@ class ComforaDriver extends Driver {
                 // this.log('fan_rate', fan_rate);
 
                 // type B adapter logic
-                const useGetToPost = settings.comfora_useGetToPost;
-                const adapter = settings.comfora_adapter;
+                const useGetToPost = settings.useGetToPost;
+                const adapter = settings.adapter;
                 let options = {};
                 // this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
                 // this.log('Adapter model:', adapter)
@@ -321,7 +321,7 @@ class ComforaDriver extends Driver {
                     useGetToPost: false,
                 };
 
-                comforactrl.daikinFanRateControl(fan_rate, ip_address, options);
+                airairhpctrl.daikinFanRateControl(fan_rate, ip_address, options);
                 return Promise.resolve(fan_rate);
             });
 
@@ -333,7 +333,7 @@ class ComforaDriver extends Driver {
                 const device = args.device;
                 const settings = device.getSettings();
 
-                const ip_address = settings.comfora_ip;
+                const ip_address = settings.ip;
                 // this.log('ip_address', ip_address);
 
                 const fan_direction = args.fdir;
@@ -341,8 +341,8 @@ class ComforaDriver extends Driver {
                 // this.log('fan_direction', fan_direction);
 
                 // type B adapter logic
-                const useGetToPost = settings.comfora_useGetToPost;
-                const adapter = settings.comfora_adapter;
+                const useGetToPost = settings.useGetToPost;
+                const adapter = settings.adapter;
                 let options = {};
                 // this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
                 // this.log('Adapter model:', adapter)
@@ -353,7 +353,7 @@ class ComforaDriver extends Driver {
                     useGetToPost: false,
                 };
 
-                comforactrl.daikinFanDirControl(fan_direction, ip_address, options);
+                airairhpctrl.daikinFanDirControl(fan_direction, ip_address, options);
                 return Promise.resolve(fan_direction);
             });
     }
@@ -421,4 +421,4 @@ class ComforaDriver extends Driver {
     }
 }
 
-module.exports = ComforaDriver;
+module.exports = AirAirHPDriver;
