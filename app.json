@@ -5,14 +5,14 @@
     "nl": "Daikin AI"
   },
   "description": {
-    "en": "Adds support for Daikin Air Conditioners",
-    "nl": "Maakt de bediening van Daikin Air Conditioners mogelijk"
+    "en": "Adds support for Daikin Air-to-air heat pumps",
+    "nl": "Maakt de bediening van Daikin Lucht/lucht warmtepompen mogelijk"
   },
   "category": [
     "climate",
     "appliances"
   ],
-  "version": "3.2.0",
+  "version": "3.2.1",
   "compatibility": ">=2.0.0",
   "athomForumDiscussionId": 2082,
   "homeyCommunityTopicId": 158,
@@ -3250,8 +3250,8 @@
   "drivers": [
     {
       "name": {
-        "en": "Air/Air Heatpump series",
-        "nl": "Lucht/Lucht Warmtepomp reeks"
+        "en": "Air-to-air heat pumps",
+        "nl": "Lucht/Lucht warmtepompen"
       },
       "class": "thermostat",
       "capabilities": [

@@ -10,11 +10,11 @@ class Device extends Homey.Device {
   }
 
   onAdded() {
-    this.log('Daikin airconditioner added');
+    this.log('Daikin air to air heat pump added');
   }
 
   onDeleted() {
-    this.log('Daikin airconditioner deleted');
+    this.log('Daikin air to air heat pump deleted');
   }
 
   getDeviceUrl() {

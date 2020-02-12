@@ -1,7 +1,7 @@
 {
     "name": {
-        "en": "Air/Air Heatpump series",
-        "nl": "Lucht/Lucht Warmtepomp reeks"
+        "en": "Air-to-air heat pumps",
+        "nl": "Lucht/Lucht warmtepompen"
     },
     "class": "thermostat",
     "capabilities": [

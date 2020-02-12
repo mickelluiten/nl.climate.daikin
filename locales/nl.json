@@ -1,7 +1,7 @@
 {
     "pair": {
         "start": {
-            "intro": "Voer het IP-adres van de airconditioner in, geef deze een naam en kies welke 'speciale modi' u wilt kunnen bedienen. Opmerkingen: 1/ mogelijk worden niet alle 'speciale modi' ondersteund door uw model airco. 2/ het gebruik van een statisch IP-adres wordt geadviseerd daar DHCP niet wordt ondersteund.",
+            "intro": "Voer het IP-adres van de warmtepomp in, geef deze een naam en kies welke 'speciale modi' u wilt kunnen bedienen. Opmerkingen: 1/ mogelijk worden niet alle 'speciale modi' ondersteund door uw specifieke model warmtepomp. 2/ het gebruik van een statisch IP-adres wordt geadviseerd daar DHCP niet wordt ondersteund.",
             "title": "Daikin apparaat instellingen",
             "error": "Er is een fout opgetreden, controleer het zojuist ingevoerde IP-adres.",
             "required": "IP-adres is verplicht.",

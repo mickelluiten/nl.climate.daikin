@@ -1,7 +1,7 @@
 {
     "pair": {
         "start": {
-            "intro": "Enter your Airco's IP-address, give it a name and choose which 'special modes' you like to control. Notes: 1/ not all 'special modes' might be supported by your airco's model. 2/ the use of a static IP-address is preferred as DHCP is not supported.",
+            "intro": "Enter your heat pump its IP-address, give it a name and choose which 'special modes' you like to control. Notes: 1/ not all 'special modes' might be supported by your particular heat pump model. 2/ the use of a static IP-address is preferred as DHCP is not supported.",
             "title": "Daikin equipment settings",
             "error": "An error has occurred, check the just entered IP-address.",
             "required": "IP-address is required.",

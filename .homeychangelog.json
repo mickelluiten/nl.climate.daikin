@@ -19,5 +19,8 @@
   },
   "3.1.5": {
     "en": "Restructured the app in support of \"Homey compose\". Flow card changes which is the result of program code optimizations, version 2 flow cards are depreciated!! and will be removed in future updates. Please replace the old \"[v2]\" flow cards by new ones (without the [v2] marking). Users are advised to upgrade their flow cards asap preventing that flow get broken in the future."
+  },
+  "3.2.0": {
+    "en": "Changed the driver model, instead of using several range model drivers switched to a single driver that supports and replaces alle previous drivers. Existing Drivers and Flowcards are depreciated and will be removed in due time from the app. Existing users are encouraged to switch over to the new driver. "
   }
 }
