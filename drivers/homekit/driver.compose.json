@@ -1,7 +1,7 @@
 {
     "name": {
-        "en": "Model HomeKit",
-        "nl": "Model HomeKit"
+        "en": "Air-to-air heat pumps (HomeKit)",
+        "nl": "Lucht/Lucht warmtepompen (HomeKit)"
     },
     "class": "thermostat",
     "capabilities": [
@@ -53,36 +53,11 @@
             },
             "value": ""
         }, {
-            "id": "homekit_adapter",
-            "type": "radio",
-            "label": {
-                "en": "Model adapter",
-                "nl": "Model adapter"
-            },
-            "hint": {
-                "en": "The older model WiFi adapter is called type-A while the newest is called type-B.",
-                "nl": "Het oudere model WiFi adapter wordt type-A genoemd terwijl het nieuwste model wordt aangeduid als type-B."
-            },
-            "value": "BRP069Axx",
-            "values": [{
-                "id": "BRP069Axx",
-                "label": {
-                    "en": "Model BRP069A--",
-                    "nl": "Model BRP069A--"
-                }
-            }, {
-                "id": "BRP069Bxx",
-                "label": {
-                    "en": "Model BRP069B--",
-                    "nl": "Model BRP069B--"
-                }
-            }]
-        }, {
             "id": "homekit_useGetToPost",
             "type": "checkbox",
             "label": {
-                "en": "B-model fw ≤ v2.0.1",
-                "nl": "B-model fw ≤ v2.0.1"
+                "en": "Use new protocol",
+                "nl": "Gebruik nieuw protocol"
             },
             "hint": {
                 "en": "Switch between the new and old Daikin communication protocol.",
@@ -123,7 +98,7 @@
                 "en": "When enabled the airco will not power ON no matter what mode is selected. This way one can experiment with flows without having to worry about damaging the airconditioner.",
                 "nl": "Wanneer aangezet zal de airco niet aanschakelen ongeacht de gekozen modus. Dit maakt het mogelijk om vrijuit te experimenteren met flows zonder bang hoeven te zijn dat de airconditoner beschadigd raakt."
             },
-            "value": false
+            "value": true
         }]
     }]
 }

@@ -15,10 +15,11 @@
             "add": "Uw instellingen worden nu opgeslagen...",
             "specialMode": "Extra modi (Krachtig, Besparen, Streamer).",
             "deviceInterval": "Interval",
-            "adaptersensira": "Standaard (BRP069B--, B-model FW ≤ 2.0.1) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond.",
-            "adapteremura": "Standaard (BRP069A--, A-model FW ≥ 1.4.3) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond.",
-            "adapternexura": "Standaard (BRP069A--, A-model FW ≥ 1.4.3) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond.",
-            "adapterhomekit": "Standaard (BRP069A--, A-model FW ≥ 1.4.3) adapter instellingen worden toegepast!! Indien nodig zijn deze te wijzigen wanneer het toevoegen is afgerond."
+            "adaptersensira": "Daikin's nieuwe (communicatie) protocol zal worden geworden gebruikt om te communiceren met de airconditioner. Zo nodig is deze instelling te wijzigen wanneer het toevoegen is afgerond in het geavanceerde instellingen menu.",
+            "adapteremura": "Daikin's nieuwe (communicatie) protocol zal worden geworden gebruikt om te communiceren met de airconditioner. Zo nodig is deze instelling te wijzigen wanneer het toevoegen is afgerond in het geavanceerde instellingen menu.",
+            "adapternexura": "Daikin's nieuwe (communicatie) protocol zal worden geworden gebruikt om te communiceren met de airconditioner. Zo nodig is deze instelling te wijzigen wanneer het toevoegen is afgerond in het geavanceerde instellingen menu.",
+            "adapterairairhp": "Daikin's nieuwe (communicatie) protocol zal worden geworden gebruikt om te communiceren met de airconditioner. Zo nodig is deze instelling te wijzigen wanneer het toevoegen is afgerond in het geavanceerde instellingen menu.",
+            "adapterhomekit": "Daikin's nieuwe (communicatie) protocol zal worden geworden gebruikt om te communiceren met de airconditioner. Zo nodig is deze instelling te wijzigen wanneer het toevoegen is afgerond in het geavanceerde instellingen menu."
         }
     }
 }

@@ -18,9 +18,9 @@ When designing flows and you add multiple Daikin AI action flowcards to a flow, 
 Daikin designed an interface that is based on polling which means the airconditioner must be interrogated once in a while to know its current status. The polling interval of the official Daikin Online Controller app is between 30 and 60 seconds. With the refresh interval setting of the Daikin AI app it is possible to set its polling interval between 5 and 30 seconds which is up to 6 times faster. A higher refresh interval means that your Homey has more work to do. When your setup involves more than one airconditioner a polling interval of less than 10 seconds is not recommended. As a result of the polling mechanism a change made with the app, either the official Daikin Online Controller app or the Homey Daikin AI app, may not show immediately in either app. It should be noted that the refresh interval (setting) has no influence for sending commands to the airconditioner, a mode, target temperature etc. change is always executed immediately.
 
 <<Demo mode>>
-Demo mode can be disabled in the device its settings menu. Demo mode can be very useful when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows.
+Demo mode can be enabled in the device its settings menu. Demo mode can be very useful when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows.
 
-Note: after initial pairing demo mode is by default turned ON !!
+Note: after initial pairing demo mode is by default turned OFF !!
 
 <<Special Modes>>
 Special modes are not supported by all models, model variants and/or the WiFi adapter its firmware version, in addition it might be that not all 3 special modes are supported. Check the Daikin Online Controller app which special modes are supported by your airco, during paring enable the supported Special Mode(s) by checking the applicable checkbox(es) or leave them all unchecked (disabled).

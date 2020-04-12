@@ -87,31 +87,6 @@
             },
             "value": ""
         }, {
-            "id": "adapter",
-            "type": "radio",
-            "label": {
-                "en": "Model adapter",
-                "nl": "Model adapter"
-            },
-            "hint": {
-                "en": "The older model WiFi adapter is called type-A while the newest is called type-B.",
-                "nl": "Het oudere model WiFi adapter wordt type-A genoemd terwijl het nieuwste model wordt aangeduid als type-B."
-            },
-            "value": "BRP069Axx",
-            "values": [{
-                "id": "BRP069Axx",
-                "label": {
-                    "en": "Model BRP069A--",
-                    "nl": "Model BRP069A--"
-                }
-            }, {
-                "id": "BRP069Bxx",
-                "label": {
-                    "en": "Model BRP069B--",
-                    "nl": "Model BRP069B--"
-                }
-            }]
-        }, {
             "id": "useGetToPost",
             "type": "checkbox",
             "label": {

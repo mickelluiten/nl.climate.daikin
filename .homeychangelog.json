@@ -22,5 +22,14 @@
   },
   "3.2.0": {
     "en": "Changed the driver model, instead of using several range model drivers switched to a single driver that supports and replaces alle previous drivers. Existing Drivers and Flowcards are depreciated and will be removed in due time from the app. Existing users are encouraged to switch over to the new driver. "
+  },
+  "3.2.1": {
+    "en": "Changed the driver model, instead of using several range model drivers switched to a single driver that supports and replaces alle previous drivers. Existing Drivers and Flowcards are depreciated and will be removed in due time from the app. Existing users are encouraged to switch over to the new driver."
+  },
+  "3.2.2": {
+    "en": "Paring validation logic changed iso new Daikin WiFi adapters."
+  },
+  "3.3.0": {
+    "en": "Upgrade to Apollon77 Daikin API v1.1.5."
   }
 }

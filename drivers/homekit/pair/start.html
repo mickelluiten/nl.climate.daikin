@@ -36,10 +36,10 @@ function saveSettings () {
 			    name: inputDeviceName,
 			    settings: {
 			            	"homekit_ip": inputIPAddress,
-                            "homekit_adapter": "BRP069Axx",
-                            "homekit_useGetToPost": false,			
+                            "homekit_adapter": "BRP069Bxx",
+                            "homekit_useGetToPost": true,			
 			            	"homekit_interval": 10,
-                            "homekit_demomode": true                    
+                            "homekit_demomode": false            
 			    }
 		};
 		Homey.emit('manual_add', device, function (err, result) {
@@ -91,7 +91,7 @@ function GetGUID() {
 			</tr>
 			<tr>
 				<td style="width:100px;" data-i18n="pair.start.deviceName">Name</td>
-				<td><input id="deviceName" type="text" value="Model HomeKit" placeholder="Model HomeKit"/></td>
+				<td><input id="deviceName" type="text" value="Your Heat Pump HomeKit" placeholder="HomeKit"/></td>
 			</tr>
 		</table>
 		<p>&nbsp;</p>

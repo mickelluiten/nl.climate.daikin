@@ -19,9 +19,9 @@ Daikin heeft een interface ontwikkelt die gebaseerd is op "polling" hetgeen bete
 
 
 <<Daikin AI demonstratie mode>>
-Demonstratie mode kan worden uitgeschakeld in het apparaat instellingen menu. Demonstratie mode kan handig zijn bij het ontwerpen van nieuwe flows aangezien demonstratie mode voorkomt dat de airconditioner daadwerkelijk wordt aangeschakeld. Het herhaalt aan en vervolgens weer uitschakelen of het schakelen tussen verwarmen en koelen is iets dat de levensduur van de compressor niet ten goede komt.
+Demonstratie mode kan worden ingeschakeld in het apparaat instellingen menu. Demonstratie mode kan handig zijn bij het ontwerpen van nieuwe flows aangezien demonstratie mode voorkomt dat de airconditioner daadwerkelijk wordt aangeschakeld. Het herhaalt aan en vervolgens weer uitschakelen of het schakelen tussen verwarmen en koelen is iets dat de levensduur van de compressor niet ten goede komt.
 
-Opmerking: na het initieel toevoegen van de airconditioner is demonstratie mode ingeschakeld, u dient deze dan ook zelf uit te te schakelen!!
+Opmerking: na het initieel toevoegen van de airconditioner is demonstratie mode UITgeschakeld.
 
 <<Speciale Modi>>
 Speciale modi worden slechts door een beperkt aantal modellen, model reeksen en/of WiFi adapter firmware versies ondersteund, raadpleeg hiervoor de gebruiksaanwijzing van uw airconditioner. Speciale Modi kunnen alleen tijdens het aanmelden van het apparaat worden aan of uitgezet.

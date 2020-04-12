@@ -16,8 +16,8 @@ When designing flows and you add multiple Daikin AI action flowcards to a flow, 
 ## Refresh interval
 Daikin designed an interface that is based on polling which means the airconditioner must be interrogated once in a while to know its current status. The polling interval of the official Daikin Online Controller app is between 30 and 60 seconds. With the refresh interval setting of the Daikin AI app it is possible to set its polling interval between 5 and 30 seconds which is up to 6 times faster. A higher refresh interval means that your Homey has more work to do. When your setup involves more than one airconditioner a polling interval of less than 10 seconds is not recommended. As a result of the polling mechanism a change made with the app, either the official Daikin Online Controller app or the Homey Daikin AI app, may not show immediately in either app. It should be noted that the refresh interval (setting) has no influence for sending commands to the airconditioner, a mode, target temperature etc. change is always executed immediately.
 
-## Demo mode (upon pairing the demo mode is by default turned ON !!)
-Demo mode can be disabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows.
+## Demo mode (upon pairing the demo mode is by default turned OFF !!)
+Demo mode can be enabled in the device its settings menu. Demo mode can be very usefull when you are designing new flows as demo mode prevents the airco to be switched on so you can safely experiment and test your new flows.
 
 ## Special Modes
 Special modes are not supported by all models, model variants and/or the WiFi adapter its firmware version, in addition it might be that not all 3 special modes are supported. Check the Daikin Online Controller app which special modes are supported by your airco, during paring enable the supported Special Mode(s) by checking the applicable checkbox(es) or leave them all unchecked (disabled).
@@ -143,3 +143,8 @@ If you like the app, consider buying me a cup of coffee!
 - 25-NOV-19: Removed code changes in relation to Daikin Airbase (SkyFi). Will not support ducted/ceiling models due to lack of documentation regarding these models.
 - 28-JAN-20: Restructure app with .homeycompose, and version 2 flow cards depreciated.
 - 02-FEB-20: Model range drivers are replaced by the AirAirHP driver which now supports most of the Air Air Heatpumps from Diakin.
+- 07-MAR-20: Rename "Model HomeKit" to "Air-to-air heat pumps (HomeKit)".
+- 12-APR-20: Changes made to pairing response validation.
+- 12-APR-20: Upgraded to the latest Apollon7 Daikin library (v1.1.5).
+- 12-APR-20: Removed WiFi adapter setting.
+- 12-APP-20: Demo mode is now OFF by default (iso of ON).

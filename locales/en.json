@@ -15,10 +15,11 @@
             "add": "Your settings are being saved now...",
             "specialMode": "Additional modes (Powerful, Economy, Streamer).",
             "deviceInterval": "Interval",
-            "adaptersensira": "Default (BRP069B--, B-model FW ≤ 2.0.1) adapter settings will be applied!! As necessary change these after pairing is completed.",
-            "adapteremura": "Default (BRP069A--, A-model FW ≥ 1.4.3) adapter settings will be applied!! As necessary change these after pairing is completed.",
-            "adapternexura": "Default (BRP069A--, A-model FW ≥ 1.4.3) adapter settings will be applied!! As necessary change these after pairing is completed.",
-            "adapterhomekit": "Default (BRP069A--, A-model FW ≥ 1.4.3) adapter settings will be applied!! As necessary change these after pairing is completed."
+            "adaptersensira": "Daikin's latest (communication) protocol will be used to communicate with the airconditioner. As necessary change this setting after pairing is completed in the advanced settings menu.",
+            "adapteremura": "Daikin's latest (communication) protocol will be used to communicate with the airconditioner. As necessary change this setting after pairing is completed in the advanced settings menu.",
+            "adapternexura": "Daikin's latest (communication) protocol will be used to communicate with the airconditioner. As necessary change this setting after pairing is completed in the advanced settings menu.",
+            "adapterairairhp": "Daikin's latest (communication) protocol will be used to communicate with the airconditioner. As necessary change this setting after pairing is completed in the advanced settings menu.",
+            "adapterhomekit": "Daikin's latest (communication) protocol will be used to communicate with the airconditioner. As necessary change this setting after pairing is completed in the advanced settings menu."
         }
     }
 }
