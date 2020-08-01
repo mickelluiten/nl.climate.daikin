@@ -59,7 +59,6 @@ class AirAirHPDevice extends Device {
     this.registerCapabilityListener('fan_rate', this.onCapabilityFanRate.bind(this));
     this.registerCapabilityListener('fan_direction', this.onCapabilityFanDir.bind(this));
     this.registerCapabilityListener('target_temperature', this.onCapabilityAircoTemp.bind(this));
-    this.registerCapabilityListener('measure_temperature', this.onCapabilityMeasureTemperature.bind(this));
     this.registerCapabilityListener('measure_temperature.inside', this.onCapabilityMeasureTemperature.bind(this));
     this.registerCapabilityListener('measure_temperature.outside', this.onCapabilityMeasureTemperature.bind(this));
 

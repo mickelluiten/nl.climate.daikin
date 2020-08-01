@@ -23,7 +23,7 @@ Demo mode can be enabled in the device its settings menu. Demo mode can be very 
 Special modes are not supported by all models, model variants and/or the WiFi adapter its firmware version, in addition it might be that not all 3 special modes are supported. Check the Daikin Online Controller app which special modes are supported by your airco, during paring enable the supported Special Mode(s) by checking the applicable checkbox(es) or leave them all unchecked (disabled).
 
 ## WiFi adapter models
-In the settings menu for your airconditioner device you can switch between the old (model A) and the new (model B) communication protocol.   
+In the settings menu for your airconditioner device you can switch between the old (WiFi adapter model A) and the new (WiFi adapter model B) communication protocol.   
 
 ## IP-address: the use of a static IP-address is recommended
 To prevent unreliable behaviour of the application the use of a fixed (static) IP-address is required. When DHCP changes your airconditioners IP-address the application will not be aware of this change and as a result the application can no longer controle the airconditioner till you manually update the IP-address in the devices its settings menu. 
@@ -148,3 +148,4 @@ If you like the app, consider buying me a cup of coffee!
 - 12-APR-20: Upgraded to the latest Apollon7 Daikin library (v1.1.5).
 - 12-APR-20: Removed WiFi adapter setting.
 - 12-APP-20: Demo mode is now OFF by default (iso of ON).
+- 01-AUG-20: Added new action flow card "change-target-temp-by", fixed a bug that prevented flows from executing.

@@ -18,8 +18,9 @@
             "adaptersensira": "Daikin's latest (communication) protocol will be used to communicate with the airconditioner. As necessary change this setting after pairing is completed in the advanced settings menu.",
             "adapteremura": "Daikin's latest (communication) protocol will be used to communicate with the airconditioner. As necessary change this setting after pairing is completed in the advanced settings menu.",
             "adapternexura": "Daikin's latest (communication) protocol will be used to communicate with the airconditioner. As necessary change this setting after pairing is completed in the advanced settings menu.",
+            "adapterhomekit": "Daikin's latest (communication) protocol will be used to communicate with the airconditioner. As necessary change this setting after pairing is completed in the advanced settings menu.",
             "adapterairairhp": "Daikin's latest (communication) protocol will be used to communicate with the airconditioner. As necessary change this setting after pairing is completed in the advanced settings menu.",
-            "adapterhomekit": "Daikin's latest (communication) protocol will be used to communicate with the airconditioner. As necessary change this setting after pairing is completed in the advanced settings menu."
+            "adapterairairhphk": "Daikin's latest (communication) protocol will be used to communicate with the airconditioner. As necessary change this setting after pairing is completed in the advanced settings menu."
         }
     }
 }

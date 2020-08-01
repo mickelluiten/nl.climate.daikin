@@ -257,6 +257,42 @@ class AirAirHPDriver extends Driver {
                 airairhpctrl.daikinTempControl(atemp, ip_address, options);
                 return Promise.resolve(atemp);
             });
+			
+	    /** * TARGET TEMPERATURE BY ACTION ** */
+	        this._v3actionTargetTemp = new Homey.FlowCardAction('change_target_temp_by');
+	        this._v3actionTargetTemp
+	            .register()
+	            .registerRunListener((args, state) => {
+	                const device = args.device;
+					//this.log('args.device', device);
+					const devicestate = device.getState();
+	                const settings = device.getSettings();
+
+	                const ip_address = settings.ip;
+	                //this.log('ip_address', ip_address);
+
+	                const target_temperature = devicestate['target_temperature'];
+					const bytemp = args.bytemp;
+					const atemp = (target_temperature + bytemp); // change current target temp by x degC, x is between -5 and +5 degC
+	                device.setCapabilityValue('target_temperature', atemp);
+	                //this.log('target temp', atemp);
+
+	                // type B adapter logic
+	                const useGetToPost = settings.useGetToPost;
+	                const adapter = settings.adapter;
+	                let options = {};
+	                //this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
+	                //this.log('Adapter model:', adapter)
+	                if (useGetToPost) options = {
+	                    useGetToPost: true,
+	                };
+	                else options = {
+	                    useGetToPost: false,
+	                };
+
+	                airairhpctrl.daikinTempControl(atemp, ip_address, options);
+	                return Promise.resolve(atemp);
+	            });
 
         // --- MODE CHANGE ACTIONS
         this._v3actionAircoMode = new Homey.FlowCardAction('change_mode');

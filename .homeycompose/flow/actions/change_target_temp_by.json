@@ -1,0 +1,21 @@
+{
+    "id": "change_target_temp_by",
+    "title": {
+        "en": "Change current target temp. by °C",
+        "nl": "Wijzig huidige doeltemp. met °C"
+    },
+    "args": [{
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=airairhp|airairhphk|comfora|emura|nexura"
+    }, {
+        "name": "bytemp",
+        "type": "number",
+        "min": -5,
+        "max": 5,
+        "placeholder": {
+            "en": "a value between -5°C and +5°C",
+            "nl": "een getal tussen de -5°C en +5°C"
+        }
+    }]
+}

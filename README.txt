@@ -26,7 +26,7 @@ Note: after initial pairing demo mode is by default turned OFF !!
 Special modes are not supported by all models, model variants and/or the WiFi adapter its firmware version, in addition it might be that not all 3 special modes are supported. Check the Daikin Online Controller app which special modes are supported by your airco, during paring enable the supported Special Mode(s) by checking the applicable checkbox(es) or leave them all unchecked (disabled).
 
 <<WiFi adapter models>>
-In the settings menu for your airconditioner device you can switch between the old (model A) and the new (model B) communication protocol.  
+In the settings menu for your airconditioner device you can switch between the old (WiFi adapter model A) and the new (WiFi adapter model B) communication protocol.  
 
 <<IP-address>>
 To prevent unreliable behaviour of the application the use of a fixed (static) IP-address is required. When DHCP changes your airconditioners IP-address the application will not be aware of this change and as a result the application can no longer controle the airconditioner till you manually update the IP-address in the devices its settings menu. 

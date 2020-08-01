@@ -27,7 +27,7 @@ Opmerking: na het initieel toevoegen van de airconditioner is demonstratie mode 
 Speciale modi worden slechts door een beperkt aantal modellen, model reeksen en/of WiFi adapter firmware versies ondersteund, raadpleeg hiervoor de gebruiksaanwijzing van uw airconditioner. Speciale Modi kunnen alleen tijdens het aanmelden van het apparaat worden aan of uitgezet.
 
 <<WiFi adapter typen>>
-In het settings menu van het airconditioner apparaat kunt u kiezen tussen het oude (model A) en nieuwe (model B) communicatie protocol. 
+In het settings menu van het airconditioner apparaat kunt u kiezen tussen het oude (WiFi adapter model A) en nieuwe (WiFi adapter model B) communicatie protocol. 
 
 <<IP-adres>>
 Het gebruik van een statisch IP-adres wordt aangeraden. Wanneer er toch gebruik gemaakt wordt van DHCP kan het IP-adres van de airconditioner wijzigen waardoor Homey niet meer in staat is om de airconditioner te bedienen, in dat geval dient u het IP-adres in het Daikin AI instellingen menu handmatig aan te passen naar het door DHCP nieuw toegekende IP-adres.

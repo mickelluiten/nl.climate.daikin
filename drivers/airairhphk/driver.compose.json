@@ -1,8 +1,7 @@
 {
-    "deprecated": true,
     "name": {
-        "en": "Model Homekit",
-        "nl": "Model Homekit"
+        "en": "Air-to-air heat pumps (HomeKit)",
+        "nl": "Lucht/Lucht warmtepompen (HomeKit)"
     },
     "class": "thermostat",
     "capabilities": [
@@ -19,8 +18,8 @@
         }
     },
     "images": {
-        "large": "/drivers/homekit/assets/images/large.png",
-        "small": "/drivers/homekit/assets/images/small.png"
+        "large": "/drivers/airairhphk/assets/images/large.png",
+        "small": "/drivers/airairhphk/assets/images/small.png"
     },
     "pair": [{
         "id": "start"
@@ -41,7 +40,7 @@
             "nl": "Netwerk, adapter type en firmware instellingen"
         },
         "children": [{
-            "id": "homekit_ip",
+            "id": "ip",
             "type": "text",
             "pattern": "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5]).){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$",
             "label": {
@@ -54,7 +53,7 @@
             },
             "value": ""
         }, {
-            "id": "homekit_useGetToPost",
+            "id": "useGetToPost",
             "type": "checkbox",
             "label": {
                 "en": "Use new protocol",
@@ -73,7 +72,7 @@
             "nl": "Overige instellingen"
         },
         "children": [{
-            "id": "homekit_interval",
+            "id": "interval",
             "type": "number",
             "label": {
                 "en": "Polling interval",
@@ -89,7 +88,7 @@
                 "max": 30
             }
         }, {
-            "id": "homekit_demomode",
+            "id": "demomode",
             "type": "checkbox",
             "label": {
                 "en": "Demo mode",

@@ -1,0 +1,102 @@
+<script>
+Homey.setTitle( __('pair.start.title') );
+
+function saveSettings () {
+   $('.err-msg').text('');
+   $('#save').prop('disabled', true);
+
+   // input variables           
+   var inputIPAddress = $('#ipAddress').val();
+   var inputDeviceName = $('#deviceName').val();
+   
+   // ip-address can not be empty
+   if (inputIPAddress == "") {
+   	    Homey.alert(__('pair.start.required'));
+        $('#save').prop('disabled', false);
+   		return;
+   }
+   
+   // create Regular Expression that validates for IPv4 addresses, then do the actual test on the input.
+   var Ipv4RegEx = new RegExp ('^(([01]?\\d\\d?|2[0-4]\\d|25[0-5]).){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$');
+   var IPInputOK = Ipv4RegEx.test(inputIPAddress);
+    
+   if (!IPInputOK) {
+   	   Homey.alert(__('pair.start.invalidIP'));
+       $('#save').prop('disabled', false);
+   	   return;
+   	}
+
+ 	if (IPInputOK) {
+        var device = {
+			data: {
+				id: GetGUID(),
+                inputdevicename: inputDeviceName,
+                ip: inputIPAddress 
+			},
+			    name: inputDeviceName,
+			    settings: {
+			            	"ip": inputIPAddress,
+                            "adapter": "BRP069Bxx",
+                            "useGetToPost": true,			
+			            	"interval": 10,
+                            "demomode": false            
+			    }
+		};
+		Homey.emit('manual_add', device, function (err, result) {
+            $('.err-msg').text(__('pair.start.add'));
+			if(err) {
+                return console.error(err);
+			}
+        });
+        Homey.on('success', function(device){
+				//Successfully connected
+                $('#save').prop('disabled', true);	
+				Homey.addDevice(device, function(err, result){
+					if( err ) return console.error(err);
+					console.log(result);
+    				//Done pairing
+    				Homey.done();
+				});
+			});
+	} 
+}
+
+Homey.on('error', function(message){
+    $('.err-msg').text(__('pair.start.error'));
+    Homey.done();
+})
+
+function GetGUID() {
+   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+       var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+       return v.toString(16);
+   });
+}
+</script>
+    <p data-i18n="pair.start.intro">enter IP address and name</p>
+		<style>
+			.pairSettings {
+				font-size:16px;
+				border:none;
+			}
+			input {
+				font-size:16px;
+				border: 1px solid #ccc;
+			}
+		</style>
+		<table class="pairSettings">
+			<tr>
+				<td style="width:100px;" data-i18n="pair.start.ipAddress">IP</td>
+				<td><input id="ipAddress" type="text" placeholder="192.168.1.1" required /></td>
+			</tr>
+			<tr>
+				<td style="width:100px;" data-i18n="pair.start.deviceName">Name</td>
+				<td><input id="deviceName" type="text" placeholder="Your Heat Pump HomeKit"/></td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+        <p style="font-size:12px; background-color:#00FF00; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;" data-i18n="pair.start.adapterairairhphk">Adapter</p>
+<fieldset>
+    <button class="button" data-i18n="pair.start.saveSettings" id="save" onclick="saveSettings()">Save</button>
+</fieldset>
+<p class="err-msg" style="color:#ff6347;"></p>
