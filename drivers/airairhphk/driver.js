@@ -22,11 +22,27 @@ class AirAirHPHKDriver extends Driver {
             const settings = device.getSettings();
 
             const ip_address = settings.ip;
-            //this.log('ip_address', ip_address);
+            this.log('ip_address', ip_address);
 
             const target_temperature = devicestate['target_temperature'];
 			const bytemp = args.bytemp;
-			const atemp = (target_temperature + bytemp); // change current target temp by x degC
+			var atemp = (target_temperature + bytemp); // change current target temp by x degC
+			var thermostat_mode = devicestate['thermostat_mode'];
+			this.log('thermostat_mode: ', thermostat_mode);
+			switch (thermostat_mode) {
+		      case 'cool':
+				this.log('Cooling range limits applied');
+	  			if(atemp < 18) {atemp = 18};
+	  			if(atemp > 32) {atemp = 32};
+		        break;
+		      case 'heat':
+				this.log('Heating range limits applied');
+	  			if(atemp < 10) {atemp = 10};
+	  			if(atemp > 30) {atemp = 30};
+		        break;
+		      default:
+		        break;
+			}
             device.setCapabilityValue('target_temperature', atemp);
             //this.log('target temp', atemp);
 

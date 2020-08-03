@@ -9,10 +9,10 @@ This app requires that your Daikin air conditioner is equipped with a WiFi adapt
 
 Note: requires either Homey's experimental Apple Homekit feature enabled or one of the following apps: "HomeKit by Sprut", "HomeyKit by Bas Jansen".
 
-- special modes, i.e. POWERFUL, are supported for some models/model variants.
+- special modes, i.e. POWERFUL, are supported for some models/model variants although still experimental.
 
-<<Action flow cards>>
-When designing flows and you add multiple Daikin AI action flowcards to a flow, or several flows but with the same trigger condition, it might be necessary to spread these actions over several seconds to give the airco time to process all the commands as the interface handles all the commands separately. The nature (asynchronous polling) of the Daikin interface still makes it possible that commands collide and as a result commands are not executed correctly which is something to keep in mind when building flows.
+<<Action flow cards, and data polling>>
+When designing flows and you add multiple Daikin AI action flowcards to a flow, or several flows but with the same trigger condition, it might be necessary to spread these actions over several seconds to give the airco time to process all the commands as the interface handles all the commands separately. The nature (asynchronous polling) of the Daikin interface still makes it possible that commands collide and as a result commands are not executed correctly which is something to keep in mind when building flows. The more airco units are controlled the more prominent this behaviour will become. It is also good to understand that i.e. after a Homey reboot and drivers are restarting within seconds this polling of the connected airco's will also be within seconds of eachother.
 
 <<Refresh interval>>
 Daikin designed an interface that is based on polling which means the airconditioner must be interrogated once in a while to know its current status. The polling interval of the official Daikin Online Controller app is between 30 and 60 seconds. With the refresh interval setting of the Daikin AI app it is possible to set its polling interval between 5 and 30 seconds which is up to 6 times faster. A higher refresh interval means that your Homey has more work to do. When your setup involves more than one airconditioner a polling interval of less than 10 seconds is not recommended. As a result of the polling mechanism a change made with the app, either the official Daikin Online Controller app or the Homey Daikin AI app, may not show immediately in either app. It should be noted that the refresh interval (setting) has no influence for sending commands to the airconditioner, a mode, target temperature etc. change is always executed immediately.
@@ -42,7 +42,7 @@ It is advised to turn your airconditioner OFF before and keep it switched OFF du
 - "Sky Air" ducted/ceiling models are NOT supported by this app.
 - The app is not compatible with Homey v1 firmware.
 - The "Airflow Rate" and "Swing" (a picker) control requires Homey mobile app version 2.0.6 or higher to be shown.
-- HomeKit support only applies for the 'Model HomeKit'.
+- HomeKit support only applies for the 'Air-to-air Heatpump (HomeKit)' driver.
 - DHCP is not supported.
 - Not all Daikin airconditioner models / model series / combinations of indoor and outdoor units are supported. Due to the fact that Daikin does not disclose their interface specification reverse engineering of the interface is extremely difficult.
 - Homey speech is not supported (note: Homekit driver users have speech support through Siri and can set airconditioner mode and the target temperature).

@@ -235,11 +235,11 @@ class AirAirHPDriver extends Driver {
                 const settings = device.getSettings();
 
                 const ip_address = settings.ip;
-                // this.log('ip_address', ip_address);
+                this.log('ip_address', ip_address);
 
                 const atemp = args.atemp;
                 device.setCapabilityValue('target_temperature', atemp);
-                // this.log('target temp', atemp);
+                this.log('target temp', atemp);
 
                 // type B adapter logic
                 const useGetToPost = settings.useGetToPost;
@@ -269,13 +269,65 @@ class AirAirHPDriver extends Driver {
 	                const settings = device.getSettings();
 
 	                const ip_address = settings.ip;
-	                //this.log('ip_address', ip_address);
+	                this.log('ip_address', ip_address);
 
 	                const target_temperature = devicestate['target_temperature'];
 					const bytemp = args.bytemp;
-					const atemp = (target_temperature + bytemp); // change current target temp by x degC, x is between -5 and +5 degC
-	                device.setCapabilityValue('target_temperature', atemp);
-	                //this.log('target temp', atemp);
+					var atemp = (target_temperature + bytemp); // change current target temp by x degC, x is between -5 and +5 degC
+					// Check the thermostat mode, unfortunately the use of special airco modes make this a bit complicated... 
+					const spmode = settings.spmode;
+			        switch (spmode) {
+					  case 0:
+	  			        var thermostat_mode = devicestate['thermostat_mode_std'];
+	  					this.log('thermostat_mode_std: ', thermostat_mode);
+		              break;
+			          case 1:
+	  			        var thermostat_mode = devicestate['thermostat_mode_ext1'];
+	  					this.log('thermostat_mode_ext1: ', thermostat_mode);
+			            break;
+			          case 2:
+	  			        var thermostat_mode = devicestate['thermostat_mode_ext2'];
+	  					this.log('thermostat_mode_ext2: ', thermostat_mode);
+			            break;
+			          case 3:
+	  			        var thermostat_mode = devicestate['thermostat_mode_ext3'];
+	  					this.log('thermostat_mode_ext3: ', thermostat_mode);
+			            break;
+			          case 4:
+	  			        var thermostat_mode = devicestate['thermostat_mode_ext4'];
+	  					this.log('thermostat_mode_ext4: ', thermostat_mode);
+			            break;
+			          case 5:
+	  			        var thermostat_mode = devicestate['thermostat_mode_ext5'];
+	  					this.log('thermostat_mode_ext5: ', thermostat_mode);
+			            break;
+			          case 6:
+	  			        var thermostat_mode = devicestate['thermostat_mode_ext6'];
+	  					this.log('thermostat_mode_ext6: ', thermostat_mode);
+			            break;
+			          case 7:
+	  			        var thermostat_mode = devicestate['thermostat_mode_ext7'];
+	  					this.log('thermostat_mode_ext7: ', thermostat_mode);
+			            break;
+			          default:
+			            break;
+			        }
+				    switch (thermostat_mode) {
+				      case 'cool':
+						this.log('Cooling range limits applied');
+			  			if(atemp < 18) {atemp = 18};
+			  			if(atemp > 32) {atemp = 32};
+				        break;
+				      case 'heat':
+						this.log('Heating range limits applied');
+			  			if(atemp < 10) {atemp = 10};
+			  			if(atemp > 30) {atemp = 30};
+				        break;
+				      default:
+				        break;
+					}
+					device.setCapabilityValue('target_temperature', atemp);
+	                this.log('target temp', atemp);
 
 	                // type B adapter logic
 	                const useGetToPost = settings.useGetToPost;
@@ -303,15 +355,49 @@ class AirAirHPDriver extends Driver {
                 const settings = device.getSettings();
 
                 const ip_address = settings.ip;
-                // this.log('ip_address', ip_address);
+                this.log('ip_address', ip_address);
 
                 const demo_mode = settings.demomode;
                 // this.log('demo_mode', demo_mode);
 
-                const thermostat_mode_std = args.mode;
-                device.setCapabilityValue('thermostat_mode_std', thermostat_mode_std);
-                // this.log('thermostat_mode_std', thermostat_mode_std);
-
+                const thermostat_mode = args.mode;
+				const spmode = settings.spmode;
+		        switch (spmode) {
+				  case 0:
+  			        device.setCapabilityValue('thermostat_mode_std', thermostat_mode);
+  					this.log('thermostat_mode_std: ', thermostat_mode);
+	              break;
+		          case 1:
+  			        device.setCapabilityValue('thermostat_mode_ext1', thermostat_mode);
+  					this.log('thermostat_mode_ext1: ', thermostat_mode);
+		            break;
+		          case 2:
+  			        device.setCapabilityValue('thermostat_mode_ext2', thermostat_mode);
+  					this.log('thermostat_mode_ext2: ', thermostat_mode);
+		            break;
+		          case 3:
+  			        device.setCapabilityValue('thermostat_mode_ext3', thermostat_mode);
+  					this.log('thermostat_mode_ext3: ', thermostat_mode);
+		            break;
+		          case 4:
+  			        device.setCapabilityValue('thermostat_mode_ext4', thermostat_mode);
+  					this.log('thermostat_mode_ext4: ', thermostat_mode);
+		            break;
+		          case 5:
+  			        device.setCapabilityValue('thermostat_mode_ext5', thermostat_mode);
+  					this.log('thermostat_mode_ext5: ', thermostat_mode);
+		            break;
+		          case 6:
+  			        device.setCapabilityValue('thermostat_mode_ext6', thermostat_mode);
+  					this.log('thermostat_mode_ext6: ', thermostat_mode);
+		            break;
+		          case 7:
+  			        device.setCapabilityValue('thermostat_mode_ext7', thermostat_mode);
+  					this.log('thermostat_mode_ext7: ', thermostat_mode);
+		            break;
+		          default:
+		            break;
+		        }
                 // type B adapter logic
                 const useGetToPost = settings.useGetToPost;
                 const adapter = settings.adapter;
@@ -325,8 +411,8 @@ class AirAirHPDriver extends Driver {
                     useGetToPost: false,
                 };
 
-                airairhpctrl.daikinModeControl(thermostat_mode_std, ip_address, options, demo_mode);
-                return Promise.resolve(thermostat_mode_std);
+                airairhpctrl.daikinModeControl(thermostat_mode, ip_address, options, demo_mode);
+                return Promise.resolve(thermostat_mode);
             });
 
         // --- FAN RATE ACTIONS
@@ -338,11 +424,11 @@ class AirAirHPDriver extends Driver {
                 const settings = device.getSettings();
 
                 const ip_address = settings.ip;
-                // this.log('ip_address', ip_address);
+                this.log('ip_address', ip_address);
 
                 const fan_rate = args.frate;
                 device.setCapabilityValue('fan_rate', fan_rate);
-                // this.log('fan_rate', fan_rate);
+                this.log('fan_rate', fan_rate);
 
                 // type B adapter logic
                 const useGetToPost = settings.useGetToPost;
@@ -370,11 +456,11 @@ class AirAirHPDriver extends Driver {
                 const settings = device.getSettings();
 
                 const ip_address = settings.ip;
-                // this.log('ip_address', ip_address);
+                this.log('ip_address', ip_address);
 
                 const fan_direction = args.fdir;
                 device.setCapabilityValue('fan_direction', fan_direction);
-                // this.log('fan_direction', fan_direction);
+                this.log('fan_direction', fan_direction);
 
                 // type B adapter logic
                 const useGetToPost = settings.useGetToPost;

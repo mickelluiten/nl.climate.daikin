@@ -11,8 +11,8 @@ Opmerking: vereist dat Homey's experimentele Apple HomeKit ondersteuning is inge
 
 - beperkte ondersteuning voor speciale modi zoals "Krachtig" en beschikbaar zijn op een beperkt aantal modellen/model reeksen.
 
-<<Flow kaarten>>
-Bij het ontwikkelen van flows die meerdere Daikin AI actie flow kaartjes bevatten, danwel verschillende flows met dezelfde trigger conditie die dan al of niet weer een Daikin AI actie uitvoeren, kan het nodig zijn dat deze triggers/acties verspreid worden over meerdere seconden dit als gevolg van het feit dat de airconditioner slechts 1 commando te gelijk kan uitvoeren. Gelet op het feit dat het interface protocol van Daikin is gebaseerd op "asynchrone polling", zie ook hieronder "Verversinterval", kan het desondanks nog steeds voorkomen dat commando's "botsen" en als gevolg daarvan niet worden uitgevoerd.  
+<<Actie flow kaarten en gegevens verversen>>
+Bij het ontwikkelen van flows die meerdere Daikin AI actie flow kaartjes bevatten, danwel verschillende flows met dezelfde trigger conditie die dan al of niet weer een Daikin AI actie uitvoeren, kan het nodig zijn dat deze triggers/acties verspreid worden over meerdere seconden dit als gevolg van het feit dat de airconditioner slechts 1 commando te gelijk kan uitvoeren. Gelet op het feit dat het interface protocol van Daikin is gebaseerd op "asynchrone polling", zie ook hieronder "Verversinterval", kan het desondanks nog steeds voorkomen dat commando's "botsen" en als gevolg daarvan niet worden uitgevoerd. Wanneer er meerdere airco units zijn aangesloten is het meer en meer belangrijk om hier rekening mee te houden. Verder is het goed om te begrijpen dat wanneer Homey reboot en vervolgens alle airco drivers herstarten ook dit polling mechanisme voor alle aangesloten airco units zo'n beetje gelijktijdig zal starten.
 
 <<Verversinterval>>
 Daikin heeft een interface ontwikkelt die gebaseerd is op "polling" hetgeen betekent dat de Daikin AI app de huidige status van het apparaat zelf moet opvragen bij de airconditioner. De verversinterval van de officiële Daikin Onlin Controller app ligt ergens tussen de 30 en 60 seconden. In de Daikin AI app kan de verversinterval door de gebruiker worden ingesteld tussen minimaal 5 en maximaal 30 seconden, hetgeen tot 6 keer sneller is dan de officiele Daikin app. Een hogere verversinterval heeft naast voordelen ook nadelen zoals een hogere CPU belasting dat weer nadelig kan uitpakken voor andere applicaties die draaien op uw Homey. Als gevolg van het polling mechanisme zullen wijzigingen die gemaakt worden met een app, hetzij de officiële Daikin Online Controller app danwel de Homey Daikin AI app, vaak niet direct maar vertraagd worden getoond in de app. Hierbij dient te worden opgemerkt dat de instelling van het verversinterval geen enkele invloed heeft op snelheid waarmee app commando's zoals een modi wijziging, doel temperatuur wijziging etc. worden uitgevoerd, deze worden namelijk altijd direct verstuurd naar en uitgevoerd door de airconditioner.
@@ -43,7 +43,7 @@ U wordt geadviseerd om uw airconditioner uit te schakelen wanneer u de Daikin AI
 - Voor bediening vanuit de Apple Home app (HomeKit) dient het 'Model HomeKit' stuurprogramma te worden gebruikt.
 - DHCP is niet ondersteund.
 - Niet alle Daikin airconditioner modellen / model reeksen / combinaties van binnen en buiten units worden ondersteund. Daikin als fabrikant stelt geen interface specificaties beschikbaar hetgeen het extra lastig maakt om software te ontwikkelen voor Daikin airconditioners.
-- Homey spraak wordt niet ondersteund (opmerking: er bestaat een beperkte spraakondersteuning middels Siri wanneer het HomeKit stuurprogramma wordt gebruikt).
+- Homey spraak wordt niet ondersteund (opmerking: er bestaat een beperkte spraakondersteuning middels Siri wanneer het 'Air-to-air Heatpump (HomeKit)' stuurprogramma wordt gebruikt).
 - Speciale modi kunnen niet gebruikt worden in flows.
 
 <<Ondersteunde modellen>
