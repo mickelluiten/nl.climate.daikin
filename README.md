@@ -150,3 +150,4 @@ If you like the app, consider buying me a cup of coffee!
 - 12-APP-20: Demo mode is now OFF by default (iso of ON).
 - 01-AUG-20: Added new action flow card "change-target-temp-by", fixed a bug that prevented flows from executing.
 - 03-AUG-20: Added range check for new action flow card, fixed a bug related to special modes (action card set mode).
+- 16-AUG-20: Depricated special modes, in version 4 specialmode are refactored with a new UI.

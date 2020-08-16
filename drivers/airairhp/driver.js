@@ -46,9 +46,9 @@ class AirAirHPDriver extends Driver {
             .registerRunListener((args, state) => {
                 const conditionMet = state['measure_temperature.inside'] > args.inside_temperature_more;
 
-                // this.log('trigger - args.inside_temperature_more', args.inside_temperature_more);
-                // this.log('trigger - state()[measure_temperature.inside]', ( state['measure_temperature.inside']) );
-                // this.log('trigger - conditionMet inside temp', conditionMet);
+                //this.log('trigger - args.inside_temperature_more', args.inside_temperature_more);
+                //this.log('trigger - state()[measure_temperature.inside]', ( state['measure_temperature.inside']) );
+                //this.log('trigger - conditionMet inside temp', conditionMet);
                 return Promise.resolve(conditionMet);
             });
 
@@ -482,7 +482,7 @@ class AirAirHPDriver extends Driver {
 
 // --- METHODS FOR TEMPERATURE FLOWCARD TRIGGERS
     /*
-     * Triggers the 'luminance more than x' flow
+     * Triggers the 'temperature' flows
      * @param {Device} device - A Device instance
      * @param {Object} tokens - An object with tokens and their typed values, as defined in the app.json
      * @param {Object} state - An object with properties which are accessible throughout the Flow

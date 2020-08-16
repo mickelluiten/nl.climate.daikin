@@ -65,6 +65,10 @@ class Driver extends Homey.Driver {
      */
   triggerFlow(trigger, device, tokens, state) {
     if (trigger) {
+	  //this.log('triggerFlow called... > trigger:',trigger);
+	  //this.log('triggerFlow called... > device:',device);
+	  //this.log('triggerFlow called... > tokens:',tokens);
+	  //this.log('triggerFlow called... > state:',state);
       trigger
         .trigger(device, tokens, state)
         .then(this.log('flowcard triggered'))

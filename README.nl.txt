@@ -1,3 +1,5 @@
+OPGELET: het is niet langer mogelijk om tijdens pairing "special modes" te selecteren dit ter voorbereiding op versie 4. Maakt u al gebruik van Special Mode functies dan dient u na de installatie van versie 4 uw airco eenmalig te verwijderen en op nieuw te pairen.
+
 Voor een juiste werking van deze Homey App is het noodzakelijk dat uw Daikin airconditioner is uitgerust met een WiFi adapter (zijnde model BRP069A-- of BRP069B--). Deze applicatie is niet geschikt om kanaal of plafond "Sky Air" modellen te bedienen.
 
 <<Mogelijkheden>>

@@ -1,4 +1,5 @@
 {
+	"deprecated": true,
     "type": "enum",
     "title": {
         "en": "Operation Mode",

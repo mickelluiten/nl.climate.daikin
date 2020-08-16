@@ -1,3 +1,5 @@
+IMPORTANT NOTE: in preparation of the version 4 release it is no longer possible to enable special modes during paring. Users that are using special mode functions need to delete and pair their airco after the initial installation of version 4.
+
 This app requires that your Daikin air conditioner is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--). This app does NOT support "Sky Air" ducted/ceiling models.
 
 <<Features>>

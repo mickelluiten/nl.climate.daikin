@@ -12,7 +12,7 @@
     "climate",
     "appliances"
   ],
-  "version": "3.4.1",
+  "version": "3.4.2",
   "compatibility": ">=2.0.0",
   "athomForumDiscussionId": 2082,
   "homeyCommunityTopicId": 158,
@@ -4326,6 +4326,7 @@
       "step": 5
     },
     "thermostat_mode_ext1": {
+      "deprecated": true,
       "type": "enum",
       "title": {
         "en": "Operation Mode",
@@ -4389,6 +4390,7 @@
       ]
     },
     "thermostat_mode_ext2": {
+      "deprecated": true,
       "type": "enum",
       "title": {
         "en": "Operation Mode",
@@ -4452,6 +4454,7 @@
       ]
     },
     "thermostat_mode_ext3": {
+      "deprecated": true,
       "type": "enum",
       "title": {
         "en": "Operation Mode",
@@ -4522,6 +4525,7 @@
       ]
     },
     "thermostat_mode_ext4": {
+      "deprecated": true,
       "type": "enum",
       "title": {
         "en": "Operation Mode",
@@ -4585,6 +4589,7 @@
       ]
     },
     "thermostat_mode_ext5": {
+      "deprecated": true,
       "type": "enum",
       "title": {
         "en": "Operation Mode",
@@ -4655,6 +4660,7 @@
       ]
     },
     "thermostat_mode_ext6": {
+      "deprecated": true,
       "type": "enum",
       "title": {
         "en": "Operation Mode",
@@ -4725,6 +4731,7 @@
       ]
     },
     "thermostat_mode_ext7": {
+      "deprecated": true,
       "type": "enum",
       "title": {
         "en": "Operation Mode",
