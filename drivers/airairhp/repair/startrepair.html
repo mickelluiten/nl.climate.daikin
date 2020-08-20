@@ -1,0 +1,212 @@
+<script>
+Homey.setTitle( __('repair.start.repairtitle') );
+
+function saveChanges () {
+   $('.err-msg').text('');
+   $('#savechanges').prop('disabled', true);
+
+   // Streamer checkbox
+   if ($('#streamer').prop('checked')) {
+       var streamerBool = true;
+   } else {
+       var streamerBool = false;
+   }   
+   // Powerful checkbox
+   if ($('#powerful').prop('checked')) {
+       var powerfulBool = true;
+   } else {
+       var powerfulBool = false;
+   } 
+   // Econo checkbox
+   if ($('#econo').prop('checked')) {
+       var econoBool = true;
+   } else {
+       var econoBool = false;
+   } 
+   // special mode martrix
+   if ( (streamerBool == false) && (powerfulBool == false) && (econoBool == false) ) { var specialModeBool = false; }; // off
+   if ( (streamerBool == false) && (powerfulBool == false) && (econoBool == true ) ) { var specialModeBool = true;  var specialMode = 1 }; // econo
+   if ( (streamerBool == false) && (powerfulBool == true ) && (econoBool == false) ) { var specialModeBool = true;  var specialMode = 2 }; // powerful
+   if ( (streamerBool == false) && (powerfulBool == true ) && (econoBool == true ) ) { var specialModeBool = true;  var specialMode = 3 }; // powerful + econo 
+   if ( (streamerBool == true ) && (powerfulBool == false) && (econoBool == false) ) { var specialModeBool = true;  var specialMode = 4 }; // streamer
+   if ( (streamerBool == true ) && (powerfulBool == false) && (econoBool == true ) ) { var specialModeBool = true;  var specialMode = 5 }; // streamer + econo
+   if ( (streamerBool == true ) && (powerfulBool == true ) && (econoBool == false) ) { var specialModeBool = true;  var specialMode = 6 }; // streamer + powerful
+   if ( (streamerBool == true ) && (powerfulBool == true ) && (econoBool == true ) ) { var specialModeBool = true;  var specialMode = 7 }; // streamer + powerful + econo
+
+
+   if (specialModeBool == false) {
+     var device = {
+           "capabilities": [
+           		 "thermostat_mode_std",
+           		 "fan_rate",
+          	 	 "fan_direction",
+         	  	 "target_temperature",
+   	     	  	 "measure_temperature",       
+   	     	  	 "measure_temperature.inside",
+          	 	 "measure_temperature.outside" 
+        	   ],
+		 	settings: {"spmode": 0}
+         }
+     } else {
+         switch (specialMode) {
+             case 1: var device = {
+				 	    "capabilities": [
+						      "thermostat_mode_std",
+                              "fan_rate",
+                              "fan_direction",
+                              "special_mode_eco",
+                              "target_temperature",
+				              "measure_temperature",       
+ 					    	  "measure_temperature.inside",
+                              "measure_temperature.outside" 
+                            ],
+                          settings: {"spmode": 1}
+                      }
+                      break;
+             case 2: var device = {
+				 		"capabilities": [
+                        	  "thermostat_mode_std",
+                     	      "fan_rate",
+                    	      "fan_direction",
+                   		 	  "special_mode_pwr",
+                      	  	  "target_temperature",
+                    		  "measure_temperature",       
+                   		 	  "measure_temperature.inside",
+                     	      "measure_temperature.outside" 
+                     	   ],
+                   	     settings: {"spmode": 2}
+                      }
+                      break;
+             case 3: var device = {
+						"capabilities": [
+                               "thermostat_mode_std",                                    
+                               "fan_rate",
+                               "fan_direction",
+   							   "special_mode_eco",
+                               "special_mode_pwr",
+                               "target_temperature",
+                    	       "measure_temperature",       
+                               "measure_temperature.inside",
+                               "measure_temperature.outside" 
+                            ],
+                   	     settings: {"spmode": 3}
+                      }
+                      break;
+             case 4: var device = {
+						"capabilities": [
+                               "thermostat_mode_std",					 
+                               "fan_rate",
+                               "fan_direction",
+                               "special_mode_str",	
+                               "target_humidity",
+                               "target_temperature",
+                    	       "measure_temperature",       
+                               "measure_temperature.inside",
+                               "measure_temperature.outside" 
+                            ],
+                   	     settings: {"spmode": 4}
+                      }
+                      break;
+             case 5: var device = {
+						"capabilities": [
+                               "thermostat_mode_std",
+                               "fan_rate",
+                               "fan_direction",
+                               "special_mode_eco",
+                               "special_mode_str",
+                               "target_humidity",
+                               "target_temperature",
+                    	       "measure_temperature",       
+                               "measure_temperature.inside",
+                               "measure_temperature.outside" 
+                            ],
+							settings: {"spmode": 5}
+                      }
+                      break;
+             case 6: var device = {
+						"capabilities": [
+                               "thermostat_mode_std",
+                               "fan_rate",
+                               "fan_direction",
+                               "special_mode_pwr",
+                               "special_mode_str",
+                               "target_humidity",
+                               "target_temperature",
+                    	       "measure_temperature",       
+                               "measure_temperature.inside",
+                               "measure_temperature.outside" 
+                            ],
+                   	     settings: {"spmode": 6}
+                      }
+                      break;
+             case 7: var device = {
+                   		"capabilities": [
+                               "thermostat_mode_std",
+                               "fan_rate",
+                               "fan_direction",
+                               "special_mode_eco",
+                               "special_mode_pwr",
+   						       "special_mode_str",
+                               "target_humidity",
+                               "target_temperature",
+                    	       "measure_temperature",       
+                               "measure_temperature.inside",
+                               "measure_temperature.outside" 
+                            ],
+                   	     settings: {"spmode": 7}
+                      }
+                      break;
+             default: break;  
+         }
+   };
+
+   Homey.emit('dorepair', device, function (err, result) {
+     $('.err-msg').text(__('repair.start.add'));
+   	 if(err) {
+	   return console.error(err);
+	 }
+   });
+	
+   Homey.on('finish', function() {
+	   $('#savechanges').prop('disabled', true);
+       Homey.confirm( Homey.__('repair.start.done'), 'info', function(){
+         Homey.done();
+	   });
+ 	});
+}
+
+Homey.on('error', function(message){
+    $('.err-msg').text(__('repair.start.error'));
+    Homey.done();
+})
+
+</script>
+    <p data-i18n="repair.start.repairintro">Select the required Special Modes</p>
+		<style>
+			.pairSettings {
+				font-size:16px;
+				border:none;
+			}
+			input {
+				font-size:16px;
+				border: 1px solid #ccc;
+			}
+		</style>
+		<table class="repairSettings">
+			<tr>
+				<td style="width:100px;" data-i18n="repair.start.econo">Econo</td>
+				<td><input id="econo" type="checkbox" unchecked="false"/></td>
+			</tr>
+			<tr>
+				<td style="width:100px;" data-i18n="repair.start.powerful">Powerful</td>
+				<td><input id="powerful" type="checkbox" unchecked="false"/></td>
+			</tr>
+			<tr>
+				<td style="width:100px;" data-i18n="repair.start.streamer">Streamer</td>
+				<td><input id="streamer" type="checkbox" unchecked="false"/></td>
+			</tr>
+		</table>
+<fieldset>
+    <button class="button" data-i18n="repair.start.saveChanges" id="savechanges" onclick="saveChanges()">Save</button>
+</fieldset>
+<p class="err-msg" style="color:#ff6347;"></p>

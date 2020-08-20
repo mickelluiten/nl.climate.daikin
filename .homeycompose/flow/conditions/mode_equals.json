@@ -7,7 +7,7 @@
     "args": [{
         "type": "device",
         "name": "device",
-        "filter": "driver_id=airairhp|comfora|emura|nexura"
+        "filter": "driver_id=airairhp"
     }, {
         "name": "mode",
         "type": "dropdown",

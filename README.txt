@@ -1,4 +1,4 @@
-IMPORTANT NOTE: in preparation of the version 4 release it is no longer possible to enable special modes during paring. Users that are using special mode functions need to delete and pair their airco after the initial installation of version 4.
+IMPORTANT NOTE: Users that are using Special Mode functions should use the device maintenance RePairing feature to fix/restore special modes after the initial installation of version 4.
 
 This app requires that your Daikin air conditioner is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--). This app does NOT support "Sky Air" ducted/ceiling models.
 
@@ -48,7 +48,8 @@ It is advised to turn your airconditioner OFF before and keep it switched OFF du
 - DHCP is not supported.
 - Not all Daikin airconditioner models / model series / combinations of indoor and outdoor units are supported. Due to the fact that Daikin does not disclose their interface specification reverse engineering of the interface is extremely difficult.
 - Homey speech is not supported (note: Homekit driver users have speech support through Siri and can set airconditioner mode and the target temperature).
-- Special modes can not be used in flows.
+- No trigger flow card available for special modes.
+- Special mode flow cards shown for not enabled special modes (might be fixed in Homey firmware 5 / SDK3)
 
 <<Compatible Daikin Air Conditioning units>>
 >> in combination with BRP069A41:

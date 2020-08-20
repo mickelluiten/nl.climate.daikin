@@ -1,4 +1,4 @@
-OPGELET: het is niet langer mogelijk om tijdens pairing "special modes" te selecteren dit ter voorbereiding op versie 4. Maakt u al gebruik van Special Mode functies dan dient u na de installatie van versie 4 uw airco eenmalig te verwijderen en op nieuw te pairen.
+OPGELET: maakt u gebruik van Speciale Modi dan dient u na de installatie van versie 4 eenmalig met behulp van het onderhoudsmenu en de opnieuw paren functie Speciale Modi te herstellen.
 
 Voor een juiste werking van deze Homey App is het noodzakelijk dat uw Daikin airconditioner is uitgerust met een WiFi adapter (zijnde model BRP069A-- of BRP069B--). Deze applicatie is niet geschikt om kanaal of plafond "Sky Air" modellen te bedienen.
 
@@ -46,7 +46,8 @@ U wordt geadviseerd om uw airconditioner uit te schakelen wanneer u de Daikin AI
 - DHCP is niet ondersteund.
 - Niet alle Daikin airconditioner modellen / model reeksen / combinaties van binnen en buiten units worden ondersteund. Daikin als fabrikant stelt geen interface specificaties beschikbaar hetgeen het extra lastig maakt om software te ontwikkelen voor Daikin airconditioners.
 - Homey spraak wordt niet ondersteund (opmerking: er bestaat een beperkte spraakondersteuning middels Siri wanneer het 'Air-to-air Heatpump (HomeKit)' stuurprogramma wordt gebruikt).
-- Speciale modi kunnen niet gebruikt worden in flows.
+- Geen trigger flow cards beschikbaar voor speciale modi.
+- Speciale modi flow cards ook van niet ingeschakelde speciale modi worden getoond (wordt mogelijk opgelost met Homey Firmware 5 / SDK3).
 
 <<Ondersteunde modellen>
 >> in combinatie met BRP069A41:

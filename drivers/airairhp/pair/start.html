@@ -82,9 +82,10 @@ function saveSettings () {
       	                		},
       	                		 name: inputDeviceName,
                                  "capabilities": [
-                                   "thermostat_mode_ext1",
+                                   "thermostat_mode_std",
                                    "fan_rate",
                                    "fan_direction",
+                                   "special_mode_eco",
                                    "target_temperature",
                            	       "measure_temperature",       
                            	       "measure_temperature.inside",
@@ -110,9 +111,10 @@ function saveSettings () {
       	                		 name: inputDeviceName,
      	                		 name: inputDeviceName,
                                  "capabilities": [
-                                    "thermostat_mode_ext2",
+                                    "thermostat_mode_std",
                                     "fan_rate",
                                     "fan_direction",
+                                    "special_mode_pwr",
                                     "target_temperature",
                           	        "measure_temperature",       
                                     "measure_temperature.inside",
@@ -137,9 +139,11 @@ function saveSettings () {
       	                		},
       	                		 name: inputDeviceName,
                                  "capabilities": [
-                                    "thermostat_mode_ext3",
+                                    "thermostat_mode_std",                                    
                                     "fan_rate",
                                     "fan_direction",
+									"special_mode_eco",
+                                    "special_mode_pwr",
                                     "target_temperature",
                          	        "measure_temperature",       
                                     "measure_temperature.inside",
@@ -164,9 +168,10 @@ function saveSettings () {
       	                		},
       	                		 name: inputDeviceName,
                                  "capabilities": [
-                                    "thermostat_mode_ext4",
+                                    "thermostat_mode_std",					 
                                     "fan_rate",
                                     "fan_direction",
+                                    "special_mode_str",	
                                     "target_humidity",
                                     "target_temperature",
                          	        "measure_temperature",       
@@ -192,9 +197,11 @@ function saveSettings () {
       	                		},
       	                		 name: inputDeviceName,
                                  "capabilities": [
-                                    "thermostat_mode_ext5",
+                                    "thermostat_mode_std",
                                     "fan_rate",
                                     "fan_direction",
+                                    "special_mode_eco",
+                                    "special_mode_str",
                                     "target_humidity",
                                     "target_temperature",
                          	        "measure_temperature",       
@@ -220,9 +227,11 @@ function saveSettings () {
       	                		},
       	                		 name: inputDeviceName,
                                  "capabilities": [
-                                    "thermostat_mode_ext6",
+                                    "thermostat_mode_std",
                                     "fan_rate",
                                     "fan_direction",
+                                    "special_mode_pwr",
+                                    "special_mode_str",
                                     "target_humidity",
                                     "target_temperature",
                          	        "measure_temperature",       
@@ -248,9 +257,12 @@ function saveSettings () {
       	                		},
       	                		 name: inputDeviceName,
                                  "capabilities": [
-                                    "thermostat_mode_ext7",
+                                    "thermostat_mode_std",
                                     "fan_rate",
                                     "fan_direction",
+                                    "special_mode_eco",
+                                    "special_mode_pwr",
+									"special_mode_str",
                                     "target_humidity",
                                     "target_temperature",
                          	        "measure_temperature",       
@@ -321,6 +333,18 @@ function GetGUID() {
 			<tr>
 				<td style="width:100px;" data-i18n="pair.start.deviceName">Name</td>
 				<td><input id="deviceName" type="text" placeholder="Your Air2Air Heat Pump"/></td>
+			</tr>
+			<tr>
+				<td style="width:100px;" data-i18n="pair.start.econo">Econo</td>
+				<td><input id="econo" type="checkbox" unchecked="false"/></td>
+			</tr>
+			<tr>
+				<td style="width:100px;" data-i18n="pair.start.powerful">Powerful</td>
+				<td><input id="powerful" type="checkbox" unchecked="false"/></td>
+			</tr>
+			<tr>
+				<td style="width:100px;" data-i18n="pair.start.streamer">Streamer</td>
+				<td><input id="streamer" type="checkbox" unchecked="false"/></td>
 			</tr>
 		</table>
         <p style="font-size:12px; background-color:#00FF00; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;" data-i18n="pair.start.adapterairairhp">Adapter</p>

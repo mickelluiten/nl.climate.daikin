@@ -1,0 +1,28 @@
+{
+    "id": "mode_pwrful_equals",
+    "title": {
+        "en": "The powerful mode !{{equals|does not equal}}",
+        "nl": "De krachtig mode komt !{{overeen met|komt niet overeen met}}"
+    },
+    "args": [{
+        "type": "device",
+        "name": "device",
+        "filter": "driver_id=airairhp"
+    }, {
+        "name": "smode_pwrful",
+        "type": "dropdown",
+        "values": [{
+            "id": "off",
+            "label": {
+                "en": "Off",
+                "nl": "Uit"
+            }
+        }, {
+            "id": "on",
+            "label": {
+                "en": "On",
+                "nl": "Aan"
+            }
+        }]
+    }]
+}

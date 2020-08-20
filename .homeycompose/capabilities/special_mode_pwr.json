@@ -1,0 +1,22 @@
+{
+	"type": "enum",
+	"title": {
+		"en": "Powerful",
+		"nl": "Krachtig"
+	},
+	"getable": true,
+	"setable": true,
+	"values": [{
+		"id": "off",
+		"title": {
+			"en": "Off",
+			"nl": "Uit"
+		}
+	}, {
+		"id": "on",
+		"title": {
+			"en": "On",
+			"nl": "Aan"
+		}
+	}]
+}

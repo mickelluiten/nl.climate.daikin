@@ -1,0 +1,28 @@
+{
+    "id": "change_smode_econo",
+    "title": {
+        "en": "Turn econo mode on or off",
+        "nl": "Schakel de econo modus aan of uit"
+    },
+    "args": [{
+        "type": "device",
+        "name": "device",
+        "filter": "driver_id=airairhp"
+    }, {
+        "name": "smecono",
+        "type": "dropdown",
+        "values": [{
+            "id": "off",
+            "label": {
+                "en": "Off",
+                "nl": "Uit"
+            }
+        }, {
+            "id": "on",
+            "label": {
+                "en": "On",
+                "nl": "Aan"
+            }
+        }]
+    }]
+}

@@ -7,6 +7,7 @@ const util = require('../../lib/daikin');
 // Device for a Daikin AirAirHP Homekit device
 class AirAirHPHKDevice extends Device {
   onInit() {
+	this.log('>>>onInit');
     super.onInit();
 
     this.log('AirAirHP Homekit capability registration started...');
@@ -46,7 +47,7 @@ class AirAirHPHKDevice extends Device {
 
   // Capability 1: Device get/set mode
   onCapabilityMode(thermostat_mode) {
-    this.log('onCapabilityMode');
+    this.log('>>>onCapabilityMode');
     this.log('mode:', thermostat_mode);
 
     this.setCapabilityValue('thermostat_mode', thermostat_mode);
@@ -64,7 +65,7 @@ class AirAirHPHKDevice extends Device {
 
   // Capability 5: Device get/set target temperature
   onCapabilityAircoTemp(atemp, opts) {
-    this.log('onCapabilityAircoTemp');
+    this.log('>>>onCapabilityAircoTemp');
 
     const oldTargetTemperature = this.getState().target_temperature;
     this.log('oldTargetTemperature: ', oldTargetTemperature);
@@ -90,7 +91,7 @@ class AirAirHPHKDevice extends Device {
 
   // Capability 6 & 7: Device measure in/outside temperature >>> only inside temp supported by HomeKit
   onCapabilityMeasureTemperature(inside, opts) {
-    this.log('onCapabilityMeasureTemperature');
+    this.log('>>>onCapabilityMeasureTemperature');
 
     // updates by interrogation of the airco, refer to refreshData method.
 
@@ -101,7 +102,7 @@ class AirAirHPHKDevice extends Device {
 
   // look for changes in the airco its settings made outside of Homey app...
   refreshData() {
-    this.log('refreshData');
+    this.log('>>>refreshData');
 
     if (this.AirAirHPHKIsDeleted) {
       this.log('Air-to-air Homekit device has been deleted, the refresh loop is now stopped...');
@@ -123,7 +124,7 @@ class AirAirHPHKDevice extends Device {
 
   // Interrogate Airconditioner Status
   deviceRequestControl(ip) {
-    this.log('deviceRequestControl');
+    this.log('>>>deviceRequestControl');
 
     util.request_control(ip, this.updateControlListeners.bind(this));
 
@@ -132,7 +133,7 @@ class AirAirHPHKDevice extends Device {
 
   // Interrogate Airconditioner Temperature Sensor
   deviceRequestSensor(ip) {
-    this.log('deviceRequestSensor');
+    this.log('>>>deviceRequestSensor');
 
     util.request_sensor(ip, this.updateSensorListeners.bind(this));
 
@@ -141,7 +142,7 @@ class AirAirHPHKDevice extends Device {
 
   // Update the app after interrogation of control_request
   updateControlListeners(control_info, control_response) {
-    this.log('updateControlListeners');
+    this.log('>>>updateControlListeners');
 
     // ---- power status
     const apow = Number(control_info[1]);
@@ -175,7 +176,7 @@ class AirAirHPHKDevice extends Device {
 
   // Update the app after interrogation of sensor_request
   updateSensorListeners(sensor_info) {
-    this.log('updateSensorListeners');
+    this.log('>>>updateSensorListeners');
 
     const inside = Number(sensor_info[1]);
     this.setCapabilityValue('measure_temperature', inside);
@@ -188,7 +189,7 @@ class AirAirHPHKDevice extends Device {
 
   // POST new Power settings to Airconditioner
   daikinPowerControl(pow) {
-    this.log('daikinPowerControl');
+    this.log('>>>daikinPowerControl');
 
     const settings = this.getSettings();
     const ip = settings.ip;
@@ -215,7 +216,7 @@ class AirAirHPHKDevice extends Device {
 
   // POST new Mode settings to Airconditioner
   daikinModeControl(thermostat_mode) {
-    this.log('daikinModeControl');
+    this.log('>>>daikinModeControl');
 
     const settings = this.getSettings();
     const ip = settings.ip;
@@ -238,7 +239,7 @@ class AirAirHPHKDevice extends Device {
 
   // POST new Temperature settings to Airconditioner
   daikinTempControl(atemp) {
-    this.log('daikinTempControl');
+    this.log('>>>daikinTempControl');
 
     const settings = this.getSettings();
     const ip = settings.ip;

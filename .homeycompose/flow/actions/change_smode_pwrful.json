@@ -1,0 +1,28 @@
+{
+    "id": "change_smode_pwrful",
+    "title": {
+        "en": "Turn powerful mode on or off",
+        "nl": "Schakel de powerful modus aan of uit"
+    },
+    "args": [{
+        "type": "device",
+        "name": "device",
+        "filter": "driver_id=airairhp"
+    }, {
+        "name": "smpwrful",
+        "type": "dropdown",
+        "values": [{
+            "id": "off",
+            "label": {
+                "en": "Off",
+                "nl": "Uit"
+            }
+        }, {
+            "id": "on",
+            "label": {
+                "en": "On",
+                "nl": "Aan"
+            }
+        }]
+    }]
+}

@@ -1,0 +1,19 @@
+{
+    "id": "has_target_humidity_less_than",
+    "title": {
+        "en": "The target humidity !{{is|isn't}} less than",
+        "nl": "De doelluchtvochtigheid !{{is|is niet}} minder dan"
+    },
+    "args": [{
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=airairhp"
+    }, {
+        "name": "target_humidity_less",
+        "type": "number",
+        "placeholder": {
+            "en": "Number between 0 - 50",
+            "nl": "Getal tussen 0 - 50"
+        }
+    }]
+}

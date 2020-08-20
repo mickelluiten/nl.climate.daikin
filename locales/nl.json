@@ -1,8 +1,10 @@
 {
     "pair": {
         "start": {
-            "intro": "Voer het IP-adres van de warmtepomp in, geef deze een naam en kies welke 'speciale modi' u wilt kunnen bedienen. Opmerkingen: 1/ mogelijk worden niet alle 'speciale modi' ondersteund door uw specifieke model warmtepomp. 2/ het gebruik van een statisch IP-adres wordt geadviseerd daar DHCP niet wordt ondersteund.",
             "title": "Daikin apparaat instellingen",
+            "intro": "Voer het IP-adres van de warmtepomp in, geef deze een naam en kies welke 'speciale modi' u wilt kunnen bedienen. Opmerkingen: 1/ mogelijk worden niet alle 'speciale modi' ondersteund door uw specifieke model warmtepomp. 2/ het gebruik van een statisch IP-adres wordt geadviseerd daar DHCP niet wordt ondersteund.",
+			"repairtitle": "Voeg toe of verwijder Speciale Modi",
+			"repairintro": "OPGELET: bestaande flows kunnen mogelijk stuk gaan door deze actie. Reeds kapotte flows kunnen niet in alle gevallen worden hersteld.",
             "error": "Er is een fout opgetreden, controleer het zojuist ingevoerde IP-adres.",
             "required": "IP-adres is verplicht.",
             "invalidIP": "Voer een geldig IPv4 adres in.",
@@ -10,17 +12,27 @@
             "deviceName": "Naam",
             "econo": "Besparen",
             "powerful": "Krachtig",
-            "streamer": "Streamer & Ontvochtigen",
+            "streamer": "Streamer/Bevochtiger",
             "saveSettings": "Voeg toe",
+            "saveChanges": "Voer wijzigingen door",
             "add": "Uw instellingen worden nu opgeslagen...",
             "specialMode": "Extra modi (Krachtig, Besparen, Streamer).",
             "deviceInterval": "Interval",
-            "adaptersensira": "Daikin's nieuwe (communicatie) protocol zal worden geworden gebruikt om te communiceren met de airconditioner. Zo nodig is deze instelling te wijzigen wanneer het toevoegen is afgerond in het geavanceerde instellingen menu.",
-            "adapteremura": "Daikin's nieuwe (communicatie) protocol zal worden geworden gebruikt om te communiceren met de airconditioner. Zo nodig is deze instelling te wijzigen wanneer het toevoegen is afgerond in het geavanceerde instellingen menu.",
-            "adapternexura": "Daikin's nieuwe (communicatie) protocol zal worden geworden gebruikt om te communiceren met de airconditioner. Zo nodig is deze instelling te wijzigen wanneer het toevoegen is afgerond in het geavanceerde instellingen menu.",
-            "adapterhomekit": "Daikin's nieuwe (communicatie) protocol zal worden geworden gebruikt om te communiceren met de airconditioner. Zo nodig is deze instelling te wijzigen wanneer het toevoegen is afgerond in het geavanceerde instellingen menu.",
             "adapterairairhp": "Daikin's nieuwe (communicatie) protocol zal worden geworden gebruikt om te communiceren met de airconditioner. Zo nodig is deze instelling te wijzigen wanneer het toevoegen is afgerond in het geavanceerde instellingen menu.",
             "adapterairairhphk": "Daikin's nieuwe (communicatie) protocol zal worden geworden gebruikt om te communiceren met de airconditioner. Zo nodig is deze instelling te wijzigen wanneer het toevoegen is afgerond in het geavanceerde instellingen menu."
         }
+    },
+    "repair": {
+        "start": {
+			"repairtitle": "Voeg toe of verwijder Speciale Modi",
+			"repairintro": "OPGELET: bestaande flows kunnen mogelijk stuk gaan door deze actie. Reeds kapotte flows kunnen niet in alle gevallen worden hersteld. ATTENTIE: wanneer na het doorlopen van deze procedure de keuzemenus Luchtdebiet en Zwenken ontbreken dient u deze procedure nogmaals te doorlopen !!",
+            "error": "Er is een fout opgetreden, controleer het zojuist ingevoerde IP-adres.",
+            "econo": "Besparen",
+            "powerful": "Krachtig",
+            "streamer": "Streamer/Bevochtiger",
+            "saveChanges": "Voer wijzigingen door",
+            "add": "Uw instellingen worden nu opgeslagen...",
+			"done": "RePairing is afgerond"
+	    }
     }
 }

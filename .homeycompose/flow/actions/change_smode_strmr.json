@@ -1,0 +1,28 @@
+{
+    "id": "change_smode_strmr",
+    "title": {
+        "en": "Turn streamer mode on or off",
+        "nl": "Schakel de streamer modus aan of uit"
+    },
+    "args": [{
+        "type": "device",
+        "name": "device",
+        "filter": "driver_id=airairhp"
+    }, {
+        "name": "smstrmr",
+        "type": "dropdown",
+        "values": [{
+            "id": "off",
+            "label": {
+                "en": "Off",
+                "nl": "Uit"
+            }
+        }, {
+            "id": "on",
+            "label": {
+                "en": "On",
+                "nl": "Aan"
+            }
+        }]
+    }]
+}

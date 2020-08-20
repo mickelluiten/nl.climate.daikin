@@ -1,0 +1,28 @@
+{
+    "id": "mode_econo_equals",
+    "title": {
+        "en": "The econo mode !{{equals|does not equal}}",
+        "nl": "De bespaarmodus komt !{{overeen met|komt niet overeen met}}"
+    },
+    "args": [{
+        "type": "device",
+        "name": "device",
+        "filter": "driver_id=airairhp"
+    }, {
+        "name": "smode_econo",
+        "type": "dropdown",
+        "values": [{
+            "id": "off",
+            "label": {
+                "en": "Off",
+                "nl": "Uit"
+            }
+        }, {
+            "id": "on",
+            "label": {
+                "en": "On",
+                "nl": "Aan"
+            }
+        }]
+    }]
+}

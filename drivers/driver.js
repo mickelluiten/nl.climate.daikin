@@ -56,6 +56,144 @@ class Driver extends Homey.Driver {
     });
   }
 
+  // Maintenance action - repairing action in support of v4 Special Modes
+  onRepair(socket, device) {
+	console.log('>>> onRepair(socket, device)');
+
+    socket.on('dorepair', (data, callback) => {
+	  console.log('Fixing/changing special modes...');
+	  console.log('Note: the maintenance dialog calls > socket.on("dorepair", (data, callback)');
+
+	  var amode = device.getCapabilityValue("thermostat_mode_std");
+	  if(amode === null) {
+		console.log('Step 1 - remove old the special modes capabilities...');
+	  	// v3 to v4 maintenance... remove deprecated special mode capabilities
+	  	device.removeCapability('thermostat_mode_ext1');
+	  	device.removeCapability('thermostat_mode_ext2');
+	  	device.removeCapability('thermostat_mode_ext3');
+	  	device.removeCapability('thermostat_mode_ext4');
+	  	device.removeCapability('thermostat_mode_ext5');
+	  	device.removeCapability('thermostat_mode_ext6');
+	  	device.removeCapability('thermostat_mode_ext7');
+	  	console.log('Deprecated Special Mode capabilities have been removed.')
+
+      	// part 2
+	  	console.log('Step 2 - add the new special mode capabilities...');
+	 	console.log('Capabilities of the device when RePairing has finished: ', data.capabilities);
+
+	 	// these capabilities might still show in the picker after upgrading from v3 to v4
+	 	// to ensure a certain picker sequence we also remove these capabilities... 
+	    device.removeCapability('fan_rate');
+	    device.removeCapability('fan_direction');
+	    console.log('Capabilities "fan_rate" and "fan_direction" are now temporarily removed');
+
+	 	// add main thermostat mode controle capabilty, should be the first to show in the picker...
+	    device.addCapability('thermostat_mode_std');
+	    //device.registerCapabilityListener('thermostat_mode_std');
+	    console.log('Capability "thermostat_mode_std" added ');
+
+  	    // now add "fan_rate" and "fan_direction" again so they shown in the picker in the correct sequence...
+  	    device.addCapability('fan_rate');
+  	    //device.registerCapabilityListener('fan_rate');
+  	    device.addCapability('fan_direction');
+  	    //device.registerCapabilityListener('fan_direction');
+	    console.log('Capabilities "fan_rate" and "fan_direction" have been added once again.');
+	  }
+
+	  // check if the fan capabilies are yet registered if not register them now...
+	  var fanrate = device.getCapabilityValue("fan_rate");
+	  if(fanrate === null) {
+  	    device.addCapability('fan_rate');
+  	    device.addCapability('fan_direction');
+	    console.log('Capabilities "fan_rate" and "fan_direction" have been added once again.');
+	  }
+	  
+      // Save the Special Mode ID
+	  console.log('Special Mode Id:', data.settings.spmode);
+      device.setSettings(data.settings);
+
+      // add special modes based on user selection to the picker...
+	  console.log('Registering the Special Mode capabilities');  
+	  const spmode_config = data.settings.spmode;  
+	  switch (spmode_config) {
+      	case 0:
+      		device.removeCapability('special_mode_eco');
+      		device.removeCapability('special_mode_pwr');
+      		device.removeCapability('special_mode_str');
+      		device.removeCapability('target_humidity');
+      		break;
+      	case 1:
+      		device.addCapability('special_mode_eco');
+			//device.registerCapabilityListener('special_mode_eco');
+      		device.removeCapability('special_mode_pwr');
+      		device.removeCapability('special_mode_str');
+      		device.removeCapability('target_humidity');
+      		break;
+			case 2:;
+      		device.removeCapability('special_mode_eco');
+      		device.addCapability('special_mode_pwr');
+      		//device.registerCapabilityListener('special_mode_pwr');
+      		device.removeCapability('special_mode_str');
+      		device.removeCapability('target_humidity');
+      		break;
+      	case 3:
+      		device.addCapability('special_mode_eco');
+			//device.registerCapabilityListener('special_mode_eco');
+      		device.addCapability('special_mode_pwr');
+      		//device.registerCapabilityListener('special_mode_pwr');
+      		device.removeCapability('special_mode_str');
+      		device.removeCapability('target_humidity');
+      		break;
+      	case 4:
+     		device.removeCapability('special_mode_eco');
+      		device.removeCapability('special_mode_pwr');
+      		device.addCapability('special_mode_str');
+			//device.registerCapabilityListener('special_mode_str');
+      		device.addCapability('target_humidity');
+			//device.registerCapabilityListener('target_humidity');
+      		break;
+      	case 5:
+      		device.addCapability('special_mode_eco');
+			//device.registerCapabilityListener('special_mode_eco');
+      		device.addCapability('special_mode_pwr');
+      		//device.registerCapabilityListener('special_mode_pwr');
+      		device.removeCapability('special_mode_str');
+      		device.removeCapability('target_humidity');
+      		break;
+      	case 6:
+      		device.removeCapability('special_mode_eco');
+      		device.addCapability('special_mode_pwr');
+      		//device.registerCapabilityListener('special_mode_pwr');
+      		device.addCapability('special_mode_str');
+			//device.registerCapabilityListener('special_mode_str');
+      		device.addCapability('target_humidity');
+			//device.registerCapabilityListener('target_humidity');
+      		break;
+      	case 7:
+      		device.addCapability('special_mode_eco');
+			//device.registerCapabilityListener('special_mode_eco');
+      		device.addCapability('special_mode_pwr');
+      		//device.registerCapabilityListener('special_mode_pwr');
+      		device.addCapability('special_mode_str');
+			//device.registerCapabilityListener('special_mode_str');
+      		device.addCapability('target_humidity');
+			//device.registerCapabilityListener('target_humidity');
+      		break;
+      	default:
+      		break;
+    };
+
+	  console.log('Finishing up...');
+  	  socket.emit('finish');
+      callback(null, true);
+    });
+
+    socket.on('disconnect', () => {
+      console.log('RePairing either aborted or completed');
+    });
+
+  }
+
   /*
      * Triggers a flow
      * @param {Homey.FlowCardTriggerDevice} trigger - A Homey.FlowCardTriggerDevice instance

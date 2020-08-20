@@ -67,6 +67,13 @@
         "id": "add_my_devices",
         "template": "add_devices"
     }],
+    "repair": [{
+        "id": "startrepair"
+    },
+    {
+        "id": "finish",
+        "template": "done"
+    }],
     "settings": [{
         "type": "group",
         "label": {

@@ -5,7 +5,7 @@ const Log = require('homey-log').Log;
 
 class Daikin extends Homey.App {
   onInit() {
-    this.log('Daikin AI is running...');
+    this.log('Daikin AI version 4 is running...');
   }
 }
 

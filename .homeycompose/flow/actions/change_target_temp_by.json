@@ -7,7 +7,7 @@
     "args": [{
         "name": "device",
         "type": "device",
-        "filter": "driver_id=airairhp|airairhphk|comfora|emura|nexura"
+        "filter": "driver_id=airairhp|airairhphk"
     }, {
         "name": "bytemp",
         "type": "number",

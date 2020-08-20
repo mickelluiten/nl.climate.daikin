@@ -150,4 +150,9 @@ If you like the app, consider buying me a cup of coffee!
 - 12-APP-20: Demo mode is now OFF by default (iso of ON).
 - 01-AUG-20: Added new action flow card "change-target-temp-by", fixed a bug that prevented flows from executing.
 - 03-AUG-20: Added range check for new action flow card, fixed a bug related to special modes (action card set mode).
-- 16-AUG-20: Depricated special modes, in version 4 specialmode are refactored with a new UI.
+- ---------- Start of the development of V4.x.x 
+- 10-AUG-20: Version 4.0.0 intial release (old drivers and related code is now completly removed from the app).
+- 11-AUG-20: Special modes refactored, these do now show as seperate pickers iso being part of the opertion mode picker.
+- 16-AUG-20: Added condition and action flow cards for special modes. Added flow cards for target_humidity.
+- 19-AUG-20: Added Maintenance Menu "Repair".
+
