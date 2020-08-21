@@ -52,8 +52,8 @@
         }
     },
     "images": {
-        "large": "/drivers/comfora/assets/images/large.png",
-        "small": "/drivers/comfora/assets/images/small.png"
+        "large": "/drivers/airairhp/assets/images/large.png",
+        "small": "/drivers/airairhp/assets/images/small.png"
     },
     "pair": [{
         "id": "start"

@@ -12,7 +12,7 @@
     "climate",
     "appliances"
   ],
-  "version": "4.0.0",
+  "version": "4.0.1",
   "compatibility": ">=2.0.0",
   "athomForumDiscussionId": 2082,
   "homeyCommunityTopicId": 158,
@@ -1317,8 +1317,8 @@
         }
       },
       "images": {
-        "large": "/drivers/comfora/assets/images/large.png",
-        "small": "/drivers/comfora/assets/images/small.png"
+        "large": "/drivers/airairhp/assets/images/large.png",
+        "small": "/drivers/airairhp/assets/images/small.png"
       },
       "pair": [
         {

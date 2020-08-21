@@ -64,7 +64,7 @@ class Driver extends Homey.Driver {
 	  console.log('Fixing/changing special modes...');
 	  console.log('Note: the maintenance dialog calls > socket.on("dorepair", (data, callback)');
 
-	  var amode = device.getCapabilityValue("thermostat_mode_std");
+	  var amode = device.getCapabilityValue("thermostat_mode_std"); // so special modes are enabled...
 	  if(amode === null) {
 		console.log('Step 1 - remove old the special modes capabilities...');
 	  	// v3 to v4 maintenance... remove deprecated special mode capabilities
@@ -87,7 +87,7 @@ class Driver extends Homey.Driver {
 	    device.removeCapability('fan_direction');
 	    console.log('Capabilities "fan_rate" and "fan_direction" are now temporarily removed');
 
-	 	// add main thermostat mode controle capabilty, should be the first to show in the picker...
+	 	// add main thermostat mode controle capabilty, should be the first to show in the picker selector...
 	    device.addCapability('thermostat_mode_std');
 	    //device.registerCapabilityListener('thermostat_mode_std');
 	    console.log('Capability "thermostat_mode_std" added ');
@@ -112,7 +112,7 @@ class Driver extends Homey.Driver {
 	  console.log('Special Mode Id:', data.settings.spmode);
       device.setSettings(data.settings);
 
-      // add special modes based on user selection to the picker...
+      // add special modes based on user selection to the picker selector...
 	  console.log('Registering the Special Mode capabilities');  
 	  const spmode_config = data.settings.spmode;  
 	  switch (spmode_config) {
@@ -124,7 +124,6 @@ class Driver extends Homey.Driver {
       		break;
       	case 1:
       		device.addCapability('special_mode_eco');
-			//device.registerCapabilityListener('special_mode_eco');
       		device.removeCapability('special_mode_pwr');
       		device.removeCapability('special_mode_str');
       		device.removeCapability('target_humidity');
@@ -132,15 +131,12 @@ class Driver extends Homey.Driver {
 			case 2:;
       		device.removeCapability('special_mode_eco');
       		device.addCapability('special_mode_pwr');
-      		//device.registerCapabilityListener('special_mode_pwr');
       		device.removeCapability('special_mode_str');
       		device.removeCapability('target_humidity');
       		break;
       	case 3:
       		device.addCapability('special_mode_eco');
-			//device.registerCapabilityListener('special_mode_eco');
       		device.addCapability('special_mode_pwr');
-      		//device.registerCapabilityListener('special_mode_pwr');
       		device.removeCapability('special_mode_str');
       		device.removeCapability('target_humidity');
       		break;
@@ -148,36 +144,25 @@ class Driver extends Homey.Driver {
      		device.removeCapability('special_mode_eco');
       		device.removeCapability('special_mode_pwr');
       		device.addCapability('special_mode_str');
-			//device.registerCapabilityListener('special_mode_str');
       		device.addCapability('target_humidity');
-			//device.registerCapabilityListener('target_humidity');
       		break;
       	case 5:
       		device.addCapability('special_mode_eco');
-			//device.registerCapabilityListener('special_mode_eco');
       		device.addCapability('special_mode_pwr');
-      		//device.registerCapabilityListener('special_mode_pwr');
       		device.removeCapability('special_mode_str');
       		device.removeCapability('target_humidity');
       		break;
       	case 6:
       		device.removeCapability('special_mode_eco');
       		device.addCapability('special_mode_pwr');
-      		//device.registerCapabilityListener('special_mode_pwr');
       		device.addCapability('special_mode_str');
-			//device.registerCapabilityListener('special_mode_str');
       		device.addCapability('target_humidity');
-			//device.registerCapabilityListener('target_humidity');
       		break;
       	case 7:
       		device.addCapability('special_mode_eco');
-			//device.registerCapabilityListener('special_mode_eco');
       		device.addCapability('special_mode_pwr');
-      		//device.registerCapabilityListener('special_mode_pwr');
       		device.addCapability('special_mode_str');
-			//device.registerCapabilityListener('special_mode_str');
       		device.addCapability('target_humidity');
-			//device.registerCapabilityListener('target_humidity');
       		break;
       	default:
       		break;

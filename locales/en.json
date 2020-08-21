@@ -2,7 +2,7 @@
     "pair": {
         "start": {
             "title": "Daikin equipment settings",
-            "intro": "Enter your heat pump its IP-address, give it a name and choose which 'special modes' you like to control. Notes: 1/ not all 'special modes' might be supported by your particular heat pump model. 2/ the use of a static IP-address is preferred as DHCP is not supported.",
+            "intro": "Enter your heat pump its IP-address (airco and Homey must be in the same subnet), give it a name and choose which 'special modes' you like to control. Notes: 1/ not all 'special modes' might be supported by your particular heat pump model. 2/ the use of a static IP-address is preferred as DHCP is not supported.",
             "error": "An error has occurred, check the just entered IP-address.",
             "required": "IP-address is required.",
             "invalidIP": "Enter a valid IPv4 address.",
@@ -22,7 +22,7 @@
     "repair": {
         "start": {
 			"repairtitle": "Add or delete Special Modes",
-			"repairintro": "CAUTION: existing flows might get broken by this action. Already broken flows cannot be fixed in all cases. ATTENTION: when after completing this procedure the pickers Airflow Rate and Swing are missing repeat this procedure !!",
+			"repairintro": "CAUTION: existing flows might get broken by this action. Already broken flows cannot be fixed in all cases. ATTENTION: when after completing this procedure the pickers Airflow Rate and Swing are missing repeat this procedure AND stop/start Daikin AI !!",
             "error": "An error has occurred, please try again.",
             "econo": "Economy",
             "powerful": "Powerful",
