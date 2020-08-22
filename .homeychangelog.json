@@ -1,35 +1,12 @@
 {
-  "3.0.0": {
-    "en": "Updates related to Athoms refreshed app store."
+  "4.0.0": {
+    "en": "Intial 4.0.0 release.",
+    "nl": "Initiele 4.0.0 release."
   },
-  "3.1.0": {
-    "en": "Added limited support for Daikin Airbase (SkyFi) used in some countries i.e. Australia."
+  "4.0.1": {
+    "en": "Improved v3 to v4 migration guidance in relation to special modes."
   },
-  "3.1.1": {
-    "en": "- Limited support for airco's using an Airbase (formerly SkyFi) WiFi adapter. Made explicit in the documentation of the app that ducted/ceiling models are not supported by the app."
-  },
-  "3.1.2": {
-    "en": "Removed code changes in relation to Daikin Airbase (SkyFi) support. Reason: wWill not support ducted/ceiling models due to lack of documentation regarding these models."
-  },
-  "3.1.3": {
-    "en": "Restructured the app using \"homeycompose\", no functional changes."
-  },
-  "3.1.4": {
-    "en": "Restructured the app in support of \"Homey compose\". Flow card names are changed which is the result of program code optimizations, old flow cards are depreciated!! and will be removed in future updates. Users are advised to upgrade their flow cards asap preventing that flow get broken in the future."
-  },
-  "3.1.5": {
-    "en": "Restructured the app in support of \"Homey compose\". Flow card changes which is the result of program code optimizations, version 2 flow cards are depreciated!! and will be removed in future updates. Please replace the old \"[v2]\" flow cards by new ones (without the [v2] marking). Users are advised to upgrade their flow cards asap preventing that flow get broken in the future."
-  },
-  "3.2.0": {
-    "en": "Changed the driver model, instead of using several range model drivers switched to a single driver that supports and replaces alle previous drivers. Existing Drivers and Flowcards are depreciated and will be removed in due time from the app. Existing users are encouraged to switch over to the new driver. "
-  },
-  "3.2.1": {
-    "en": "Changed the driver model, instead of using several range model drivers switched to a single driver that supports and replaces alle previous drivers. Existing Drivers and Flowcards are depreciated and will be removed in due time from the app. Existing users are encouraged to switch over to the new driver."
-  },
-  "3.2.2": {
-    "en": "Paring validation logic changed iso new Daikin WiFi adapters."
-  },
-  "3.3.0": {
-    "en": "Upgrade to Apollon77 Daikin API v1.1.5."
+  "4.0.2": {
+    "en": "Improved v3 to v4 migration guidance in relation to special modes."
   }
 }
