@@ -85,19 +85,20 @@ class Driver extends Homey.Driver {
 	 	// to ensure a certain picker sequence we also remove these capabilities... 
 	    device.removeCapability('fan_rate');
 	    device.removeCapability('fan_direction');
-	    console.log('Capabilities "fan_rate" and "fan_direction" are now temporarily removed');
+	    console.log('Capabilities "fan_rate" and "fan_direction" are now temporarily removed !! User should exectute the RePair function ones more.');
 
 	 	// add main thermostat mode controle capabilty, should be the first to show in the picker selector...
 	    device.addCapability('thermostat_mode_std');
 	    //device.registerCapabilityListener('thermostat_mode_std');
 	    console.log('Capability "thermostat_mode_std" added ');
 
-  	    // now add "fan_rate" and "fan_direction" again so they shown in the picker in the correct sequence...
-  	    device.addCapability('fan_rate');
-  	    //device.registerCapabilityListener('fan_rate');
-  	    device.addCapability('fan_direction');
-  	    //device.registerCapabilityListener('fan_direction');
-	    console.log('Capabilities "fan_rate" and "fan_direction" have been added once again.');
+  	    //-- it seems not possible to remove and then add the same capability in one go... 
+			// now add "fan_rate" and "fan_direction" again so they shown in the picker in the correct sequence...
+  	    	//device.addCapability('fan_rate');
+  	    	//device.registerCapabilityListener('fan_rate');
+  	    	//device.addCapability('fan_direction');
+  	    	//device.registerCapabilityListener('fan_direction');
+	    	//console.log('Capabilities "fan_rate" and "fan_direction" have been added once again.');
 	  }
 
 	  // check if the fan capabilies are yet registered if not register them now...

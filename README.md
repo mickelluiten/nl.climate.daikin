@@ -155,4 +155,5 @@ If you like the app, consider buying me a cup of coffee!
 - 11-AUG-20: Special modes refactored, these do now show as seperate pickers iso being part of the opertion mode picker.
 - 16-AUG-20: Added condition and action flow cards for special modes. Added flow cards for target_humidity.
 - 19-AUG-20: Added Maintenance Menu "Repair".
+- 22-AUG-20: Improvements to Repair, further improved on error handling.
 

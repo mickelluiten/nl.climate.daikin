@@ -1,4 +1,4 @@
-OPGELET: maakt u gebruik van Speciale Modi dan dient u na de installatie van versie 4 eenmalig met behulp van het onderhoudsmenu en de opnieuw paren functie Speciale Modi te herstellen.
+OPGELET: maakt u gebruik van Speciale Modi dan dient u na de installatie van versie 4 eenmalig met behulp van het onderhoudsmenu en de opnieuw paren functie Speciale Modi te herstellen. Vervolgens kan de melding "Rond de upgrade naar versie 4 af." worden gewist door de Daikin AI app te herstarten. 
 
 Voor een juiste werking van deze Homey App is het noodzakelijk dat uw Daikin airconditioner is uitgerust met een WiFi adapter (zijnde model BRP069A-- of BRP069B--). Deze applicatie is NIET geschikt om kanaal of plafond "Sky Air" modellen te bedienen.
 

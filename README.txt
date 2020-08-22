@@ -1,4 +1,4 @@
-IMPORTANT NOTE: Users that are using Special Mode functions should use the device maintenance RePairing feature to fix/restore special modes after the initial installation of version 4.
+IMPORTANT NOTE: Users that are using Special Mode functions should use the device maintenance RePairing feature to fix/restore special modes after the initial installation of version 4. Afterwards the message "Complete the upgrade to version 4." can be cleared by restarting the Daikin AI app.
 
 This app requires that your Daikin air conditioner is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--). This app does NOT support "Sky Air" ducted/ceiling models.
 

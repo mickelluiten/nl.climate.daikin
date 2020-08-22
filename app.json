@@ -9,10 +9,9 @@
     "nl": "Maakt de bediening van Daikin Lucht/lucht warmtepompen mogelijk"
   },
   "category": [
-    "climate",
-    "appliances"
+    "climate"
   ],
-  "version": "4.0.1",
+  "version": "4.0.2",
   "compatibility": ">=2.0.0",
   "athomForumDiscussionId": 2082,
   "homeyCommunityTopicId": 158,
@@ -40,15 +39,6 @@
   "tags": {
     "en": [
       "Daikin",
-      "Emura",
-      "Nextura",
-      "Comfora",
-      "Ururu Sarara",
-      "Ururu",
-      "Sarara",
-      "Stylish",
-      "Perfera",
-      "Sensira",
       "airconditioner",
       "airconditioning",
       "airco",
@@ -60,19 +50,10 @@
     ],
     "nl": [
       "Daikin",
-      "Emura",
-      "Nextura",
-      "Comfora",
-      "Ururu Sarara",
-      "Ururu",
-      "Sarara",
-      "Stylish",
-      "Perfera",
-      "Sensira",
       "airconditioner",
       "airconditioning",
-      "thermostaat",
       "airco",
+      "thermostaat",
       "ventilator",
       "homekit",
       "home",

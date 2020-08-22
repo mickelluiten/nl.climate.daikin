@@ -2,7 +2,7 @@
     "pair": {
         "start": {
             "title": "Daikin apparaat instellingen",
-            "intro": "Voer het IP-adres van de warmtepomp in (arico en Homey dienen zich te bevinden in hetzelfde subnet), geef deze een naam en kies welke 'speciale modi' u wilt kunnen bedienen. Opmerkingen: 1/ mogelijk worden niet alle 'speciale modi' ondersteund door uw specifieke model warmtepomp. 2/ het gebruik van een statisch IP-adres wordt geadviseerd daar DHCP niet wordt ondersteund.",
+            "intro": "Voer het IP-adres van de warmtepomp in (arico en Homey dienen zich te bevinden in hetzelfde subnet), geef deze een naam en kies welke 'speciale modi' u wilt kunnen bedienen. Opmerkingen: 1/ mogelijk worden niet alle 'speciale modi' ondersteund door uw specifieke model warmtepomp. 2/ het gebruik van een statisch IP-adres wordt geadviseerd daar DHCP niet wordt ondersteund. 3/ Mesh netwerken kunnen wisselende resultaten geven. ",
 			"repairtitle": "Voeg toe of verwijder Speciale Modi",
 			"repairintro": "OPGELET: bestaande flows kunnen mogelijk stuk gaan door deze actie. Reeds kapotte flows kunnen niet in alle gevallen worden hersteld.",
             "error": "Er is een fout opgetreden, controleer het zojuist ingevoerde IP-adres.",
@@ -25,7 +25,7 @@
     "repair": {
         "start": {
 			"repairtitle": "Voeg toe of verwijder Speciale Modi",
-			"repairintro": "OPGELET: bestaande flows kunnen mogelijk stuk gaan door deze actie. Reeds kapotte flows kunnen niet in alle gevallen worden hersteld. ATTENTIE: wanneer na het doorlopen van deze procedure de keuzemenus Luchtdebiet en Zwenken ontbreken dient u deze procedure nogmaals te doorlopen EN stop/start Daikin AI !!",
+			"repairintro": "OPGELET: bestaande flows kunnen mogelijk stuk gaan door deze actie. Reeds kapotte flows kunnen niet in alle gevallen worden hersteld. ATTENTIE: wanneer na het doorlopen van deze procedure de keuzemenus Luchtdebiet en Zwenken ontbreken dient u deze procedure nogmaals te doorlopen !!",
             "error": "Er is een fout opgetreden, controleer het zojuist ingevoerde IP-adres.",
             "econo": "Besparen",
             "powerful": "Krachtig",
