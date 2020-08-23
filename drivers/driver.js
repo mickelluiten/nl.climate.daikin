@@ -62,11 +62,16 @@ class Driver extends Homey.Driver {
 
     socket.on('dorepair', (data, callback) => {
 	  console.log('Fixing/changing special modes...');
-	  console.log('Note: the maintenance dialog calls > socket.on("dorepair", (data, callback)');
+	  //Note: that the maintenance dialog starts the repairstart.html dialog which then calls this routine...
 
-	  var amode = device.getCapabilityValue("thermostat_mode_std"); // so special modes are enabled...
-	  if(amode === null) {
-		console.log('Step 1 - remove old the special modes capabilities...');
+      // Save the Special Mode ID
+	  console.log('Special Mode Id:', data.settings.spmode);
+      device.setSettings(data.settings);
+	  const spmode_config = data.settings.spmode;
+
+	  // check if v3 special mode user has already upgraded... if not delete the old special mode capabilities...
+	  if(!device.hasCapability('thermostat_mode_std')) {
+		console.log('Upgrade Step 1 - remove old the special modes capabilities...');
 	  	// v3 to v4 maintenance... remove deprecated special mode capabilities
 	  	device.removeCapability('thermostat_mode_ext1');
 	  	device.removeCapability('thermostat_mode_ext2');
@@ -77,12 +82,8 @@ class Driver extends Homey.Driver {
 	  	device.removeCapability('thermostat_mode_ext7');
 	  	console.log('Deprecated Special Mode capabilities have been removed.')
 
-      	// part 2
-	  	console.log('Step 2 - add the new special mode capabilities...');
-	 	console.log('Capabilities of the device when RePairing has finished: ', data.capabilities);
-
-	 	// these capabilities might still show in the picker after upgrading from v3 to v4
-	 	// to ensure a certain picker sequence we also remove these capabilities... 
+	  	console.log('Prepare the upgrade...');
+	 	// to ensure that the thermostat mode picker is the first picker when the upgrade ia completed we remove... 
 	    device.removeCapability('fan_rate');
 	    device.removeCapability('fan_direction');
 	    console.log('Capabilities "fan_rate" and "fan_direction" are now temporarily removed !! User should exectute the RePair function ones more.');
@@ -99,71 +100,75 @@ class Driver extends Homey.Driver {
   	    	//device.addCapability('fan_direction');
   	    	//device.registerCapabilityListener('fan_direction');
 	    	//console.log('Capabilities "fan_rate" and "fan_direction" have been added once again.');
+		
+			console.log('User should execute the "Try Repair" maintenance function once more...');
 	  }
 
 	  // check if the fan capabilies are yet registered if not register them now...
-	  var fanrate = device.getCapabilityValue("fan_rate");
-	  if(fanrate === null) {
+	  if(!device.hasCapability('fan_rate')) {
+		console.log('Upgrade Step 2...');
   	    device.addCapability('fan_rate');
   	    device.addCapability('fan_direction');
 	    console.log('Capabilities "fan_rate" and "fan_direction" have been added once again.');
 	  }
-	  
-      // Save the Special Mode ID
-	  console.log('Special Mode Id:', data.settings.spmode);
-      device.setSettings(data.settings);
 
       // add special modes based on user selection to the picker selector...
-	  console.log('Registering the Special Mode capabilities');  
-	  const spmode_config = data.settings.spmode;  
 	  switch (spmode_config) {
       	case 0:
       		device.removeCapability('special_mode_eco');
       		device.removeCapability('special_mode_pwr');
       		device.removeCapability('special_mode_str');
       		device.removeCapability('target_humidity');
+			console.log('Added/Updated special modes capabilities... Special Mode Id: 0');
       		break;
       	case 1:
       		device.addCapability('special_mode_eco');
       		device.removeCapability('special_mode_pwr');
       		device.removeCapability('special_mode_str');
       		device.removeCapability('target_humidity');
+			console.log('Added/Updated special modes capabilities... Special Mode Id: 1');
       		break;
-			case 2:;
+		case 2:
       		device.removeCapability('special_mode_eco');
       		device.addCapability('special_mode_pwr');
       		device.removeCapability('special_mode_str');
       		device.removeCapability('target_humidity');
+			console.log('Added/Updated special modes capabilities... Special Mode Id: 2');
       		break;
-      	case 3:
+		case 3:
       		device.addCapability('special_mode_eco');
       		device.addCapability('special_mode_pwr');
       		device.removeCapability('special_mode_str');
       		device.removeCapability('target_humidity');
+			console.log('Added/Updated special modes capabilities... Special Mode Id: 3');
       		break;
       	case 4:
      		device.removeCapability('special_mode_eco');
       		device.removeCapability('special_mode_pwr');
       		device.addCapability('special_mode_str');
       		device.addCapability('target_humidity');
+			console.log('Added/Updated special modes capabilities... Special Mode Id: 4');
       		break;
       	case 5:
       		device.addCapability('special_mode_eco');
       		device.addCapability('special_mode_pwr');
       		device.removeCapability('special_mode_str');
       		device.removeCapability('target_humidity');
+			console.log('Added/Updated special modes capabilities... Special Mode Id: 5');
       		break;
       	case 6:
       		device.removeCapability('special_mode_eco');
       		device.addCapability('special_mode_pwr');
       		device.addCapability('special_mode_str');
       		device.addCapability('target_humidity');
+			console.log('Added/Updated special modes capabilities... Special Mode Id: 6');
       		break;
       	case 7:
       		device.addCapability('special_mode_eco');
       		device.addCapability('special_mode_pwr');
       		device.addCapability('special_mode_str');
       		device.addCapability('target_humidity');
+			console.log('Added/Updated special modes capabilities... Special Mode Id: 7');
       		break;
       	default:
       		break;

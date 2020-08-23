@@ -11,8 +11,7 @@ class AirAirHPDevice extends Device {
 		super.onInit();
 
         const deviceCapabilities = this.getCapabilities();
-		this.log('Device Capabilities:', deviceCapabilities);
-		this.log('Device Capabilities 3:', this.getCapabilityValue("thermostat_mode_ext3"));		
+		this.log('Device Capabilities:', deviceCapabilities);	
 		
 		const settings = this.getSettings();
 		const spmode_config = settings.spmode;
@@ -26,7 +25,7 @@ class AirAirHPDevice extends Device {
 					.catch(this.error); // ensure a valid mode is shown at start up...
 				break;
 			case 1:
-				if(this.getCapabilityValue("thermostat_mode_ext1") !== null) this.setWarning('Complete the upgrade to version 4.');
+				if(this.hasCapability('thermostat_mode_ext1')) this.setWarning('Complete the upgrade to version 4.');
 				else this.setWarning(null);
 				this.registerCapabilityListener('thermostat_mode_std', this.onCapabilityMode.bind(this));
 				this.setCapabilityValue('thermostat_mode_std', 'off')
@@ -36,7 +35,7 @@ class AirAirHPDevice extends Device {
 					.catch(this.error); // ensure a valid mode is shown at start up...
 				break;
 			case 2:
-				if(this.getCapabilityValue("thermostat_mode_ext2") !== null) this.setWarning('Complete the upgrade to version 4.');
+				if(this.hasCapability('thermostat_mode_ext2')) this.setWarning('Complete the upgrade to version 4.');
 				else this.setWarning(null);
 				this.registerCapabilityListener('thermostat_mode_std', this.onCapabilityMode.bind(this));
 				this.setCapabilityValue('thermostat_mode_std', 'off')
@@ -46,7 +45,7 @@ class AirAirHPDevice extends Device {
 					.catch(this.error); // ensure a valid mode is shown at start up...
 				break;
 			case 3:
-				if(this.getCapabilityValue("thermostat_mode_ext3") !== null) this.setWarning('Complete the upgrade to version 4.');
+				if(this.hasCapability('thermostat_mode_ext3')) this.setWarning('Complete the upgrade to version 4.');
 				else this.setWarning(null);
 				this.registerCapabilityListener('thermostat_mode_std', this.onCapabilityMode.bind(this));
 				this.setCapabilityValue('thermostat_mode_std', 'off')
@@ -59,7 +58,7 @@ class AirAirHPDevice extends Device {
 					.catch(this.error); // ensure a valid mode is shown at start up...
 				break;
 			case 4:
-				if(this.getCapabilityValue("thermostat_mode_ext4") !== null) this.setWarning('Complete the upgrade to version 4.');
+				if(this.hasCapability('thermostat_mode_ext4')) this.setWarning('Complete the upgrade to version 4.');
 				else this.setWarning(null);
 				this.registerCapabilityListener('thermostat_mode_std', this.onCapabilityMode.bind(this));
 				this.setCapabilityValue('thermostat_mode_std', 'off')
@@ -70,7 +69,7 @@ class AirAirHPDevice extends Device {
 				this.registerCapabilityListener('target_humidity', this.onCapabilityAircoHum.bind(this));
 				break;
 			case 5:
-				if(this.getCapabilityValue("thermostat_mode_ext5") !== null) this.setWarning('Complete the upgrade to version 4.');
+				if(this.hasCapability('thermostat_mode_ext5')) this.setWarning('Complete the upgrade to version 4.');
 				else this.setWarning(null);
 				this.registerCapabilityListener('thermostat_mode_std', this.onCapabilityMode.bind(this));
 				this.setCapabilityValue('thermostat_mode_std', 'off')
@@ -84,7 +83,7 @@ class AirAirHPDevice extends Device {
 				this.registerCapabilityListener('target_humidity', this.onCapabilityAircoHum.bind(this));
 				break;
 			case 6:
-				if(this.getCapabilityValue("thermostat_mode_ext6") !== null) this.setWarning('Complete the upgrade to version 4.');
+				if(this.hasCapability('thermostat_mode_ext6')) this.setWarning('Complete the upgrade to version 4.');
 				else this.setWarning(null);
 				this.registerCapabilityListener('thermostat_mode_std', this.onCapabilityMode.bind(this));
 				this.setCapabilityValue('thermostat_mode_std', 'off')
@@ -98,7 +97,7 @@ class AirAirHPDevice extends Device {
 				this.registerCapabilityListener('target_humidity', this.onCapabilityAircoHum.bind(this));
 				break;
 			case 7:
-				if(this.getCapabilityValue("thermostat_mode_ext7") !== null) this.setWarning('Complete the upgrade to version 4.');
+				if(this.hasCapability('thermostat_mode_ext7')) this.setWarning('Complete the upgrade to version 4.');
 				else this.setWarning(null);
 				this.registerCapabilityListener('thermostat_mode_std', this.onCapabilityMode.bind(this));
 				this.setCapabilityValue('thermostat_mode_std', 'off')
