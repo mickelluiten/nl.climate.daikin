@@ -148,6 +148,17 @@ class AirAirHPHKDevice extends Device {
   updateControlListeners(control_info, control_response) {
     this.log('>>>updateControlListeners');
 
+	// ---- error handling
+	if (!(control_info === 'ctrlerr_404' && control_info === 'ctrlerr_parse')) this.setWarning(null);
+	if(control_info === 'ctrlerr_404') { 
+		this.setWarning('HTTP 404 error (control)');
+		return Promise.resolve();
+	}
+	if(control_info === 'ctrlerr_parse') {
+		this.setWarning('Control update failed (parse err)');
+		return Promise.resolve();
+	}
+
     // ---- power status
     const apow = Number(control_info[1]);
 
@@ -186,6 +197,18 @@ class AirAirHPHKDevice extends Device {
   updateSensorListeners(sensor_info) {
     this.log('>>>updateSensorListeners');
 
+	// ---- error handling
+	if (!(sensor_info === 'sensorerr_404' && sensor_info === 'sensorerr_parse')) this.setWarning(null);
+	if(sensor_info === 'sensorerr_404') { 
+		this.setWarning('HTTP 404 error (sensors)');
+		return Promise.resolve();
+	}
+	if(sensor_info === 'sensorerr_parse') {
+		this.setWarning('Sensor update failed (parse err)');
+		return Promise.resolve();
+	}
+
+	// ---- update temperature readings
     const inside = Number(sensor_info[1]);
     this.setCapabilityValue('measure_temperature', inside)
 		.catch(this.error);
