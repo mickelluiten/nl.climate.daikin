@@ -11,7 +11,7 @@
   "category": [
     "climate"
   ],
-  "version": "4.0.4",
+  "version": "4.0.5",
   "compatibility": ">=3.1.0",
   "athomForumDiscussionId": 2082,
   "homeyCommunityTopicId": 158,
@@ -1052,8 +1052,8 @@
               {
                 "id": "dehumid",
                 "label": {
-                  "en": "Dehumidfication",
-                  "nl": "Ontvochtigen"
+                  "en": "Dry",
+                  "nl": "Drogen"
                 }
               },
               {

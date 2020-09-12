@@ -38,8 +38,8 @@
         }, {
             "id": "dehumid",
             "label": {
-                "en": "Dehumidfication",
-                "nl": "Ontvochtigen"
+                "en": "Dry",
+                "nl": "Drogen"
             }
         }, {
             "id": "fan",

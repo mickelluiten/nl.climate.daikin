@@ -156,4 +156,6 @@ If you like the app, consider buying me a cup of coffee!
 - 16-AUG-20: Added condition and action flow cards for special modes. Added flow cards for target_humidity.
 - 19-AUG-20: Added Maintenance Menu "Repair".
 - 22-AUG-20: Improvements to Repair, further improved on error handling.
+- 05-SEP-20: Improvements to error handling related sensor / control info.
+- 12-SEP-20: Action flow card Dehumidification is now Dry (same as mode).
 
