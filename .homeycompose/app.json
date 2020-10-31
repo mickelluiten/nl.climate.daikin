@@ -11,11 +11,11 @@
 	"category": [
 		"climate"
 	],
-	"version": "4.0.5",
-	"compatibility": ">=3.1.0",
+	"version": "5.0.0",
+	"compatibility": ">=5.0.0",
+	"sdk": 3,
 	"athomForumDiscussionId": 2082,
 	"homeyCommunityTopicId": 158,
-	"sdk": 2,
 	"brandColor": "#2E96D0",
 	"author": {
 		"name": "Peter Eier",

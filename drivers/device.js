@@ -4,6 +4,7 @@ const Homey = require('homey');
 
 class Device extends Homey.Device {
   onInit() {
+	this.log('>>>onInit device.js');
     this.log('Device initialization...');
     this.log('Driver name:', this.getName());
     this.log('Driver class:', this.getClass());
@@ -21,9 +22,6 @@ class Device extends Homey.Device {
     return this.getData().deviceURL;
   }
 
-  getDeviceType() {
-    this.getDriver().getDeviceType();
-  }
 }
 
 module.exports = Device;

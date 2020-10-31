@@ -7,8 +7,31 @@ const util = require('../../lib/daikin');
 // Device for a Daikin AirAirHP device
 class AirAirHPDevice extends Device {
 	onInit() {
-		this.log('>>>onInit');
+		this.log('>>>onInit device airairhp');
 		super.onInit();
+		
+		let device = this; // We're in a Device instance
+		let tokens = {};
+		let state = {};
+		
+		// -------- Initializing Flows - Triggers --------------
+		this.driver.ready().then(() => {
+			this.log('Initializing Flow Triggers...')
+			this._triggerTargetHumidityMoreThan = this.driver.triggerTargetHumidityMoreThan;
+			this._triggerTargetHumidityLessThan = this.driver.triggerTargetHumidityLessThan;
+			this._triggerTargetHumidityBetween = this.driver.triggerTargetHumidityBetween;
+			this._triggerTargetTemperatureMoreThan = this.driver.triggerTargetTemperatureMoreThan;
+			this._triggerTargetTemperatureLessThan = this.driver.triggerTargetTemperatureLessThan;
+			this._triggerTargetTemperatureBetween = this.driver.triggerTargetTemperatureBetween;
+			this._triggerInsideTemperatureMoreThan = this.driver.triggerInsideTemperatureMoreThan;
+			this._triggerInsideTemperatureLessThan = this.driver.triggerInsideTemperatureLessThan;
+			this._triggerInsideTemperatureBetween = this.driver.triggerInsideTemperatureBetween;
+			this._triggerOutsideTemperatureMoreThan = this.driver.triggerOutsideTemperatureMoreThan;
+			this._triggerOutsideTemperatureLessThan = this.driver.triggerOutsideTemperatureLessThan;
+			this._triggerOutsideTemperatureBetween = this.driver.triggerOutsideTemperatureBetween;
+			this._triggerAircoMode = this.driver.triggerAircoMode;
+		});
+
 
         const deviceCapabilities = this.getCapabilities();
 		this.log('Device Capabilities:', deviceCapabilities);	
@@ -316,21 +339,17 @@ class AirAirHPDevice extends Device {
 			this.setCapabilityValue('target_humidity', ahum)
 				.catch(this.error);
 
+			// trigger action flows as necessary (see driver.js)
 			const device = this;
 			const tokens = {
 				humidity_set: ahum
 			};
-
 			const state = {
 				'target_humidity': ahum
 			};
-
-			// trigger action flows as necessary (see driver.js)
-			const driver = this.getDriver();
-			driver
-				.triggerTargetHumidityMoreThan(device, tokens, state)
-				.triggerTargetHumidityLessThan(device, tokens, state)
-				.triggerTargetHumidityBetween(device, tokens, state);
+			this._triggerTargetHumidityMoreThan.trigger(device, tokens, state);
+			this._triggerTargetHumidityLessThan.trigger(device, tokens, state);
+			this._triggerTargetHumidityBetween.trigger(device, tokens, state);
 
 			// update the airco its settings
 			this.daikinHumControl(ahum);
@@ -352,22 +371,18 @@ class AirAirHPDevice extends Device {
 			this.setCapabilityValue('target_temperature', atemp)
 				.catch(this.error);
 
+			// trigger action flows as necessary (see driver.js)
 			const device = this;
 			const tokens = {
 				temperature_set: atemp
 			};
-
 			const state = {
 				target_temperature: atemp
 			};
-
-			// trigger temperature flows
-			const driver = this.getDriver();
-			driver
-				.triggerTargetTemperatureMoreThan(device, tokens, state)
-				.triggerTargetTemperatureLessThan(device, tokens, state)
-				.triggerTargetTemperatureBetween(device, tokens, state);
-
+			this._triggerTargetTemperatureMoreThan.trigger(device, tokens, state);
+			this._triggerTargetTemperatureLessThan.trigger(device, tokens, state);
+			this._triggerTargetTemperatureBetween.trigger(device, tokens, state);
+		
 			// update the airco its settings
 			this.daikinTempControl(atemp);
 		}
@@ -463,9 +478,8 @@ class AirAirHPDevice extends Device {
 		// when the airco is tured off then Daikin AI should show mode "OFF" and keep showing that mode iso the airco mode
 		if ((capability_mode !== 'off')) this.setCapabilityValue('thermostat_mode_std', thermostat_mode)
 			.catch(this.error);
-		// but when the airco is powered on externally make sure that capability mode "OFF" is cleared by
-		// setting it to "auto" which will be overruled by the correct airco mode the next refreshData loop
-		if ((apow === 1) && (capability_mode === 'off')) this.setCapabilityValue('thermostat_mode_std', 'auto')
+		// when the airco is powered on externally make sure that capability mode "OFF" is cleared by
+		if ((apow === 1) && (capability_mode === 'off')) this.setCapabilityValue('thermostat_mode_std', thermostat_mode)
 			.catch(this.error);
 		// when the airo is powered off externally make sure that capability mode "OFF" is set
 		if ((apow === 0) && (capability_mode !== 'off')) this.setCapabilityValue('thermostat_mode_std', 'off')
@@ -488,19 +502,15 @@ class AirAirHPDevice extends Device {
 		if ((oldcapability_mode !== capability_mode) && (demo_mode === false)) {
 			this.log('Airco mode has changed, old:', oldcapability_mode, ' new:', capability_mode);
 
+			// trigger action flows as necessary (see driver.js)
 			const device = this;
 			const tokens = {
 				new_capability_mode: capability_mode,
 			};
-
 			const state = {
 				capability_mode
 			};
-
-			// trigger action flows as necessary (see driver.js)
-			const driver = this.getDriver();
-			driver
-				.triggerCapabilityModeChange(device, tokens, state);
+			this._triggerAircoMode.trigger(device, tokens, state);
 		}
 
 		// ---- temperature
@@ -510,17 +520,10 @@ class AirAirHPDevice extends Device {
 			.catch(this.error);
 
 		// turn thermostat ui component black when AC is turned off (note: a custom airco_mode capability and the thermostat ui component do not work properly together...)
-		//if ((capability_mode === 'off')) {
-		if ((apow === 0)) {
-			const inside_temp = this.getCapabilityValue('measure_temperature.inside');
+		if ((capability_mode === 'off')) {
 			const target_temp = this.getCapabilityValue('target_temperature');
-			this.setCapabilityValue('target_temperature', inside_temp)
-				.catch(this.error); // inside = target results in black thermostat ui component
-
-			// update the airco its settings as necessary
-			if (target_temp !== inside_temp) {
-				this.daikinTempControl(inside_temp);
-			}
+    		this.setCapabilityValue('measure_temperature', target_temp)
+			.catch(this.error); // used by the Homey thermostat
 		}
 
 		// ---- humidity
@@ -583,8 +586,11 @@ class AirAirHPDevice extends Device {
 
 		const inside = Number(sensor_info[1]);
 		const outside = Number(sensor_info[3]);
-    	this.setCapabilityValue('measure_temperature', inside)
-			.catch(this.error); // used by the Homey thermostat
+		var capability_mode = this.getCapabilityValue('thermostat_mode_std');
+		if(capability_mode !== 'off') {
+    		this.setCapabilityValue('measure_temperature', inside)
+				.catch(this.error); // used by the Homey thermostat, updates only when the airco is turned on
+		}
 		this.setCapabilityValue('measure_temperature.inside', inside)
 			.catch(this.error);
 		this.log('Temp inside:', inside);
@@ -608,21 +614,17 @@ class AirAirHPDevice extends Device {
 			this.setCapabilityValue('measure_temperature.inside', inside)
 				.catch(this.error);
 
+			// trigger action flows as necessary (see driver.js)
 			const device = this;
 			const tokens = {
 				inside_temperature: inside
 			};
-
 			const state = {
 				'measure_temperature.inside': inside
 			};
-
-			// trigger inside temperature flows
-			const driver = this.getDriver();
-			driver
-				.triggerInsideTemperatureMoreThan(device, tokens, state)
-				.triggerInsideTemperatureLessThan(device, tokens, state)
-				.triggerInsideTemperatureBetween(device, tokens, state);
+			this._triggerInsideTemperatureMoreThan.trigger(device, tokens, state);
+			this._triggerInsideTemperatureLessThan.trigger(device, tokens, state);
+			this._triggerInsideTemperatureBetween.trigger(device, tokens, state);
 		}
 
 		// --- Outside
@@ -631,21 +633,17 @@ class AirAirHPDevice extends Device {
 			this.setCapabilityValue('measure_temperature.outside', outside)
 				.catch(this.error);
 
+			// trigger action flows as necessary (see driver.js)
 			const device = this;
 			const tokens = {
 				outside_temperature: outside
 			};
-
 			const state = {
 				'measure_temperature.outside': outside
 			};
-
-			// trigger outside temperature flows
-			const driver = this.getDriver();
-			driver
-				.triggerOutsideTemperatureMoreThan(device, tokens, state)
-				.triggerOutsideTemperatureLessThan(device, tokens, state)
-				.triggerOutsideTemperatureBetween(device, tokens, state);
+			this._triggerOutsideTemperatureMoreThan.trigger(device, tokens, state);
+			this._triggerOutsideTemperatureLessThan.trigger(device, tokens, state);
+			this._triggerOutsideTemperatureBetween.trigger(device, tokens, state);
 		}
 
 		return Promise.resolve();

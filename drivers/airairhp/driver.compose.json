@@ -57,15 +57,6 @@
     },
     "pair": [{
         "id": "start"
-    }, {
-        "id": "list_my_devices",
-        "template": "list_devices",
-        "navigation": {
-            "next": "add_my_devices"
-        }
-    }, {
-        "id": "add_my_devices",
-        "template": "add_devices"
     }],
     "repair": [{
         "id": "startrepair"
@@ -116,8 +107,8 @@
             "id": "interval",
             "type": "number",
             "label": {
-                "en": "Polling interval",
-                "nl": "Gegevens opvragen elke"
+                "en": "Refresh interval (in seconds)",
+                "nl": "Gegevens verversen elke (in seconden)"
             },
             "hint": {
                 "en": "Every x seconds the app will refresh its information.",

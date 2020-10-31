@@ -1,4 +1,5 @@
 {
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "nl.climate.daikin",
   "name": {
     "en": "Daikin AI",
@@ -11,11 +12,11 @@
   "category": [
     "climate"
   ],
-  "version": "4.0.5",
-  "compatibility": ">=3.1.0",
+  "version": "5.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
   "athomForumDiscussionId": 2082,
   "homeyCommunityTopicId": 158,
-  "sdk": 2,
   "brandColor": "#2E96D0",
   "author": {
     "name": "Peter Eier",
@@ -1304,17 +1305,6 @@
       "pair": [
         {
           "id": "start"
-        },
-        {
-          "id": "list_my_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_my_devices"
-          }
-        },
-        {
-          "id": "add_my_devices",
-          "template": "add_devices"
         }
       ],
       "repair": [
@@ -1374,8 +1364,8 @@
               "id": "interval",
               "type": "number",
               "label": {
-                "en": "Polling interval",
-                "nl": "Gegevens opvragen elke"
+                "en": "Refresh interval (in seconds)",
+                "nl": "Gegevens verversen elke (in seconden)"
               },
               "hint": {
                 "en": "Every x seconds the app will refresh its information.",
@@ -1431,17 +1421,6 @@
       "pair": [
         {
           "id": "start"
-        },
-        {
-          "id": "list_my_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_my_devices"
-          }
-        },
-        {
-          "id": "add_my_devices",
-          "template": "add_devices"
         }
       ],
       "settings": [
@@ -1492,8 +1471,8 @@
               "id": "interval",
               "type": "number",
               "label": {
-                "en": "Polling interval",
-                "nl": "Gegevens opvragen elke"
+                "en": "Refresh interval (in seconds)",
+                "nl": "Gegevens verversen elke (in seconden)"
               },
               "hint": {
                 "en": "Every x seconds the app will refresh its information.",

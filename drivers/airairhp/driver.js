@@ -4,331 +4,335 @@ const Homey = require('homey');
 const Driver = require('../../drivers/driver');
 const airairhpctrl = require('../../lib/daikin');
 
-// Driver for a Daikin Comfora type Airconditioner
+// Driver for a Daikin Air2Air Heatpump type Airconditioner
 class AirAirHPDriver extends Driver {
+
 	onInit() {
+		this.log('>>>onInit driver airairhp');
+		super.onInit();
+
 		this.deviceType = 'airairhp';
 
 		//* ** TRIGGER FLOWCARDS *******************************************************************************************
 		// --- Humidity flowcards
 		/* ** TARGET Humidity TRIGGERS ** */
-		this._triggerTargetHumidityMoreThan = new Homey.FlowCardTriggerDevice('change_target_humidity_more_than');
-		this._triggerTargetHumidityMoreThan
-			.register()
+		this.triggerTargetHumidityMoreThan = this.homey.flow.getDeviceTriggerCard('change_target_humidity_more_than');
+		this.triggerTargetHumidityMoreThan
 			.registerRunListener((args, state) => {
+				this.log('triggerTargetHumidityMoreThan fired');
 				const conditionMet = state.target_humidity > args.target_humidity_more;
 				// this.log('trigger - args.target_humidity_more', args.target_humidity_more);
 				// this.log('trigger - state.target_humidity', (state.target_humidity) );
 				// this.log('trigger - conditionMet', conditionMet);
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
-		this._triggerTargetHumidityLessThan = new Homey.FlowCardTriggerDevice('change_target_humidity_less_than');
-		this._triggerTargetHumidityLessThan
-			.register()
+		this.triggerTargetHumidityLessThan = this.homey.flow.getDeviceTriggerCard('change_target_humidity_less_than');
+		this.triggerTargetHumidityLessThan
 			.registerRunListener((args, state) => {
+				this.log('triggerTargetHumidityLessThan fired');
 				const conditionMet = state.target_humidity < args.target_humidity_less;
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
-		this._triggerTargetHumidityBetween = new Homey.FlowCardTriggerDevice('change_target_humidity_between');
-		this._triggerTargetHumidityBetween
-			.register()
+		this.triggerTargetHumidityBetween = this.homey.flow.getDeviceTriggerCard('change_target_humidity_between');
+		this.triggerTargetHumidityBetween
 			.registerRunListener((args, state) => {
+				this.log('triggerTargetHumidityBetween fired');
 				const conditionMet = state.target_humidity > args.target_humidity_from && state.target_humidity < args.target_humidity_to;
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
 		// --- Temperature flowcards
 		/* ** TARGET TEMPERATURE TRIGGERS ** */
-		this._triggerTargetTemperatureMoreThan = new Homey.FlowCardTriggerDevice('change_target_temperature_more_than');
-		this._triggerTargetTemperatureMoreThan
-			.register()
+		this.triggerTargetTemperatureMoreThan = this.homey.flow.getDeviceTriggerCard('change_target_temperature_more_than');
+		this.triggerTargetTemperatureMoreThan
 			.registerRunListener((args, state) => {
+				this.log('triggerTargetTemperatureMoreThan fired');
 				const conditionMet = state.target_temperature > args.target_temperature_more;
 				// this.log('trigger - args.target_temperature_more', args.target_temperature_more);
 				// this.log('trigger - state.target_temperature', (state.target_temperature) );
 				// this.log('trigger - conditionMet', conditionMet);
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
-		this._triggerTargetTemperatureLessThan = new Homey.FlowCardTriggerDevice('change_target_temperature_less_than');
-		this._triggerTargetTemperatureLessThan
-			.register()
+		this.triggerTargetTemperatureLessThan = this.homey.flow.getDeviceTriggerCard('change_target_temperature_less_than');
+		this.triggerTargetTemperatureLessThan
 			.registerRunListener((args, state) => {
+				this.log('triggerTargetTemperatureLessThan fired');
 				const conditionMet = state.target_temperature < args.target_temperature_less;
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
-		this._triggerTargetTemperatureBetween = new Homey.FlowCardTriggerDevice('change_target_temperature_between');
-		this._triggerTargetTemperatureBetween
-			.register()
+		this.triggerTargetTemperatureBetween = this.homey.flow.getDeviceTriggerCard('change_target_temperature_between');
+		this.triggerTargetTemperatureBetween
 			.registerRunListener((args, state) => {
+				this.log('triggerTargetTemperatureBetween fired');
 				const conditionMet = state.target_temperature > args.target_temperature_from && state.target_temperature < args.target_temperature_to;
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
 		/** * INSIDE TEMPERATURE TRIGGERS ** */
-		this._triggerInsideTemperatureMoreThan = new Homey.FlowCardTriggerDevice('inside_temperature_more_than');
-		this._triggerInsideTemperatureMoreThan
-			.register()
+		this.triggerInsideTemperatureMoreThan = this.homey.flow.getDeviceTriggerCard('inside_temperature_more_than');
+		this.triggerInsideTemperatureMoreThan
 			.registerRunListener((args, state) => {
+				this.log('triggerInsideTemperatureMoreThan fired');
 				const conditionMet = state['measure_temperature.inside'] > args.inside_temperature_more;
 				//this.log('trigger - args.inside_temperature_more', args.inside_temperature_more);
 				//this.log('trigger - state()[measure_temperature.inside]', ( state['measure_temperature.inside']) );
 				//this.log('trigger - conditionMet inside temp', conditionMet);
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
-		this._triggerInsideTemperatureLessThan = new Homey.FlowCardTriggerDevice('inside_temperature_less_than');
-		this._triggerInsideTemperatureLessThan
-			.register()
+		this.triggerInsideTemperatureLessThan = this.homey.flow.getDeviceTriggerCard('inside_temperature_less_than');
+		this.triggerInsideTemperatureLessThan
 			.registerRunListener((args, state) => {
+				this.log('triggerInsideTemperatureLessThan fired');
 				const conditionMet = state['measure_temperature.inside'] < args.inside_temperature_less;
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
-		this._triggerInsideTemperatureBetween = new Homey.FlowCardTriggerDevice('inside_temperature_between');
-		this._triggerInsideTemperatureBetween
-			.register()
+		this.triggerInsideTemperatureBetween = this.homey.flow.getDeviceTriggerCard('inside_temperature_between');
+		this.triggerInsideTemperatureBetween
 			.registerRunListener((args, state) => {
+				this.log('triggerInsideTemperatureBetween fired');
 				const conditionMet = state['measure_temperature.inside'] > args.inside_temperature_from && state['measure_temperature.inside'] < args.inside_temperature_to;
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
 		/** * OUTSIDE TEMPERATURE TRIGGERS ** */
-		this._triggerOutsideTemperatureMoreThan = new Homey.FlowCardTriggerDevice('outside_temperature_more_than');
-		this._triggerOutsideTemperatureMoreThan
-			.register()
+		this.triggerOutsideTemperatureMoreThan = this.homey.flow.getDeviceTriggerCard('outside_temperature_more_than');
+		this.triggerOutsideTemperatureMoreThan
 			.registerRunListener((args, state) => {
+				this.log('triggerOutsideTemperatureMoreThan fired');
 				const conditionMet = state['measure_temperature.outside'] > args.outside_temperature_more;
 				// this.log('trigger - args.outside_temperature_more', args.outside_temperature_more);
 				// this.log('trigger - state[measure_temperature.outside]', ( state['measure_temperature.outside']) );
 				// this.log('trigger - conditionMet outside temp', conditionMet);
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
-		this._triggerOutsideTemperatureLessThan = new Homey.FlowCardTriggerDevice('outside_temperature_less_than');
-		this._triggerOutsideTemperatureLessThan
-			.register()
+		this.triggerOutsideTemperatureLessThan = this.homey.flow.getDeviceTriggerCard('outside_temperature_less_than');
+		this.triggerOutsideTemperatureLessThan
 			.registerRunListener((args, state) => {
+				this.log('triggerOutsideTemperatureLessThan fired');
 				const conditionMet = state['measure_temperature.outside'] < args.ouside_temperature_less;
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
-		this._triggerOutsideTemperatureBetween = new Homey.FlowCardTriggerDevice('outside_temperature_between');
-		this._triggerOutsideTemperatureBetween
-			.register()
+		this.triggerOutsideTemperatureBetween = this.homey.flow.getDeviceTriggerCard('outside_temperature_between');
+		this.triggerOutsideTemperatureBetween
 			.registerRunListener((args, state) => {
+				this.log('triggerOutsideTemperatureBetween fired');
 				const conditionMet = state['measure_temperature.outside'] > args.outside_temperature_from && state['measure_temperature.outside'] < args.outside_temperature_to;
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
 		/** * MODE CHANGE TRIGGER ** */
-		this._triggerAircoMode = new Homey.FlowCardTriggerDevice('mode_changed');
-		this._triggerAircoMode
-			.register()
+		this.triggerAircoMode = this.homey.flow.getDeviceTriggerCard('mode_changed');
+		this.triggerAircoMode
 			.registerRunListener((args, state) => {
+				this.log('triggerAircoMode fired');
 				const conditionMet = state.capability_mode === args.mode;
-				// this.log('trigger - args.mode', args.mode);
-				// this.log('trigger - state[capability_mode]', ( state['capability_mode']) );
-				// this.log('trigger - conditionMet capability_mode', conditionMet);
-				return Promise.resolve(conditionMet);
-			});
+				this.log('trigger - args.mode', args.mode);
+				this.log('trigger - state[capability_mode]', ( state['capability_mode']) );
+				this.log('trigger - conditionMet capability_mode', conditionMet);
+				return conditionMet;
+		});
 
 		//* ** CONDITION FLOWCARDS *******************************************************************************************
 		/* ** TARGET HUMIDITY CONDITIONS ** */
-		this._conditionTargetHumidityMoreThan = new Homey.FlowCardCondition('has_target_humidity_more_than');
-		this._conditionTargetHumidityMoreThan
-			.register()
+		this.conditionTargetHumidityMoreThan = this.homey.flow.getConditionCard('has_target_humidity_more_than');
+		this.conditionTargetHumidityMoreThan
 			.registerRunListener((args, state) => {
+				this.log('conditionTargetHumidityMoreThan fired');
 				const device = args.device;
 				const devicestate = device.getState();
-				const conditionMet = devicestate.target_humidity > args.target_humidity_more;
+				let conditionMet = devicestate.target_humidity > args.target_humidity_more;
 				// this.log('condition args.target_humidity_more', args.target_humidity_more);
 				// this.log('condition devicestate.target_humidity', devicestate.target_humidity);
 				// this.log('condition conditionMet', conditionMet);
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
-		this._conditionTargetHumidityLessThan = new Homey.FlowCardCondition('has_target_humidity_less_than');
-		this._conditionTargetHumidityLessThan
-			.register()
+		this.conditionTargetHumidityLessThan = this.homey.flow.getConditionCard('has_target_humidity_less_than');
+		this.conditionTargetHumidityLessThan
 			.registerRunListener((args, state) => {
+				this.log('conditionTargetHumidityLessThan fired');
 				const device = args.device;
 				const devicestate = device.getState();
-				const conditionMet = devicestate.target_humidity < args.target_humidity_less;
-				return Promise.resolve(conditionMet);
-			});
+				let conditionMet = devicestate.target_humidity < args.target_humidity_less;
+				return conditionMet;
+		});
 
-		this._conditionTargetHumidityBetween = new Homey.FlowCardCondition('has_target_humidity_between');
-		this._conditionTargetHumidityBetween
-			.register()
+		this.conditionTargetHumidityBetween = this.homey.flow.getConditionCard('has_target_humidity_between');
+		this.conditionTargetHumidityBetween
 			.registerRunListener((args, state) => {
+				this.log('conditionTargetHumidityBetween fired');
 				const device = args.device;
 				const devicestate = device.getState();
-				const conditionMet = devicestate.target_humidity > args.target_humidity_from && devicestate.target_humidity < args.target_humidity_to;
-				return Promise.resolve(conditionMet);
-			});
+				let conditionMet = devicestate.target_humidity > args.target_humidity_from && devicestate.target_humidity < args.target_humidity_to;
+				return conditionMet;
+		});
 
 		/* ** TARGET TEMPERATURE CONDITIONS ** */
-		this._conditionTargetTemperatureMoreThan = new Homey.FlowCardCondition('has_target_temperature_more_than');
-		this._conditionTargetTemperatureMoreThan
-			.register()
+		this.conditionTargetTemperatureMoreThan = this.homey.flow.getConditionCard('has_target_temperature_more_than');
+		this.conditionTargetTemperatureMoreThan
 			.registerRunListener((args, state) => {
+				this.log('conditionTargetTemperatureMoreThan fired');
 				const device = args.device;
 				const devicestate = device.getState();
-				const conditionMet = devicestate.target_temperature > args.target_temperature_more;
+				let conditionMet = devicestate.target_temperature > args.target_temperature_more;
 				// this.log('condition args.target_temperature_more', args.target_temperature_more);
 				// this.log('condition devicestate.target_temperature', devicestate.target_temperature);
 				// this.log('condition conditionMet', conditionMet);
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
-		this._conditionTargetTemperatureLessThan = new Homey.FlowCardCondition('has_target_temperature_less_than');
-		this._conditionTargetTemperatureLessThan
-			.register()
+		this.conditionTargetTemperatureLessThan = this.homey.flow.getConditionCard('has_target_temperature_less_than');
+		this.conditionTargetTemperatureLessThan
 			.registerRunListener((args, state) => {
+				this.log('conditionTargetTemperatureLessThan fired');
 				const device = args.device;
 				const devicestate = device.getState();
-				const conditionMet = devicestate.target_temperature < args.target_temperature_less;
-				return Promise.resolve(conditionMet);
-			});
+				let conditionMet = devicestate.target_temperature < args.target_temperature_less;
+				return conditionMet;
+		});
 
-		this._conditionTargetTemperatureBetween = new Homey.FlowCardCondition('has_target_temperature_between');
-		this._conditionTargetTemperatureBetween
-			.register()
+		this.conditionTargetTemperatureBetween = this.homey.flow.getConditionCard('has_target_temperature_between');
+		this.conditionTargetTemperatureBetween
 			.registerRunListener((args, state) => {
+				this.log('conditionTargetTemperatureBetween fired');
 				const device = args.device;
 				const devicestate = device.getState();
-				const conditionMet = devicestate.target_temperature > args.target_temperature_from && devicestate.target_temperature < args.target_temperature_to;
-				return Promise.resolve(conditionMet);
-			});
+				let conditionMet = devicestate.target_temperature > args.target_temperature_from && devicestate.target_temperature < args.target_temperature_to;
+				return conditionMet;
+		});
 
 		/** * INSIDE TEMPERATURE CONDITIONS ** */
-		this._conditionInsideTemperatureMoreThan = new Homey.FlowCardCondition('has_inside_temperature_more_than');
-		this._conditionInsideTemperatureMoreThan
-			.register()
+		this.conditionInsideTemperatureMoreThan = this.homey.flow.getConditionCard('has_inside_temperature_more_than');
+		this.conditionInsideTemperatureMoreThan
 			.registerRunListener((args, state) => {
+				this.log('conditionInsideTemperatureMoreThan fired');
 				const device = args.device;
 				const devicestate = device.getState();
-				const conditionMet = devicestate['measure_temperature.inside'] > args.inside_temperature_more;
+				let conditionMet = devicestate['measure_temperature.inside'] > args.inside_temperature_more;
 				// this.log('condition - [measure_temperature.inside]', devicestate['measure_temperature.inside']);
 				// this.log('condition - args.inside_temperature_more', args.inside_temperature_more);
 				// this.log('condition - conditionMet inside temp', conditionMet);
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
-		this._conditionInsideTemperatureLessThan = new Homey.FlowCardCondition('has_inside_temperature_less_than');
-		this._conditionInsideTemperatureLessThan
-			.register()
+		this.conditionInsideTemperatureLessThan = this.homey.flow.getConditionCard('has_inside_temperature_less_than');
+		this.conditionInsideTemperatureLessThan
 			.registerRunListener((args, state) => {
+				this.log('conditionInsideTemperatureLessThan fired');
 				const device = args.device;
 				const devicestate = device.getState();
-				const conditionMet = devicestate['measure_temperature.inside'] < args.inside_temperature_less;
-				return Promise.resolve(conditionMet);
-			});
+				let conditionMet = devicestate['measure_temperature.inside'] < args.inside_temperature_less;
+				return conditionMet;
+		});
 
-		this._conditionInsideTemperatureBetween = new Homey.FlowCardCondition('has_inside_temperature_between');
-		this._conditionInsideTemperatureBetween
-			.register()
+		this.conditionInsideTemperatureBetween = this.homey.flow.getConditionCard('has_inside_temperature_between');
+		this.conditionInsideTemperatureBetween
 			.registerRunListener((args, state) => {
+				this.log('conditionInsideTemperatureBetween fired');
 				const device = args.device;
 				const devicestate = device.getState();
-				const conditionMet = devicestate['measure_temperature.inside'] > args.inside_temperature_from && devicestate['measure_temperature.inside'] < args.inside_temperature_to;
-				return Promise.resolve(conditionMet);
-			});
+				let conditionMet = devicestate['measure_temperature.inside'] > args.inside_temperature_from && devicestate['measure_temperature.inside'] < args.inside_temperature_to;
+				return conditionMet;
+		});
 
 		/** * OUTSIDE TEMPERATURE CONDITIONS ** */
-		this._conditionOutsideTemperatureMoreThan = new Homey.FlowCardCondition('has_outside_temperature_more_than');
-		this._conditionOutsideTemperatureMoreThan
-			.register()
+		this.conditionOutsideTemperatureMoreThan = this.homey.flow.getConditionCard('has_outside_temperature_more_than');
+		this.conditionOutsideTemperatureMoreThan
 			.registerRunListener((args, state) => {
+				this.log('conditionOutsideTemperatureMoreThan fired');
 				const device = args.device;
 				const devicestate = device.getState();
-				const conditionMet = devicestate['measure_temperature.outside'] > args.outside_temperature_more;
+				let conditionMet = devicestate['measure_temperature.outside'] > args.outside_temperature_more;
 				// this.log('condition - [measure_temperature.outside]', devicestate['measure_temperature.outside']);
 				// this.log('condition - args.outside_temperature_more', args.outside_temperature_more);
 				// this.log('condition - conditionMet outside temp', conditionMet);
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
-		this._conditionOutsideTemperatureLessThan = new Homey.FlowCardCondition('has_outside_temperature_less_than');
-		this._conditionOutsideTemperatureLessThan
-			.register()
+		this.conditionOutsideTemperatureLessThan = this.homey.flow.getConditionCard('has_outside_temperature_less_than');
+		this.conditionOutsideTemperatureLessThan
 			.registerRunListener((args, state) => {
+				this.log('conditionOutsideTemperatureLessThan fired');
 				const device = args.device;
 				const devicestate = device.getState();
-				const conditionMet = devicestate['measure_temperature.outside'] < args.outside_temperature_less;
-				return Promise.resolve(conditionMet);
-			});
+				let conditionMet = devicestate['measure_temperature.outside'] < args.outside_temperature_less;
+				return conditionMet;
+		});
 
-		this._conditionOutsideTemperatureBetween = new Homey.FlowCardCondition('has_outside_temperature_between');
-		this._conditionOutsideTemperatureBetween
-			.register()
+		this.conditionOutsideTemperatureBetween = this.homey.flow.getConditionCard('has_outside_temperature_between');
+		this.conditionOutsideTemperatureBetween
 			.registerRunListener((args, state) => {
+				this.log('conditionOutsideTemperatureBetween fired');
 				const device = args.device;
 				const devicestate = device.getState();
-				const conditionMet = devicestate['measure_temperature.outside'] > args.outside_temperature_from && devicestate['measure_temperature.outside'] < args.outside_temperature_to;
-				return Promise.resolve(conditionMet);
-			});
+				let conditionMet = devicestate['measure_temperature.outside'] > args.outside_temperature_from && devicestate['measure_temperature.outside'] < args.outside_temperature_to;
+				return conditionMet;
+		});
 
 		/* ** MODE CHANGE CONDITIONS ** */
-		this._conditionAircoMode = new Homey.FlowCardCondition('mode_equals');
-		this._conditionAircoMode
-			.register()
+		this.conditionAircoMode = this.homey.flow.getConditionCard('mode_equals');
+		this.conditionAircoMode
 			.registerRunListener((args, state) => {
+				this.log('conditionAircoMode fired');
 				const device = args.device;
 				const settings = device.getSettings();
-				const conditionMet = settings.capability_mode === args.mode;
+				let conditionMet = settings.capability_mode === args.mode;
 				// this.log('condition - [settings.capability_mode]', settings.capability_mode);
 				// this.log('condition - args.mode', args.mode);
 				// this.log('condition - conditionMet capability_mode', conditionMet);
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
 		/* ** ECONO MODE CHANGE CONDITIONS ** */
-		this._conditionSmodeEcono = new Homey.FlowCardCondition('mode_econo_equals');
-		this._conditionSmodeEcono
-			.register()
+		this.conditionSmodeEcono = this.homey.flow.getConditionCard('mode_econo_equals');
+		this.conditionSmodeEcono
 			.registerRunListener((args, state) => {
+				this.log('conditionSmodeEcono fired');
 				const device = args.device;
 				const devicestate = device.getState();
-				const conditionMet = devicestate['special_mode_eco'] === args.smode_econo;
+				let conditionMet = devicestate['special_mode_eco'] === args.smode_econo;
 				// this.log('condition - [special_mode_eco]', devicestate['special_mode_eco']);
 				// this.log('condition - args.smode_econo', args.smode_econo);
 				// this.log('condition - conditionMet econo mode', conditionMet);
-				return Promise.resolve(conditionMet);
-			});
+				return conditionMet;
+		});
 
 		/* ** POWERFUL MODE CHANGE CONDITIONS ** */
-		this._conditionSmodePwrFul = new Homey.FlowCardCondition('mode_pwrful_equals');
-		this._conditionSmodePwrFul
-			.register()
+		this.conditionSmodePwrFul = this.homey.flow.getConditionCard('mode_pwrful_equals');
+		this.conditionSmodePwrFul
 			.registerRunListener((args, state) => {
+				this.log('conditionSmodePwrFul fired');
 				const device = args.device;
 				const devicestate = device.getState();
-				const conditionMet = devicestate['special_mode_pwr'] === args.smode_pwrful;
-				return Promise.resolve(conditionMet);
-			});
+				let conditionMet = devicestate['special_mode_pwr'] === args.smode_pwrful;
+				return conditionMet;
+		});
 
 		/* ** STREAMER MODE CHANGE CONDITIONS ** */
-		this._conditionSmodeStrmr = new Homey.FlowCardCondition('mode_strmr_equals');
-		this._conditionSmodeStrmr
-			.register()
+		this.conditionSmodeStrmr = this.homey.flow.getConditionCard('mode_strmr_equals');
+		this.conditionSmodeStrmr
 			.registerRunListener((args, state) => {
+				this.log('conditionSmodeStrmr fired');
 				const device = args.device;
 				const devicestate = device.getState();
-				const conditionMet = devicestate['special_mode_str'] === args.smode_strmr;
-				return Promise.resolve(conditionMet);
-			});
+				let conditionMet = devicestate['special_mode_str'] === args.smode_strmr;
+				return conditionMet;
+		});
 
 		//* ** ACTION FLOWCARDS *******************************************************************************************
 		/** * TARGET TEMPERATURE ACTION ** */
-		this._actionTargetHum = new Homey.FlowCardAction('change_target_hum');
-		this._actionTargetHum
-			.register()
+		this.actionTargetHum = this.homey.flow.getActionCard('change_target_hum');
+		this.actionTargetHum
 			.registerRunListener((args, state) => {
+				this.log('actionTargetHum fired');
 				const device = args.device;
 				const settings = device.getSettings();
 
@@ -354,13 +358,13 @@ class AirAirHPDriver extends Driver {
 
 				airairhpctrl.daikinHumControl(ahum, ip_address, options);
 				return Promise.resolve(ahum);
-			});
+		});
 
 		/** * TARGET TEMPERATURE ACTION ** */
-		this._actionTargetTemp = new Homey.FlowCardAction('change_target_temp');
-		this._actionTargetTemp
-			.register()
+		this.actionTargetTemp = this.homey.flow.getActionCard('change_target_temp');
+		this.actionTargetTemp
 			.registerRunListener((args, state) => {
+				this.log('actionTargetTemp fired');
 				const device = args.device;
 				const settings = device.getSettings();
 
@@ -386,13 +390,13 @@ class AirAirHPDriver extends Driver {
 
 				airairhpctrl.daikinTempControl(atemp, ip_address, options);
 				return Promise.resolve(atemp);
-			});
+		});
 
 		/** * TARGET TEMPERATURE BY ACTION ** */
-		this._actionTargetTemp = new Homey.FlowCardAction('change_target_temp_by');
-		this._actionTargetTemp
-			.register()
+		this.actionTargetTempBy = this.homey.flow.getActionCard('change_target_temp_by');
+		this.actionTargetTempBy
 			.registerRunListener((args, state) => {
+				this.log('actionTargetTempBy fired');
 				const device = args.device;
 				//this.log('args.device', device);
 				const devicestate = device.getState();
@@ -449,13 +453,13 @@ class AirAirHPDriver extends Driver {
 
 				airairhpctrl.daikinTempControl(atemp, ip_address, options);
 				return Promise.resolve(atemp);
-			});
+		});
 
 		// --- MODE CHANGE ACTIONS
-		this._actionAircoMode = new Homey.FlowCardAction('change_mode');
-		this._actionAircoMode
-			.register()
+		this.actionAircoMode = this.homey.flow.getActionCard('change_mode');
+		this.actionAircoMode
 			.registerRunListener((args, state) => {
+				this.log('actionAircoMode fired');
 				const device = args.device;
 				const settings = device.getSettings();
 
@@ -467,7 +471,7 @@ class AirAirHPDriver extends Driver {
 
 				const thermostat_mode = args.mode;
 				const spmode = settings.spmode;
-				device.setCapabilityValue('thermostat_mode', thermostat_mode);
+				device.setCapabilityValue('thermostat_mode_std', thermostat_mode);
 				this.log('thermostat_mode: ', thermostat_mode);
 
 				// type B adapter logic
@@ -485,13 +489,13 @@ class AirAirHPDriver extends Driver {
 
 				airairhpctrl.daikinModeControl(thermostat_mode, ip_address, options, demo_mode);
 				return Promise.resolve(thermostat_mode);
-			});
+		});
 
 		// --- ECONO ACTIONS
-		this._actionEcono = new Homey.FlowCardAction('change_smode_econo');
-		this._actionEcono
-			.register()
+		this.actionEcono = this.homey.flow.getActionCard('change_smode_econo');
+		this.actionEcono
 			.registerRunListener((args, state) => {
+				this.log('actionEcono fired');
 				const device = args.device;
 				const settings = device.getSettings();
 
@@ -525,13 +529,13 @@ class AirAirHPDriver extends Driver {
 
 				airairhpctrl.daikinSpecialModeControl("econo", ip_address, options, advstate);
 				return Promise.resolve(economode);
-			});
+		});
 
 		// --- POWERFUL ACTIONS
-		this._actionPwrFul = new Homey.FlowCardAction('change_smode_pwrful');
-		this._actionPwrFul
-			.register()
+		this.actionPwrFul = this.homey.flow.getActionCard('change_smode_pwrful');
+		this.actionPwrFul
 			.registerRunListener((args, state) => {
+				this.log('actionPwrFul fired');
 				const device = args.device;
 				const settings = device.getSettings();
 
@@ -565,53 +569,53 @@ class AirAirHPDriver extends Driver {
 
 				airairhpctrl.daikinSpecialModeControl("powerful", ip_address, options, advstate);
 				return Promise.resolve(pwrfulmode);
-			});
+		});
 
-			// --- STREAMER ACTIONS
-			this._actionStrmr = new Homey.FlowCardAction('change_smode_strmr');
-			this._actionStrmr
-				.register()
-				.registerRunListener((args, state) => {
-					const device = args.device;
-					const settings = device.getSettings();
+		// --- STREAMER ACTIONS
+		this.actionStrmr = this.homey.flow.getActionCard('change_smode_strmr');
+		this.actionStrmr
+			.registerRunListener((args, state) => {
+				this.log('actionStrmr fired');
+				const device = args.device;
+				const settings = device.getSettings();
 
-					const ip_address = settings.ip;
-					this.log('ip_address', ip_address);
+				const ip_address = settings.ip;
+				this.log('ip_address', ip_address);
 
-					const strmrmode = args.smstrmr;
-					device.setCapabilityValue('special_mode_str', strmrmode);
-					this.log('special_mode_str: ', strmrmode);
+				const strmrmode = args.smstrmr;
+				device.setCapabilityValue('special_mode_str', strmrmode);
+				this.log('special_mode_str: ', strmrmode);
 
-					if (strmrmode === "on") {
-						var advstate = 1;
-						this.log('Streamer mode: On');
-					} else {
-						var advstate = 0;
-						this.log('Streamer mode: Off');
-					};
+				if (strmrmode === "on") {
+					var advstate = 1;
+					this.log('Streamer mode: On');
+				} else {
+					var advstate = 0;
+					this.log('Streamer mode: Off');
+				};
 
-					// type B adapter logic
-					const useGetToPost = settings.useGetToPost;
-					const adapter = settings.adapter;
-					let options = {};
-					// this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
-					// this.log('Adapter model:', adapter)
-					if (useGetToPost) options = {
-						useGetToPost: true
-					};
-					else options = {
-						useGetToPost: false
-					};
+				// type B adapter logic
+				const useGetToPost = settings.useGetToPost;
+				const adapter = settings.adapter;
+				let options = {};
+				// this.log('firmware < v2.0.1 (then useGetToPost):', useGetToPost);
+				// this.log('Adapter model:', adapter)
+				if (useGetToPost) options = {
+					useGetToPost: true
+				};
+				else options = {
+					useGetToPost: false
+				};
 
-					airairhpctrl.daikinSpecialModeControl("streamer", ip_address, options, advstate);
-					return Promise.resolve(strmrmode);
-				});
+				airairhpctrl.daikinSpecialModeControl("streamer", ip_address, options, advstate);
+				return Promise.resolve(strmrmode);
+		});
 
 		// --- FAN RATE ACTIONS
-		this._actionFanRate = new Homey.FlowCardAction('change_fan_rate');
-		this._actionFanRate
-			.register()
+		this.actionFanRate = this.homey.flow.getActionCard('change_fan_rate');
+		this.actionFanRate
 			.registerRunListener((args, state) => {
+				this.log('actionFanRate fired');
 				const device = args.device;
 				const settings = device.getSettings();
 
@@ -637,13 +641,13 @@ class AirAirHPDriver extends Driver {
 
 				airairhpctrl.daikinFanRateControl(fan_rate, ip_address, options);
 				return Promise.resolve(fan_rate);
-			});
+		});
 
 		// --- FAN DIRECTION ACTIONS
-		this._actionFanDirection = new Homey.FlowCardAction('change_fan_direction');
-		this._actionFanDirection
-			.register()
+		this.actionFanDirection = this.homey.flow.getActionCard('change_fan_direction');
+		this.actionFanDirection
 			.registerRunListener((args, state) => {
+				this.log('actionFanDirection fired');
 				const device = args.device;
 				const settings = device.getSettings();
 
@@ -669,86 +673,9 @@ class AirAirHPDriver extends Driver {
 
 				airairhpctrl.daikinFanDirControl(fan_direction, ip_address, options);
 				return Promise.resolve(fan_direction);
-			});
+		});
 	}
 
-	// --- METHODS FOR TEMPERATURE FLOWCARD TRIGGERS
-	/*
-	 * Triggers the 'temperature' flows
-	 * @param {Device} device - A Device instance
-	 * @param {Object} tokens - An object with tokens and their typed values, as defined in the app.json
-	 * @param {Object} state - An object with properties which are accessible throughout the Flow
-	 */
-	// --- Target Humidity triggering
-	triggerTargetHumidityMoreThan(device, tokens, state) {
-		this.triggerFlow(this._triggerTargetHumidityMoreThan, device, tokens, state);
-		return this;
-	}
-
-	triggerTargetHumidityLessThan(device, tokens, state) {
-		this.triggerFlow(this._triggerTargetHumidityLessThan, device, tokens, state);
-		return this;
-	}
-
-	triggerTargetHumidityBetween(device, tokens, state) {
-		this.triggerFlow(this._triggerTargetHumidityBetween, device, tokens, state);
-		return this;
-	}
-	
-	// --- Target Temperature triggering
-	triggerTargetTemperatureMoreThan(device, tokens, state) {
-		this.triggerFlow(this._triggerTargetTemperatureMoreThan, device, tokens, state);
-		return this;
-	}
-
-	triggerTargetTemperatureLessThan(device, tokens, state) {
-		this.triggerFlow(this._triggerTargetTemperatureLessThan, device, tokens, state);
-		return this;
-	}
-
-	triggerTargetTemperatureBetween(device, tokens, state) {
-		this.triggerFlow(this._triggerTargetTemperatureBetween, device, tokens, state);
-		return this;
-	}
-
-	// --- Inside Temperature triggering
-	triggerInsideTemperatureMoreThan(device, tokens, state) {
-		this.triggerFlow(this._triggerInsideTemperatureMoreThan, device, tokens, state);
-		return this;
-	}
-
-	triggerInsideTemperatureLessThan(device, tokens, state) {
-		this.triggerFlow(this._triggerInsideTemperatureLessThan, device, tokens, state);
-		return this;
-	}
-
-	triggerInsideTemperatureBetween(device, tokens, state) {
-		this.triggerFlow(this._triggerInsideTemperatureBetween, device, tokens, state);
-		return this;
-	}
-
-	// --- Outside Temperature triggering
-	triggerOutsideTemperatureMoreThan(device, tokens, state) {
-		this.triggerFlow(this._triggerOutsideTemperatureMoreThan, device, tokens, state);
-		return this;
-	}
-
-	triggerOutsideTemperatureLessThan(device, tokens, state) {
-		this.triggerFlow(this._triggerOutsideTemperatureLessThan, device, tokens, state);
-		return this;
-	}
-
-	triggerOutsideTemperatureBetween(device, tokens, state) {
-		this.triggerFlow(this._triggerOusideTemperatureBetween, device, tokens, state);
-		return this;
-	}
-
-	// --- METHODS FOR MODE FLOWCARD TRIGGERS
-	// --- Mode triggering
-	triggerCapabilityModeChange(device, tokens, state) {
-		this.triggerFlow(this._triggerAircoMode, device, tokens, state);
-		return this;
-	}
 }
 
 module.exports = AirAirHPDriver;

@@ -7,8 +7,11 @@ const util = require('../../lib/daikin');
 // Device for a Daikin AirAirHP Homekit device
 class AirAirHPHKDevice extends Device {
   onInit() {
-	this.log('>>>onInit');
+	this.log('>>>onInit device airairhphk');
     super.onInit();
+
+    const deviceCapabilities = this.getCapabilities();
+	this.log('Device Capabilities:', deviceCapabilities);
 
     this.log('AirAirHP Homekit capability registration started...');
     this.registerCapabilityListener('thermostat_mode', this.onCapabilityMode.bind(this));
@@ -78,11 +81,9 @@ class AirAirHPHKDevice extends Device {
       this.setCapabilityValue('target_temperature', atemp)
 	  	.catch(this.error);
 
-      const device = this;
       const tokens = {
         temperature_set: atemp,
       };
-
       const state = {
         target_temperature: atemp,
       };

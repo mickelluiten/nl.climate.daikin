@@ -4,11 +4,13 @@ const Homey = require('homey');
 
 // Driver for a Daikin Airconditioner
 class Driver extends Homey.Driver {
-  onPair(socket) {
-    console.log('onPair(socket)');
+  onPair(session) {
+    console.log('onPair(session)');
 
-    socket.on('manual_add', (device, callback) => {
-      const devices = {};
+    //session.setHandler('manual_add', (device, callback) => {
+    session.setHandler('manual_add', (device) => {
+      //const devices = {};
+      const devices = [];
       const request = require('request');
       const url = `http://${device.data.ip}/aircon/get_control_info`;
       console.log(`Connecting to: ${url}`);
@@ -16,7 +18,7 @@ class Driver extends Homey.Driver {
       request(url, (error, response, body) => {
         if (response === null || response === undefined) {
           console.log('Response: ', response);
-          socket.emit('error', 'http error');
+          session.emit('error', 'http error');
           return response;
         }
 
@@ -29,38 +31,27 @@ class Driver extends Homey.Driver {
           console.log('Device ID: ', device.data.id);
           console.log('Device name: ', device.data.inputdevicename);
           console.log('Device ip-address: ', device.data.ip);
-          callback(null, devices);
-          socket.emit('success', device);
+          session.emit('success', device);
+		  return devices;
         } else {
           console.log('Response.statusCode:', response.statusCode);
-          socket.emit('error', `http error: ${response.statusCode}`);
+          session.emit('error', `http error: ${response.statusCode}`);
         }
       });
 
-      // emit when devices are still being searched
-      socket.emit('list_devices', devices);
-
-      // fire the callback when searching is done
-      callback(null, devices);
-
-      // when no devices are found, return an empty array
-      callback(null, []);
-
-      // or fire a callback with Error to show that instead
-      callback(new Error('Something bad has occured!'));
     });
 
     // this happens when user clicks away the pairing windows
-    socket.on('disconnect', () => {
+    session.setHandler('disconnect', () => {
       console.log('Pairing is finished (done or aborted)'); // using console.log because this.log or Homey.log is not a function
     });
   }
 
   // Maintenance action - repairing action in support of v4 Special Modes
-  onRepair(socket, device) {
-	console.log('>>> onRepair(socket, device)');
+  onRepair(session, device) {
+	console.log('>>> onRepair(session, device)');
 
-    socket.on('dorepair', (data, callback) => {
+    session.setHandler('dorepair', (data, callback) => {
 	  console.log('Fixing/changing special modes...');
 	  //Note: that the maintenance dialog starts the repairstart.html dialog which then calls this routine...
 
@@ -175,34 +166,14 @@ class Driver extends Homey.Driver {
     };
 
 	  console.log('Finishing up...');
-  	  socket.emit('finish');
+  	  session.emit('finish');
       callback(null, true);
     });
 
-    socket.on('disconnect', () => {
+    session.setHandler('disconnect', () => {
       console.log('RePairing either aborted or completed');
     });
 
-  }
-
-  /*
-     * Triggers a flow
-     * @param {Homey.FlowCardTriggerDevice} trigger - A Homey.FlowCardTriggerDevice instance
-     * @param {Device} device - A Device instance
-     * @param {Object} tokens - An object with tokens and their typed values, as defined in the app.json
-     * @param {Object} state - An object with properties which are accessible throughout the Flow
-     */
-  triggerFlow(trigger, device, tokens, state) {
-    if (trigger) {
-	  //this.log('triggerFlow called... > trigger:',trigger);
-	  //this.log('triggerFlow called... > device:',device);
-	  //this.log('triggerFlow called... > tokens:',tokens);
-	  //this.log('triggerFlow called... > state:',state);
-      trigger
-        .trigger(device, tokens, state)
-        .then(this.log('flowcard triggered'))
-        .catch(this.error);
-    }
   }
 
   getDeviceType() {
