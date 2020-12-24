@@ -12,7 +12,7 @@
   "category": [
     "climate"
   ],
-  "version": "5.0.0",
+  "version": "5.0.1",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "athomForumDiscussionId": 2082,
@@ -1514,28 +1514,28 @@
       "setable": true,
       "values": [
         {
-          "id": "0",
+          "id": "zero",
           "title": {
             "en": "Stop",
             "nl": "Stop"
           }
         },
         {
-          "id": "1",
+          "id": "one",
           "title": {
             "en": "Vertical",
             "nl": "Vertikaal"
           }
         },
         {
-          "id": "2",
+          "id": "two",
           "title": {
             "en": "Horizontal",
             "nl": "Horizontaal"
           }
         },
         {
-          "id": "3",
+          "id": "three",
           "title": {
             "en": "3D",
             "nl": "3D"
@@ -1567,35 +1567,35 @@
           }
         },
         {
-          "id": "3",
+          "id": "three",
           "title": {
             "en": "Level 1",
             "nl": "Niveau 1"
           }
         },
         {
-          "id": "4",
+          "id": "four",
           "title": {
             "en": "Level 2",
             "nl": "Niveau 2"
           }
         },
         {
-          "id": "5",
+          "id": "five",
           "title": {
             "en": "Level 3",
             "nl": "Niveau 3"
           }
         },
         {
-          "id": "6",
+          "id": "six",
           "title": {
             "en": "Level 4",
             "nl": "Niveau 4"
           }
         },
         {
-          "id": "7",
+          "id": "seven",
           "title": {
             "en": "Level 5",
             "nl": "Niveau 5"

@@ -48,7 +48,7 @@ class AirAirHPDevice extends Device {
 					.catch(this.error); // ensure a valid mode is shown at start up...
 				break;
 			case 1:
-				if(this.hasCapability('thermostat_mode_ext1')) this.setWarning('Complete the upgrade to version 4.');
+				if(this.hasCapability('thermostat_mode_ext1')) this.setWarning('Complete the driver upgrade.');
 				else this.setWarning(null);
 				this.registerCapabilityListener('thermostat_mode_std', this.onCapabilityMode.bind(this));
 				this.setCapabilityValue('thermostat_mode_std', 'off')
@@ -58,7 +58,7 @@ class AirAirHPDevice extends Device {
 					.catch(this.error); // ensure a valid mode is shown at start up...
 				break;
 			case 2:
-				if(this.hasCapability('thermostat_mode_ext2')) this.setWarning('Complete the upgrade to version 4.');
+				if(this.hasCapability('thermostat_mode_ext2')) this.setWarning('Complete the driver upgrade.');
 				else this.setWarning(null);
 				this.registerCapabilityListener('thermostat_mode_std', this.onCapabilityMode.bind(this));
 				this.setCapabilityValue('thermostat_mode_std', 'off')
@@ -68,7 +68,7 @@ class AirAirHPDevice extends Device {
 					.catch(this.error); // ensure a valid mode is shown at start up...
 				break;
 			case 3:
-				if(this.hasCapability('thermostat_mode_ext3')) this.setWarning('Complete the upgrade to version 4.');
+				if(this.hasCapability('thermostat_mode_ext3')) this.setWarning('Complete the driver upgrade.');
 				else this.setWarning(null);
 				this.registerCapabilityListener('thermostat_mode_std', this.onCapabilityMode.bind(this));
 				this.setCapabilityValue('thermostat_mode_std', 'off')
@@ -81,7 +81,7 @@ class AirAirHPDevice extends Device {
 					.catch(this.error); // ensure a valid mode is shown at start up...
 				break;
 			case 4:
-				if(this.hasCapability('thermostat_mode_ext4')) this.setWarning('Complete the upgrade to version 4.');
+				if(this.hasCapability('thermostat_mode_ext4')) this.setWarning('Complete the driver upgrade.');
 				else this.setWarning(null);
 				this.registerCapabilityListener('thermostat_mode_std', this.onCapabilityMode.bind(this));
 				this.setCapabilityValue('thermostat_mode_std', 'off')
@@ -92,7 +92,7 @@ class AirAirHPDevice extends Device {
 				this.registerCapabilityListener('target_humidity', this.onCapabilityAircoHum.bind(this));
 				break;
 			case 5:
-				if(this.hasCapability('thermostat_mode_ext5')) this.setWarning('Complete the upgrade to version 4.');
+				if(this.hasCapability('thermostat_mode_ext5')) this.setWarning('Complete the driver upgrade.');
 				else this.setWarning(null);
 				this.registerCapabilityListener('thermostat_mode_std', this.onCapabilityMode.bind(this));
 				this.setCapabilityValue('thermostat_mode_std', 'off')
@@ -106,7 +106,7 @@ class AirAirHPDevice extends Device {
 				this.registerCapabilityListener('target_humidity', this.onCapabilityAircoHum.bind(this));
 				break;
 			case 6:
-				if(this.hasCapability('thermostat_mode_ext6')) this.setWarning('Complete the upgrade to version 4.');
+				if(this.hasCapability('thermostat_mode_ext6')) this.setWarning('Complete the driver upgrade.');
 				else this.setWarning(null);
 				this.registerCapabilityListener('thermostat_mode_std', this.onCapabilityMode.bind(this));
 				this.setCapabilityValue('thermostat_mode_std', 'off')
@@ -120,7 +120,7 @@ class AirAirHPDevice extends Device {
 				this.registerCapabilityListener('target_humidity', this.onCapabilityAircoHum.bind(this));
 				break;
 			case 7:
-				if(this.hasCapability('thermostat_mode_ext7')) this.setWarning('Complete the upgrade to version 4.');
+				if(this.hasCapability('thermostat_mode_ext7')) this.setWarning('Complete the driver upgrade.');
 				else this.setWarning(null);
 				this.registerCapabilityListener('thermostat_mode_std', this.onCapabilityMode.bind(this));
 				this.setCapabilityValue('thermostat_mode_std', 'off')
@@ -535,9 +535,9 @@ class AirAirHPDevice extends Device {
 		}		
 
 		// ---- fan rate
-		const fan_rates = ['A', 'B', '3', '4', '5', '6', '7'];
+		const fan_rates = ['A', 'B', 'three', 'four', 'five', 'six', 'seven'];
 		let frate_nbr = -1;
-		const frate = String(control_info[23]);
+		const frate = String(control_info[23]); // control_info[23] = 'A','B','3','4','5','6','7'
 		if (frate === 'A') {
 			frate_nbr = 0;
 		}
@@ -547,15 +547,15 @@ class AirAirHPDevice extends Device {
 		if (frate_nbr !== 0 && frate_nbr !== 1) {
 			frate_nbr = parseInt(frate - 1);
 		}
-		const fan_rate = fan_rates[frate_nbr];
+		const fan_rate = fan_rates[frate_nbr]; // fan_rate = 'A','B','three','four',etc.
 		this.setCapabilityValue('fan_rate', fan_rate)
 			.catch(this.error);
 		this.log('frate:', fan_rate);
 
 		// ---- fan direction
-		const fan_directions = ['0', '1', '2', '3'];
-		const fdir = Number(control_info[24]);
-		const fan_direction = fan_directions[fdir];
+		const fan_directions = ['zero', 'one', 'two', 'three'];
+		const fdir = Number(control_info[24]); // control_info[24] = '0,'1','2','3'
+		const fan_direction = fan_directions[fdir]; // fan_direction = 'zero','one,'two,'three'
 		this.setCapabilityValue('fan_direction', fan_direction)
 			.catch(this.error);
 		this.log('fdir:', fan_direction);

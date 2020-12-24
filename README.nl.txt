@@ -13,5 +13,5 @@ Opmerking: vereist dat Homey's experimentele Apple HomeKit ondersteuning is inge
 
 Opmerking: het beschikbaar hebben van speciale modi op de IR afstandsbediening betekent niet automatisch dat deze modi ook via WiFi kunnen worden bediend.
 
-<Gberuiksaanwijzing>
-Kijk hier https://community.athom.com/t/daikin-ai/158
+<Gebruiksaanwijzing>
+Bezoek het forum (de link vind u onderaan deze pagina).

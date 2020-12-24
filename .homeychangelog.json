@@ -8,5 +8,17 @@
   },
   "4.0.2": {
     "en": "Improved v3 to v4 migration guidance in relation to special modes."
+  },
+  "4.0.3": {
+    "en": "Improved v3 to v4 migration guidance in relation to special modes."
+  },
+  "4.0.4": {
+    "en": "Improved v3 to v4 migration guidance in relation to special modes. Improved error handling."
+  },
+  "4.0.5": {
+    "en": "Improved v3 to v4 migration guidance in relation to special modes. Improved error handling. Action flow card Dehumidification is now called Dry (same as mode)."
+  },
+  "5.0.0": {
+    "en": "1/ Updates to support SDK3. 2/ Changes to thermostat UI behavior, when airco is turned off it will follow the target temperature setting (iso the inside temperature). 3/ Changes to the thermostat mode logic when externally powered on i.e. when using the IR remote."
   }
 }

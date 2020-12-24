@@ -14,4 +14,4 @@ Note: requires either Homey's experimental Apple Homekit feature enabled or one 
 Note: having these functions on you airco's IR remote control does not mean that these special modes can be controlled via WiFi.
 
 <User Manual>
-See https://community.athom.com/t/daikin-ai/158
+Visit the community forum (the link can be found at the bottom of this page).
