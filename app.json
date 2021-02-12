@@ -12,7 +12,7 @@
   "category": [
     "climate"
   ],
-  "version": "5.0.1",
+  "version": "5.0.3",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "athomForumDiscussionId": 2082,
@@ -81,18 +81,30 @@
           },
           {
             "name": "target_humidity_from",
-            "type": "number",
-            "placeholder": {
-              "en": "Number between 0 - 50",
-              "nl": "Getal tussen 0 - 50"
+            "type": "range",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "label": "%",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "From",
+              "nl": "Van"
             }
           },
           {
             "name": "target_humidity_to",
-            "type": "number",
-            "placeholder": {
-              "en": "Number between 0 - 50",
-              "nl": "Getal tussen 0 - 50"
+            "type": "range",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "label": "%",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "To",
+              "nl": "Tot"
             }
           }
         ]
@@ -111,10 +123,16 @@
           },
           {
             "name": "target_humidity_less",
-            "type": "number",
-            "placeholder": {
-              "en": "Number between 0 - 50",
-              "nl": "Getal tussen 0 - 50"
+            "type": "range",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "label": "%",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "Less than",
+              "nl": "Minder dan"
             }
           }
         ]
@@ -133,10 +151,16 @@
           },
           {
             "name": "target_humidity_more",
-            "type": "number",
-            "placeholder": {
-              "en": "Number between 0 - 50",
-              "nl": "Getal tussen 0 - 50"
+            "type": "range",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "label": "%",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "More than",
+              "nl": "Meer dan"
             }
           }
         ]
@@ -155,18 +179,30 @@
           },
           {
             "name": "target_temperature_from",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "From",
+              "nl": "Van"
             }
           },
           {
             "name": "target_temperature_to",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "To",
+              "nl": "Tot"
             }
           }
         ]
@@ -185,10 +221,16 @@
           },
           {
             "name": "target_temperature_less",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "Less than",
+              "nl": "Minder dan"
             }
           }
         ]
@@ -207,10 +249,16 @@
           },
           {
             "name": "target_temperature_more",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "More than",
+              "nl": "Meer dan"
             }
           }
         ]
@@ -229,18 +277,30 @@
           },
           {
             "name": "inside_temperature_from",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "From",
+              "nl": "Van"
             }
           },
           {
             "name": "inside_temperature_to",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "To",
+              "nl": "Tot"
             }
           }
         ]
@@ -259,10 +319,16 @@
           },
           {
             "name": "inside_temperature_less",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "Less than",
+              "nl": "Minder than"
             }
           }
         ]
@@ -281,10 +347,16 @@
           },
           {
             "name": "inside_temperature_more",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "More than",
+              "nl": "Meer dan"
             }
           }
         ]
@@ -365,18 +437,30 @@
           },
           {
             "name": "outside_temperature_from",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "From",
+              "nl": "Van"
             }
           },
           {
             "name": "outside_temperature_to",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "To",
+              "nl": "Tot"
             }
           }
         ]
@@ -395,10 +479,16 @@
           },
           {
             "name": "ouside_temperature_less",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "Less than",
+              "nl": "Minder dan"
             }
           }
         ]
@@ -417,10 +507,16 @@
           },
           {
             "name": "outside_temperature_more",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "More than",
+              "nl": "Meer dan"
             }
           }
         ]
@@ -441,18 +537,30 @@
           },
           {
             "name": "inside_temperature_from",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "From",
+              "nl": "Van"
             }
           },
           {
             "name": "inside_temperature_to",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "To",
+              "nl": "Tot"
             }
           }
         ]
@@ -471,10 +579,16 @@
           },
           {
             "name": "inside_temperature_less",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "Less than",
+              "nl": "Minder dan"
             }
           }
         ]
@@ -493,10 +607,16 @@
           },
           {
             "name": "inside_temperature_more",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "More than",
+              "nl": "Meer dan"
             }
           }
         ]
@@ -515,18 +635,30 @@
           },
           {
             "name": "outside_temperature_from",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "From",
+              "nl": "Van"
             }
           },
           {
             "name": "outside_temperature_to",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "To",
+              "nl": "Tot"
             }
           }
         ]
@@ -545,10 +677,16 @@
           },
           {
             "name": "outside_temperature_less",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "Less than",
+              "nl": "Minder dan"
             }
           }
         ]
@@ -567,10 +705,16 @@
           },
           {
             "name": "outside_temperature_more",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "More than",
+              "nl": "Meer dan"
             }
           }
         ]
@@ -589,18 +733,30 @@
           },
           {
             "name": "target_humidity_from",
-            "type": "number",
-            "placeholder": {
-              "en": "Number between 0 - 50",
-              "nl": "Getal tussen 0 - 50"
+            "type": "range",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "label": "%",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "From",
+              "nl": "Van"
             }
           },
           {
             "name": "target_humidity_to",
-            "type": "number",
-            "placeholder": {
-              "en": "Number between 0 - 50",
-              "nl": "Getal tussen 0 - 50"
+            "type": "range",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "label": "%",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "To",
+              "nl": "Tot"
             }
           }
         ]
@@ -619,10 +775,16 @@
           },
           {
             "name": "target_humidity_less",
-            "type": "number",
-            "placeholder": {
-              "en": "Number between 0 - 50",
-              "nl": "Getal tussen 0 - 50"
+            "type": "range",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "label": "%",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "Less than",
+              "nl": "Minder dan"
             }
           }
         ]
@@ -641,10 +803,16 @@
           },
           {
             "name": "target_humidity_more",
-            "type": "number",
-            "placeholder": {
-              "en": "Number between 0 - 50",
-              "nl": "Getal tussen 0 - 50"
+            "type": "range",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "label": "%",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "More than",
+              "nl": "Meer dan"
             }
           }
         ]
@@ -663,18 +831,30 @@
           },
           {
             "name": "target_temperature_from",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "From",
+              "nl": "Van"
             }
           },
           {
             "name": "target_temperature_to",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "To",
+              "nl": "Tot"
             }
           }
         ]
@@ -693,10 +873,16 @@
           },
           {
             "name": "target_temperature_less",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "Less than",
+              "nl": "Minder dan"
             }
           }
         ]
@@ -715,10 +901,16 @@
           },
           {
             "name": "target_temperature_more",
-            "type": "number",
-            "placeholder": {
-              "en": "in C",
-              "nl": "in C"
+            "type": "range",
+            "min": -10,
+            "max": 60,
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "More than",
+              "nl": "Meer dan"
             }
           }
         ]
@@ -1173,8 +1365,8 @@
       {
         "id": "change_target_hum",
         "title": {
-          "en": "Change target humidity",
-          "nl": "Wijzig doel luchtvochtigheid"
+          "en": "Change target humidity to",
+          "nl": "Wijzig doel luchtvochtigheid in"
         },
         "args": [
           {
@@ -1184,12 +1376,15 @@
           },
           {
             "name": "ahum",
-            "type": "number",
+            "type": "range",
             "min": 0,
             "max": 50,
-            "placeholder": {
-              "en": "Number between 0 - 50",
-              "nl": "Getal tussen 0 - 50"
+            "label": "%",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "Target Humidity",
+              "nl": "Doel relatieve luchtvochtigheid"
             }
           }
         ]
@@ -1197,8 +1392,8 @@
       {
         "id": "change_target_temp",
         "title": {
-          "en": "Change target temperature",
-          "nl": "Wijzig doel temperatuur"
+          "en": "Change target temperature to",
+          "nl": "Wijzig doel temperatuur in"
         },
         "args": [
           {
@@ -1208,12 +1403,16 @@
           },
           {
             "name": "atemp",
-            "type": "number",
+            "type": "range",
             "min": 15,
             "max": 35,
-            "placeholder": {
-              "en": "°C",
-              "nl": "°C"
+            "step": 1,
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "Target temperature",
+              "nl": "Doel temperatuur"
             }
           }
         ]
@@ -1232,12 +1431,15 @@
           },
           {
             "name": "bytemp",
-            "type": "number",
+            "type": "range",
             "min": -5,
             "max": 5,
-            "placeholder": {
-              "en": "a value between -5°C and +5°C",
-              "nl": "een getal tussen de -5°C en +5°C"
+            "label": "°C",
+            "labelMultiplier": 1,
+            "labelDecimals": 0,
+            "title": {
+              "en": "Change target temperature by",
+              "nl": "Wijzig de doel temperatuur met"
             }
           }
         ]
@@ -1514,28 +1716,28 @@
       "setable": true,
       "values": [
         {
-          "id": "zero",
+          "id": "stop",
           "title": {
             "en": "Stop",
             "nl": "Stop"
           }
         },
         {
-          "id": "one",
+          "id": "vertical",
           "title": {
             "en": "Vertical",
             "nl": "Vertikaal"
           }
         },
         {
-          "id": "two",
+          "id": "horizontal",
           "title": {
             "en": "Horizontal",
             "nl": "Horizontaal"
           }
         },
         {
-          "id": "three",
+          "id": "3d",
           "title": {
             "en": "3D",
             "nl": "3D"
@@ -1553,49 +1755,49 @@
       "setable": true,
       "values": [
         {
-          "id": "A",
+          "id": "auto",
           "title": {
             "en": "Auto",
             "nl": "Auto"
           }
         },
         {
-          "id": "B",
+          "id": "quiet",
           "title": {
             "en": "Quiet",
             "nl": "Stil"
           }
         },
         {
-          "id": "three",
+          "id": "level1",
           "title": {
             "en": "Level 1",
             "nl": "Niveau 1"
           }
         },
         {
-          "id": "four",
+          "id": "level2",
           "title": {
             "en": "Level 2",
             "nl": "Niveau 2"
           }
         },
         {
-          "id": "five",
+          "id": "level3",
           "title": {
             "en": "Level 3",
             "nl": "Niveau 3"
           }
         },
         {
-          "id": "six",
+          "id": "level4",
           "title": {
             "en": "Level 4",
             "nl": "Niveau 4"
           }
         },
         {
-          "id": "seven",
+          "id": "level5",
           "title": {
             "en": "Level 5",
             "nl": "Niveau 5"

@@ -10,17 +10,29 @@
         "filter": "driver_id=airairhp"
     }, {
         "name": "target_humidity_from",
-        "type": "number",
-        "placeholder": {
-            "en": "Number between 0 - 50",
-            "nl": "Getal tussen 0 - 50"
+        "type": "range",
+        "min": 0,
+        "max": 50,
+		"step": 1,
+		"label": "%",
+		"labelMultiplier": 1,
+		"labelDecimals": 0,
+        "title": {
+            "en": "From",
+            "nl": "Van"
         }
     }, {
         "name": "target_humidity_to",
-        "type": "number",
-        "placeholder": {
-            "en": "Number between 0 - 50",
-            "nl": "Getal tussen 0 - 50"
+        "type": "range",
+        "min": 0,
+        "max": 50,
+		"step": 1,
+		"label": "%",
+		"labelMultiplier": 1,
+		"labelDecimals": 0,
+        "title": {
+            "en": "To",
+            "nl": "Tot"
         }
     }]
 }

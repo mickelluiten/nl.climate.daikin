@@ -7,25 +7,25 @@
     "getable": true,
     "setable": true,
     "values": [{
-        "id": "zero",
+        "id": "stop",
         "title": {
             "en": "Stop",
             "nl": "Stop"
         }
     }, {
-        "id": "one",
+        "id": "vertical",
         "title": {
             "en": "Vertical",
             "nl": "Vertikaal"
         }
     }, {
-        "id": "two",
+        "id": "horizontal",
         "title": {
             "en": "Horizontal",
             "nl": "Horizontaal"
         }
     }, {
-        "id": "three",
+        "id": "3d",
         "title": {
             "en": "3D",
             "nl": "3D"

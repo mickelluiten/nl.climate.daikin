@@ -10,10 +10,16 @@
         "filter": "driver_id=airairhp"
     }, {
         "name": "target_humidity_more",
-        "type": "number",
-        "placeholder": {
-            "en": "Number between 0 - 50",
-            "nl": "Getal tussen 0 - 50"
+        "type": "range",
+        "min": 0,
+        "max": 50,
+		"step": 1,
+		"label": "%",
+		"labelMultiplier": 1,
+		"labelDecimals": 0,
+        "title": {
+            "en": "More than",
+            "nl": "Meer dan"
         }
     }]
 }

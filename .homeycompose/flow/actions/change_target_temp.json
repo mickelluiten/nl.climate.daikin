@@ -1,8 +1,8 @@
 {
     "id": "change_target_temp",
     "title": {
-        "en": "Change target temperature",
-        "nl": "Wijzig doel temperatuur"
+        "en": "Change target temperature to",
+        "nl": "Wijzig doel temperatuur in"
     },
     "args": [{
         "name": "device",
@@ -10,12 +10,16 @@
         "filter": "driver_id=airairhp"
     }, {
         "name": "atemp",
-        "type": "number",
+        "type": "range",
         "min": 15,
         "max": 35,
-        "placeholder": {
-            "en": "°C",
-            "nl": "°C"
+		"step": 1,
+		"label": "°C",
+		"labelMultiplier": 1,
+		"labelDecimals": 0,
+        "title": {
+            "en": "Target temperature",
+            "nl": "Doel temperatuur"
         }
     }]
 }

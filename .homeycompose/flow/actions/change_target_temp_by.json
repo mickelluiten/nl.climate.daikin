@@ -10,12 +10,15 @@
         "filter": "driver_id=airairhp|airairhphk"
     }, {
         "name": "bytemp",
-        "type": "number",
+        "type": "range",
         "min": -5,
         "max": 5,
-        "placeholder": {
-            "en": "a value between -5°C and +5°C",
-            "nl": "een getal tussen de -5°C en +5°C"
+		"label": "°C",
+		"labelMultiplier": 1,
+		"labelDecimals": 0,
+        "title": {
+            "en": "Change target temperature by",
+            "nl": "Wijzig de doel temperatuur met"
         }
     }]
 }

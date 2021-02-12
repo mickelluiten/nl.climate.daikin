@@ -10,10 +10,16 @@
         "filter": "driver_id=airairhp"
     }, {
         "name": "ouside_temperature_less",
-        "type": "number",
-        "placeholder": {
-            "en": "in C",
-            "nl": "in C"
+        "type": "range",
+        "min": -10,
+        "max": 60,
+		"step": 1,
+		"label": "°C",
+		"labelMultiplier": 1,
+		"labelDecimals": 0,
+        "title": {
+            "en": "Less than",
+            "nl": "Minder dan"
         }
     }]
 }

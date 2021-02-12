@@ -1,8 +1,8 @@
 {
     "id": "change_target_hum",
     "title": {
-        "en": "Change target humidity",
-        "nl": "Wijzig doel luchtvochtigheid"
+        "en": "Change target humidity to",
+        "nl": "Wijzig doel luchtvochtigheid in"
     },
     "args": [{
         "name": "device",
@@ -10,12 +10,15 @@
         "filter": "driver_id=airairhp"
     }, {
         "name": "ahum",
-        "type": "number",
+        "type": "range",
         "min": 0,
         "max": 50,
-        "placeholder": {
-            "en": "Number between 0 - 50",
-            "nl": "Getal tussen 0 - 50"
+		"label": "%",
+		"labelMultiplier": 1,
+		"labelDecimals": 0,
+        "title": {
+            "en": "Target Humidity",
+            "nl": "Doel relatieve luchtvochtigheid"
         }
     }]
 }

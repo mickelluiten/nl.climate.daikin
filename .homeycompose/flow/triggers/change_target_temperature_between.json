@@ -10,17 +10,29 @@
         "filter": "driver_id=airairhp"
     }, {
         "name": "target_temperature_from",
-        "type": "number",
-        "placeholder": {
-            "en": "in C",
-            "nl": "in C"
+        "type": "range",
+        "min": -10,
+        "max": 60,
+		"step": 1,
+		"label": "°C",
+		"labelMultiplier": 1,
+		"labelDecimals": 0,
+        "title": {
+            "en": "From",
+            "nl": "Van"
         }
     }, {
         "name": "target_temperature_to",
-        "type": "number",
-        "placeholder": {
-            "en": "in C",
-            "nl": "in C"
+        "type": "range",
+        "min": -10,
+        "max": 60,
+		"step": 1,
+		"label": "°C",
+		"labelMultiplier": 1,
+		"labelDecimals": 0,
+        "title": {
+            "en": "To",
+            "nl": "Tot"
         }
     }]
 }
