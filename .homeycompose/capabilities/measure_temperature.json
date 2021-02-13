@@ -1,0 +1,16 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Temperature",
+    "nl": "Temperatuur"
+  },
+  "units": {
+    "en": "°C"
+  },
+  "insights": true,
+  "decimals": 1,
+  "chartType": "spline",
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor"
+}

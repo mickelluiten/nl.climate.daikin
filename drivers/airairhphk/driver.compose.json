@@ -9,14 +9,6 @@
         "target_temperature",
         "measure_temperature"
     ],
-    "capabilitiesOptions": {
-        "measure_temperature": {
-            "title": {
-                "en": "Inside temp.",
-                "nl": "Binnen temp."
-            }
-        }
-    },
     "images": {
         "large": "/drivers/airairhphk/assets/images/large.png",
         "small": "/drivers/airairhphk/assets/images/small.png"

@@ -1,8 +1,8 @@
 {
     "id": "change_target_temp_by",
     "title": {
-        "en": "Change current target temp. by °C",
-        "nl": "Wijzig huidige doeltemp. met °C"
+        "en": "Change target temperature by °C",
+        "nl": "Wijzig de ingestelde temperatuur met °C"
     },
     "args": [{
         "name": "device",
@@ -18,7 +18,7 @@
 		"labelDecimals": 0,
         "title": {
             "en": "Change target temperature by",
-            "nl": "Wijzig de doel temperatuur met"
+            "nl": "Wijzig de ingestelde temperatuur met"
         }
     }]
 }

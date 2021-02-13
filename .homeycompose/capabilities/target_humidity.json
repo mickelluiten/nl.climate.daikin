@@ -4,14 +4,17 @@
         "en": "Target humidity",
         "nl": "Doel luchtvochtigheid"
     },
-    "uiComponent": "slider",
-    "getable": true,
-    "setable": true,
     "units": {
         "en": "%",
         "nl": "%"
     },
+    "insights": true,
+ 	"decimals": 0,
+	"chartType": "spline",
+    "getable": true,
+    "setable": true,
     "min": 0,
     "max": 50,
-    "step": 1
+    "step": 1,
+    "uiComponent": "slider"
 }

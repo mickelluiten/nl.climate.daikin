@@ -11,12 +11,12 @@
     }, {
         "name": "outside_temperature_from",
         "type": "range",
-        "min": -10,
-        "max": 60,
+        "min": -50,
+        "max": 50,
 		"step": 1,
 		"label": "°C",
 		"labelMultiplier": 1,
-		"labelDecimals": 0,
+		"labelDecimals": 1,
         "title": {
             "en": "From",
             "nl": "Van"
@@ -24,12 +24,12 @@
     }, {
         "name": "outside_temperature_to",
         "type": "range",
-        "min": -10,
-        "max": 60,
-		"step": 1,
+        "min": -50,
+        "max": 50,
+		"step": 0.5,
 		"label": "°C",
 		"labelMultiplier": 1,
-		"labelDecimals": 0,
+		"labelDecimals": 1,
         "title": {
             "en": "To",
             "nl": "Tot"

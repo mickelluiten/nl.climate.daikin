@@ -14,30 +14,6 @@
         "measure_temperature.outside"
     ],
     "capabilitiesOptions": {
-        "thermostat_mode_std": {
-            "title": {
-                "en": "Operation Mode",
-                "nl": "Bedrijfsmodus"
-            }
-        },
-        "fan_rate": {
-            "title": {
-                "en": "Airflow Rate",
-                "nl": "Luchtdebiet"
-            }
-        },
-        "fan_direction": {
-            "title": {
-                "en": "Swing",
-                "nl": "Zwenken"
-            }
-        },
-        "target_temperature": {
-            "title": {
-                "en": "Target temperature",
-                "nl": "Doel temperatuur"
-            }
-        },
         "measure_temperature.inside": {
             "title": {
                 "en": "Inside",

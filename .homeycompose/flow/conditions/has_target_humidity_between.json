@@ -2,7 +2,7 @@
     "id": "has_target_humidity_between",
     "title": {
         "en": "The target humidity !{{is|isn't}} between",
-        "nl": "De doelluchtvochtigheid !{{is|is niet}} tussen"
+        "nl": "De ingestelde luchtvochtigheid !{{is|is niet}} tussen"
     },
     "args": [{
         "name": "device",

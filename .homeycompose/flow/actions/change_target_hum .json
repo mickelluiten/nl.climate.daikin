@@ -2,7 +2,7 @@
     "id": "change_target_hum",
     "title": {
         "en": "Change target humidity to",
-        "nl": "Wijzig doel luchtvochtigheid in"
+        "nl": "Wijzig de ingestelde luchtvochtigheid in"
     },
     "args": [{
         "name": "device",
@@ -18,7 +18,7 @@
 		"labelDecimals": 0,
         "title": {
             "en": "Target Humidity",
-            "nl": "Doel relatieve luchtvochtigheid"
+            "nl": "Ingestelde luchtvochtigheid"
         }
     }]
 }

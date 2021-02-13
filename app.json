@@ -12,7 +12,7 @@
   "category": [
     "climate"
   ],
-  "version": "5.0.3",
+  "version": "5.0.4",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "athomForumDiscussionId": 2082,
@@ -71,7 +71,7 @@
         "id": "change_target_humidity_between",
         "title": {
           "en": "The target humidity is between",
-          "nl": "De doelluchtvochtigheid is tussen"
+          "nl": "De ingestelde luchtvochtigheid is tussen"
         },
         "args": [
           {
@@ -113,7 +113,7 @@
         "id": "change_target_humidity_less_than",
         "title": {
           "en": "The target humidity is less than",
-          "nl": "De doelluchtvochtigheid is minder dan"
+          "nl": "De ingestelde luchtvochtigheid is minder dan"
         },
         "args": [
           {
@@ -141,7 +141,7 @@
         "id": "change_target_humidity_more_than",
         "title": {
           "en": "The target humidity is more than",
-          "nl": "De doelluchtvochtigheid is meer dan"
+          "nl": "De ingestelde luchtvochtigheid is meer dan"
         },
         "args": [
           {
@@ -169,7 +169,7 @@
         "id": "change_target_temperature_between",
         "title": {
           "en": "The target temperature is between",
-          "nl": "De doeltemperatuur is tussen"
+          "nl": "De ingestelde temperatuur is tussen"
         },
         "args": [
           {
@@ -180,8 +180,8 @@
           {
             "name": "target_temperature_from",
             "type": "range",
-            "min": -10,
-            "max": 60,
+            "min": 10,
+            "max": 32,
             "step": 1,
             "label": "°C",
             "labelMultiplier": 1,
@@ -194,8 +194,8 @@
           {
             "name": "target_temperature_to",
             "type": "range",
-            "min": -10,
-            "max": 60,
+            "min": 10,
+            "max": 32,
             "step": 1,
             "label": "°C",
             "labelMultiplier": 1,
@@ -211,7 +211,7 @@
         "id": "change_target_temperature_less_than",
         "title": {
           "en": "The target temperature is less than",
-          "nl": "De doeltemperatuur is minder dan"
+          "nl": "De ingestelde temperatuur is minder dan"
         },
         "args": [
           {
@@ -222,8 +222,8 @@
           {
             "name": "target_temperature_less",
             "type": "range",
-            "min": -10,
-            "max": 60,
+            "min": 10,
+            "max": 32,
             "step": 1,
             "label": "°C",
             "labelMultiplier": 1,
@@ -239,7 +239,7 @@
         "id": "change_target_temperature_more_than",
         "title": {
           "en": "The target temperature is more than",
-          "nl": "De doeltemperatuur is meer dan"
+          "nl": "De ingestelde temperatuur is meer dan"
         },
         "args": [
           {
@@ -250,8 +250,8 @@
           {
             "name": "target_temperature_more",
             "type": "range",
-            "min": -10,
-            "max": 60,
+            "min": 10,
+            "max": 32,
             "step": 1,
             "label": "°C",
             "labelMultiplier": 1,
@@ -278,12 +278,12 @@
           {
             "name": "inside_temperature_from",
             "type": "range",
-            "min": -10,
-            "max": 60,
-            "step": 1,
+            "min": -20,
+            "max": 80,
+            "step": 0.5,
             "label": "°C",
             "labelMultiplier": 1,
-            "labelDecimals": 0,
+            "labelDecimals": 1,
             "title": {
               "en": "From",
               "nl": "Van"
@@ -292,12 +292,12 @@
           {
             "name": "inside_temperature_to",
             "type": "range",
-            "min": -10,
-            "max": 60,
-            "step": 1,
+            "min": -20,
+            "max": 80,
+            "step": 0.5,
             "label": "°C",
             "labelMultiplier": 1,
-            "labelDecimals": 0,
+            "labelDecimals": 1,
             "title": {
               "en": "To",
               "nl": "Tot"
@@ -320,12 +320,12 @@
           {
             "name": "inside_temperature_less",
             "type": "range",
-            "min": -10,
-            "max": 60,
-            "step": 1,
+            "min": -20,
+            "max": 80,
+            "step": 0.5,
             "label": "°C",
             "labelMultiplier": 1,
-            "labelDecimals": 0,
+            "labelDecimals": 1,
             "title": {
               "en": "Less than",
               "nl": "Minder than"
@@ -348,12 +348,12 @@
           {
             "name": "inside_temperature_more",
             "type": "range",
-            "min": -10,
-            "max": 60,
-            "step": 1,
+            "min": -20,
+            "max": 80,
+            "step": 0.5,
             "label": "°C",
             "labelMultiplier": 1,
-            "labelDecimals": 0,
+            "labelDecimals": 1,
             "title": {
               "en": "More than",
               "nl": "Meer dan"
@@ -438,12 +438,12 @@
           {
             "name": "outside_temperature_from",
             "type": "range",
-            "min": -10,
-            "max": 60,
+            "min": -50,
+            "max": 50,
             "step": 1,
             "label": "°C",
             "labelMultiplier": 1,
-            "labelDecimals": 0,
+            "labelDecimals": 1,
             "title": {
               "en": "From",
               "nl": "Van"
@@ -452,12 +452,12 @@
           {
             "name": "outside_temperature_to",
             "type": "range",
-            "min": -10,
-            "max": 60,
-            "step": 1,
+            "min": -50,
+            "max": 50,
+            "step": 0.5,
             "label": "°C",
             "labelMultiplier": 1,
-            "labelDecimals": 0,
+            "labelDecimals": 1,
             "title": {
               "en": "To",
               "nl": "Tot"
@@ -480,12 +480,12 @@
           {
             "name": "ouside_temperature_less",
             "type": "range",
-            "min": -10,
-            "max": 60,
-            "step": 1,
+            "min": -50,
+            "max": 50,
+            "step": 0.5,
             "label": "°C",
             "labelMultiplier": 1,
-            "labelDecimals": 0,
+            "labelDecimals": 1,
             "title": {
               "en": "Less than",
               "nl": "Minder dan"
@@ -508,12 +508,12 @@
           {
             "name": "outside_temperature_more",
             "type": "range",
-            "min": -10,
-            "max": 60,
-            "step": 1,
+            "min": -50,
+            "max": 50,
+            "step": 0.5,
             "label": "°C",
             "labelMultiplier": 1,
-            "labelDecimals": 0,
+            "labelDecimals": 1,
             "title": {
               "en": "More than",
               "nl": "Meer dan"
@@ -538,12 +538,12 @@
           {
             "name": "inside_temperature_from",
             "type": "range",
-            "min": -10,
-            "max": 60,
-            "step": 1,
+            "min": -20,
+            "max": 80,
+            "step": 0.5,
             "label": "°C",
             "labelMultiplier": 1,
-            "labelDecimals": 0,
+            "labelDecimals": 1,
             "title": {
               "en": "From",
               "nl": "Van"
@@ -552,12 +552,12 @@
           {
             "name": "inside_temperature_to",
             "type": "range",
-            "min": -10,
-            "max": 60,
-            "step": 1,
+            "min": -20,
+            "max": 80,
+            "step": 0.5,
             "label": "°C",
             "labelMultiplier": 1,
-            "labelDecimals": 0,
+            "labelDecimals": 1,
             "title": {
               "en": "To",
               "nl": "Tot"
@@ -580,12 +580,12 @@
           {
             "name": "inside_temperature_less",
             "type": "range",
-            "min": -10,
-            "max": 60,
-            "step": 1,
+            "min": -20,
+            "max": 80,
+            "step": 0.5,
             "label": "°C",
             "labelMultiplier": 1,
-            "labelDecimals": 0,
+            "labelDecimals": 1,
             "title": {
               "en": "Less than",
               "nl": "Minder dan"
@@ -608,12 +608,12 @@
           {
             "name": "inside_temperature_more",
             "type": "range",
-            "min": -10,
-            "max": 60,
-            "step": 1,
+            "min": -20,
+            "max": 80,
+            "step": 0.5,
             "label": "°C",
             "labelMultiplier": 1,
-            "labelDecimals": 0,
+            "labelDecimals": 1,
             "title": {
               "en": "More than",
               "nl": "Meer dan"
@@ -636,12 +636,12 @@
           {
             "name": "outside_temperature_from",
             "type": "range",
-            "min": -10,
-            "max": 60,
-            "step": 1,
+            "min": -50,
+            "max": 50,
+            "step": 0.5,
             "label": "°C",
             "labelMultiplier": 1,
-            "labelDecimals": 0,
+            "labelDecimals": 1,
             "title": {
               "en": "From",
               "nl": "Van"
@@ -650,12 +650,12 @@
           {
             "name": "outside_temperature_to",
             "type": "range",
-            "min": -10,
-            "max": 60,
-            "step": 1,
+            "min": -50,
+            "max": 50,
+            "step": 0.5,
             "label": "°C",
             "labelMultiplier": 1,
-            "labelDecimals": 0,
+            "labelDecimals": 1,
             "title": {
               "en": "To",
               "nl": "Tot"
@@ -678,12 +678,12 @@
           {
             "name": "outside_temperature_less",
             "type": "range",
-            "min": -10,
-            "max": 60,
-            "step": 1,
+            "min": -50,
+            "max": 50,
+            "step": 0.5,
             "label": "°C",
             "labelMultiplier": 1,
-            "labelDecimals": 0,
+            "labelDecimals": 1,
             "title": {
               "en": "Less than",
               "nl": "Minder dan"
@@ -706,12 +706,12 @@
           {
             "name": "outside_temperature_more",
             "type": "range",
-            "min": -10,
-            "max": 60,
-            "step": 1,
+            "min": -50,
+            "max": 50,
+            "step": 0.5,
             "label": "°C",
             "labelMultiplier": 1,
-            "labelDecimals": 0,
+            "labelDecimals": 1,
             "title": {
               "en": "More than",
               "nl": "Meer dan"
@@ -723,7 +723,7 @@
         "id": "has_target_humidity_between",
         "title": {
           "en": "The target humidity !{{is|isn't}} between",
-          "nl": "De doelluchtvochtigheid !{{is|is niet}} tussen"
+          "nl": "De ingestelde luchtvochtigheid !{{is|is niet}} tussen"
         },
         "args": [
           {
@@ -765,7 +765,7 @@
         "id": "has_target_humidity_less_than",
         "title": {
           "en": "The target humidity !{{is|isn't}} less than",
-          "nl": "De doelluchtvochtigheid !{{is|is niet}} minder dan"
+          "nl": "De ingestelde luchtvochtigheid !{{is|is niet}} minder dan"
         },
         "args": [
           {
@@ -793,7 +793,7 @@
         "id": "has_target_humidity_more_than",
         "title": {
           "en": "The target humidity !{{is|isn't}} more than",
-          "nl": "De doelluchtvochtigheid !{{is|is niet}} meer dan"
+          "nl": "De ingestelde luchtvochtigheid !{{is|is niet}} meer dan"
         },
         "args": [
           {
@@ -821,7 +821,7 @@
         "id": "has_target_temperature_between",
         "title": {
           "en": "The target temperature !{{is|isn't}} between",
-          "nl": "De doeltemperatuur !{{is|is niet}} tussen"
+          "nl": "De ingestelde temperatuur !{{is|is niet}} tussen"
         },
         "args": [
           {
@@ -832,8 +832,8 @@
           {
             "name": "target_temperature_from",
             "type": "range",
-            "min": -10,
-            "max": 60,
+            "min": 10,
+            "max": 32,
             "step": 1,
             "label": "°C",
             "labelMultiplier": 1,
@@ -846,8 +846,8 @@
           {
             "name": "target_temperature_to",
             "type": "range",
-            "min": -10,
-            "max": 60,
+            "min": 10,
+            "max": 35,
             "step": 1,
             "label": "°C",
             "labelMultiplier": 1,
@@ -863,7 +863,7 @@
         "id": "has_target_temperature_less_than",
         "title": {
           "en": "The target temperature !{{is|isn't}} less than",
-          "nl": "De doeltemperatuur !{{is|is niet}} minder dan"
+          "nl": "De ingestelde temperatuur !{{is|is niet}} minder dan"
         },
         "args": [
           {
@@ -874,8 +874,8 @@
           {
             "name": "target_temperature_less",
             "type": "range",
-            "min": -10,
-            "max": 60,
+            "min": 10,
+            "max": 32,
             "step": 1,
             "label": "°C",
             "labelMultiplier": 1,
@@ -891,7 +891,7 @@
         "id": "has_target_temperature_more_than",
         "title": {
           "en": "The target temperature !{{is|isn't}} more than",
-          "nl": "De doeltemperatuur !{{is|is niet}} meer dan"
+          "nl": "De ingestelde temperatuur !{{is|is niet}} meer dan"
         },
         "args": [
           {
@@ -902,8 +902,8 @@
           {
             "name": "target_temperature_more",
             "type": "range",
-            "min": -10,
-            "max": 60,
+            "min": 10,
+            "max": 32,
             "step": 1,
             "label": "°C",
             "labelMultiplier": 1,
@@ -1366,7 +1366,7 @@
         "id": "change_target_hum",
         "title": {
           "en": "Change target humidity to",
-          "nl": "Wijzig doel luchtvochtigheid in"
+          "nl": "Wijzig de ingestelde luchtvochtigheid in"
         },
         "args": [
           {
@@ -1384,7 +1384,7 @@
             "labelDecimals": 0,
             "title": {
               "en": "Target Humidity",
-              "nl": "Doel relatieve luchtvochtigheid"
+              "nl": "Ingestelde luchtvochtigheid"
             }
           }
         ]
@@ -1393,7 +1393,7 @@
         "id": "change_target_temp",
         "title": {
           "en": "Change target temperature to",
-          "nl": "Wijzig doel temperatuur in"
+          "nl": "Wijzig de ingestelde temperatuur in"
         },
         "args": [
           {
@@ -1404,15 +1404,15 @@
           {
             "name": "atemp",
             "type": "range",
-            "min": 15,
-            "max": 35,
+            "min": 10,
+            "max": 32,
             "step": 1,
             "label": "°C",
             "labelMultiplier": 1,
             "labelDecimals": 0,
             "title": {
               "en": "Target temperature",
-              "nl": "Doel temperatuur"
+              "nl": "Ingestelde temperatuur"
             }
           }
         ]
@@ -1420,8 +1420,8 @@
       {
         "id": "change_target_temp_by",
         "title": {
-          "en": "Change current target temp. by °C",
-          "nl": "Wijzig huidige doeltemp. met °C"
+          "en": "Change target temperature by °C",
+          "nl": "Wijzig de ingestelde temperatuur met °C"
         },
         "args": [
           {
@@ -1439,7 +1439,7 @@
             "labelDecimals": 0,
             "title": {
               "en": "Change target temperature by",
-              "nl": "Wijzig de doel temperatuur met"
+              "nl": "Wijzig de ingestelde temperatuur met"
             }
           }
         ]
@@ -1463,30 +1463,6 @@
         "measure_temperature.outside"
       ],
       "capabilitiesOptions": {
-        "thermostat_mode_std": {
-          "title": {
-            "en": "Operation Mode",
-            "nl": "Bedrijfsmodus"
-          }
-        },
-        "fan_rate": {
-          "title": {
-            "en": "Airflow Rate",
-            "nl": "Luchtdebiet"
-          }
-        },
-        "fan_direction": {
-          "title": {
-            "en": "Swing",
-            "nl": "Zwenken"
-          }
-        },
-        "target_temperature": {
-          "title": {
-            "en": "Target temperature",
-            "nl": "Doel temperatuur"
-          }
-        },
         "measure_temperature.inside": {
           "title": {
             "en": "Inside",
@@ -1608,14 +1584,6 @@
         "target_temperature",
         "measure_temperature"
       ],
-      "capabilitiesOptions": {
-        "measure_temperature": {
-          "title": {
-            "en": "Inside temp.",
-            "nl": "Binnen temp."
-          }
-        }
-      },
       "images": {
         "large": "/drivers/airairhphk/assets/images/large.png",
         "small": "/drivers/airairhphk/assets/images/small.png"
@@ -1805,6 +1773,22 @@
         }
       ]
     },
+    "measure_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur"
+      },
+      "units": {
+        "en": "°C"
+      },
+      "insights": true,
+      "decimals": 1,
+      "chartType": "spline",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
     "special_mode_eco": {
       "type": "enum",
       "title": {
@@ -1886,16 +1870,37 @@
         "en": "Target humidity",
         "nl": "Doel luchtvochtigheid"
       },
-      "uiComponent": "slider",
-      "getable": true,
-      "setable": true,
       "units": {
         "en": "%",
         "nl": "%"
       },
+      "insights": true,
+      "decimals": 0,
+      "chartType": "spline",
+      "getable": true,
+      "setable": true,
       "min": 0,
       "max": 50,
-      "step": 1
+      "step": 1,
+      "uiComponent": "slider"
+    },
+    "target_temperature": {
+      "type": "number",
+      "min": 10,
+      "max": 32,
+      "title": {
+        "en": "Target temperature",
+        "nl": "Ingestelde temperatuur"
+      },
+      "units": {
+        "en": "°C"
+      },
+      "chartType": "stepLine",
+      "decimals": 0,
+      "insights": true,
+      "getable": true,
+      "setable": true,
+      "uiComponent": "thermostat"
     },
     "thermostat_mode_std": {
       "type": "enum",
@@ -1905,9 +1910,7 @@
       },
       "getable": true,
       "setable": true,
-      "min": 10,
-      "max": 32,
-      "step": 1,
+      "uiComponent": "picker",
       "values": [
         {
           "id": "off",

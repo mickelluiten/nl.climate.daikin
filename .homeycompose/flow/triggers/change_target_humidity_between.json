@@ -2,7 +2,7 @@
     "id": "change_target_humidity_between",
     "title": {
         "en": "The target humidity is between",
-        "nl": "De doelluchtvochtigheid is tussen"
+        "nl": "De ingestelde luchtvochtigheid is tussen"
     },
     "args": [{
         "name": "device",

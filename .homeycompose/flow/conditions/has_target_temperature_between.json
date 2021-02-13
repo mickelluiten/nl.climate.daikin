@@ -2,7 +2,7 @@
     "id": "has_target_temperature_between",
     "title": {
         "en": "The target temperature !{{is|isn't}} between",
-        "nl": "De doeltemperatuur !{{is|is niet}} tussen"
+        "nl": "De ingestelde temperatuur !{{is|is niet}} tussen"
     },
     "args": [{
         "name": "device",
@@ -11,8 +11,8 @@
     }, {
         "name": "target_temperature_from",
         "type": "range",
-        "min": -10,
-        "max": 60,
+        "min": 10,
+        "max": 32,
 		"step": 1,
 		"label": "°C",
 		"labelMultiplier": 1,
@@ -24,8 +24,8 @@
     }, {
         "name": "target_temperature_to",
         "type": "range",
-        "min": -10,
-        "max": 60,
+        "min": 10,
+        "max": 35,
 		"step": 1,
 		"label": "°C",
 		"labelMultiplier": 1,

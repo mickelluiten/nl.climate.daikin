@@ -2,7 +2,7 @@
     "id": "has_target_humidity_more_than",
     "title": {
         "en": "The target humidity !{{is|isn't}} more than",
-        "nl": "De doelluchtvochtigheid !{{is|is niet}} meer dan"
+        "nl": "De ingestelde luchtvochtigheid !{{is|is niet}} meer dan"
     },
     "args": [{
         "name": "device",

@@ -2,7 +2,7 @@
     "id": "change_target_temp",
     "title": {
         "en": "Change target temperature to",
-        "nl": "Wijzig doel temperatuur in"
+        "nl": "Wijzig de ingestelde temperatuur in"
     },
     "args": [{
         "name": "device",
@@ -11,15 +11,15 @@
     }, {
         "name": "atemp",
         "type": "range",
-        "min": 15,
-        "max": 35,
+        "min": 10,
+        "max": 32,
 		"step": 1,
 		"label": "°C",
 		"labelMultiplier": 1,
 		"labelDecimals": 0,
         "title": {
             "en": "Target temperature",
-            "nl": "Doel temperatuur"
+            "nl": "Ingestelde temperatuur"
         }
     }]
 }

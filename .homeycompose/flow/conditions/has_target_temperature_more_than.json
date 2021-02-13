@@ -2,7 +2,7 @@
     "id": "has_target_temperature_more_than",
     "title": {
         "en": "The target temperature !{{is|isn't}} more than",
-        "nl": "De doeltemperatuur !{{is|is niet}} meer dan"
+        "nl": "De ingestelde temperatuur !{{is|is niet}} meer dan"
     },
     "args": [{
         "name": "device",
@@ -11,8 +11,8 @@
     }, {
         "name": "target_temperature_more",
         "type": "range",
-        "min": -10,
-        "max": 60,
+        "min": 10,
+        "max": 32,
 		"step": 1,
 		"label": "°C",
 		"labelMultiplier": 1,

@@ -6,9 +6,7 @@
     },
     "getable": true,
     "setable": true,
-    "min": 10,
-    "max": 32,
-    "step": 1.0,
+  	"uiComponent": "picker",
     "values": [{
         "id": "off",
         "title": {
