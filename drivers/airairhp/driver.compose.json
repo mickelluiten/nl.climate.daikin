@@ -18,13 +18,31 @@
             "title": {
                 "en": "Inside",
                 "nl": "Binnen"
-            }
+            },
+		    "units": {
+		      "en": "°C"
+		    },
+		    "insights": true,
+		    "decimals": 1,
+		    "chartType": "spline",
+		    "getable": true,
+		    "setable": false,
+		    "uiComponent": "sensor"
         },
         "measure_temperature.outside": {
             "title": {
                 "en": "Outside",
                 "nl": "Buiten"
-            }
+            },
+		    "units": {
+		      "en": "°C"
+		    },
+		    "insights": true,
+		    "decimals": 1,
+		    "chartType": "spline",
+		    "getable": true,
+		    "setable": false,
+		    "uiComponent": "sensor"
         }
     },
     "images": {

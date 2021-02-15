@@ -210,7 +210,7 @@ class AirAirHPHKDevice extends Device {
 	}
 
 	// ---- update temperature readings
-    const inside = Number(sensor_info[1]);
+    const inside = parseFloat(sensor_info[1]); //was >> Number(sensor_info[1]); // Note that parseFloat >> 10.0 = 10, 10.45 = 10.45!!
     this.setCapabilityValue('measure_temperature', inside)
 		.catch(this.error);
     this.log('Temp inside:', inside);

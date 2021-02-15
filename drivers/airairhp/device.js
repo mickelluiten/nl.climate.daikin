@@ -566,6 +566,7 @@ class AirAirHPDevice extends Device {
 	// Update the app after interrogation of sensor_request
 	updateSensorListeners(sensor_info) {
 		this.log('>>>updateSensorListeners');
+		this.log('sensor_info: ', sensor_info);
 
 		// ---- error handling
 		if (!(sensor_info === 'sensorerr_404' && sensor_info === 'sensorerr_parse')) this.setWarning(null);
@@ -584,8 +585,8 @@ class AirAirHPDevice extends Device {
 		var oldOutsideTemperature = this.getState()['measure_temperature.outside'];
 		this.log('oldOutsideTemperature: ', oldOutsideTemperature);
 
-		const inside = Number(sensor_info[1]);
-		const outside = Number(sensor_info[3]);
+		const inside = parseFloat(sensor_info[1]);  //was >> Number(sensor_info[1]);  // Note that parseFloat >> 10.0 = 10, 10.45 = 10.45!!
+		const outside = parseFloat(sensor_info[3]); //was >> Number(sensor_info[3]);  // Note that parseFloat >> 10.0 = 10, 10.45 = 10.45!!
 		var capability_mode = this.getCapabilityValue('thermostat_mode_std');
 		if(capability_mode !== 'off') {
     		this.setCapabilityValue('measure_temperature', inside)

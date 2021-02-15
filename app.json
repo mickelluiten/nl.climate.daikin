@@ -12,7 +12,7 @@
   "category": [
     "climate"
   ],
-  "version": "5.0.4",
+  "version": "5.0.5",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "athomForumDiscussionId": 2082,
@@ -1467,13 +1467,31 @@
           "title": {
             "en": "Inside",
             "nl": "Binnen"
-          }
+          },
+          "units": {
+            "en": "°C"
+          },
+          "insights": true,
+          "decimals": 1,
+          "chartType": "spline",
+          "getable": true,
+          "setable": false,
+          "uiComponent": "sensor"
         },
         "measure_temperature.outside": {
           "title": {
             "en": "Outside",
             "nl": "Buiten"
-          }
+          },
+          "units": {
+            "en": "°C"
+          },
+          "insights": true,
+          "decimals": 1,
+          "chartType": "spline",
+          "getable": true,
+          "setable": false,
+          "uiComponent": "sensor"
         }
       },
       "images": {
