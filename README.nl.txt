@@ -1,4 +1,4 @@
-Voor een juiste werking van deze Homey App is het noodzakelijk dat uw Daikin airconditioner is uitgerust met een WiFi adapter (zijnde model BRP069A-- of BRP069B--). Deze applicatie is NIET geschikt om kanaal of plafond "Sky Air" modellen te bedienen.
+Voor een juiste werking van deze Homey App is het noodzakelijk dat uw Daikin airconditioner is uitgerust met een WiFi adapter (zijnde model BRP069A-- of BRP069B--). Deze applicatie is NIET geschikt om kanaal of plafond "Sky Air" modellen te bedienen, modellen welke bediend worden met Daikin’s Residential Controller app (geïntroduceerd in januari 2021) en/of modellen welke zijn uitgerust met de BRP069C– WiFi adapter.
 
 <<Mogelijkheden>>
 - maakt de bediening van de meeste airconditioners behorende tot Daikin's lucht/lucht warmtepompen productgroep mogelijk middels 1 enkel stuurprogramma.
