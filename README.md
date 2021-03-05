@@ -1,7 +1,7 @@
 ![Daikin logo](https://github.com/PeterEIER/nl.climate.daikin/raw/master/assets/images/Daikin-logo-wide.png)
 
 # Daikin AI for Homey
-Control your Daikin air conditioner through Homey. This app requires that your Daikin air conditioner is equipped with a WiFi adapter (either model BRP069A-- or BRP069B--). This app does NOT support "Sky Air" ducted/ceiling models, models that are/can only be controlled by Daikin’s Residential Controller app (which was introduced in January of 2021) and/or models equipped with a BRP069C– WiFi adapter.
+Control your Daikin air conditioner through Homey. This app requires that your Daikin air conditioner is equipped with a WiFi adapter (either model BRP069A-- or BRP069B–). This app does NOT support “Sky Air” ducted/ceiling models, models that are/can only be controlled by Daikin’s Residential Controller app (which was introduced in January of 2021) and/or models equipped with a C type (i.e. BRP069C4x) WiFi adapter.
 
 ## Features
 - supports most Daikin airconditioners that belonging to Daikin's "Air-to-air heat pumps" productgroup through a single driver. Note for existing users; the "range model" drivers are as of now depreciated.
