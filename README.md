@@ -239,4 +239,5 @@ If you like the app, consider buying me a cup of coffee!
 - 31-OCT-20: Changes to thermostat logic when airco is turned off
 - 24-DEC-20: Changes to enumaration of fan-rate and fan-direction in support of the MQTT Hub (Homey) app
 - 12-FEB-21: Fixed a bug related to flow cards not show UoM
+- 10-MAR-21: Bug fix - (inside) temperature changed flowcard was missing
 

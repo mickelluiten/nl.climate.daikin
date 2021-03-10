@@ -1,0 +1,12 @@
+{
+	"id": "measure_temperature_changed",
+	"title": {
+		"en": "The (inside) temperature has changed",
+		"nl": "De (binnen) temperatuur is veranderd"
+	},
+	"args": [{
+		"name": "device",
+		"type": "device",
+		"filter": "driver_id=airairhp"
+	}]
+}
