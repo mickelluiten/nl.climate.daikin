@@ -547,7 +547,7 @@ class AirAirHPDevice extends Device {
 		if (frate_nbr !== 0 && frate_nbr !== 1) {
 			frate_nbr = parseInt(frate - 1);
 		}
-		const fan_rate = fan_rates[frate_nbr]; // fan_rate = 'A','B','three','four',etc.
+		const fan_rate = fan_rates[frate_nbr]; // fan_rate = 'auto','quiet','level1','level2',etc.
 		this.setCapabilityValue('fan_rate', fan_rate)
 			.catch(this.error);
 		this.log('frate:', fan_rate);
@@ -555,7 +555,7 @@ class AirAirHPDevice extends Device {
 		// ---- fan direction
 		const fan_directions = ['stop', 'vertical', 'horizontal', '3d'];
 		const fdir = Number(control_info[24]); // control_info[24] = '0,'1','2','3'
-		const fan_direction = fan_directions[fdir]; // fan_direction = 'zero','one,'two,'three'
+		const fan_direction = fan_directions[fdir]; // fan_direction = 'stop','vertical,'horizontal,'3d'
 		this.setCapabilityValue('fan_direction', fan_direction)
 			.catch(this.error);
 		this.log('fdir:', fan_direction);

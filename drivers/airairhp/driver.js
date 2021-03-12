@@ -622,7 +622,42 @@ class AirAirHPDriver extends Driver {
 				const ip_address = settings.ip;
 				this.log('ip_address', ip_address);
 
-				const fan_rate = args.frate;
+				var fan_rate = args.frate; // control_info[23] = 'A','B','3','4','5','6','7'
+				// The enumeration that is used by the airco is translated here in support of MQTTHub by Harry de Groot
+				switch (fan_rate) {
+					case 'A':
+						fan_rate = 'auto';
+						break;
+
+					case 'B':
+						fan_rate = 'quiet';
+						break;
+
+					case '3':
+						fan_rate = 'level1';
+						break;
+
+					case '4':
+						fan_rate = 'level2';
+						break;
+
+					case '5':
+						fan_rate = 'level3';
+						break;
+
+					case '6':
+						fan_rate = 'level4';
+						break;
+
+					case '7':
+						fan_rate = 'level5';
+						break;
+
+					default:
+						console.log('unrecognized fan rate !!, auto selected !!');
+						fan_rate = 'auto';
+						break;
+				}
 				device.setCapabilityValue('fan_rate', fan_rate);
 				this.log('fan_rate', fan_rate);
 
@@ -654,7 +689,30 @@ class AirAirHPDriver extends Driver {
 				const ip_address = settings.ip;
 				this.log('ip_address', ip_address);
 
-				const fan_direction = args.fdir;
+				var fan_direction = args.fdir; // control_info[24] = '0,'1','2','3'
+				// The enumeration that is used by the airco is translated here in support of MQTTHub by Harry de Groot
+				switch (fan_direction) {
+					case '0':
+						fan_direction = 'stop';
+						break;
+
+					case '1':
+						fan_direction = 'vertical';
+						break;
+
+					case '2':
+						fan_direction = 'horizontal';
+						break;
+
+					case '3':
+						fan_direction = '3d';
+						break;
+
+					default:
+						console.log('unrecognized fan direction !!, fan turned off !!');
+						var fan_direction = 'stop';
+						break;
+				}
 				device.setCapabilityValue('fan_direction', fan_direction);
 				this.log('fan_direction', fan_direction);
 
@@ -675,7 +733,6 @@ class AirAirHPDriver extends Driver {
 				return Promise.resolve(fan_direction);
 		});
 	}
-
 }
 
 module.exports = AirAirHPDriver;

@@ -20,5 +20,23 @@
   },
   "5.0.0": {
     "en": "1/ Updates to support SDK3. 2/ Changes to thermostat UI behavior, when airco is turned off it will follow the target temperature setting (iso the inside temperature). 3/ Changes to the thermostat mode logic when externally powered on i.e. when using the IR remote."
+  },
+  "5.0.3": {
+    "en": "1/ Updates to support SDK3. 2/ Changes to thermostat UI behavior, when airco is turned off it will follow the target temperature setting (iso the inside temperature). 3/ Changes to the thermostat mode logic when externally powered on i.e. when using the IR remote. 4/ Bug fixes."
+  },
+  "5.0.4": {
+    "en": "1/ Updates to support SDK3. 2/ Changes to thermostat UI behavior, when airco is turned off it will follow the target temperature setting (iso the inside temperature). 3/ Changes to the thermostat mode logic when externally powered on i.e. when using the IR remote. 4/ Bug fixes."
+  },
+  "5.0.5": {
+    "en": "1/ Updates to support SDK3. 2/ Changes to thermostat UI behavior, when airco is turned off it will follow the target temperature setting (iso the inside temperature). 3/ Changes to the thermostat mode logic when externally powered on i.e. when using the IR remote. 4/ Bug fixes."
+  },
+  "5.0.6": {
+    "en": "1/ Updates to support SDK3. 2/ Changes to thermostat UI behavior, when airco is turned off it will follow the target temperature setting (iso the inside temperature). 3/ Changes to the thermostat mode logic when externally powered on i.e. when using the IR remote. 4/ Bug fixes."
+  },
+  "5.0.7": {
+    "en": "1/ Updates to support SDK3. 2/ Changes to thermostat UI behavior, when airco is turned off it will follow the target temperature setting (iso the inside temperature). 3/ Changes to the thermostat mode logic when externally powered on i.e. when using the IR remote. 4/ Bug fixes. 5/ App (store) description updated."
+  },
+  "5.0.8": {
+    "en": "Bug fix."
   }
 }
