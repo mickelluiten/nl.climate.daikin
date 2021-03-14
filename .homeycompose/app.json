@@ -5,13 +5,13 @@
 		"nl": "Daikin AI"
 	},
 	"description": {
-		"en": "Adds support for Daikin Air-to-air heat pumps",
-		"nl": "Maakt de bediening van Daikin Lucht/lucht warmtepompen mogelijk"
+		"en": "Experience your perfect climate with Daikin AI",
+		"nl": "Het perfecte binnenklimaat met Daikin AI"
 	},
 	"category": [
 		"climate"
 	],
-	"version": "5.0.9",
+	"version": "5.0.10",
 	"compatibility": ">=5.0.0",
 	"sdk": 3,
 	"athomForumDiscussionId": 2082,

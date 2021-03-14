@@ -38,5 +38,8 @@
   },
   "5.0.8": {
     "en": "Bug fix."
+  },
+  "5.0.9": {
+    "en": "Bug fixes; related to trigger flowcards (fan direction, fan rate)."
   }
 }

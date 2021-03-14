@@ -240,5 +240,5 @@ If you like the app, consider buying me a cup of coffee!
 - 24-DEC-20: Changes to enumaration of fan-rate and fan-direction in support of the MQTT Hub (Homey) app
 - 12-FEB-21: Fixed a bug related to flow cards not show UoM
 - 10-MAR-21: Bug fix - (inside) temperature changed flowcard was missing
-- 12-MAR-21: Bug fix - flowcard logic Fan Rate and Fan Direction
+- 12-MAR-21: Bug fix - action flowcard logic Fan Rate and Fan Direction
 

@@ -623,7 +623,7 @@ class AirAirHPDriver extends Driver {
 				this.log('ip_address', ip_address);
 
 				var fan_rate = args.frate; // control_info[23] = 'A','B','3','4','5','6','7'
-				// The enumeration that is used by the airco is translated here in support of MQTTHub by Harry de Groot
+				// The enumeration that is used by the airco is translated here in support of MQTTHub by Harrie de Groot
 				switch (fan_rate) {
 					case 'A':
 						fan_rate = 'auto';
@@ -690,7 +690,7 @@ class AirAirHPDriver extends Driver {
 				this.log('ip_address', ip_address);
 
 				var fan_direction = args.fdir; // control_info[24] = '0,'1','2','3'
-				// The enumeration that is used by the airco is translated here in support of MQTTHub by Harry de Groot
+				// The enumeration that is used by the airco is translated here in support of MQTTHub by Harrie de Groot
 				switch (fan_direction) {
 					case '0':
 						fan_direction = 'stop';
