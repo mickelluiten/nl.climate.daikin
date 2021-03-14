@@ -5,13 +5,13 @@
 		"nl": "Daikin AI"
 	},
 	"description": {
-		"en": "Experience your perfect climate with Daikin AI",
-		"nl": "Het perfecte binnenklimaat met Daikin AI"
+		"en": "Experience your perfect climate",
+		"nl": "Ervaar uw perfecte klimaat"
 	},
 	"category": [
 		"climate"
 	],
-	"version": "5.0.10",
+	"version": "5.0.11",
 	"compatibility": ">=5.0.0",
 	"sdk": 3,
 	"athomForumDiscussionId": 2082,
